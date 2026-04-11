@@ -676,7 +676,7 @@ a  { color: inherit; text-decoration: none; }
   align-items: center;
   text-align: center;
 }
-.footer__logo .nav__logo-img { filter: brightness(10); }
+.nav__logo-img--footer { filter: brightness(0) invert(1) opacity(.85); }
 .footer__tagline {
   font-size: 14px;
   color: rgba(255,255,255,.4);

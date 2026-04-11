@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" fill="none">
+  <defs>
+    <!-- Blue gradient for pipes -->
+    <linearGradient id="blueGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#0D2756"/>
+      <stop offset="50%"  stop-color="#1E6BC5"/>
+      <stop offset="100%" stop-color="#5BB8F5"/>
+    </linearGradient>
+    <!-- Teal gradient for main arrow -->
+    <linearGradient id="tealGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#00A88A"/>
+      <stop offset="100%" stop-color="#00E4BC"/>
+    </linearGradient>
+    <!-- Deep blue for the P arcs -->
+    <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1E6BC5"/>
+      <stop offset="100%" stop-color="#5BB8F5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- ICON: Stylised P with pipeline/flow motif  -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <!-- Outer arc of the P (thick curved pipe, left loop) -->
+  <path d="M 60 155
+           C 20 155, 20 45, 60 45
+           L 105 45
+           C 148 45, 165 65, 165 100
+           C 165 135, 148 155, 105 155
+           Z"
+        fill="none"
+        stroke="url(#blueGrad)"
+        stroke-width="18"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Inner cutout / second pipe arc -->
+  <path d="M 65 125
+           C 48 125, 48 75, 65 75
+           L 100 75
+           C 122 75, 135 86, 135 100
+           C 135 114, 122 125, 100 125
+           Z"
+        fill="none"
+        stroke="url(#arcGrad)"
+        stroke-width="12"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Vertical stem of the P -->
+  <line x1="60" y1="45" x2="60" y2="165"
+        stroke="url(#blueGrad)"
+        stroke-width="18"
+        stroke-linecap="round"/>
+
+  <!-- Flowing pipe lines extending left with nodes -->
+  <!-- Pipe 1: curves from lower stem -->
+  <path d="M 50 145 C 20 145, 10 170, -5 165"
+        stroke="url(#blueGrad)"
+        stroke-width="7"
+        stroke-linecap="round"
+        fill="none"/>
+  <!-- Node dot at end of pipe 1 -->
+  <circle cx="-5" cy="165" r="6" fill="#1E6BC5"/>
+
+  <!-- Pipe 2: curves from mid stem -->
+  <path d="M 50 110 C 18 110, 5 130, -10 128"
+        stroke="url(#blueGrad)"
+        stroke-width="6"
+        stroke-linecap="round"
+        fill="none"/>
+  <circle cx="-10" cy="128" r="5" fill="#1E6BC5"/>
+
+  <!-- Pipe 3: short horizontal from inner arc -->
+  <path d="M 50 70 C 28 70, 10 58, 0 52"
+        stroke="url(#blueGrad)"
+        stroke-width="5"
+        stroke-linecap="round"
+        fill="none"/>
+  <circle cx="0" cy="52" r="5" fill="#5BB8F5"/>
+
+  <!-- Small arrow chevron on pipe 1 -->
+  <path d="M 22 148 L 28 145 L 22 142"
+        stroke="#5BB8F5"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- Small arrow chevron on pipe 2 -->
+  <path d="M 18 113 L 24 110 L 18 107"
+        stroke="#5BB8F5"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- Node dots on the P itself -->
+  <circle cx="60"  cy="45"  r="7"  fill="#0D2756"/>
+  <circle cx="105" cy="45"  r="6"  fill="#1E6BC5"/>
+  <circle cx="165" cy="100" r="7"  fill="#1E6BC5"/>
+  <circle cx="105" cy="155" r="6"  fill="#1E6BC5"/>
+  <circle cx="60"  cy="155" r="7"  fill="#0D2756"/>
+  <circle cx="60"  cy="165" r="8"  fill="#0D2756"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- TEAL DIAGONAL ARROW (main accent)          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Arrow shaft -->
+  <line x1="55" y1="158" x2="148" y2="38"
+        stroke="url(#tealGrad)"
+        stroke-width="12"
+        stroke-linecap="round"/>
+
+  <!-- Arrow head -->
+  <polygon points="148,38  128,38  148,58"
+           fill="url(#tealGrad)"/>
+  <!-- Cleaner arrowhead using path -->
+  <path d="M 148 38 L 128 30 L 136 50 Z"
+        fill="#00E4BC"/>
+
+  <!-- Dot on arrow at bottom -->
+  <circle cx="72" cy="140" r="7" fill="#00C4A0"/>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- TEXT: pipeline.news                         -->
+  <!-- ═══════════════════════════════════════════ -->
+  <text x="200" y="120"
+        font-family="Inter, Arial, sans-serif"
+        font-weight="800"
+        font-size="72"
+        letter-spacing="-2"
+        fill="#0D2756">pipeline</text>
+
+  <text x="576" y="120"
+        font-family="Inter, Arial, sans-serif"
+        font-weight="700"
+        font-size="72"
+        letter-spacing="-2"
+        fill="#1E6BC5">.news</text>
+
+  <!-- Subtitle -->
+  <text x="200" y="148"
+        font-family="Inter, Arial, sans-serif"
+        font-weight="500"
+        font-size="14"
+        letter-spacing="2"
+        fill="#6B7A99">INFO, STRUMENTI E CONSIGLI PER PROFESSIONISTI DELLA VENDITA</text>
+</svg>
