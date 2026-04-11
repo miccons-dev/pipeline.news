@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipeline — La newsletter per i professionisti della vendita</title>
+  <meta name="description" content="Ogni settimana, strategie, insights e strumenti per chiudere più trattative. La newsletter italiana per chi vive di vendita." />
+  <meta property="og:title" content="Pipeline — La newsletter per i professionisti della vendita" />
+  <meta property="og:description" content="Ogni settimana, strategie, insights e strumenti per chiudere più trattative." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pipeline.news" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="logo.png" alt="Pipeline.news" class="nav__logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span class="nav__logo-text" style="display:none">
+          <span class="logo-pipe">|</span>pipeline<span class="logo-dot">.</span><span class="logo-news">news</span>
+        </span>
+      </a>
+      <a href="#iscriviti" class="btn btn--nav">Iscriviti gratis →</a>
+    </div>
+  </header>
+
+  <!-- ─── HERO ────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__badge">📬 Newsletter settimanale · Gratis</div>
+      <h1 class="hero__title">
+        Vendi meglio.<br />
+        <span class="highlight">Ogni settimana.</span>
+      </h1>
+      <p class="hero__sub">
+        Pipeline è la newsletter italiana dedicata ai professionisti della vendita.
+        Ogni lunedì, strategie concrete, casi reali e strumenti testati
+        per chiudere più trattative e far crescere il tuo fatturato.
+      </p>
+
+      <form class="hero__form" action="#" method="post" id="form-hero">
+        <div class="form__row">
+          <input
+            type="email"
+            name="email"
+            placeholder="La tua email di lavoro"
+            required
+            class="form__input"
+            aria-label="Indirizzo email"
+          />
+          <button type="submit" class="btn btn--primary">
+            Iscriviti gratis
+          </button>
+        </div>
+        <p class="form__note">Zero spam. Cancellazione con un click. Sempre gratis.</p>
+      </form>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num">4.200+</span>
+          <span class="stat__label">lettori attivi</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">52%</span>
+          <span class="stat__label">tasso di apertura medio</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">ogni lunedì</span>
+          <span class="stat__label">nella tua inbox</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SOCIAL PROOF LOGOS ──────────────────────────────────── -->
+  <section class="logos-bar">
+    <div class="container">
+      <p class="logos-bar__label">Letta da professionisti in aziende come</p>
+      <div class="logos-bar__row">
+        <span class="logos-bar__company">Salesforce</span>
+        <span class="logos-bar__company">HubSpot</span>
+        <span class="logos-bar__company">Zucchetti</span>
+        <span class="logos-bar__company">Esprinet</span>
+        <span class="logos-bar__company">Teamsystem</span>
+        <span class="logos-bar__company">Wolters Kluwer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COSA TROVERAI ────────────────────────────────────────── -->
+  <section class="section section--light" id="cosa-troverai">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Cosa troverai</span>
+        <h2 class="section__title">Una lettura da 5 minuti<br />che vale quanto un corso</h2>
+        <p class="section__desc">
+          Ogni numero di Pipeline affronta un tema rilevante per chi lavora nelle vendite,
+          con un approccio pratico e immediatamente applicabile.
+        </p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card__icon">🎯</div>
+          <h3 class="card__title">Strategie di vendita</h3>
+          <p class="card__body">
+            Tecniche di prospecting, gestione delle obiezioni, negoziazione e chiusura.
+            Solo metodologie che funzionano nel mercato italiano.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card__icon">📊</div>
+          <h3 class="card__title">Sales ops & metriche</h3>
+          <p class="card__body">
+            Come strutturare la pipeline, misurare le performance e prendere decisioni
+            basate sui dati. Senza tecnicismi inutili.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🧠</div>
+          <h3 class="card__title">Psicologia della persuasione</h3>
+          <p class="card__body">
+            Le leve cognitive che influenzano le decisioni d'acquisto.
+            Come usarle in modo etico per accelerare il ciclo di vendita.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🛠️</div>
+          <h3 class="card__title">Strumenti & AI</h3>
+          <p class="card__body">
+            I migliori tool per vendere in modo più efficiente: CRM, automazioni,
+            intelligenza artificiale applicata alle vendite.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card__icon">📖</div>
+          <h3 class="card__title">Casi studio reali</h3>
+          <p class="card__body">
+            Analisi di trattative vinte e perse, processi di vendita
+            che hanno scalato, errori da non ripetere.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🌍</div>
+          <h3 class="card__title">Trend internazionali</h3>
+          <p class="card__body">
+            Le idee più interessanti dal mondo anglosassone e americano,
+            filtrate e tradotte per il contesto italiano.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PER CHI È ────────────────────────────────────────────── -->
+  <section class="section section--dark" id="per-chi">
+    <div class="container">
+      <div class="section__header section__header--white">
+        <span class="section__tag section__tag--light">Per chi è</span>
+        <h2 class="section__title">È fatta per te se...</h2>
+      </div>
+
+      <div class="checklist">
+        <div class="checklist__col">
+          <div class="check-item check-item--yes">
+            <span class="check-item__icon">✓</span>
+            <p>Lavori come <strong>Sales Manager, Account Executive o BDR</strong> e vuoi migliorare le tue performance</p>
+          </div>
+          <div class="check-item check-item--yes">
+            <span class="check-item__icon">✓</span>
+            <p>Sei un <strong>imprenditore o libero professionista</strong> che deve vendere i propri servizi</p>
+          </div>
+          <div class="check-item check-item--yes">
+            <span class="check-item__icon">✓</span>
+            <p>Guidi un <strong>team commerciale</strong> e cerchi idee per motivarlo e strutturarlo meglio</p>
+          </div>
+          <div class="check-item check-item--yes">
+            <span class="check-item__icon">✓</span>
+            <p>Sei all'inizio della tua carriera nelle vendite e vuoi <strong>crescere più velocemente</strong></p>
+          </div>
+        </div>
+        <div class="checklist__col">
+          <div class="check-item check-item--no">
+            <span class="check-item__icon">✗</span>
+            <p>Non fa per te se cerchi <strong>trucchetti manipolativi</strong> o promesse di arricchimento facile</p>
+          </div>
+          <div class="check-item check-item--no">
+            <span class="check-item__icon">✗</span>
+            <p>Non è adatta se hai già tutto sotto controllo e <strong>non vuoi migliorare</strong></p>
+          </div>
+          <div class="check-item check-item--no">
+            <span class="check-item__icon">✗</span>
+            <p>Non è il posto giusto se cerchi <strong>contenuti generici e teorici</strong> senza applicazione pratica</p>
+          </div>
+          <div class="check-item check-item--no">
+            <span class="check-item__icon">✗</span>
+            <p>Non è per te se pensi che <strong>vendere sia qualcosa di cui vergognarsi</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── COME FUNZIONA ────────────────────────────────────────── -->
+  <section class="section section--light" id="come-funziona">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Come funziona</span>
+        <h2 class="section__title">Semplice come aprire la mail del lunedì mattina</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">01</div>
+          <h3 class="step__title">Ti iscrivi gratis</h3>
+          <p class="step__body">Inserisci la tua email. Nessuna carta di credito, nessun account da creare. Solo la tua email.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">02</div>
+          <h3 class="step__title">Ogni lunedì mattina</h3>
+          <p class="step__body">Ricevi Pipeline nella tua inbox. Un'email da 5 minuti, densa di contenuto, pronta per iniziare la settimana.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step">
+          <div class="step__num">03</div>
+          <h3 class="step__title">Applichi e vendi di più</h3>
+          <p class="step__body">Prendi quello che ti serve, mettilo in pratica, e guarda crescere le tue trattative chiuse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ANTEPRIMA NUMERI ─────────────────────────────────────── -->
+  <section class="section section--white" id="numeri">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">Ultimi numeri</span>
+        <h2 class="section__title">Dai un'occhiata a cosa abbiamo scritto</h2>
+      </div>
+
+      <div class="issues">
+        <article class="issue">
+          <div class="issue__meta">
+            <span class="issue__num">#047</span>
+            <span class="issue__date">7 Apr 2026</span>
+          </div>
+          <h3 class="issue__title">Come usare l'AI per qualificare i lead in metà tempo</h3>
+          <p class="issue__excerpt">Abbiamo testato 6 strumenti di AI per la qualificazione dei lead. Ecco quale ha funzionato meglio e come integrarlo nel tuo processo...</p>
+          <a href="#" class="issue__link">Leggi l'anteprima →</a>
+        </article>
+        <article class="issue">
+          <div class="issue__meta">
+            <span class="issue__num">#046</span>
+            <span class="issue__date">31 Mar 2026</span>
+          </div>
+          <h3 class="issue__title">Il metodo MEDDIC spiegato con un caso reale B2B italiano</h3>
+          <p class="issue__excerpt">MEDDIC è la metodologia di qualificazione preferita dalle aziende SaaS. Ti mostriamo come adattarla al mercato italiano con un caso concreto...</p>
+          <a href="#" class="issue__link">Leggi l'anteprima →</a>
+        </article>
+        <article class="issue">
+          <div class="issue__meta">
+            <span class="issue__num">#045</span>
+            <span class="issue__date">24 Mar 2026</span>
+          </div>
+          <h3 class="issue__title">Perché i tuoi follow-up non funzionano (e come sistemarli)</h3>
+          <p class="issue__excerpt">Il 80% delle vendite richiede almeno 5 follow-up. Il 44% dei venditori si arrende dopo il primo. Ecco la sequenza che funziona davvero...</p>
+          <a href="#" class="issue__link">Leggi l'anteprima →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIANZE ────────────────────────────────────────── -->
+  <section class="section section--accent" id="testimonianze">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag section__tag--dark">Cosa dicono i lettori</span>
+        <h2 class="section__title">Non fidarti di noi. Fidati di loro.</h2>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <p class="testimonial__quote">
+            "Pipeline è l'unica newsletter di vendita in italiano che vale davvero la pena leggere. Ogni lunedì trovo almeno una cosa che riesco ad applicare subito."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">MR</div>
+            <div>
+              <strong class="testimonial__name">Marco Rossi</strong>
+              <span class="testimonial__role">Senior Account Executive · Milano</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__quote">
+            "Ho aumentato il mio tasso di chiusura del 23% in 6 mesi. Non posso attribuire tutto a Pipeline, ma sicuramente ha contribuito a cambiare come penso alla vendita."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">SF</div>
+            <div>
+              <strong class="testimonial__name">Sara Ferretti</strong>
+              <span class="testimonial__role">Sales Director · Torino</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__quote">
+            "Finalmente qualcuno che parla di vendita senza le solite frasi fatte. Contenuti pratici, casi reali, zero bullshit. La consiglio a tutto il mio team."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">AL</div>
+            <div>
+              <strong class="testimonial__name">Andrea Longo</strong>
+              <span class="testimonial__role">VP Sales · Roma</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__quote">
+            "Come imprenditore che deve anche vendere, Pipeline mi ha dato una prospettiva completamente diversa. Il numero sull'AI per il prospecting mi ha cambiato il processo."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">VB</div>
+            <div>
+              <strong class="testimonial__name">Valentina Bianchi</strong>
+              <span class="testimonial__role">CEO · Bologna</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────────────── -->
+  <section class="section section--white" id="faq">
+    <div class="container container--narrow">
+      <div class="section__header">
+        <span class="section__tag">FAQ</span>
+        <h2 class="section__title">Domande frequenti</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-item__q">È davvero gratis?</summary>
+          <p class="faq-item__a">Sì, Pipeline è completamente gratuita. Nessuna versione premium, nessun paywall. La newsletter è gratis ora e lo rimarrà.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">Con quale frequenza viene pubblicata?</summary>
+          <p class="faq-item__a">Ogni lunedì mattina. Un'email a settimana, per iniziare la settimana con le idee giuste.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">Quanto tempo ci vuole a leggerla?</summary>
+          <p class="faq-item__a">Circa 5 minuti. L'abbiamo progettata per essere densa ma leggibile, senza perderti in mille link e approfondimenti.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">Posso cancellarmi in qualsiasi momento?</summary>
+          <p class="faq-item__a">Assolutamente sì. In fondo ad ogni email trovi il link per cancellare l'iscrizione. Un click e sei fuori, senza domande.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">È adatta anche se sono all'inizio della mia carriera?</summary>
+          <p class="faq-item__a">Sì. Scriviamo per tutti i livelli: dal BDR al suo primo anno al Sales Director con 20 anni di esperienza. L'approccio è pratico e diretto, non accademico.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-item__q">Posso suggerire un argomento?</summary>
+          <p class="faq-item__a">Certo! Rispondi direttamente a qualsiasi email che ricevi e ci fai sapere cosa ti piacerebbe leggere. Leggiamo tutto.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ─────────────────────────────────────────────── -->
+  <section class="section cta-section" id="iscriviti">
+    <div class="container container--narrow">
+      <h2 class="cta-section__title">Inizia la tua prossima settimana<br />con le idee giuste</h2>
+      <p class="cta-section__sub">
+        Unisciti a 4.200+ professionisti della vendita che ogni lunedì mattina
+        aprono Pipeline per iniziare la settimana nel modo giusto.
+      </p>
+      <form class="hero__form" action="#" method="post" id="form-cta">
+        <div class="form__row">
+          <input
+            type="email"
+            name="email"
+            placeholder="La tua email di lavoro"
+            required
+            class="form__input"
+            aria-label="Indirizzo email"
+          />
+          <button type="submit" class="btn btn--primary">
+            Iscriviti gratis
+          </button>
+        </div>
+        <p class="form__note" style="color: rgba(255,255,255,0.7)">Zero spam. Cancellazione con un click. Sempre gratis.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo">
+          <img src="logo.png" alt="Pipeline.news" class="nav__logo-img" style="filter:brightness(10)" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <span class="nav__logo-text" style="display:none; color:#fff">
+            <span class="logo-pipe">|</span>pipeline<span class="logo-dot">.</span><span class="logo-news">news</span>
+          </span>
+        </a>
+        <p class="footer__tagline">La newsletter italiana per chi vive di vendita.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="#cosa-troverai">Cosa troverai</a>
+        <a href="#per-chi">Per chi è</a>
+        <a href="#numeri">Ultimi numeri</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="footer__legal">
+        <p>© 2026 Pipeline.news · <a href="#">Privacy Policy</a> · <a href="#">Cancella iscrizione</a></p>
+        <p>Fatto con passione per la vendita 🇮🇹</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
