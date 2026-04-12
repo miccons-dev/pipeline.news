@@ -81,6 +81,19 @@ a  { color: inherit; text-decoration: none; }
   background: linear-gradient(135deg, #00D4AE, var(--teal));
 }
 
+.btn--xl {
+  padding: 18px 40px;
+  font-size: 18px;
+  border-radius: 14px;
+}
+
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
 .btn--nav {
   background: var(--teal);
   color: #fff;
