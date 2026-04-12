@@ -146,10 +146,7 @@
             </button>
           </div>
           <div class="sub-form__feedback sub-form__feedback--success" role="alert" aria-live="polite">
-            ✅ Fatto! Controlla la tua inbox per confermare l'iscrizione.
-          </div>
-          <div class="sub-form__feedback sub-form__feedback--error" role="alert" aria-live="polite">
-            ❌ Qualcosa non ha funzionato. Riprova tra qualche secondo.
+            ✅ Si è aperta una nuova scheda: clicca <strong>Iscriviti</strong> per confermare. Riceverai l'email di benvenuto!
           </div>
           <p class="form__note">Zero spam. Cancellazione con un click. Sempre gratis.</p>
         </form>
@@ -473,10 +470,7 @@
           </button>
         </div>
         <div class="sub-form__feedback sub-form__feedback--success" role="alert" aria-live="polite">
-          ✅ Fatto! Controlla la tua inbox per confermare l'iscrizione.
-        </div>
-        <div class="sub-form__feedback sub-form__feedback--error" role="alert" aria-live="polite">
-          ❌ Qualcosa non ha funzionato. Riprova tra qualche secondo.
+          ✅ Si è aperta una nuova scheda: clicca <strong>Iscriviti</strong> per confermare. Riceverai l'email di benvenuto!
         </div>
         <p class="form__note" style="color: rgba(255,255,255,0.7)">Zero spam. Cancellazione con un click. Sempre gratis.</p>
       </form>
@@ -515,112 +509,41 @@
     }
   </script>
 
-  <!-- ── Beehiiv inline subscription ─────────────────────────── -->
+  <!-- ── Beehiiv subscription ────────────────────────────────── -->
+  <!--
+    L'API Beehiiv richiede autenticazione e blocca le chiamate dal
+    browser (CORS). Su un sito statico la soluzione affidabile è:
+    catturare l'email → aprire la pagina Beehiiv con l'email precompilata
+    → Beehiiv gestisce iscrizione e invio email di conferma.
+  -->
   <script>
     (function () {
-      const PUB_ID    = 'pub_502a54b7-6175-4c50-a224-8d244c41a2ed';
-      const API_URL   = 'https://api.beehiiv.com/v2/publications/' + PUB_ID + '/subscriptions';
-      const SUB_URL   = 'https://pipelinenews-newsletter-7c1aa1.beehiiv.com/subscribe';
+      var SUB_BASE = 'https://pipelinenews-newsletter-7c1aa1.beehiiv.com/subscribe';
 
-      /* ── Mostra messaggio di feedback ── */
-      function showFeedback(formEl, type) {
-        formEl.querySelector('.sub-form__row').classList.add('is-hidden');
-        formEl.querySelector('.sub-form__feedback--' + type).classList.add('is-visible');
-        if (type === 'error') {
-          setTimeout(function () {
-            formEl.querySelector('.sub-form__row').classList.remove('is-hidden');
-            formEl.querySelector('.sub-form__feedback--error').classList.remove('is-visible');
-            var btn = formEl.querySelector('.sub-form__btn');
-            btn.disabled = false;
-            btn.textContent = 'Iscriviti gratis →';
-          }, 4000);
-        }
-      }
-
-      /* ── Metodo 1: POST diretto all'API Beehiiv (funziona se CORS è aperto) ── */
-      function tryApiSubscribe(email) {
-        return fetch(API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: email,
-            reactivate_existing: false,
-            send_welcome_email: true,
-            utm_source: 'website',
-            utm_medium: 'organic'
-          })
-        }).then(function (res) {
-          if (res.status === 200 || res.status === 201 || res.status === 409) return true;
-          throw new Error('status ' + res.status);
-        });
-      }
-
-      /* ── Metodo 2: Form POST silenzioso in iframe nascosto ─────────────────── */
-      /* Invia l'email direttamente alla pagina di iscrizione Beehiiv            */
-      /* senza redirect visibile. L'utente resta sul sito.                       */
-      function hiddenFormSubscribe(email) {
-        var iframeName = 'bhv_' + Date.now();
-
-        var iframe = document.createElement('iframe');
-        iframe.name = iframeName;
-        iframe.setAttribute('aria-hidden', 'true');
-        iframe.style.cssText = 'display:none;position:absolute;width:0;height:0;border:0;left:-9999px;';
-        document.body.appendChild(iframe);
-
-        var form = document.createElement('form');
-        form.method = 'POST';
-        form.action = SUB_URL;
-        form.target  = iframeName;
-        form.style.display = 'none';
-
-        var emailField = document.createElement('input');
-        emailField.type  = 'hidden';
-        emailField.name  = 'email';
-        emailField.value = email;
-        form.appendChild(emailField);
-
-        document.body.appendChild(form);
-        form.submit();
-
-        /* Pulizia dopo 10s */
-        setTimeout(function () {
-          if (form.parentNode)   form.parentNode.removeChild(form);
-          if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
-        }, 10000);
-      }
-
-      /* ── Orchestrazione ─────────────────────────────────────── */
-      function subscribe(email, formEl) {
-        var btn = formEl.querySelector('.sub-form__btn');
-        btn.disabled    = true;
-        btn.textContent = 'Iscrizione in corso…';
-
-        tryApiSubscribe(email)
-          .then(function () {
-            /* API funziona → successo */
-            showFeedback(formEl, 'success');
-          })
-          .catch(function () {
-            /* API bloccata da CORS/auth → usa hidden iframe POST */
-            hiddenFormSubscribe(email);
-            showFeedback(formEl, 'success');
-          });
-      }
-
-      /* ── Validazione e init form ────────────────────────────── */
       function initForm(formEl) {
         if (!formEl) return;
+
         formEl.addEventListener('submit', function (e) {
           e.preventDefault();
+
           var input = formEl.querySelector('input[type="email"]');
           var email = input.value.trim();
+
+          /* Validazione email */
           if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             input.focus();
             input.style.borderColor = '#ef4444';
             setTimeout(function () { input.style.borderColor = ''; }, 2000);
             return;
           }
-          subscribe(email, formEl);
+
+          /* Apre la pagina Beehiiv con l'email precompilata in nuova scheda */
+          var url = SUB_BASE + '?email=' + encodeURIComponent(email);
+          window.open(url, '_blank', 'noopener,noreferrer');
+
+          /* Mostra conferma all'utente */
+          formEl.querySelector('.sub-form__row').classList.add('is-hidden');
+          formEl.querySelector('.sub-form__feedback--success').classList.add('is-visible');
         });
       }
 
