@@ -14,92 +14,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <style>
-    /* ── Inline subscription form ───────────────────────────── */
-    .sub-form { width: 100%; }
-
-    .sub-form__row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .sub-form__input {
-      flex: 1 1 260px;
-      padding: 14px 18px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: inherit;
-      background: rgba(255,255,255,0.95);
-      color: #1a1a2e;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .sub-form__input:focus {
-      border-color: #fff;
-      background: #fff;
-    }
-
-    .sub-form__input::placeholder { color: #9ca3af; }
-
-    /* Input variante chiara (per sezione CTA su sfondo scuro) */
-    .sub-form--light .sub-form__input {
-      border-color: #d1d5db;
-      background: #fff;
-    }
-
-    .sub-form--light .sub-form__input:focus { border-color: #2563eb; }
-
-    .sub-form__btn {
-      flex-shrink: 0;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .sub-form__btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
-
-    /* Stati success / error */
-    .sub-form__feedback {
-      display: none;
-      margin-top: 12px;
-      padding: 14px 18px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .sub-form__feedback--success {
-      background: rgba(34, 197, 94, 0.15);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      color: #fff;
-    }
-
-    .sub-form__feedback--error {
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.4);
-      color: #fff;
-    }
-
-    .sub-form--light .sub-form__feedback--success {
-      background: rgba(34, 197, 94, 0.1);
-      border-color: rgba(34, 197, 94, 0.5);
-      color: #15803d;
-    }
-
-    .sub-form--light .sub-form__feedback--error {
-      background: rgba(239, 68, 68, 0.1);
-      border-color: rgba(239, 68, 68, 0.4);
-      color: #b91c1c;
-    }
-
-    .sub-form__feedback.is-visible { display: block; }
-    .sub-form__row.is-hidden { display: none; }
-  </style>
 </head>
 <body>
 
@@ -131,22 +45,25 @@
 
       <div class="hero__cta">
         <!-- ── Form iscrizione inline (hero) ── -->
-        <form class="sub-form" id="form-hero" novalidate>
-          <div class="sub-form__row">
+        <form class="hero__form" id="form-hero" novalidate>
+          <div class="form__row">
             <input
               type="email"
-              class="sub-form__input"
+              class="form__input"
               placeholder="La tua email di lavoro"
               required
               autocomplete="email"
               aria-label="Il tuo indirizzo email"
             />
-            <button type="submit" class="btn btn--primary btn--xl sub-form__btn">
+            <button type="submit" class="btn btn--primary">
               Iscriviti gratis →
             </button>
           </div>
-          <div class="sub-form__feedback sub-form__feedback--success" role="alert" aria-live="polite">
-            ✅ Si è aperta una nuova scheda: clicca <strong>Iscriviti</strong> per confermare. Riceverai l'email di benvenuto!
+          <div class="form__feedback form__feedback--success" role="alert" aria-live="polite">
+            ✅ Iscritto! Controlla la tua inbox per la conferma.
+          </div>
+          <div class="form__feedback form__feedback--error" role="alert" aria-live="polite">
+            ❌ Qualcosa non ha funzionato. Riprova tra qualche secondo.
           </div>
           <p class="form__note">Zero spam. Cancellazione con un click. Sempre gratis.</p>
         </form>
@@ -455,24 +372,27 @@
         aprono Pipeline per iniziare la settimana nel modo giusto.
       </p>
       <!-- ── Form iscrizione inline (CTA finale) ── -->
-      <form class="sub-form sub-form--light" id="form-cta" novalidate>
-        <div class="sub-form__row">
+      <form class="hero__form" id="form-cta" novalidate>
+        <div class="form__row">
           <input
             type="email"
-            class="sub-form__input"
+            class="form__input"
             placeholder="La tua email di lavoro"
             required
             autocomplete="email"
             aria-label="Il tuo indirizzo email"
           />
-          <button type="submit" class="btn btn--primary btn--xl sub-form__btn">
+          <button type="submit" class="btn btn--primary">
             Iscriviti gratis →
           </button>
         </div>
-        <div class="sub-form__feedback sub-form__feedback--success" role="alert" aria-live="polite">
-          ✅ Si è aperta una nuova scheda: clicca <strong>Iscriviti</strong> per confermare. Riceverai l'email di benvenuto!
+        <div class="form__feedback form__feedback--success" role="alert" aria-live="polite">
+          ✅ Iscritto! Controlla la tua inbox per la conferma.
         </div>
-        <p class="form__note" style="color: rgba(255,255,255,0.7)">Zero spam. Cancellazione con un click. Sempre gratis.</p>
+        <div class="form__feedback form__feedback--error" role="alert" aria-live="polite">
+          ❌ Qualcosa non ha funzionato. Riprova tra qualche secondo.
+        </div>
+        <p class="form__note">Zero spam. Cancellazione con un click. Sempre gratis.</p>
       </form>
     </div>
   </section>
@@ -509,41 +429,63 @@
     }
   </script>
 
-  <!-- ── Beehiiv subscription ────────────────────────────────── -->
+  <!-- ── Beehiiv subscription via Cloudflare Worker ──────────── -->
   <!--
-    L'API Beehiiv richiede autenticazione e blocca le chiamate dal
-    browser (CORS). Su un sito statico la soluzione affidabile è:
-    catturare l'email → aprire la pagina Beehiiv con l'email precompilata
-    → Beehiiv gestisce iscrizione e invio email di conferma.
+    Il Worker (worker/subscribe.js) fa da proxy sicuro verso l'API Beehiiv:
+    tiene la chiave API come secret Cloudflare e gestisce CORS.
+    Dopo aver deployato il Worker, sostituisci YOUR_WORKER_URL con l'URL
+    reale (es. https://pipeline-subscribe.tuonome.workers.dev).
   -->
   <script>
     (function () {
-      var SUB_BASE = 'https://pipelinenews-newsletter-7c1aa1.beehiiv.com/subscribe';
+      var WORKER_URL = 'YOUR_WORKER_URL';
 
       function initForm(formEl) {
         if (!formEl) return;
 
+        var row      = formEl.querySelector('.form__row');
+        var inputEl  = formEl.querySelector('input[type="email"]');
+        var btnEl    = formEl.querySelector('button[type="submit"]');
+        var msgOk    = formEl.querySelector('.form__feedback--success');
+        var msgErr   = formEl.querySelector('.form__feedback--error');
+
         formEl.addEventListener('submit', function (e) {
           e.preventDefault();
 
-          var input = formEl.querySelector('input[type="email"]');
-          var email = input.value.trim();
+          var email = inputEl.value.trim();
 
-          /* Validazione email */
+          /* Validazione email lato client */
           if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            input.focus();
-            input.style.borderColor = '#ef4444';
-            setTimeout(function () { input.style.borderColor = ''; }, 2000);
+            inputEl.focus();
+            row.style.outline = '2px solid #ef4444';
+            setTimeout(function () { row.style.outline = ''; }, 2000);
             return;
           }
 
-          /* Apre la pagina Beehiiv con l'email precompilata in nuova scheda */
-          var url = SUB_BASE + '?email=' + encodeURIComponent(email);
-          window.open(url, '_blank', 'noopener,noreferrer');
+          /* Disabilita il pulsante durante la richiesta */
+          btnEl.disabled = true;
+          btnEl.textContent = 'Un momento…';
 
-          /* Mostra conferma all'utente */
-          formEl.querySelector('.sub-form__row').classList.add('is-hidden');
-          formEl.querySelector('.sub-form__feedback--success').classList.add('is-visible');
+          fetch(WORKER_URL, {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify({ email: email }),
+          })
+          .then(function (res) { return res.json(); })
+          .then(function (data) {
+            if (data.success) {
+              row.classList.add('is-hidden');
+              msgOk.classList.add('is-visible');
+            } else {
+              throw new Error('ko');
+            }
+          })
+          .catch(function () {
+            btnEl.disabled = false;
+            btnEl.textContent = 'Iscriviti gratis →';
+            msgErr.classList.add('is-visible');
+            setTimeout(function () { msgErr.classList.remove('is-visible'); }, 4000);
+          });
         });
       }
 
