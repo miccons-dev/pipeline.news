@@ -41,22 +41,20 @@
         per chiudere più trattative e far crescere il tuo fatturato.
       </p>
 
-      <form class="hero__form" action="#" method="post" id="form-hero">
-        <div class="form__row">
-          <input
-            type="email"
-            name="email"
-            placeholder="La tua email di lavoro"
-            required
-            class="form__input"
-            aria-label="Indirizzo email"
-          />
-          <button type="submit" class="btn btn--primary">
-            Iscriviti gratis
-          </button>
-        </div>
+      <!-- BEEHIIV FORM EMBED — Hero -->
+      <!-- Incolla qui il codice embed da: Beehiiv → Grow → Forms → Embed -->
+      <!-- Sostituisci YOUR_PUBLICATION_ID con il tuo vero ID (es. pub_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx) -->
+      <div class="beehiiv-embed-wrap">
+        <iframe
+          src="https://embeds.beehiiv.com/YOUR_PUBLICATION_ID?slim=true"
+          data-test-id="beehiiv-embed"
+          height="52"
+          frameborder="0"
+          scrolling="no"
+          class="beehiiv-embed">
+        </iframe>
         <p class="form__note">Zero spam. Cancellazione con un click. Sempre gratis.</p>
-      </form>
+      </div>
 
       <div class="hero__stats">
         <div class="stat">
@@ -244,34 +242,12 @@
         <h2 class="section__title">Dai un'occhiata a cosa abbiamo scritto</h2>
       </div>
 
-      <div class="issues">
-        <article class="issue">
-          <div class="issue__meta">
-            <span class="issue__num">#047</span>
-            <span class="issue__date">7 Apr 2026</span>
-          </div>
-          <h3 class="issue__title">Come usare l'AI per qualificare i lead in metà tempo</h3>
-          <p class="issue__excerpt">Abbiamo testato 6 strumenti di AI per la qualificazione dei lead. Ecco quale ha funzionato meglio e come integrarlo nel tuo processo...</p>
-          <a href="#" class="issue__link">Leggi l'anteprima →</a>
-        </article>
-        <article class="issue">
-          <div class="issue__meta">
-            <span class="issue__num">#046</span>
-            <span class="issue__date">31 Mar 2026</span>
-          </div>
-          <h3 class="issue__title">Il metodo MEDDIC spiegato con un caso reale B2B italiano</h3>
-          <p class="issue__excerpt">MEDDIC è la metodologia di qualificazione preferita dalle aziende SaaS. Ti mostriamo come adattarla al mercato italiano con un caso concreto...</p>
-          <a href="#" class="issue__link">Leggi l'anteprima →</a>
-        </article>
-        <article class="issue">
-          <div class="issue__meta">
-            <span class="issue__num">#045</span>
-            <span class="issue__date">24 Mar 2026</span>
-          </div>
-          <h3 class="issue__title">Perché i tuoi follow-up non funzionano (e come sistemarli)</h3>
-          <p class="issue__excerpt">Il 80% delle vendite richiede almeno 5 follow-up. Il 44% dei venditori si arrende dopo il primo. Ecco la sequenza che funziona davvero...</p>
-          <a href="#" class="issue__link">Leggi l'anteprima →</a>
-        </article>
+      <!-- Issues caricati dinamicamente da posts.json (generato da GitHub Actions) -->
+      <div class="issues" id="issues-container">
+        <div class="issues__loading" aria-live="polite">
+          <span class="issues__spinner"></span>
+          Caricamento edizioni…
+        </div>
       </div>
     </div>
   </section>
@@ -382,22 +358,19 @@
         Unisciti a 4.200+ professionisti della vendita che ogni lunedì mattina
         aprono Pipeline per iniziare la settimana nel modo giusto.
       </p>
-      <form class="hero__form" action="#" method="post" id="form-cta">
-        <div class="form__row">
-          <input
-            type="email"
-            name="email"
-            placeholder="La tua email di lavoro"
-            required
-            class="form__input"
-            aria-label="Indirizzo email"
-          />
-          <button type="submit" class="btn btn--primary">
-            Iscriviti gratis
-          </button>
-        </div>
+      <!-- BEEHIIV FORM EMBED — CTA finale -->
+      <!-- Stessa cosa dell'hero: incolla il tuo embed Beehiiv qui, oppure cambia solo YOUR_PUBLICATION_ID -->
+      <div class="beehiiv-embed-wrap">
+        <iframe
+          src="https://embeds.beehiiv.com/YOUR_PUBLICATION_ID?slim=true"
+          data-test-id="beehiiv-embed"
+          height="52"
+          frameborder="0"
+          scrolling="no"
+          class="beehiiv-embed">
+        </iframe>
         <p class="form__note" style="color: rgba(255,255,255,0.7)">Zero spam. Cancellazione con un click. Sempre gratis.</p>
-      </form>
+      </div>
     </div>
   </section>
 

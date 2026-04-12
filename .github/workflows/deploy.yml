@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+# Si attiva su ogni push al branch main,
+# ogni lunedì alle 07:00 (per aggiornare le edizioni della settimana),
+# oppure manualmente da GitHub → Actions → "Run workflow".
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 7 * * 1'   # ogni lunedì alle 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita deploy sovrapposti: cancella il vecchio se arriva uno nuovo.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      # 1. Scarica il codice del repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Installa Node.js (serve solo per eseguire fetch-posts.js)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Recupera le ultime edizioni da Beehiiv e genera posts.json
+      #    - BEEHIIV_API_KEY  →  aggiunto come GitHub Secret (vedi istruzioni sotto)
+      #    - BEEHIIV_PUBLICATION_ID  →  aggiunto come GitHub Variable (non secret)
+      - name: Fetch posts from Beehiiv
+        env:
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUBLICATION_ID: ${{ vars.BEEHIIV_PUBLICATION_ID }}
+        run: node scripts/fetch-posts.js
+
+      # 4. Configura GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 5. Carica tutti i file del sito (incluso posts.json appena generato)
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      # 6. Pubblica su GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
