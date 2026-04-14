@@ -54,11 +54,10 @@
       margin-bottom: 32px;
     }
     .top-logo img {
-      height: 48px;
-      width: auto;
+      height: auto;
+      max-width: 260px;
+      width: 100%;
       display: block;
-      /* Inverte i colori per leggibilità su sfondo scuro navy */
-      filter: brightness(0) invert(1) opacity(.88);
     }
 
     /* ── Card ────────────────────────────────────────────────── */
@@ -283,8 +282,8 @@
 
   <!-- Logo in flusso normale — non rimane fisso scorrendo -->
   <a href="https://www.pipeline.news" class="top-logo">
-    <img src="logo.png" alt="Pipeline.news"
-         onerror="this.src='logo.svg';this.onerror=null" />
+    <img src="logo-dark.PNG" alt="Pipeline.news"
+         onerror="this.src='logo.png';this.onerror=null" />
   </a>
 
   <div class="confetti-wrap" id="confetti"></div>
