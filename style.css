@@ -934,9 +934,10 @@ a  { color: inherit; text-decoration: none; }
 /* ── Layout due colonne ───────────────────────────────────── */
 .archive-layout {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 300px 1fr;
   min-height: calc(100vh - 68px - 240px);
   align-items: start;
+  border-top: 1px solid var(--border);
 }
 
 /* ── Sidebar ──────────────────────────────────────────────── */
@@ -1040,18 +1041,55 @@ a  { color: inherit; text-decoration: none; }
 
 .archive-reader__empty {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 480px;
-  gap: 14px;
-  color: var(--gray);
-  text-align: center;
-  font-size: 15px;
+  padding: 40px;
 }
-.archive-reader__empty-icon {
-  font-size: 52px;
-  opacity: .35;
+.archive-empty {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 52px 44px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+}
+.archive-empty__icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--teal), var(--cyan));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: #fff;
+}
+.archive-empty__title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -.3px;
+  margin-bottom: 12px;
+}
+.archive-empty__text {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.archive-empty__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,196,160,.08);
+  border: 1px solid rgba(0,196,160,.25);
+  color: var(--teal-d);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 100px;
 }
 
 /* Topbar articolo */
@@ -1168,12 +1206,19 @@ a  { color: inherit; text-decoration: none; }
   .archive-sidebar {
     position: static;
     height: auto;
+    max-height: 40vh;
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
-  .archive-sidebar__inner { overflow: visible; }
+  .archive-sidebar__inner {
+    overflow-y: auto;
+    max-height: 40vh;
+  }
   .archive-reader {
     padding: 28px 20px 48px;
+  }
+  .archive-empty {
+    padding: 36px 28px;
   }
   .archive-reader__back-btn { display: inline-flex; }
   .archive-reader__date { margin-left: 0; }
