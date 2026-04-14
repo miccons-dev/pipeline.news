@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archivio Newsletter — Pipeline</title>
+  <meta name="description" content="Tutte le edizioni di Pipeline, la newsletter italiana per i professionisti della vendita." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="logo.png" alt="Pipeline.news" class="nav__logo-img"
+             onerror="this.src='logo.svg';this.onerror=null" />
+      </a>
+      <a href="/#iscriviti" class="btn btn--nav">Iscriviti gratis →</a>
+    </div>
+  </header>
+
+  <!-- ─── HEADER PAGINA ───────────────────────────────────────── -->
+  <section class="archive-hero">
+    <div class="container">
+      <a href="/" class="archive-hero__back">← Torna alla home</a>
+      <h1 class="archive-hero__title">Archivio Newsletter</h1>
+      <p class="archive-hero__sub">Tutte le edizioni di Pipeline, dalla più recente alla più antica.</p>
+    </div>
+  </section>
+
+  <!-- ─── LAYOUT ARCHIVIO ─────────────────────────────────────── -->
+  <div class="archive-layout">
+
+    <!-- Sidebar: lista edizioni -->
+    <aside class="archive-sidebar" id="archive-sidebar">
+      <div class="archive-sidebar__inner">
+        <div class="archive-loading" id="archive-loading" aria-live="polite">
+          <span class="issues__spinner"></span> Caricamento archivio…
+        </div>
+        <ul class="archive-list" id="archive-list" role="list"></ul>
+      </div>
+    </aside>
+
+    <!-- Pannello lettore -->
+    <main class="archive-reader" id="archive-reader">
+
+      <!-- Stato vuoto iniziale -->
+      <div class="archive-reader__empty" id="archive-empty">
+        <div class="archive-reader__empty-icon">📬</div>
+        <p>Seleziona un'edizione dalla lista per leggerne il contenuto.</p>
+      </div>
+
+      <!-- Contenuto edizione -->
+      <article class="archive-reader__article" id="archive-article" hidden>
+        <header class="archive-reader__topbar">
+          <button class="archive-reader__back-btn" id="reader-back-btn" aria-label="Torna alla lista">
+            ← Lista edizioni
+          </button>
+          <span class="archive-reader__date" id="reader-date"></span>
+        </header>
+        <h1 class="archive-reader__title" id="reader-title"></h1>
+        <p class="archive-reader__subtitle" id="reader-subtitle"></p>
+        <hr class="archive-reader__divider" />
+        <div class="archive-reader__body" id="reader-body"></div>
+        <div class="archive-reader__no-content" id="reader-no-content" hidden>
+          <p>Il contenuto completo di questa edizione è disponibile su Beehiiv.</p>
+          <a href="#" id="reader-external-link" class="btn btn--primary"
+             target="_blank" rel="noopener noreferrer">
+            Leggi l'edizione completa →
+          </a>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo">
+          <img src="logo.png" alt="Pipeline.news" class="nav__logo-img nav__logo-img--footer"
+               onerror="this.src='logo.svg';this.onerror=null" />
+        </a>
+        <p class="footer__tagline">La newsletter italiana per chi vive di vendita.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="/#cosa-troverai">Cosa troverai</a>
+        <a href="/#per-chi">Per chi è</a>
+        <a href="/#numeri">Ultimi numeri</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <div class="footer__legal">
+        <p>© 2026 Pipeline.news · <a href="#">Privacy Policy</a> · <a href="#">Cancella iscrizione</a></p>
+        <p>Fatto con passione per la vendita 🇮🇹</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="archive.js"></script>
+</body>
+</html>

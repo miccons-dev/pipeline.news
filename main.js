@@ -74,8 +74,8 @@ async function loadPosts() {
         </div>
         <h3 class="issue__title">${escapeHtml(post.title)}</h3>
         <p class="issue__excerpt">${escapeHtml(post.subtitle || post.preview_text || '')}</p>
-        <a href="${escapeHtml(post.web_url)}" class="issue__link" target="_blank" rel="noopener noreferrer">
-          Leggi l'anteprima →
+        <a href="archive.html#${escapeHtml(post.id)}" class="issue__link">
+          Leggi l'edizione →
         </a>
       </article>
     `).join('');
