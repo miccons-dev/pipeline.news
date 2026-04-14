@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benvenuto in Pipeline</title>
+  <meta name="description" content="Sei dentro. Ogni lunedi, strategie concrete per vendere meglio." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1a1a2e;--blue:#2563eb;--blue-light:#60a5fa;--white:#fff}
+    body{font-family:'Inter',Arial,sans-serif;background:var(--navy);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
+    body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(37,99,235,.18) 0%,transparent 70%);pointer-events:none;z-index:0}
+    .card{position:relative;z-index:1;max-width:600px;width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:24px;padding:56px 48px;text-align:center;backdrop-filter:blur(20px);box-shadow:0 32px 80px rgba(0,0,0,.4);animation:fadeUp .7s ease both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .icon-wrap{display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,rgba(37,99,235,.25),rgba(96,165,250,.15));border:1px solid rgba(96,165,250,.3);font-size:36px;margin-bottom:28px;animation:pop .6s .3s cubic-bezier(.175,.885,.32,1.275) both}
+    @keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+    .badge{display:inline-block;background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.4);color:var(--blue-light);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+    h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.15;color:var(--white);margin-bottom:16px}
+    h1 span{background:linear-gradient(90deg,var(--blue-light),#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .sub{font-size:17px;line-height:1.7;color:rgba(255,255,255,.68);margin-bottom:36px}
+    .divider{width:48px;height:3px;background:linear-gradient(90deg,var(--blue),var(--blue-light));border-radius:2px;margin:0 auto 36px}
+    .checklist{text-align:left;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px 32px;margin-bottom:36px}
+    .checklist h3{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:18px}
+    .check-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}
+    .check-item:last-child{margin-bottom:0}
+    .check-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(37,99,235,.25);border:1px solid rgba(37,99,235,.5);display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px}
+    .check-text{font-size:15px;line-height:1.5;color:rgba(255,255,255,.80)}
+    .check-text strong{color:var(--white);font-weight:600}
+    .monday-box{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(37,99,235,.15),rgba(96,165,250,.08));border:1px solid rgba(37,99,235,.25);border-radius:12px;padding:16px 24px;margin-bottom:36px}
+    .monday-box .dot{width:8px;height:8px;border-radius:50%;background:var(--blue-light);flex-shrink:0;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+    .monday-box p{font-size:15px;font-weight:500;color:rgba(255,255,255,.85)}
+    .monday-box p strong{color:var(--blue-light)}
+    .btn{display:inline-block;background:linear-gradient(135deg,#1d4ed8,var(--blue));color:var(--white);font-family:'Inter',sans-serif;font-size:16px;font-weight:700;text-decoration:none;padding:16px 36px;border-radius:10px;box-shadow:0 4px 20px rgba(37,99,235,.35)}
+    .top-logo{position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:10}
+    .top-logo img{height:32px;width:auto;display:block}
+    .footer-note{position:relative;z-index:1;margin-top:28px;font-size:13px;color:rgba(255,255,255,.28);text-align:center}
+    .footer-note a{color:rgba(255,255,255,.40);text-decoration:none}
+    .confetti-wrap{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0}
+    .confetti-piece{position:absolute;top:-10px;opacity:0;animation:fall linear both}
+    @keyframes fall{0%{opacity:1;transform:translateY(0) rotate(0deg)}100%{opacity:0;transform:translateY(100vh) rotate(720deg)}}
+    @media(max-width:520px){.card{padding:40px 24px;border-radius:20px}.checklist{padding:20px}}
+  </style>
+</head>
+<body>
+  <a href="https://www.pipeline.news" class="top-logo">
+    <img src="logo.png" alt="Pipeline.news" onerror="this.style.display='none'" />
+  </a>
+  <div class="confetti-wrap" id="confetti"></div>
+  <div class="card">
+    <div class="icon-wrap">&#127881;</div>
+    <div class="badge">&#10003; &nbsp;Iscrizione confermata</div>
+    <h1>Sei dentro,<br /><span>benvenuto in Pipeline.</span></h1>
+    <p class="sub">Non devi fare altro. Nessuna conferma, nessun passaggio aggiuntivo.<br />La tua iscrizione &egrave; attiva da adesso.</p>
+    <div class="divider"></div>
+    <div class="checklist">
+      <h3>Cosa aspettarti</h3>
+      <div class="check-item"><div class="check-icon">&#127919;</div><p class="check-text"><strong>Una email ogni luned&igrave; mattina</strong> &mdash; strategie, casi reali e strumenti per vendere meglio.</p></div>
+      <div class="check-item"><div class="check-icon">&#9201;</div><p class="check-text"><strong>5 minuti di lettura</strong> &mdash; densi di contenuto, zero riempitivo.</p></div>
+      <div class="check-item"><div class="check-icon">&#9993;</div><p class="check-text">Mittente: <strong>pipeline.news</strong> &mdash; aggiungilo ai contatti per non perderti nessuna edizione.</p></div>
+      <div class="check-item"><div class="check-icon">&#128683;</div><p class="check-text"><strong>Zero spam</strong> &mdash; nessuna promozione, nessun partner. Solo contenuto.</p></div>
+    </div>
+    <div class="monday-box">
+      <div class="dot"></div>
+      <p>La tua prima edizione arriva <strong>luned&igrave; prossimo</strong> &mdash; a presto! &#128236;</p>
+    </div>
+    <a href="https://www.pipeline.news" class="btn">Torna al sito &rarr;</a>
+  </div>
+  <p class="footer-note">
+    Hai domande? Scrivi a <a href="mailto:mconsonni1@gmail.com">mconsonni1@gmail.com</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://www.pipeline.news">pipeline.news</a>
+  </p>
+  <script>
+    (function(){
+      const c=['#2563eb','#60a5fa','#93c5fd','#a78bfa','#fff','#fbbf24'];
+      const w=document.getElementById('confetti');
+      for(let i=0;i<55;i++){
+        const el=document.createElement('div');
+        el.className='confetti-piece';
+        el.style.left=Math.random()*100+'%';
+        el.style.background=c[Math.floor(Math.random()*c.length)];
+        el.style.width=(Math.random()*8+4)+'px';
+        el.style.height=(Math.random()*8+4)+'px';
+        el.style.borderRadius=Math.random()>.5?'50%':'2px';
+        el.style.animationDuration=(Math.random()*3+2.5)+'s';
+        el.style.animationDelay=(Math.random()*2.5)+'s';
+        w.appendChild(el);
+      }
+    })();
+  </script>
+</body>
+</html>
