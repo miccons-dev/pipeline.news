@@ -20,14 +20,14 @@
       --white:  #ffffff;
     }
 
-    html { background: var(--navy); }
+    html { background: #0b3f6f; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     [hidden] { display: none !important; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(150deg, var(--navy) 0%, #1a3d78 60%, var(--blue) 100%);
+      background: linear-gradient(150deg, #0b3f6f 0%, #1a3d78 60%, var(--blue) 100%);
       color: var(--white);
       min-height: 100vh;
       display: flex;
@@ -43,7 +43,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 60%,
+      background: radial-gradient(ellipse 80% 60% at 50% -10%,
         rgba(0,196,160,.14) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
