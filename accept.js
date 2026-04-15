@@ -49,8 +49,9 @@ async function loadInvite(token) {
     }
 
     /* pending — show invite card */
+    const displayName = data.referrerName || data.referrerEmail;
     referrerNote.innerHTML =
-      `<strong>${escapeHtml(data.referrerEmail)}</strong> pensa che Pipeline<br />possa esserti utile.`;
+      `<strong>${escapeHtml(displayName)}</strong> ti ha riservato un posto in Pipeline.`;
 
     inviteToken = token;
     showOnly(stateInvite);

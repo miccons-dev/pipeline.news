@@ -9,107 +9,120 @@ function esc(str) {
 }
 
 /**
- * HTML body for the invite email.
- * @param {{ referrerEmail: string, inviteUrl: string }} opts
- * @returns {string}
+ * HTML invite email.
+ * @param {{ referrerName: string, referrerEmail: string, inviteUrl: string }} opts
  */
-function inviteEmailHtml({ referrerEmail, inviteUrl }) {
-  const features = [
-    '🎯 Strategie di vendita concrete e immediatamente applicabili',
-    '⏱ 5 minuti di lettura ogni martedì mattina',
-    '📊 Casi reali, metriche e strumenti testati sul campo',
-    '🚫 Zero spam — disiscriviti in un click quando vuoi',
-  ];
+function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
+  const name = esc(referrerName);
 
   return `<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Sei stato invitato a Pipeline.news</title>
+<title>${name} ti ha riservato un posto in Pipeline.</title>
 </head>
-<body style="margin:0;padding:0;background:#F0F6FF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#F0F6FF;padding:40px 16px;">
-  <tr><td align="center">
-    <table width="600" cellpadding="0" cellspacing="0"
-           style="max-width:600px;width:100%;background:#0D2756;border-radius:16px;overflow:hidden;">
+<body style="margin:0;padding:0;background:#F0F6FF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
 
-      <!-- Header -->
+<table width="100%" cellpadding="0" cellspacing="0"
+       style="background:#F0F6FF;padding:40px 16px;">
+  <tr><td align="center">
+
+    <table width="600" cellpadding="0" cellspacing="0"
+           style="max-width:600px;width:100%;border-radius:20px;overflow:hidden;
+                  box-shadow:0 24px 64px rgba(13,39,86,.18);">
+
+      <!-- ── LOGO ─────────────────────────────────────────── -->
       <tr>
-        <td style="background:linear-gradient(135deg,#0D2756,#1a3d78);padding:36px 48px 28px;text-align:center;">
-          <p style="margin:0;font-size:26px;font-weight:800;color:#fff;letter-spacing:-.5px;">
-            pipeline<span style="color:#00C4A0;">.news</span>
-          </p>
+        <td align="center"
+            style="background:linear-gradient(150deg,#0D2756 0%,#1a3d78 60%,#1E6BC5 100%);
+                   padding:40px 48px 36px;">
+          <img src="https://www.pipeline.news/logo-dark.PNG"
+               alt="pipeline.news"
+               width="200"
+               style="display:block;margin:0 auto;max-width:200px;height:auto;border:0;" />
         </td>
       </tr>
 
-      <!-- Body -->
+      <!-- ── BODY ─────────────────────────────────────────── -->
       <tr>
-        <td style="padding:36px 48px 32px;background:#0D2756;">
-
-          <!-- Badge -->
-          <p style="margin:0 0 22px;text-align:center;">
-            <span style="display:inline-block;background:rgba(0,196,160,.15);border:1px solid rgba(0,196,160,.4);
-                         color:#00E4BC;font-size:11px;font-weight:700;letter-spacing:1px;
-                         text-transform:uppercase;padding:6px 16px;border-radius:100px;">
-              ✉ Invito personale
-            </span>
-          </p>
+        <td style="background:#0D2756;padding:44px 52px 40px;">
 
           <!-- Headline -->
-          <h1 style="margin:0 0 14px;font-size:28px;font-weight:900;color:#fff;line-height:1.2;text-align:center;">
-            Sei stato invitato<br/>
-            <span style="color:#00C4A0;">a Pipeline.news</span>
+          <h1 style="margin:0 0 28px;font-size:30px;font-weight:900;
+                     color:#ffffff;line-height:1.2;letter-spacing:-.5px;text-align:center;">
+            ${name} ti ha riservato<br/>
+            un posto in <span style="color:#00C4A0;">Pipeline.</span>
           </h1>
 
-          <!-- Referrer note -->
-          <p style="margin:0 0 26px;font-size:15px;color:rgba(255,255,255,.65);text-align:center;line-height:1.6;">
-            <strong style="color:rgba(255,255,255,.9);">${esc(referrerEmail)}</strong>
-            &nbsp;pensa che Pipeline possa esserti utile.
+          <!-- Divider -->
+          <div style="width:40px;height:3px;
+                      background:linear-gradient(90deg,#00C4A0,#5BB8F5);
+                      border-radius:2px;margin:0 auto 32px;"></div>
+
+          <!-- Body copy -->
+          <p style="margin:0 0 20px;font-size:16px;line-height:1.75;
+                    color:rgba(255,255,255,.80);">
+            Ogni martedì mattina, Pipeline consegna nella tua inbox una tattica
+            di vendita B2B concreta&nbsp;— con lo script pronto, il template email
+            da copiare e il tool gratuito per applicarla quella stessa mattina.
           </p>
 
-          <!-- Divider -->
-          <div style="width:40px;height:3px;background:linear-gradient(90deg,#00C4A0,#5BB8F5);
-                      border-radius:2px;margin:0 auto 26px;"></div>
-
-          <!-- Value prop box -->
-          <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:28px;">
+          <!-- Callout -->
+          <table cellpadding="0" cellspacing="0" width="100%"
+                 style="margin-bottom:20px;">
             <tr>
-              <td style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);
-                         border-radius:12px;padding:22px 26px;">
-                <p style="margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:1px;
-                           text-transform:uppercase;color:rgba(255,255,255,.4);">Cosa troverai</p>
-                ${features.map(f => `<p style="margin:0 0 10px;font-size:14px;color:rgba(255,255,255,.82);line-height:1.5;">${f}</p>`).join('\n                ')}
+              <td style="background:rgba(0,196,160,.10);
+                         border-left:3px solid #00C4A0;
+                         border-radius:0 8px 8px 0;
+                         padding:14px 20px;">
+                <p style="margin:0;font-size:15px;font-weight:700;
+                           color:#ffffff;line-height:1.5;letter-spacing:.1px;">
+                  Niente teoria. Niente motivazione.<br/>Solo cose che funzionano.
+                </p>
               </td>
             </tr>
           </table>
 
+          <!-- Endorsement -->
+          <p style="margin:0 0 36px;font-size:15px;line-height:1.7;
+                    color:rgba(255,255,255,.65);font-style:italic;">
+            ${name} pensa che valga il tuo tempo.
+            <span style="color:#ffffff;font-style:normal;font-weight:600;">Ha ragione.</span>
+          </p>
+
           <!-- CTA -->
-          <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:24px;">
+          <table cellpadding="0" cellspacing="0" width="100%"
+                 style="margin-bottom:28px;">
             <tr>
               <td align="center">
                 <a href="${esc(inviteUrl)}"
-                   style="display:inline-block;background:linear-gradient(135deg,#00C4A0,#00A88A);
-                          color:#fff;font-size:16px;font-weight:700;text-decoration:none;
-                          padding:16px 40px;border-radius:10px;">
-                  Accetta l'invito &rarr;
+                   style="display:inline-block;
+                          background:linear-gradient(135deg,#00C4A0,#00A88A);
+                          color:#ffffff;font-size:17px;font-weight:800;
+                          text-decoration:none;padding:18px 44px;
+                          border-radius:12px;letter-spacing:.1px;
+                          box-shadow:0 4px 20px rgba(0,196,160,.4);">
+                  → Iscriviti gratis a Pipeline
                 </a>
               </td>
             </tr>
           </table>
 
-          <p style="margin:0;font-size:12px;color:rgba(255,255,255,.3);text-align:center;line-height:1.7;">
-            Questo link è valido per 7 giorni.<br/>
-            Hai ricevuto questa email perché ${esc(referrerEmail)} ha inserito il tuo indirizzo.<br/>
-            Se non conosci questa persona, ignora semplicemente questa email.
+          <!-- Fine print -->
+          <p style="margin:0;font-size:12px;color:rgba(255,255,255,.28);
+                    text-align:center;line-height:1.8;">
+            Il link è valido 7 giorni. Cancellazione in un click, sempre.<br/>
+            Hai ricevuto questa email perché ${esc(referrerEmail)} ha inserito il tuo indirizzo.
           </p>
+
         </td>
       </tr>
 
-      <!-- Footer -->
+      <!-- ── FOOTER ────────────────────────────────────────── -->
       <tr>
-        <td style="background:#080F1F;padding:18px 48px;text-align:center;">
-          <p style="margin:0;font-size:12px;color:rgba(255,255,255,.25);">
+        <td style="background:#080F1F;padding:20px 52px;text-align:center;">
+          <p style="margin:0;font-size:12px;color:rgba(255,255,255,.22);">
             &copy; 2026 Pipeline.news &middot; La newsletter per i professionisti della vendita
           </p>
         </td>
@@ -118,29 +131,32 @@ function inviteEmailHtml({ referrerEmail, inviteUrl }) {
     </table>
   </td></tr>
 </table>
+
 </body>
 </html>`;
 }
 
 /**
  * Plain-text fallback.
- * @param {{ referrerEmail: string, inviteUrl: string }} opts
- * @returns {string}
+ * @param {{ referrerName: string, referrerEmail: string, inviteUrl: string }} opts
  */
-function inviteEmailText({ referrerEmail, inviteUrl }) {
-  return `Sei stato invitato a Pipeline.news
+function inviteEmailText({ referrerName, referrerEmail, inviteUrl }) {
+  return `${referrerName} ti ha riservato un posto in Pipeline.
 
-${referrerEmail} pensa che Pipeline possa esserti utile.
+Ogni martedì mattina, Pipeline consegna nella tua inbox una tattica di vendita B2B concreta — con lo script pronto, il template email da copiare e il tool gratuito per applicarla quella stessa mattina.
 
-Pipeline è la newsletter italiana per i professionisti della vendita.
-Ogni martedì: strategie, casi reali e strumenti per chiudere più trattative.
+Niente teoria. Niente motivazione. Solo cose che funzionano.
 
-Accetta l'invito: ${inviteUrl}
+${referrerName} pensa che valga il tuo tempo. Ha ragione.
 
-Il link è valido per 7 giorni.
+→ Iscriviti gratis a Pipeline
+${inviteUrl}
+
+Il link è valido 7 giorni. Cancellazione in un click, sempre.
+
+---
 Hai ricevuto questa email perché ${referrerEmail} ha inserito il tuo indirizzo.
-Se non hai richiesto l'invito, ignora questa email.
-
+Se non conosci questa persona, ignora semplicemente questa email.
 Pipeline.news — La newsletter per i professionisti della vendita
 `;
 }

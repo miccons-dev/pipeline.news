@@ -2,12 +2,12 @@
 'use strict';
 
 /* ── Config ──────────────────────────────────────────────── */
-// Set this to your deployed API URL before going live
 const API_BASE = 'https://pipeline-news.onrender.com';
 const MAX_CHIPS = 10;
 const EMAIL_RE  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /* ── DOM refs ────────────────────────────────────────────── */
+const nameInput     = document.getElementById('nameInput');
 const referrerInput = document.getElementById('referrerInput');
 const chipsWrap     = document.getElementById('chipsWrap');
 const chipInput     = document.getElementById('chipInput');
@@ -26,12 +26,16 @@ function isValidEmail(email) {
   return EMAIL_RE.test(email) && email.length <= 254;
 }
 
+function isValidName(name) {
+  return name.trim().length > 0 && name.trim().length <= 60;
+}
+
 /* ── Chip management ─────────────────────────────────────── */
 function addEmail(raw) {
   const email = raw.toLowerCase().trim();
   if (!email) return;
   if (chips.length >= MAX_CHIPS) return;
-  if (chips.some(c => c.email === email)) return;   // deduplicate
+  if (chips.some(c => c.email === email)) return;
 
   chips.push({ email, valid: isValidEmail(email) });
   renderChips();
@@ -51,10 +55,8 @@ function parseAndAdd(text) {
 }
 
 function renderChips() {
-  /* Remove all existing chip elements */
   chipsWrap.querySelectorAll('.chip').forEach(el => el.remove());
 
-  /* Insert chips before the input */
   chips.forEach((c, i) => {
     const chip = document.createElement('span');
     chip.className = `chip chip--${c.valid ? 'valid' : 'invalid'}`;
@@ -71,8 +73,7 @@ function renderChips() {
 }
 
 function updateCounter() {
-  const validCount = chips.filter(c => c.valid).length;
-  const total      = chips.length;
+  const total = chips.length;
   chipCounter.textContent = `${total}/${MAX_CHIPS}`;
   chipCounter.classList.toggle('is-full', total >= MAX_CHIPS);
 
@@ -80,27 +81,26 @@ function updateCounter() {
     chipInput.placeholder = 'Limite raggiunto';
     chipInput.disabled    = true;
   } else {
-    chipInput.placeholder = total === 0 ? 'mario@azienda.com, luca@email.it…' : 'Aggiungi un\'altra…';
+    chipInput.placeholder = total === 0 ? 'mario@azienda.com, luca@email.it…' : "Aggiungi un'altra…";
     chipInput.disabled    = false;
   }
 }
 
 function updateSubmit() {
-  const validChips    = chips.filter(c => c.valid).length;
-  const referrerOk    = isValidEmail(referrerInput.value.trim());
-  sendBtn.disabled    = validChips === 0 || !referrerOk;
+  const validChips = chips.filter(c => c.valid).length;
+  const nameOk     = isValidName(nameInput.value);
+  const emailOk    = isValidEmail(referrerInput.value.trim());
+  sendBtn.disabled = validChips === 0 || !nameOk || !emailOk;
 }
 
 /* ── Chip input events ───────────────────────────────────── */
 chipInput.addEventListener('keydown', (e) => {
-  /* Trigger add on comma, space, Enter, Tab */
   if ([',', ' ', 'Enter', 'Tab'].includes(e.key)) {
     e.preventDefault();
     const val = chipInput.value.trim();
     if (val) { addEmail(val); chipInput.value = ''; }
     return;
   }
-  /* Backspace on empty input removes last chip */
   if (e.key === 'Backspace' && chipInput.value === '' && chips.length > 0) {
     removeChip(chips.length - 1);
   }
@@ -108,8 +108,7 @@ chipInput.addEventListener('keydown', (e) => {
 
 chipInput.addEventListener('paste', (e) => {
   e.preventDefault();
-  const text = e.clipboardData.getData('text');
-  parseAndAdd(text);
+  parseAndAdd(e.clipboardData.getData('text'));
   chipInput.value = '';
 });
 
@@ -118,17 +117,15 @@ chipInput.addEventListener('blur', () => {
   if (val) { addEmail(val); chipInput.value = ''; }
 });
 
-/* Click on chips wrap focuses input */
 chipsWrap.addEventListener('click', (e) => {
   const removeBtn = e.target.closest('.chip__remove');
-  if (removeBtn) {
-    removeChip(parseInt(removeBtn.dataset.index, 10));
-    return;
-  }
+  if (removeBtn) { removeChip(parseInt(removeBtn.dataset.index, 10)); return; }
   chipInput.focus();
 });
 
-/* Referrer input: re-validate submit on each change */
+/* ── Name / email field validation ──────────────────────── */
+nameInput.addEventListener('input', updateSubmit);
+
 referrerInput.addEventListener('input', () => {
   const ok = isValidEmail(referrerInput.value.trim());
   referrerInput.classList.toggle('is-invalid', referrerInput.value.length > 0 && !ok);
@@ -139,7 +136,13 @@ referrerInput.addEventListener('input', () => {
 sendBtn.addEventListener('click', submitInvites);
 
 async function submitInvites() {
+  const referrerName  = nameInput.value.trim();
   const referrerEmail = referrerInput.value.trim();
+
+  if (!isValidName(referrerName)) {
+    showError('Inserisci il tuo nome prima di inviare gli inviti.');
+    return;
+  }
   if (!isValidEmail(referrerEmail)) {
     showError('Inserisci la tua email prima di inviare gli inviti.');
     return;
@@ -147,7 +150,7 @@ async function submitInvites() {
 
   const validEmails = chips.filter(c => c.valid).map(c => c.email);
   if (validEmails.length === 0) {
-    showError('Aggiungi almeno un\'email valida da invitare.');
+    showError("Aggiungi almeno un'email valida da invitare.");
     return;
   }
 
@@ -159,13 +162,11 @@ async function submitInvites() {
     const res  = await fetch(`${API_BASE}/api/v1/invite`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ referrerEmail, emails: validEmails }),
+      body: JSON.stringify({ referrerName, referrerEmail, emails: validEmails }),
     });
     const data = await res.json();
 
-    if (!res.ok) {
-      throw new Error(data.error || 'Errore durante l\'invio.');
-    }
+    if (!res.ok) throw new Error(data.error || "Errore durante l'invio.");
 
     showSuccess(data.sent, data.skipped);
   } catch (err) {
@@ -183,7 +184,7 @@ function showError(msg) {
 }
 
 function clearStatus() {
-  statusMsg.hidden = true;
+  statusMsg.hidden      = true;
   statusMsg.textContent = '';
 }
 
@@ -206,12 +207,16 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-/* ── Pre-fill referrer from URL param (?from=email) ─────── */
+/* ── Pre-fill da URL (?from=email&name=Mario) ────────────── */
 (function prefillFromUrl() {
   const params = new URLSearchParams(location.search);
   const from   = params.get('from');
+  const name   = params.get('name');
   if (from && isValidEmail(from)) {
     referrerInput.value = from;
-    updateSubmit();
   }
+  if (name) {
+    nameInput.value = decodeURIComponent(name).trim().slice(0, 60);
+  }
+  updateSubmit();
 })();

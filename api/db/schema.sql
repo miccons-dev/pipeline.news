@@ -7,6 +7,7 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 CREATE TABLE IF NOT EXISTS invites (
   id             UUID         PRIMARY KEY DEFAULT gen_random_uuid(),
   token          CHAR(64)     UNIQUE NOT NULL,
+  referrer_name  VARCHAR(60),
   referrer_email VARCHAR(254) NOT NULL,
   invited_email  VARCHAR(254) NOT NULL,
   status         VARCHAR(20)  NOT NULL DEFAULT 'pending'
@@ -25,6 +26,9 @@ CREATE INDEX IF NOT EXISTS idx_invites_invited    ON invites (invited_email);
 -- Partial index for efficient expiry sweeps
 CREATE INDEX IF NOT EXISTS idx_invites_expires    ON invites (expires_at)
   WHERE status = 'pending';
+
+-- Migration for existing installations (safe to run multiple times)
+ALTER TABLE invites ADD COLUMN IF NOT EXISTS referrer_name VARCHAR(60);
 
 -- ── Per-referrer aggregated stats ─────────────────────────────
 CREATE TABLE IF NOT EXISTS referral_stats (

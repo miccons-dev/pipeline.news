@@ -10,26 +10,33 @@ const router = express.Router();
 const resend  = new Resend(process.env.RESEND_API_KEY);
 
 /* ── Constants ───────────────────────────────────────────── */
-const EMAIL_REGEX          = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const MAX_PER_BATCH        = 10;
-const MAX_PER_DAY          = 20;
-const TOKEN_EXPIRY_DAYS    = 7;
-const BEEHIIV_PUB_ID       = process.env.BEEHIIV_PUBLICATION_ID;
-const BEEHIIV_API_KEY      = process.env.BEEHIIV_API_KEY;
-const SITE_URL             = process.env.SITE_URL || 'https://www.pipeline.news';
-const FROM_EMAIL           = process.env.FROM_EMAIL || 'Pipeline.news <crew@pipeline.news>';
+const EMAIL_REGEX       = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_PER_BATCH     = 10;
+const MAX_PER_DAY       = 20;
+const TOKEN_EXPIRY_DAYS = 7;
+const BEEHIIV_PUB_ID    = process.env.BEEHIIV_PUBLICATION_ID;
+const BEEHIIV_API_KEY   = process.env.BEEHIIV_API_KEY;
+const SITE_URL          = process.env.SITE_URL || 'https://www.pipeline.news';
+const FROM_EMAIL        = process.env.FROM_EMAIL || 'Pipeline.news <crew@pipeline.news>';
 
 /* ── Helpers ─────────────────────────────────────────────── */
 const isValidEmail = (e) => EMAIL_REGEX.test(e) && e.length <= 254;
 const generateToken = () => crypto.randomBytes(32).toString('hex');
 
+function sanitizeName(raw) {
+  return String(raw ?? '').trim().replace(/\s+/g, ' ').slice(0, 60);
+}
+
 /* ─── POST /api/v1/invite ─────────────────────────────────────
-   Body: { referrerEmail: string, emails: string[] }
-   Creates invite records and sends invitation emails.
+   Body: { referrerName: string, referrerEmail: string, emails: string[] }
 ──────────────────────────────────────────────────────────── */
 router.post('/invite', async (req, res) => {
-  const { referrerEmail, emails } = req.body ?? {};
+  const { referrerName: rawName, referrerEmail, emails } = req.body ?? {};
 
+  const referrerName = sanitizeName(rawName);
+  if (!referrerName) {
+    return res.status(400).json({ error: 'Inserisci il tuo nome prima di inviare gli inviti.' });
+  }
   if (!referrerEmail || !isValidEmail(String(referrerEmail))) {
     return res.status(400).json({ error: 'Email mittente non valida.' });
   }
@@ -40,12 +47,11 @@ router.post('/invite', async (req, res) => {
     return res.status(400).json({ error: `Puoi inviare al massimo ${MAX_PER_BATCH} inviti alla volta.` });
   }
 
-  /* Deduplicate, validate, normalise */
   const normalRef = referrerEmail.toLowerCase().trim();
   const unique = [...new Set(
     emails
       .map(e => String(e).toLowerCase().trim())
-      .filter(e => isValidEmail(e) && e !== normalRef)   // drop invalid + self-invite
+      .filter(e => isValidEmail(e) && e !== normalRef)
   )];
 
   if (unique.length === 0) {
@@ -56,7 +62,7 @@ router.post('/invite', async (req, res) => {
   try {
     await client.query('BEGIN');
 
-    /* Rate-limit: count invites sent by this referrer in the last 24h */
+    /* Rate-limit: max 20 inviti per referrer nelle ultime 24h */
     const { rows: [{ cnt }] } = await client.query(
       `SELECT COUNT(*) AS cnt FROM invites
        WHERE referrer_email = $1 AND created_at > NOW() - INTERVAL '24 hours'`,
@@ -71,31 +77,29 @@ router.post('/invite', async (req, res) => {
       });
     }
 
-    /* Process each email */
     let sent = 0, skipped = 0, failed = 0;
 
     for (const invitedEmail of unique) {
       try {
         const token = generateToken();
 
-        /* Insert — skip if this pair already exists */
         const insert = await client.query(
-          `INSERT INTO invites (token, referrer_email, invited_email, expires_at)
-           VALUES ($1, $2, $3, NOW() + INTERVAL '${TOKEN_EXPIRY_DAYS} days')
+          `INSERT INTO invites (token, referrer_name, referrer_email, invited_email, expires_at)
+           VALUES ($1, $2, $3, $4, NOW() + INTERVAL '${TOKEN_EXPIRY_DAYS} days')
            ON CONFLICT (referrer_email, invited_email) DO NOTHING
            RETURNING id`,
-          [token, normalRef, invitedEmail]
+          [token, referrerName, normalRef, invitedEmail]
         );
 
         if (insert.rowCount === 0) { skipped++; continue; }
 
-        /* Send email */
+        const inviteUrl = `${SITE_URL}/accept.html?token=${token}`;
         await resend.emails.send({
           from:    FROM_EMAIL,
           to:      invitedEmail,
-          subject: `${referrerEmail} ti ha invitato a Pipeline.news`,
-          html:    inviteEmailHtml({ referrerEmail, inviteUrl: `${SITE_URL}/accept.html?token=${token}` }),
-          text:    inviteEmailText({ referrerEmail, inviteUrl: `${SITE_URL}/accept.html?token=${token}` }),
+          subject: `${referrerName} ti ha riservato un posto in Pipeline.`,
+          html:    inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }),
+          text:    inviteEmailText({ referrerName, referrerEmail, inviteUrl }),
         });
 
         sent++;
@@ -105,15 +109,14 @@ router.post('/invite', async (req, res) => {
       }
     }
 
-    /* Upsert referral stats */
     if (sent > 0) {
       await client.query(
         `INSERT INTO referral_stats (email, invites_sent, last_invite_at, updated_at)
          VALUES ($1, $2, NOW(), NOW())
          ON CONFLICT (email) DO UPDATE
-         SET invites_sent     = referral_stats.invites_sent + EXCLUDED.invites_sent,
-             last_invite_at   = NOW(),
-             updated_at       = NOW()`,
+         SET invites_sent   = referral_stats.invites_sent + EXCLUDED.invites_sent,
+             last_invite_at = NOW(),
+             updated_at     = NOW()`,
         [normalRef, sent]
       );
     }
@@ -147,14 +150,13 @@ router.get('/invite/:token', async (req, res) => {
   }
 
   try {
-    /* Sweep expired invites */
     await pool.query(
       `UPDATE invites SET status = 'expired'
        WHERE status = 'pending' AND expires_at < NOW()`
     );
 
     const { rows } = await pool.query(
-      `SELECT referrer_email, invited_email, status, created_at, expires_at
+      `SELECT referrer_name, referrer_email, invited_email, status, created_at, expires_at
        FROM invites WHERE token = $1`,
       [token]
     );
@@ -163,6 +165,7 @@ router.get('/invite/:token', async (req, res) => {
 
     const inv = rows[0];
     return res.json({
+      referrerName:  inv.referrer_name,
       referrerEmail: inv.referrer_email,
       invitedEmail:  inv.invited_email,
       status:        inv.status,
@@ -176,7 +179,6 @@ router.get('/invite/:token', async (req, res) => {
 
 /* ─── POST /api/v1/accept-invite ─────────────────────────────
    Body: { token: string }
-   Subscribes the invited user via Beehiiv and marks invite accepted.
 ──────────────────────────────────────────────────────────── */
 router.post('/accept-invite', async (req, res) => {
   const { token } = req.body ?? {};
@@ -188,15 +190,13 @@ router.post('/accept-invite', async (req, res) => {
   try {
     await client.query('BEGIN');
 
-    /* Sweep expired */
     await client.query(
       `UPDATE invites SET status = 'expired'
        WHERE status = 'pending' AND expires_at < NOW()`
     );
 
-    /* Lock the row */
     const { rows } = await client.query(
-      `SELECT id, referrer_email, invited_email, status
+      `SELECT id, referrer_name, referrer_email, invited_email, status
        FROM invites WHERE token = $1 FOR UPDATE`,
       [token]
     );
@@ -231,12 +231,12 @@ router.post('/accept-invite', async (req, res) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email:                invite.invited_email,
-          reactivate_existing:  false,
-          send_welcome_email:   true,
-          utm_source:           'user_invite',
-          utm_medium:           'referral',
-          utm_campaign:         invite.referrer_email,
+          email:               invite.invited_email,
+          reactivate_existing: false,
+          send_welcome_email:  true,
+          utm_source:          'user_invite',
+          utm_medium:          'referral',
+          utm_campaign:        invite.referrer_email,
           custom_fields: [
             { name: 'referral_source', value: 'user_invite' },
             { name: 'referrer_email',  value: invite.referrer_email },
@@ -245,7 +245,6 @@ router.post('/accept-invite', async (req, res) => {
       }
     );
 
-    /* 409 = already subscribed in Beehiiv — treat as success */
     if (!beehiivRes.ok && beehiivRes.status !== 409) {
       const body = await beehiivRes.text();
       console.error('Beehiiv error:', beehiivRes.status, body.slice(0, 200));
@@ -255,13 +254,11 @@ router.post('/accept-invite', async (req, res) => {
       });
     }
 
-    /* Mark as accepted */
     await client.query(
       `UPDATE invites SET status = 'accepted', accepted_at = NOW() WHERE id = $1`,
       [invite.id]
     );
 
-    /* Upsert referral stats for the referrer */
     await client.query(
       `INSERT INTO referral_stats (email, invites_sent, invites_accepted, updated_at)
        VALUES ($1, 0, 1, NOW())
