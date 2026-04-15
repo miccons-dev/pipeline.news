@@ -193,6 +193,7 @@
     /* ── Tuesday box ─────────────────────────────────────────── */
     .monday-box {
       display: flex;
+      flex-wrap: nowrap;
       align-items: center;
       justify-content: center;
       gap: 10px;
@@ -208,13 +209,14 @@
       border-radius: 50%;
       background: var(--teal);
       flex-shrink: 0;
+      align-self: center;
       animation: pulse 2s ease-in-out infinite;
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50%       { opacity: .5; transform: scale(.8); }
     }
-    .monday-box p { font-size: 15px; font-weight: 500; color: rgba(255,255,255,.85); }
+    .monday-box p { font-size: 15px; font-weight: 500; color: rgba(255,255,255,.85); margin: 0; line-height: 1.5; }
     .monday-box p strong { color: #00E4BC; }
 
     /* ── Bottoni ─────────────────────────────────────────────── */
@@ -354,8 +356,6 @@
         <p>La tua prima edizione arriva <strong>marted&igrave; prossimo</strong> &mdash; a presto! &#128236;</p>
       </div>
 
-      <a href="https://www.pipeline.news" class="btn">Torna al sito &rarr;</a>
-
       <!-- Sezione invita colleghi -->
       <div class="invite-section">
         <p class="invite-section__title">Vuoi portare un collega?</p>
@@ -364,6 +364,8 @@
           Invita un collega &rarr;
         </a>
       </div>
+
+      <a href="https://www.pipeline.news" class="btn" style="margin-top:16px;">Torna al sito &rarr;</a>
     </div>
 
   <p class="footer-note">
