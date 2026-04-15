@@ -123,6 +123,12 @@ router.post('/invite', async (req, res) => {
 
     await client.query('COMMIT');
 
+    if (sent === 0 && failed > 0) {
+      return res.status(500).json({
+        error: `Invio fallito per ${failed} email. Riprova tra qualche minuto.`,
+      });
+    }
+
     return res.json({
       sent,
       skipped,

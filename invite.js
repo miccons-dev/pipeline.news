@@ -168,6 +168,10 @@ async function submitInvites() {
 
     if (!res.ok) throw new Error(data.error || "Errore durante l'invio.");
 
+    if (data.sent === 0 && data.failed > 0) {
+      throw new Error(`Impossibile inviare gli inviti (${data.failed} error${data.failed === 1 ? 'e' : 'i'}). Riprova tra qualche minuto.`);
+    }
+
     showSuccess(data.sent, data.skipped);
   } catch (err) {
     showError(err.message || 'Impossibile inviare gli inviti. Riprova tra qualche minuto.');

@@ -6,8 +6,21 @@ const express      = require('express');
 const cors         = require('cors');
 const rateLimit    = require('express-rate-limit');
 const inviteRoutes = require('./routes/invites');
+const pool         = require('./db/pool');
 
 const app  = express();
+
+/* ── Startup migration ───────────────────────────────────── */
+(async function migrate() {
+  try {
+    await pool.query(
+      `ALTER TABLE invites ADD COLUMN IF NOT EXISTS referrer_name VARCHAR(60)`
+    );
+    console.log('✅  Migration: referrer_name column ensured');
+  } catch (err) {
+    console.error('⚠️   Migration warning:', err.message);
+  }
+})();
 const PORT = process.env.PORT || 3000;
 
 /* ── Trust proxy (Render / Railway / Fly.io / Vercel) ────── */
