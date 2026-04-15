@@ -9,7 +9,7 @@ function esc(str) {
 }
 
 /**
- * HTML invite email.
+ * HTML invite email — light theme.
  * @param {{ referrerName: string, referrerEmail: string, inviteUrl: string }} opts
  */
 function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
@@ -22,37 +22,43 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>${name} ti ha riservato un posto in Pipeline.</title>
 </head>
-<body style="margin:0;padding:0;background:#F0F6FF;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+<body style="margin:0;padding:0;background:#E8F0FC;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
 
 <table width="100%" cellpadding="0" cellspacing="0"
-       style="background:#F0F6FF;padding:40px 16px;">
+       style="background:#E8F0FC;padding:40px 16px;">
   <tr><td align="center">
 
     <table width="600" cellpadding="0" cellspacing="0"
-           style="max-width:600px;width:100%;border-radius:20px;overflow:hidden;
-                  box-shadow:0 24px 64px rgba(13,39,86,.18);">
+           style="max-width:600px;width:100%;background:#ffffff;
+                  border-radius:20px;overflow:hidden;
+                  box-shadow:0 8px 48px rgba(13,39,86,.10);">
 
       <!-- ── LOGO ─────────────────────────────────────────── -->
       <tr>
         <td align="center"
-            style="background:linear-gradient(150deg,#0D2756 0%,#1a3d78 60%,#1E6BC5 100%);
-                   padding:40px 48px 36px;">
-          <img src="https://www.pipeline.news/logo-dark.PNG"
+            style="background:#ffffff;padding:36px 48px 28px;
+                   border-bottom:3px solid #F0F6FF;">
+          <img src="https://www.pipeline.news/logo.png"
                alt="pipeline.news"
-               width="200"
-               style="display:block;margin:0 auto;max-width:200px;height:auto;border:0;" />
+               width="180"
+               style="display:block;margin:0 auto;max-width:180px;height:auto;border:0;" />
         </td>
       </tr>
 
       <!-- ── BODY ─────────────────────────────────────────── -->
       <tr>
-        <td style="background:#0D2756;padding:44px 52px 40px;">
+        <td style="background:#ffffff;padding:44px 52px 40px;">
 
           <!-- Headline -->
-          <h1 style="margin:0 0 28px;font-size:30px;font-weight:900;
-                     color:#ffffff;line-height:1.2;letter-spacing:-.5px;text-align:center;">
-            ${name} ti ha riservato<br/>
-            un posto in <span style="color:#00C4A0;">Pipeline.</span>
+          <h1 style="margin:0 0 10px;font-size:28px;font-weight:900;
+                     color:#0D2756;line-height:1.2;letter-spacing:-.5px;
+                     text-align:center;">
+            ${name} ti ha riservato
+          </h1>
+          <h1 style="margin:0 0 28px;font-size:28px;font-weight:900;
+                     color:#00C4A0;line-height:1.2;letter-spacing:-.5px;
+                     text-align:center;">
+            un posto in Pipeline.
           </h1>
 
           <!-- Divider -->
@@ -61,23 +67,24 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
                       border-radius:2px;margin:0 auto 32px;"></div>
 
           <!-- Body copy -->
-          <p style="margin:0 0 20px;font-size:16px;line-height:1.75;
-                    color:rgba(255,255,255,.80);">
+          <p style="margin:0 0 24px;font-size:16px;line-height:1.75;
+                    color:#4a5568;text-align:center;">
             Ogni martedì mattina, Pipeline consegna nella tua inbox una tattica
-            di vendita B2B concreta&nbsp;— con lo script pronto, il template email
-            da copiare e il tool gratuito per applicarla quella stessa mattina.
+            di vendita B2B concreta&nbsp;&mdash; con lo script pronto, il template
+            email da copiare e il tool gratuito per applicarla quella stessa mattina.
           </p>
 
-          <!-- Callout -->
+          <!-- Callout card -->
           <table cellpadding="0" cellspacing="0" width="100%"
-                 style="margin-bottom:20px;">
+                 style="margin-bottom:24px;">
             <tr>
-              <td style="background:rgba(0,196,160,.10);
-                         border-left:3px solid #00C4A0;
-                         border-radius:0 8px 8px 0;
-                         padding:14px 20px;">
+              <td style="background:#F0F6FF;
+                         border:1px solid #D1DCF0;
+                         border-left:4px solid #00C4A0;
+                         border-radius:0 12px 12px 0;
+                         padding:16px 22px;">
                 <p style="margin:0;font-size:15px;font-weight:700;
-                           color:#ffffff;line-height:1.5;letter-spacing:.1px;">
+                           color:#0D2756;line-height:1.5;">
                   Niente teoria. Niente motivazione.<br/>Solo cose che funzionano.
                 </p>
               </td>
@@ -86,9 +93,9 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
 
           <!-- Endorsement -->
           <p style="margin:0 0 36px;font-size:15px;line-height:1.7;
-                    color:rgba(255,255,255,.65);font-style:italic;">
+                    color:#6B7A99;text-align:center;font-style:italic;">
             ${name} pensa che valga il tuo tempo.
-            <span style="color:#ffffff;font-style:normal;font-weight:600;">Ha ragione.</span>
+            <span style="color:#0D2756;font-style:normal;font-weight:700;">Ha ragione.</span>
           </p>
 
           <!-- CTA -->
@@ -100,9 +107,9 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
                    style="display:inline-block;
                           background:linear-gradient(135deg,#00C4A0,#00A88A);
                           color:#ffffff;font-size:17px;font-weight:800;
-                          text-decoration:none;padding:18px 44px;
+                          text-decoration:none;padding:18px 48px;
                           border-radius:12px;letter-spacing:.1px;
-                          box-shadow:0 4px 20px rgba(0,196,160,.4);">
+                          box-shadow:0 4px 20px rgba(0,196,160,.35);">
                   → Iscriviti gratis a Pipeline
                 </a>
               </td>
@@ -110,7 +117,7 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
           </table>
 
           <!-- Fine print -->
-          <p style="margin:0;font-size:12px;color:rgba(255,255,255,.28);
+          <p style="margin:0;font-size:12px;color:#a0aec0;
                     text-align:center;line-height:1.8;">
             Il link è valido 7 giorni. Cancellazione in un click, sempre.<br/>
             Hai ricevuto questa email perché ${esc(referrerEmail)} ha inserito il tuo indirizzo.
@@ -121,8 +128,9 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
 
       <!-- ── FOOTER ────────────────────────────────────────── -->
       <tr>
-        <td style="background:#080F1F;padding:20px 52px;text-align:center;">
-          <p style="margin:0;font-size:12px;color:rgba(255,255,255,.22);">
+        <td style="background:#F7FAFF;border-top:1px solid #E2EAF8;
+                   padding:20px 52px;text-align:center;">
+          <p style="margin:0;font-size:12px;color:#a0aec0;">
             &copy; 2026 Pipeline.news &middot; La newsletter per i professionisti della vendita
           </p>
         </td>
