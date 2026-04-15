@@ -726,6 +726,7 @@ a  { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .nav__logo-img--footer { filter: brightness(0) invert(1) opacity(.85); }
+.footer__logo { justify-content: center; }
 .footer__tagline {
   font-size: 14px;
   color: rgba(255,255,255,.4);
@@ -909,7 +910,7 @@ a  { color: inherit; text-decoration: none; }
 /* ── Header pagina archivio ───────────────────────────────── */
 .archive-hero {
   background: linear-gradient(150deg, var(--navy) 0%, #1a3d78 60%, #1E6BC5 100%);
-  padding: 52px 0 44px;
+  padding: 36px 0 32px;
 }
 .archive-hero__back {
   display: inline-block;
@@ -966,6 +967,38 @@ a  { color: inherit; text-decoration: none; }
   padding: 28px 20px;
   font-size: 14px;
   color: var(--gray);
+}
+
+/* ── Filtri tag ───────────────────────────────────────────── */
+.archive-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 16px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.archive-tag {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gray);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+  letter-spacing: .3px;
+}
+.archive-tag:hover {
+  background: var(--bg-mid);
+  color: var(--navy);
+  border-color: var(--cyan);
+}
+.archive-tag.is-active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
 }
 
 /* ── Lista edizioni ───────────────────────────────────────── */
@@ -1036,7 +1069,7 @@ a  { color: inherit; text-decoration: none; }
 
 /* ── Pannello lettore ─────────────────────────────────────── */
 .archive-reader {
-  padding: 40px 56px 64px;
+  padding: 32px 40px 48px;
   min-height: 600px;
 }
 
@@ -1147,6 +1180,7 @@ a  { color: inherit; text-decoration: none; }
   line-height: 1.8;
   color: #2a3a5a;
   max-width: 720px;
+  margin: 0 auto;
 }
 .archive-reader__body img {
   max-width: 100%;

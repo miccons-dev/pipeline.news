@@ -18,6 +18,7 @@ function formatDate(unixSeconds) {
 
 /* ── DOM refs ────────────────────────────────────────────── */
 const loadingEl   = document.getElementById('archive-loading');
+const tagsEl      = document.getElementById('archive-tags');
 const listEl      = document.getElementById('archive-list');
 const emptyEl     = document.getElementById('archive-empty');
 const articleEl   = document.getElementById('archive-article');
@@ -30,14 +31,58 @@ const extLinkEl   = document.getElementById('reader-external-link');
 const backBtn     = document.getElementById('reader-back-btn');
 
 /* ── State ───────────────────────────────────────────────── */
+let allPosts = [];
 let posts    = [];
-let activeId = null;
+let activeId  = null;
+let activeTag = null;
 
 /* ── Nav shadow ──────────────────────────────────────────── */
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('nav--scrolled', window.scrollY > 20);
 }, { passive: true });
+
+/* ── Tag filtering ───────────────────────────────────────── */
+function renderTags(allPostsData) {
+  const tagSet = new Set();
+  allPostsData.forEach(p => (p.tags || []).forEach(t => t && tagSet.add(t)));
+  const tags = [...tagSet].sort();
+  if (tags.length === 0) return;
+
+  tagsEl.innerHTML =
+    `<button class="archive-tag is-active" data-tag="">Tutti</button>` +
+    tags.map(t => `<button class="archive-tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('');
+
+  tagsEl.hidden = false;
+
+  tagsEl.addEventListener('click', e => {
+    const btn = e.target.closest('.archive-tag');
+    if (!btn) return;
+    const tag = btn.dataset.tag;
+    activeTag = tag || null;
+
+    tagsEl.querySelectorAll('.archive-tag').forEach(b =>
+      b.classList.toggle('is-active', b.dataset.tag === (activeTag || ''))
+    );
+
+    filterAndRender();
+  });
+}
+
+function filterAndRender() {
+  const filtered = activeTag
+    ? allPosts.filter(p => (p.tags || []).includes(activeTag))
+    : allPosts;
+  renderList(filtered);
+
+  /* If active post is not in filtered set, reset reader */
+  if (activeId && !filtered.find(p => p.id === activeId)) {
+    articleEl.hidden = true;
+    emptyEl.hidden   = false;
+    activeId         = null;
+    history.replaceState(null, '', location.pathname);
+  }
+}
 
 /* ── Select post ─────────────────────────────────────────── */
 function selectPost(id) {
@@ -52,15 +97,14 @@ function selectPost(id) {
   });
 
   /* Popola il lettore */
-  dateEl.textContent    = formatDate(post.publish_date);
-  titleEl.textContent   = post.title;
+  dateEl.textContent     = formatDate(post.publish_date);
+  titleEl.textContent    = post.title;
   subtitleEl.textContent = post.subtitle || post.preview_text || '';
 
   if (post.content_html && post.content_html.trim()) {
-    /* Estrae il corpo dal documento HTML completo di Beehiiv */
     const parser = new DOMParser();
     const doc    = parser.parseFromString(post.content_html, 'text/html');
-    bodyEl.innerHTML  = doc.body ? doc.body.innerHTML : post.content_html;
+    bodyEl.innerHTML   = doc.body ? doc.body.innerHTML : post.content_html;
     noContentEl.hidden = true;
     bodyEl.hidden      = false;
   } else {
@@ -70,16 +114,13 @@ function selectPost(id) {
     extLinkEl.href     = post.web_url;
   }
 
-  /* Mostra l'articolo */
   emptyEl.hidden   = true;
   articleEl.hidden = false;
 
-  /* Su mobile scrolla al lettore */
   if (window.innerWidth < 900) {
     articleEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  /* Aggiorna hash URL per link diretto */
   history.replaceState(null, '', '#' + id);
 }
 
@@ -93,7 +134,6 @@ backBtn.addEventListener('click', () => {
     el.setAttribute('aria-selected', 'false');
   });
   history.replaceState(null, '', location.pathname);
-  /* Su mobile scrolla su alla lista */
   if (window.innerWidth < 900) {
     document.getElementById('archive-sidebar').scrollIntoView({ behavior: 'smooth' });
   }
@@ -102,6 +142,12 @@ backBtn.addEventListener('click', () => {
 /* ── Render lista ────────────────────────────────────────── */
 function renderList(data) {
   posts = data;
+
+  if (data.length === 0) {
+    listEl.innerHTML = '<li class="archive-list__empty">Nessuna edizione per questo tag.</li>';
+    return;
+  }
+
   listEl.innerHTML = data.map((p, i) => `
     <li class="archive-list__item"
         data-id="${escapeHtml(p.id)}"
@@ -109,7 +155,7 @@ function renderList(data) {
         tabindex="0"
         aria-selected="false"
         aria-label="${escapeHtml(p.title)}">
-      <span class="archive-list__num">#${data.length - i}</span>
+      <span class="archive-list__num">#${allPosts.length - allPosts.findIndex(ap => ap.id === p.id)}</span>
       <div class="archive-list__info">
         <span class="archive-list__date">${formatDate(p.publish_date)}</span>
         <span class="archive-list__title">${escapeHtml(p.title)}</span>
@@ -142,11 +188,13 @@ async function loadArchive() {
       return;
     }
 
-    renderList(data.posts);
+    allPosts = data.posts;
+    renderTags(allPosts);
+    renderList(allPosts);
 
     /* Apre il post dall'hash URL (link diretto) */
     const hash = location.hash.slice(1);
-    if (hash && data.posts.find(p => p.id === hash)) {
+    if (hash && allPosts.find(p => p.id === hash)) {
       selectPost(hash);
     }
 

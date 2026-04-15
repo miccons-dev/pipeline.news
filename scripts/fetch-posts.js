@@ -47,6 +47,7 @@ function mapPost(p, includeContent = false) {
   };
   if (includeContent) {
     post.content_html = p.content?.free?.web || '';
+    post.tags = (p.tags || []).map(t => typeof t === 'string' ? t : (t.name || '')).filter(Boolean);
   }
   return post;
 }
