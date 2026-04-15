@@ -321,6 +321,21 @@
       <p>La tua prima edizione arriva <strong>marted&igrave; prossimo</strong> &mdash; a presto! &#128236;</p>
     </div>
     <a href="https://www.pipeline.news" class="btn">Torna al sito &rarr;</a>
+
+    <!-- Invite section -->
+    <div style="margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.10);">
+      <p style="font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:8px;">
+        Vuoi portare un collega?
+      </p>
+      <p style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:16px;line-height:1.55;">
+        Invita il tuo team in 30 secondi. Riceveranno un invito personalizzato.
+      </p>
+      <a id="inviteLink" href="invite.html" class="btn"
+         style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+                box-shadow:none;font-size:14px;color:rgba(255,255,255,.78);">
+        Invita un collega &rarr;
+      </a>
+    </div>
   </div>
 
   <p class="footer-note">
@@ -328,6 +343,17 @@
     &nbsp;&middot;&nbsp;
     <a href="https://www.pipeline.news">pipeline.news</a>
   </p>
+
+  <script>
+    /* Pre-fill referrer in invite link from URL param ?email= */
+    (function () {
+      var email = new URLSearchParams(location.search).get('email');
+      var link  = document.getElementById('inviteLink');
+      if (email && link) {
+        link.href = 'invite.html?from=' + encodeURIComponent(email);
+      }
+    })();
+  </script>
 
   <script>
     (function () {
