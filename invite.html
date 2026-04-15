@@ -20,6 +20,8 @@
       --red:    #ff5b5b;
     }
 
+    html { background: var(--navy); }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     [hidden] { display: none !important; }
 
@@ -40,7 +42,7 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% -10%,
+      background: radial-gradient(ellipse 80% 60% at 50% 60%,
         rgba(0,196,160,.14) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0;
