@@ -8,7 +8,7 @@
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     /* ── Palette: identica a index.html ─────────────────────── */
     :root {
@@ -30,9 +30,6 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 24px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -47,23 +44,55 @@
       z-index: 0;
     }
 
-    /* ── Logo: flusso normale, non fixed ─────────────────────── */
-    .top-logo {
+    /* ── Navbar ──────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,39,86,.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav__logo { display: flex; align-items: center; }
+    .nav__logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+    .nav__cta {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .nav__cta:hover { color: var(--teal); }
+
+    /* ── Contenuto principale ────────────────────────────────── */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
       position: relative;
       z-index: 1;
-      margin-bottom: 32px;
-    }
-    .top-logo img {
-      height: auto;
-      max-width: 260px;
-      width: 100%;
-      display: block;
     }
 
     /* ── Card ────────────────────────────────────────────────── */
     .card {
-      position: relative;
-      z-index: 1;
       max-width: 600px;
       width: 100%;
       background: rgba(255,255,255,.06);
@@ -190,7 +219,7 @@
     }
     .check-text strong { color: var(--white); font-weight: 600; }
 
-    /* ── Monday box ──────────────────────────────────────────── */
+    /* ── Tuesday box ─────────────────────────────────────────── */
     .monday-box {
       display: flex;
       align-items: center;
@@ -217,7 +246,7 @@
     .monday-box p { font-size: 15px; font-weight: 500; color: rgba(255,255,255,.85); }
     .monday-box p strong { color: #00E4BC; }
 
-    /* ── Bottone ─────────────────────────────────────────────── */
+    /* ── Bottoni ─────────────────────────────────────────────── */
     .btn {
       display: inline-block;
       background: linear-gradient(135deg, var(--teal), var(--teal-d));
@@ -235,11 +264,40 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 28px rgba(0,196,160,.5);
     }
+    .btn--ghost {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: none;
+      font-size: 14px;
+      color: rgba(255,255,255,.78);
+    }
+    .btn--ghost:hover {
+      background: rgba(255,255,255,.13);
+      box-shadow: none;
+      transform: translateY(-1px);
+    }
+
+    /* ── Sezione invito colleghi ─────────────────────────────── */
+    .invite-section {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .invite-section__title {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 6px;
+    }
+    .invite-section__sub {
+      font-size: 13px;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
 
     /* ── Footer ──────────────────────────────────────────────── */
     .footer-note {
-      position: relative;
-      z-index: 1;
       margin-top: 28px;
       font-size: 13px;
       color: rgba(255,255,255,.30);
@@ -280,72 +338,79 @@
 </head>
 <body>
 
-  <!-- Logo in flusso normale — non rimane fisso scorrendo -->
-  <a href="https://www.pipeline.news" class="top-logo">
-    <img src="logo-dark.PNG" alt="Pipeline.news"
-         onerror="this.src='logo.png';this.onerror=null" />
-  </a>
+  <!-- ─── NAV ──────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="https://www.pipeline.news" class="nav__logo">
+        <img src="logo-dark.PNG" alt="Pipeline.news"
+             onerror="this.src='logo.png';this.onerror=null" />
+      </a>
+      <a href="https://www.pipeline.news" class="nav__cta">Torna al sito →</a>
+    </div>
+  </header>
 
   <div class="confetti-wrap" id="confetti"></div>
 
-  <div class="card">
-    <div class="icon-wrap">&#127881;</div>
-    <div class="badge">&#10003; &nbsp;Iscrizione confermata</div>
-    <h1>Sei dentro,<br /><span>benvenuto in Pipeline.</span></h1>
-    <p class="sub">
-      Non devi fare altro. Nessuna conferma, nessun passaggio aggiuntivo.<br />
-      La tua iscrizione &egrave; attiva da adesso.
+  <!-- ─── CONTENUTO ────────────────────────────────────────── -->
+  <main class="main">
+
+    <div class="card">
+      <div class="icon-wrap">&#127881;</div>
+      <div class="badge">&#10003; &nbsp;Iscrizione confermata</div>
+      <h1>Sei dentro,<br /><span>benvenuto in Pipeline.</span></h1>
+      <p class="sub">
+        Non devi fare altro. Nessuna conferma, nessun passaggio aggiuntivo.<br />
+        La tua iscrizione &egrave; attiva da adesso.
+      </p>
+      <div class="divider"></div>
+
+      <div class="checklist">
+        <h3>Cosa aspettarti</h3>
+        <div class="check-item">
+          <div class="check-icon">&#127919;</div>
+          <p class="check-text"><strong>Una email ogni marted&igrave; mattina</strong> &mdash; strategie, casi reali e strumenti per vendere meglio.</p>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">&#9201;</div>
+          <p class="check-text"><strong>5 minuti di lettura</strong> &mdash; densi di contenuto, zero riempitivo.</p>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">&#9993;</div>
+          <p class="check-text">Mittente: <strong>pipeline.news</strong> &mdash; aggiungilo ai contatti per non perderti nessuna edizione.</p>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">&#128683;</div>
+          <p class="check-text"><strong>Zero spam</strong> &mdash; solo contenuti selezionati e, quando presente, una sponsorizzazione rilevante per chi lavora nelle vendite.</p>
+        </div>
+      </div>
+
+      <div class="monday-box">
+        <div class="dot"></div>
+        <p>La tua prima edizione arriva <strong>marted&igrave; prossimo</strong> &mdash; a presto! &#128236;</p>
+      </div>
+
+      <a href="https://www.pipeline.news" class="btn">Torna al sito &rarr;</a>
+
+      <!-- Sezione invita colleghi -->
+      <div class="invite-section">
+        <p class="invite-section__title">Vuoi portare un collega?</p>
+        <p class="invite-section__sub">Invita il tuo team in 30 secondi. Riceveranno un invito personalizzato.</p>
+        <a id="inviteLink" href="invite.html" class="btn btn--ghost">
+          Invita un collega &rarr;
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-note">
+      Hai domande? Scrivi a <a href="mailto:crew@pipeline.news">crew@pipeline.news</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.pipeline.news">pipeline.news</a>
     </p>
-    <div class="divider"></div>
-    <div class="checklist">
-      <h3>Cosa aspettarti</h3>
-      <div class="check-item">
-        <div class="check-icon">&#127919;</div>
-        <p class="check-text"><strong>Una email ogni marted&igrave; mattina</strong> &mdash; strategie, casi reali e strumenti per vendere meglio.</p>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">&#9201;</div>
-        <p class="check-text"><strong>5 minuti di lettura</strong> &mdash; densi di contenuto, zero riempitivo.</p>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">&#9993;</div>
-        <p class="check-text">Mittente: <strong>pipeline.news</strong> &mdash; aggiungilo ai contatti per non perderti nessuna edizione.</p>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">&#128683;</div>
-        <p class="check-text"><strong>Zero spam</strong> &mdash; solo contenuti selezionati e, quando presente, una sponsorizzazione rilevante per chi lavora nelle vendite.</p>
-      </div>
-    </div>
-    <div class="monday-box">
-      <div class="dot"></div>
-      <p>La tua prima edizione arriva <strong>marted&igrave; prossimo</strong> &mdash; a presto! &#128236;</p>
-    </div>
-    <a href="https://www.pipeline.news" class="btn">Torna al sito &rarr;</a>
 
-    <!-- Invite section -->
-    <div style="margin-top:28px;padding-top:28px;border-top:1px solid rgba(255,255,255,.10);">
-      <p style="font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:8px;">
-        Vuoi portare un collega?
-      </p>
-      <p style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:16px;line-height:1.55;">
-        Invita il tuo team in 30 secondi. Riceveranno un invito personalizzato.
-      </p>
-      <a id="inviteLink" href="invite.html" class="btn"
-         style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
-                box-shadow:none;font-size:14px;color:rgba(255,255,255,.78);">
-        Invita un collega &rarr;
-      </a>
-    </div>
-  </div>
-
-  <p class="footer-note">
-    Hai domande? Scrivi a <a href="mailto:crew@pipeline.news">crew@pipeline.news</a>
-    &nbsp;&middot;&nbsp;
-    <a href="https://www.pipeline.news">pipeline.news</a>
-  </p>
+  </main>
 
   <script>
-    /* Pre-fill referrer in invite link from URL param ?email= */
+    /* Pre-fill referrer nel link invita da ?email= */
     (function () {
       var email = new URLSearchParams(location.search).get('email');
       var link  = document.getElementById('inviteLink');
@@ -374,5 +439,6 @@
       }
     })();
   </script>
+
 </body>
 </html>
