@@ -2,7 +2,7 @@
 'use strict';
 
 /* ── Config ──────────────────────────────────────────────── */
-const API_BASE = 'https://api.pipeline.news';
+const API_BASE = 'https://pipeline-news.onrender.com';
 
 /* ── DOM refs ────────────────────────────────────────────── */
 const stateLoading = document.getElementById('state-loading');

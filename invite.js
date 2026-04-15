@@ -3,7 +3,7 @@
 
 /* ── Config ──────────────────────────────────────────────── */
 // Set this to your deployed API URL before going live
-const API_BASE = 'https://api.pipeline.news';
+const API_BASE = 'https://pipeline-news.onrender.com';
 const MAX_CHIPS = 10;
 const EMAIL_RE  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
