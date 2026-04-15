@@ -203,19 +203,7 @@
       padding: 16px 24px;
       margin-bottom: 36px;
     }
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--teal);
-      flex-shrink: 0;
-      align-self: center;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: .5; transform: scale(.8); }
-    }
+    .monday-box-icon { font-size: 20px; flex-shrink: 0; line-height: 1; }
     .monday-box p { font-size: 15px; font-weight: 500; color: rgba(255,255,255,.85); margin: 0; line-height: 1.5; }
     .monday-box p strong { color: #00E4BC; }
 
@@ -268,6 +256,17 @@
       margin-bottom: 16px;
       line-height: 1.55;
     }
+
+    /* ── Link torna alla home ────────────────────────────────── */
+    .link-back {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,.45);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    .link-back:hover { color: var(--teal); }
 
     /* ── Footer ──────────────────────────────────────────────── */
     .footer-note {
@@ -352,8 +351,8 @@
       </div>
 
       <div class="monday-box">
-        <div class="dot"></div>
-        <p>La tua prima edizione arriva <strong>marted&igrave; prossimo</strong> &mdash; a presto! &#128236;</p>
+        <span class="monday-box-icon">&#128236;</span>
+        <p>La tua prima edizione arriva <strong>marted&igrave; prossimo</strong> &mdash; a presto!</p>
       </div>
 
       <!-- Sezione invita colleghi -->
@@ -365,7 +364,7 @@
         </a>
       </div>
 
-      <a href="https://www.pipeline.news" class="btn" style="margin-top:16px;">Torna al sito &rarr;</a>
+      <a href="https://www.pipeline.news" class="link-back">&#8592; Torna alla home</a>
     </div>
 
   <p class="footer-note">
