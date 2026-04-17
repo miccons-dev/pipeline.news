@@ -72,7 +72,11 @@ function postHtml(p) {
     return `<span class="post-tag" style="background:${c.bg};border-color:${c.bd};color:${c.c}">${esc(t)}</span>`;
   }).join('');
 
-  const href = (p.web_url && p.web_url !== '#') ? esc(p.web_url) : null;
+  const bodyHtml = p.content_html
+    ? `<div class="blog-post__content">${p.content_html}</div>`
+    : p.preview_text
+      ? `<p class="blog-post__excerpt">${esc(p.preview_text)}</p>`
+      : '';
 
   return `
     <article class="blog-post">
@@ -82,10 +86,7 @@ function postHtml(p) {
       </div>
       <h2 class="blog-post__title">${esc(p.title)}</h2>
       ${p.subtitle ? `<p class="blog-post__subtitle">${esc(p.subtitle)}</p>` : ''}
-      ${p.preview_text ? `<p class="blog-post__excerpt">${esc(p.preview_text)}</p>` : ''}
-      ${href
-        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="blog-post__link">Leggi l'articolo completo →</a>`
-        : ''}
+      ${bodyHtml}
     </article>`;
 }
 
