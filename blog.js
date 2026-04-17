@@ -1,14 +1,17 @@
 'use strict';
 
-const filterPills = document.getElementById('filterPills');
-const blogFilters = document.getElementById('blogFilters');
-const blogGrid    = document.getElementById('blogGrid');
-const blogLoading = document.getElementById('blogLoading');
-const blogEmpty   = document.getElementById('blogEmpty');
-const emptyReset  = document.getElementById('emptyReset');
+const filterPills  = document.getElementById('filterPills');
+const blogFilters  = document.getElementById('blogFilters');
+const blogFeed     = document.getElementById('blogFeed');
+const blogLoading  = document.getElementById('blogLoading');
+const blogEmpty    = document.getElementById('blogEmpty');
+const emptyReset   = document.getElementById('emptyReset');
+const paginationEl = document.getElementById('blogPagination');
 
-let allPosts  = [];
-let activeTag = '';
+const PER_PAGE = 5;
+let allPosts   = [];
+let activeTag  = '';
+let currentPage = 1;
 
 const MONTHS = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
 
@@ -20,27 +23,23 @@ function formatDate(ts) {
 
 function esc(str) {
   return String(str ?? '')
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* ── Tag colours (cycling palette) ──────────────────────── */
-const TAG_PALETTE = [
-  { bg: 'rgba(30,107,197,.09)',  border: 'rgba(30,107,197,.22)',  color: '#1E6BC5' },
-  { bg: 'rgba(0,196,160,.09)',   border: 'rgba(0,196,160,.28)',   color: '#00A88A' },
-  { bg: 'rgba(91,184,245,.12)',  border: 'rgba(91,184,245,.32)',  color: '#1a6fa8' },
-  { bg: 'rgba(99,102,241,.09)',  border: 'rgba(99,102,241,.25)',  color: '#4f46e5' },
-  { bg: 'rgba(245,158,11,.10)',  border: 'rgba(245,158,11,.28)',  color: '#b45309' },
+/* ── Tag colour palette ──────────────────────────────────── */
+const PALETTE = [
+  { bg:'rgba(30,107,197,.09)',  bd:'rgba(30,107,197,.22)', c:'#1E6BC5' },
+  { bg:'rgba(0,196,160,.09)',   bd:'rgba(0,196,160,.28)',  c:'#00A88A' },
+  { bg:'rgba(91,184,245,.12)',  bd:'rgba(91,184,245,.32)', c:'#1a6fa8' },
+  { bg:'rgba(99,102,241,.09)',  bd:'rgba(99,102,241,.25)', c:'#4f46e5' },
+  { bg:'rgba(245,158,11,.10)',  bd:'rgba(245,158,11,.28)', c:'#b45309' },
 ];
-const tagColorMap = {};
-let tagColorIndex = 0;
-
+const colorMap = {};
+let colorIdx = 0;
 function tagColor(tag) {
-  if (!tagColorMap[tag]) {
-    tagColorMap[tag] = TAG_PALETTE[tagColorIndex % TAG_PALETTE.length];
-    tagColorIndex++;
-  }
-  return tagColorMap[tag];
+  if (!colorMap[tag]) colorMap[tag] = PALETTE[colorIdx++ % PALETTE.length];
+  return colorMap[tag];
 }
 
 /* ── Filters ─────────────────────────────────────────────── */
@@ -53,85 +52,119 @@ function collectTags() {
 function renderFilters(tags) {
   filterPills.innerHTML = '';
   blogFilters.hidden = tags.length === 0;
-  if (tags.length === 0) return;
+  if (!tags.length) return;
 
-  const makeBtn = (label, tag) => {
+  const mkBtn = (label, tag) => {
     const btn = document.createElement('button');
-    btn.className = 'blog-filter-btn' + (activeTag === tag ? ' is-active' : '');
+    btn.className = 'page-filter-btn' + (activeTag === tag ? ' is-active' : '');
     btn.textContent = label;
     btn.dataset.tag = tag;
     filterPills.appendChild(btn);
   };
-
-  makeBtn('Tutti', '');
-  tags.forEach(t => makeBtn(t, t));
+  mkBtn('Tutti', '');
+  tags.forEach(t => mkBtn(t, t));
 }
 
-/* ── Card rendering ──────────────────────────────────────── */
-function cardHtml(p) {
-  const tags = (p.tags || []);
-  const tagsHtml = tags.map(t => {
+/* ── Article HTML ────────────────────────────────────────── */
+function postHtml(p) {
+  const tagsHtml = (p.tags || []).map(t => {
     const c = tagColor(t);
-    return `<span class="blog-card__tag" style="background:${c.bg};border-color:${c.border};color:${c.color}">${esc(t)}</span>`;
+    return `<span class="post-tag" style="background:${c.bg};border-color:${c.bd};color:${c.c}">${esc(t)}</span>`;
   }).join('');
 
-  const thumb = p.thumbnail_url
-    ? `<div class="blog-card__thumb blog-card__thumb--img" style="background-image:url('${esc(p.thumbnail_url)}')" role="img" aria-label="${esc(p.title)}"></div>`
-    : `<div class="blog-card__thumb"></div>`;
-
-  const href   = (p.web_url && p.web_url !== '#') ? esc(p.web_url) : null;
-  const tag    = href ? 'a' : 'div';
-  const attrs  = href ? ` href="${href}" target="_blank" rel="noopener noreferrer"` : '';
+  const href = (p.web_url && p.web_url !== '#') ? esc(p.web_url) : null;
 
   return `
-    <${tag}${attrs} class="blog-card">
-      ${thumb}
-      <div class="blog-card__body">
-        ${tagsHtml ? `<div class="blog-card__tags">${tagsHtml}</div>` : ''}
-        <h2 class="blog-card__title">${esc(p.title)}</h2>
-        ${p.preview_text
-          ? `<p class="blog-card__preview">${esc(p.preview_text)}</p>`
-          : ''}
-        <div class="blog-card__footer">
-          <span class="blog-card__date">${formatDate(p.publish_date)}</span>
-          ${href ? '<span class="blog-card__cta">Leggi →</span>' : ''}
-        </div>
+    <article class="blog-post">
+      <div class="blog-post__meta">
+        ${tagsHtml ? `<div class="blog-post__tags">${tagsHtml}</div>` : ''}
+        <time class="blog-post__date">${formatDate(p.publish_date)}</time>
       </div>
-    </${tag}>`;
+      <h2 class="blog-post__title">${esc(p.title)}</h2>
+      ${p.subtitle ? `<p class="blog-post__subtitle">${esc(p.subtitle)}</p>` : ''}
+      ${p.preview_text ? `<p class="blog-post__excerpt">${esc(p.preview_text)}</p>` : ''}
+      ${href
+        ? `<a href="${href}" target="_blank" rel="noopener noreferrer" class="blog-post__link">Leggi l'articolo completo →</a>`
+        : ''}
+    </article>`;
 }
 
-/* ── Grid rendering ──────────────────────────────────────── */
-function renderGrid() {
+/* ── Pagination ──────────────────────────────────────────── */
+function renderPagination(totalPages) {
+  if (totalPages <= 1) { paginationEl.hidden = true; return; }
+  paginationEl.hidden = false;
+
+  const items = [];
+  items.push(`<button class="pag-btn" data-page="${currentPage - 1}" ${currentPage === 1 ? 'disabled' : ''}>← Precedenti</button>`);
+
+  const delta = 2;
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= delta) {
+      items.push(`<button class="pag-btn${i === currentPage ? ' is-active' : ''}" data-page="${i}">${i}</button>`);
+    } else if (Math.abs(i - currentPage) === delta + 1) {
+      items.push(`<span class="pag-ellipsis">…</span>`);
+    }
+  }
+
+  items.push(`<button class="pag-btn" data-page="${currentPage + 1}" ${currentPage === totalPages ? 'disabled' : ''}>Successive →</button>`);
+  paginationEl.innerHTML = items.join('');
+}
+
+/* ── Feed render ─────────────────────────────────────────── */
+function renderFeed() {
   const filtered = activeTag
     ? allPosts.filter(p => (p.tags || []).includes(activeTag))
     : allPosts;
 
-  const empty = filtered.length === 0;
-  blogGrid.hidden  = empty;
-  blogEmpty.hidden = !empty;
+  const total = filtered.length;
+  const totalPages = Math.ceil(total / PER_PAGE) || 1;
+  if (currentPage > totalPages) currentPage = 1;
 
-  if (!empty) blogGrid.innerHTML = filtered.map(cardHtml).join('');
+  const page = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+
+  blogFeed.hidden  = total === 0;
+  blogEmpty.hidden = total > 0;
+
+  if (total === 0) { paginationEl.hidden = true; return; }
+
+  blogFeed.innerHTML = page.map(postHtml).join('');
+  renderPagination(totalPages);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /* ── Events ──────────────────────────────────────────────── */
 filterPills.addEventListener('click', e => {
-  const btn = e.target.closest('.blog-filter-btn');
+  const btn = e.target.closest('.page-filter-btn');
   if (!btn) return;
   activeTag = btn.dataset.tag;
+  currentPage = 1;
   renderFilters(collectTags());
-  renderGrid();
+  renderFeed();
   const url = new URL(location.href);
   activeTag ? url.searchParams.set('tag', activeTag) : url.searchParams.delete('tag');
+  url.searchParams.delete('p');
+  history.replaceState(null, '', url);
+});
+
+paginationEl.addEventListener('click', e => {
+  const btn = e.target.closest('.pag-btn');
+  if (!btn || btn.disabled) return;
+  currentPage = parseInt(btn.dataset.page, 10);
+  renderFeed();
+  const url = new URL(location.href);
+  currentPage > 1 ? url.searchParams.set('p', currentPage) : url.searchParams.delete('p');
   history.replaceState(null, '', url);
 });
 
 emptyReset.addEventListener('click', () => {
   activeTag = '';
+  currentPage = 1;
   const url = new URL(location.href);
   url.searchParams.delete('tag');
+  url.searchParams.delete('p');
   history.replaceState(null, '', url);
   renderFilters(collectTags());
-  renderGrid();
+  renderFeed();
 });
 
 /* ── Init ────────────────────────────────────────────────── */
@@ -142,15 +175,14 @@ async function loadBlog() {
     const data = await res.json();
     allPosts = (data.posts || []).filter(p => p.title);
 
-    activeTag = new URLSearchParams(location.search).get('tag') || '';
+    const params = new URLSearchParams(location.search);
+    activeTag   = params.get('tag') || '';
+    currentPage = parseInt(params.get('p'), 10) || 1;
 
     blogLoading.hidden = true;
-
-    /* Pre-assign tag colours in stable order */
     collectTags().forEach(t => tagColor(t));
-
     renderFilters(collectTags());
-    renderGrid();
+    renderFeed();
   } catch {
     blogLoading.innerHTML =
       '<span style="color:var(--red,#e53e3e)">Impossibile caricare gli articoli. Riprova più tardi.</span>';

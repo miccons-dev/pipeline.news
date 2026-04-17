@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog — Pipeline</title>
-  <meta name="description" content="Strategie di vendita B2B, casi reali e strumenti pratici. Tutte le edizioni di Pipeline, filtrabili per argomento." />
+  <meta name="description" content="Approfondimenti su vendita B2B, leadership commerciale e crescita professionale. Articoli esclusivi del team Pipeline." />
   <link rel="canonical" href="https://www.pipeline.news/blog.html" />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,34 +22,37 @@
         <img src="logo.png" alt="Pipeline.news" class="nav__logo-img"
              onerror="this.src='logo.svg';this.onerror=null" />
       </a>
-      <nav class="nav__links" aria-label="Navigazione principale">
-        <a href="/blog.html" class="nav__link is-active">Blog</a>
-        <a href="/archive.html" class="nav__link">Archivio</a>
-      </nav>
-      <a href="/#iscriviti" class="btn btn--nav">Iscriviti gratis →</a>
+      <div class="nav__right">
+        <nav class="nav__links" aria-label="Navigazione principale">
+          <a href="/blog.html" class="nav__link is-active">Blog</a>
+          <a href="/archive.html" class="nav__link">Archivio</a>
+        </nav>
+        <a href="/#iscriviti" class="btn btn--nav">Iscriviti gratis →</a>
+      </div>
     </div>
   </header>
 
   <!-- ─── HERO ─────────────────────────────────────────────────── -->
-  <section class="blog-hero">
-    <div class="container">
-      <div class="blog-hero__badge">✍️ Newsletter settimanale</div>
-      <h1 class="blog-hero__title">Blog Pipeline</h1>
-      <p class="blog-hero__sub">
-        Strategie, casi reali e strumenti per chi vive di vendita.<br />
-        Ogni articolo è un'edizione pubblicata ogni martedì.
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <div class="page-hero__badge">✍️ Approfondimenti & Guide</div>
+      <h1 class="page-hero__title">Blog</h1>
+      <p class="page-hero__sub">
+        Articoli di approfondimento su vendita B2B, leadership commerciale
+        e crescita professionale — contenuti diversi dalla newsletter settimanale,
+        pensati per chi vuole andare più in profondità.
       </p>
     </div>
   </section>
 
   <!-- ─── FILTRI TAG ────────────────────────────────────────────── -->
-  <div class="blog-filters" id="blogFilters" hidden>
+  <div class="page-filters" id="blogFilters" hidden>
     <div class="container">
-      <div class="blog-filters__pills" id="filterPills" role="group" aria-label="Filtra per argomento"></div>
+      <div class="page-filters__pills" id="filterPills" role="group" aria-label="Filtra per argomento"></div>
     </div>
   </div>
 
-  <!-- ─── GRIGLIA ARTICOLI ──────────────────────────────────────── -->
+  <!-- ─── FEED ARTICOLI ────────────────────────────────────────── -->
   <section class="blog-section">
     <div class="container">
 
@@ -58,13 +61,15 @@
         Caricamento articoli…
       </div>
 
-      <div class="blog-grid" id="blogGrid"></div>
+      <div class="blog-feed" id="blogFeed"></div>
 
       <div class="blog-empty" id="blogEmpty" hidden>
         <div class="blog-empty__icon">📭</div>
         <p class="blog-empty__text">Nessun articolo trovato per questo tag.</p>
         <button class="blog-empty__reset" id="emptyReset">Mostra tutti →</button>
       </div>
+
+      <nav class="blog-pagination" id="blogPagination" hidden aria-label="Pagine"></nav>
 
     </div>
   </section>
