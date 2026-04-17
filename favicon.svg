@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="pipelineGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00C4A0"/>
+      <stop offset="1" stop-color="#1E6BC5"/>
+    </linearGradient>
+    <clipPath id="roundClip">
+      <rect x="0" y="0" width="64" height="64" rx="14"/>
+    </clipPath>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#pipelineGrad)"/>
+  <g clip-path="url(#roundClip)">
+    <path fill="#ffffff" fill-rule="evenodd" d="M18 12 H37 C49 12 49 35 37 35 H28 V52 H18 Z M28 20 H35 C40 20 40 27 35 27 H28 Z"/>
+    <rect x="0" y="24" width="64" height="2.5" fill="url(#pipelineGrad)"/>
+    <rect x="0" y="39" width="64" height="2.5" fill="url(#pipelineGrad)"/>
+  </g>
+</svg>
