@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il C-level risponde. Solo se gli dai un motivo.",
+      "subtitle": "Come scrivere al decisore senza finire ignorato",
+      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale dedica davvero alla vendita in una giornata lavorativa di 8 ore. Il rest",
+      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "publish_date": 1776203280,
+      "thumbnail_url": null,
+      "tags": [
+        "primo contatto",
+        "decisori senior"
+      ]
+    },
+    {
       "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
       "kind": "article",
       "title": "Tre righe che un CEO legge. Le altre no.",
@@ -266,21 +280,7 @@
         "prenotazione automatica",
         "ciclo vendita"
       ]
-    },
-    {
-      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "kind": "article",
-      "title": "Quattro livelli di personalizzazione: usi solo il primo",
-      "subtitle": "Mettere il nome nell'oggetto non è personalizzazione. È prendere in giro te stesso.",
-      "preview_text": "La maggior parte delle email commerciali italiane ha un problema strutturale: sono generiche con una spruzzata di nome proprio. 'Ciao Marco,",
-      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "publish_date": 1776123180,
-      "thumbnail_url": null,
-      "tags": [
-        "personalizzazione email",
-        "prospecting"
-      ]
     }
   ],
-  "generated": 1776551896
+  "generated": 1776551899
 }
