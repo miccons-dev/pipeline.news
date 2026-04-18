@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "kind": "newsletter",
+      "title": "L'evento da 10 persone che ha cambiato tutto",
+      "subtitle": "Come trasformare l'adozione dell'IA in un vantaggio commerciale reale — senza aspettare il consenso di nessuno",
+      "preview_text": "Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l&#x27;adozione dell&#x27;IA in azienda dal 10% al 97% con un singolo evento",
+      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "publish_date": 1775547000,
+      "thumbnail_url": null,
+      "tags": [
+        "adozione ia",
+        "team sales",
+        "formazione",
+        "produttività",
+        "pmi"
+      ]
+    },
+    {
       "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
       "kind": "newsletter",
       "title": "Il C-level risponde. Solo se gli dai un motivo.",
@@ -70,23 +87,6 @@
       ]
     },
     {
-      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "kind": "newsletter",
-      "title": "L'evento da 10 persone che ha cambiato tutto",
-      "subtitle": "Come trasformare l'adozione dell'IA in un vantaggio commerciale reale — senza aspettare il consenso di nessuno",
-      "preview_text": "Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l&#x27;adozione dell&#x27;IA in azienda dal 10% al 97% con un singolo evento",
-      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "publish_date": 1776466081,
-      "thumbnail_url": null,
-      "tags": [
-        "adozione ia",
-        "team sales",
-        "formazione",
-        "produttività",
-        "pmi"
-      ]
-    },
-    {
       "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
       "title": "Dove metti la riprova sociale cambia tutto",
       "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
@@ -114,5 +114,5 @@
       "thumbnail_url": null
     }
   ],
-  "generated": 1776546221
+  "generated": 1776546223
 }
