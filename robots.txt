@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /scripts/
-Disallow: /.github/
 
 Sitemap: https://www.pipeline.news/sitemap.xml

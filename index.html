@@ -16,9 +16,11 @@
   <meta property="og:site_name" content="Pipeline.news" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Pipeline — La newsletter italiana per i professionisti della vendita" />
   <meta name="twitter:description" content="Ogni martedì, strategie concrete e strumenti testati per chiudere più trattative. Gratis." />
+  <meta name="og:image" content="https://www.pipeline.news/logo.png" />
+  <meta name="twitter:image" content="https://www.pipeline.news/logo.png" />
 
   <!-- Additional SEO -->
   <meta name="author" content="Pipeline.news" />
@@ -36,32 +38,40 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsletterArticle",
-    "name": "Pipeline",
-    "description": "La newsletter italiana per i professionisti della vendita. Ogni martedì: strategie, casi reali e strumenti per chiudere più trattative.",
-    "url": "https://www.pipeline.news/",
-    "inLanguage": "it-IT",
-    "publisher": {
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Pipeline.news",
+      "url": "https://www.pipeline.news/",
+      "description": "La newsletter italiana per i professionisti della vendita. Ogni martedì: strategie, casi reali e strumenti per chiudere più trattative.",
+      "inLanguage": "it-IT",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.pipeline.news/archive.html?tag={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Pipeline.news",
       "url": "https://www.pipeline.news/",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.pipeline.news/logo.png"
+      },
+      "areaServed": "IT",
+      "knowsLanguage": "it",
+      "foundingLocation": {
+        "@type": "Place",
+        "addressCountry": "IT"
       }
-    },
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "Professionisti della vendita, Sales Manager, Account Executive, imprenditori"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
     }
-  }
+  ]
   </script>
 </head>
 <body>

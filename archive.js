@@ -242,6 +242,14 @@ function injectCta(html, issueNum) {
   return html.slice(0, cut + 1) + buildCtaHtml(issueNum) + html.slice(cut + 1);
 }
 
+/* ── Dynamic meta (SEO / social sharing) ───────────────────────── */
+function setMeta(attr, val, content) {
+  let el = document.querySelector(`meta[${attr}="${val}"]`);
+  if (!el) { el = document.createElement('meta'); el.setAttribute(attr, val); document.head.appendChild(el); }
+  el.setAttribute('content', content);
+}
+const _defaultTitle = document.title;
+
 /* ── Modal ──────────────────────────────────────────────────────── */
 function openModal(post) {
   const issueNum = allPosts.length - allPosts.indexOf(post);
@@ -274,12 +282,22 @@ function openModal(post) {
   document.body.style.overflow = 'hidden';
   blogModal.scrollTop = 0;
   history.replaceState(null, '', '#' + post.id);
+  document.title = `${post.title} — Pipeline.news`;
+  setMeta('name', 'description', post.subtitle || post.preview_text || '');
+  setMeta('property', 'og:title', `${post.title} — Pipeline.news`);
+  setMeta('property', 'og:description', post.subtitle || post.preview_text || '');
+  setMeta('property', 'og:url', `https://www.pipeline.news/archive.html#${esc(post.id)}`);
 }
 
 function closeModal() {
   blogModal.hidden = true;
   document.body.style.overflow = '';
   history.replaceState(null, '', location.pathname);
+  document.title = _defaultTitle;
+  setMeta('name', 'description', 'Tutte le edizioni di Pipeline, la newsletter italiana per i professionisti della vendita B2B.');
+  setMeta('property', 'og:title', 'Archivio Newsletter — Pipeline.news');
+  setMeta('property', 'og:description', 'Tutte le edizioni di Pipeline: tattiche di vendita B2B ogni martedì. Gratis.');
+  setMeta('property', 'og:url', 'https://www.pipeline.news/archive.html');
 }
 
 modalClose.addEventListener('click', closeModal);

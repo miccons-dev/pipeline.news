@@ -129,6 +129,15 @@ function renderFeed() {
   blogFeed.innerHTML = '<div class="blog-feed">' + page.map(postHtml).join('') + '</div>';
   renderPagination(totalPages);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (activeTag) {
+    document.title = `${activeTag} — Blog Pipeline.news`;
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute('content', `Articoli su "${activeTag}" — vendita B2B, leadership e crescita professionale.`);
+  } else {
+    document.title = 'Blog — Pipeline.news';
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute('content', 'Approfondimenti su vendita B2B, leadership commerciale e crescita professionale. Articoli esclusivi del team Pipeline.');
+  }
 }
 
 /* ── Events ─────────────────────────────────────────────────────── */
