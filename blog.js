@@ -1,20 +1,31 @@
 'use strict';
 
-const filterPills  = document.getElementById('filterPills');
-const blogFilters  = document.getElementById('blogFilters');
-const blogFeed     = document.getElementById('blogFeed');
-const blogLoading  = document.getElementById('blogLoading');
-const blogEmpty    = document.getElementById('blogEmpty');
-const emptyReset   = document.getElementById('emptyReset');
-const paginationEl = document.getElementById('blogPagination');
+/* ── DOM refs ───────────────────────────────────────────────────── */
+const filterPills   = document.getElementById('filterPills');
+const blogFilters   = document.getElementById('blogFilters');
+const blogFeed      = document.getElementById('blogFeed');
+const blogLoading   = document.getElementById('blogLoading');
+const blogEmpty     = document.getElementById('blogEmpty');
+const emptyReset    = document.getElementById('emptyReset');
+const paginationEl  = document.getElementById('blogPagination');
+const blogModal     = document.getElementById('blogModal');
+const modalClose    = document.getElementById('modalClose');
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalTags     = document.getElementById('modalTags');
+const modalDate     = document.getElementById('modalDate');
+const modalTitle    = document.getElementById('modalTitle');
+const modalSubtitle = document.getElementById('modalSubtitle');
+const modalBody     = document.getElementById('modalBody');
 
-const PER_PAGE = 5;
-let allPosts   = [];
-let activeTag  = '';
+/* ── State ──────────────────────────────────────────────────────── */
+const PER_PAGE  = 7;   // 1 featured + 6 grid
+let allPosts    = [];
+let activeTag   = '';
 let currentPage = 1;
 
 const MONTHS = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
 
+/* ── Utils ──────────────────────────────────────────────────────── */
 function formatDate(ts) {
   if (!ts) return '';
   const d = new Date(ts * 1000);
@@ -23,17 +34,17 @@ function formatDate(ts) {
 
 function esc(str) {
   return String(str ?? '')
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-/* ── Tag colour palette ──────────────────────────────────── */
+/* ── Tag colours ────────────────────────────────────────────────── */
 const PALETTE = [
-  { bg:'rgba(30,107,197,.09)',  bd:'rgba(30,107,197,.22)', c:'#1E6BC5' },
-  { bg:'rgba(0,196,160,.09)',   bd:'rgba(0,196,160,.28)',  c:'#00A88A' },
-  { bg:'rgba(91,184,245,.12)',  bd:'rgba(91,184,245,.32)', c:'#1a6fa8' },
-  { bg:'rgba(99,102,241,.09)',  bd:'rgba(99,102,241,.25)', c:'#4f46e5' },
-  { bg:'rgba(245,158,11,.10)',  bd:'rgba(245,158,11,.28)', c:'#b45309' },
+  { bg: 'rgba(30,107,197,.09)',  bd: 'rgba(30,107,197,.22)', c: '#1E6BC5' },
+  { bg: 'rgba(0,196,160,.09)',   bd: 'rgba(0,196,160,.28)',  c: '#00A88A' },
+  { bg: 'rgba(91,184,245,.12)',  bd: 'rgba(91,184,245,.32)', c: '#1a6fa8' },
+  { bg: 'rgba(99,102,241,.09)',  bd: 'rgba(99,102,241,.25)', c: '#4f46e5' },
+  { bg: 'rgba(245,158,11,.10)',  bd: 'rgba(245,158,11,.28)', c: '#b45309' },
 ];
 const colorMap = {};
 let colorIdx = 0;
@@ -42,7 +53,30 @@ function tagColor(tag) {
   return colorMap[tag];
 }
 
-/* ── Filters ─────────────────────────────────────────────── */
+function tagsHtml(post) {
+  return (post.tags || []).map(t => {
+    const c = tagColor(t);
+    return `<span class="post-tag" style="background:${c.bg};border-color:${c.bd};color:${c.c}">${esc(t)}</span>`;
+  }).join('');
+}
+
+/* ── Cover gradients (stable per post) ──────────────────────────── */
+const COVERS = [
+  'linear-gradient(135deg,#0D2756 0%,#1E6BC5 100%)',
+  'linear-gradient(135deg,#1E6BC5 0%,#5BB8F5 100%)',
+  'linear-gradient(135deg,#00C4A0 0%,#0D2756 100%)',
+  'linear-gradient(135deg,#0D2756 0%,#00A88A 100%)',
+  'linear-gradient(135deg,#5BB8F5 0%,#4f46e5 100%)',
+];
+
+function coverBg(post) {
+  if (post.thumbnail_url) return `url('${esc(post.thumbnail_url)}') center/cover no-repeat`;
+  let h = 0;
+  for (const ch of post.id) h = (h * 31 + ch.charCodeAt(0)) & 0x7fffffff;
+  return COVERS[h % COVERS.length];
+}
+
+/* ── Filters ────────────────────────────────────────────────────── */
 function collectTags() {
   const set = new Set();
   allPosts.forEach(p => (p.tags || []).forEach(t => set.add(t)));
@@ -53,7 +87,6 @@ function renderFilters(tags) {
   filterPills.innerHTML = '';
   blogFilters.hidden = tags.length === 0;
   if (!tags.length) return;
-
   const mkBtn = (label, tag) => {
     const btn = document.createElement('button');
     btn.className = 'page-filter-btn' + (activeTag === tag ? ' is-active' : '');
@@ -65,39 +98,33 @@ function renderFilters(tags) {
   tags.forEach(t => mkBtn(t, t));
 }
 
-/* ── Article HTML ────────────────────────────────────────── */
-function postHtml(p) {
-  const tagsHtml = (p.tags || []).map(t => {
-    const c = tagColor(t);
-    return `<span class="post-tag" style="background:${c.bg};border-color:${c.bd};color:${c.c}">${esc(t)}</span>`;
-  }).join('');
-
-  const bodyHtml = p.content_html
-    ? `<div class="blog-post__content">${p.content_html}</div>`
-    : p.preview_text
-      ? `<p class="blog-post__excerpt">${esc(p.preview_text)}</p>`
-      : '';
-
+/* ── Card HTML ──────────────────────────────────────────────────── */
+function cardHtml(p, featured) {
+  const tags = tagsHtml(p);
+  const cls  = 'blog-card' + (featured ? ' blog-card--featured' : '');
   return `
-    <article class="blog-post">
-      <div class="blog-post__meta">
-        ${tagsHtml ? `<div class="blog-post__tags">${tagsHtml}</div>` : ''}
-        <time class="blog-post__date">${formatDate(p.publish_date)}</time>
+    <article class="${cls}" data-id="${esc(p.id)}" tabindex="0" role="button"
+             aria-label="Leggi: ${esc(p.title)}">
+      <div class="blog-card__cover" style="background:${coverBg(p)}">
+        ${tags ? `<div class="blog-card__cover-tags">${tags}</div>` : ''}
       </div>
-      <h2 class="blog-post__title">${esc(p.title)}</h2>
-      ${p.subtitle ? `<p class="blog-post__subtitle">${esc(p.subtitle)}</p>` : ''}
-      ${bodyHtml}
+      <div class="blog-card__body">
+        <h2 class="blog-card__title">${esc(p.title)}</h2>
+        ${p.subtitle ? `<p class="blog-card__subtitle">${esc(p.subtitle)}</p>` : ''}
+        <div class="blog-card__meta">
+          <time class="blog-card__date">${formatDate(p.publish_date)}</time>
+          <span class="blog-card__read">Leggi →</span>
+        </div>
+      </div>
     </article>`;
 }
 
-/* ── Pagination ──────────────────────────────────────────── */
+/* ── Pagination ─────────────────────────────────────────────────── */
 function renderPagination(totalPages) {
   if (totalPages <= 1) { paginationEl.hidden = true; return; }
   paginationEl.hidden = false;
-
   const items = [];
   items.push(`<button class="pag-btn" data-page="${currentPage - 1}" ${currentPage === 1 ? 'disabled' : ''}>← Precedenti</button>`);
-
   const delta = 2;
   for (let i = 1; i <= totalPages; i++) {
     if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= delta) {
@@ -106,18 +133,17 @@ function renderPagination(totalPages) {
       items.push(`<span class="pag-ellipsis">…</span>`);
     }
   }
-
   items.push(`<button class="pag-btn" data-page="${currentPage + 1}" ${currentPage === totalPages ? 'disabled' : ''}>Successive →</button>`);
   paginationEl.innerHTML = items.join('');
 }
 
-/* ── Feed render ─────────────────────────────────────────── */
+/* ── Feed render ────────────────────────────────────────────────── */
 function renderFeed() {
   const filtered = activeTag
     ? allPosts.filter(p => (p.tags || []).includes(activeTag))
     : allPosts;
 
-  const total = filtered.length;
+  const total      = filtered.length;
   const totalPages = Math.ceil(total / PER_PAGE) || 1;
   if (currentPage > totalPages) currentPage = 1;
 
@@ -125,15 +151,89 @@ function renderFeed() {
 
   blogFeed.hidden  = total === 0;
   blogEmpty.hidden = total > 0;
-
   if (total === 0) { paginationEl.hidden = true; return; }
 
-  blogFeed.innerHTML = page.map(postHtml).join('');
+  let html = '<div class="blog-grid">';
+  page.forEach((p, i) => {
+    html += cardHtml(p, i === 0 && currentPage === 1);
+  });
+  html += '</div>';
+  blogFeed.innerHTML = html;
+
+  blogFeed.querySelectorAll('.blog-card').forEach(card => {
+    const open = () => {
+      const post = allPosts.find(p => p.id === card.dataset.id);
+      if (post) openModal(post);
+    };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+
   renderPagination(totalPages);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Events ──────────────────────────────────────────────── */
+/* ── Mid-article subscription CTA ──────────────────────────────── */
+function buildCtaHtml(postNum) {
+  return `
+    <div class="modal-cta">
+      <div class="modal-cta__label">Pipeline · Edizione #${postNum}</div>
+      <h3 class="modal-cta__heading">Quella di martedì prossimo arriva solo nella tua inbox.</h3>
+      <p class="modal-cta__sub">Ogni settimana: tattica pratica, framework testato, nessun rumore. Gratis.</p>
+      <iframe src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
+              data-test-id="beehiiv-embed"
+              width="100%" height="160" frameborder="0" scrolling="no"
+              class="modal-cta__iframe" title="Iscriviti a Pipeline"></iframe>
+    </div>`;
+}
+
+function injectCta(html, postNum) {
+  const half = Math.floor(html.length / 2);
+  const cut  = html.indexOf('>', half);
+  if (cut === -1) return html + buildCtaHtml(postNum);
+  return html.slice(0, cut + 1) + buildCtaHtml(postNum) + html.slice(cut + 1);
+}
+
+/* ── Modal ──────────────────────────────────────────────────────── */
+function openModal(post) {
+  const idx     = allPosts.indexOf(post);
+  const postNum = allPosts.length - idx;
+
+  modalTags.innerHTML       = tagsHtml(post);
+  modalDate.textContent     = formatDate(post.publish_date);
+  modalTitle.textContent    = post.title;
+  modalSubtitle.textContent = post.subtitle || '';
+  modalSubtitle.hidden      = !post.subtitle;
+
+  const rawHtml = post.content_html && post.content_html.trim()
+    ? post.content_html
+    : (post.preview_text
+        ? `<p>${esc(post.preview_text)}</p>`
+        : '<p style="color:var(--gray)">Contenuto non disponibile.</p>');
+
+  modalBody.innerHTML = injectCta(rawHtml, postNum);
+
+  blogModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  blogModal.scrollTop = 0;
+  history.replaceState(null, '', '#' + post.id);
+}
+
+function closeModal() {
+  blogModal.hidden = true;
+  document.body.style.overflow = '';
+  history.replaceState(null, '', location.pathname + (location.search || ''));
+}
+
+modalClose.addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', closeModal);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !blogModal.hidden) closeModal();
+});
+
+/* ── Filter & pagination events ─────────────────────────────────── */
 filterPills.addEventListener('click', e => {
   const btn = e.target.closest('.page-filter-btn');
   if (!btn) return;
@@ -168,7 +268,7 @@ emptyReset.addEventListener('click', () => {
   renderFeed();
 });
 
-/* ── Init ────────────────────────────────────────────────── */
+/* ── Init ───────────────────────────────────────────────────────── */
 async function loadBlog() {
   try {
     const res = await fetch('blog.json', { cache: 'no-store' });
@@ -184,6 +284,12 @@ async function loadBlog() {
     collectTags().forEach(t => tagColor(t));
     renderFilters(collectTags());
     renderFeed();
+
+    const hash = location.hash.slice(1);
+    if (hash) {
+      const post = allPosts.find(p => p.id === hash);
+      if (post) openModal(post);
+    }
   } catch {
     blogLoading.innerHTML =
       '<span style="color:var(--red,#e53e3e)">Impossibile caricare gli articoli. Riprova più tardi.</span>';
