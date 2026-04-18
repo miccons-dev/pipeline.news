@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il multi-threading non è una scelta. È l'unica via.",
+      "subtitle": "Come costruire consenso interno prima che il decisore ti risponda",
+      "preview_text": "Il numero della settimana 45% dei team sales usa l&#x27;AI per la ricerca account. Il che significa che il vantaggio informativo si sta azze",
+      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "publish_date": 1774942200,
+      "thumbnail_url": null,
+      "tags": [
+        "multi-threading",
+        "consenso interno"
+      ]
+    },
+    {
       "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
       "kind": "article",
       "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
@@ -266,21 +280,7 @@
         "vendita fondatore",
         "metodo commerciale"
       ]
-    },
-    {
-      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il C-level risponde. Solo se gli dai un motivo.",
-      "subtitle": "Come scrivere al decisore senza finire ignorato",
-      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale dedica davvero alla vendita in una giornata lavorativa di 8 ore. Il rest",
-      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "publish_date": 1776203280,
-      "thumbnail_url": null,
-      "tags": [
-        "primo contatto",
-        "decisori senior"
-      ]
     }
   ],
-  "generated": 1776552322
+  "generated": 1776552325
 }
