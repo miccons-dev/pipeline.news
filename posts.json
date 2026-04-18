@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il C-level risponde. Solo se gli dai un motivo.",
+      "subtitle": "Come scrivere al decisore senza finire ignorato",
+      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale dedica davvero alla vendita in una giornata lavorativa di 8 ore. Il rest",
+      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "publish_date": 1776203280,
+      "thumbnail_url": null,
+      "tags": [
+        "primo contatto",
+        "decisori senior"
+      ]
+    },
+    {
       "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
       "kind": "article",
       "title": "Quattro livelli di personalizzazione: usi solo il primo",
@@ -266,21 +280,7 @@
         "riprova sociale",
         "proposte commerciali"
       ]
-    },
-    {
-      "id": "due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
-      "kind": "article",
-      "title": "Due ore al giorno. È tutto il tempo che hai per vendere.",
-      "subtitle": "Il problema non è la motivazione. È dove finisce il tempo.",
-      "preview_text": "I responsabili commerciali italiani non perdono trattative per mancanza di tecnica. Le perdono perché quando arriva il momento di fare una c",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
-      "publish_date": 1776295920,
-      "thumbnail_url": null,
-      "tags": [
-        "gestione tempo",
-        "produttività vendite"
-      ]
     }
   ],
-  "generated": 1776552347
+  "generated": 1776552350
 }
