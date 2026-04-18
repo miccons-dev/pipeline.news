@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "due-ore-per-vendere-dove-vanno-le-altre-sei-2026-03-19",
+      "kind": "article",
+      "title": "Due ore per vendere: dove vanno le altre sei",
+      "subtitle": "Il problema non è la produttività. È cosa conti come vendita.",
+      "preview_text": "2 ore al giorno dedicate alla vendita effettiva dal sales medio Finisci la giornata con la sensazione di aver lavorato tutto il giorno. Hai ",
+      "web_url": "https://www.pipeline.news/post.html?id=due-ore-per-vendere-dove-vanno-le-altre-sei-2026-03-19",
+      "publish_date": 1773963240,
+      "thumbnail_url": null,
+      "tags": [
+        "gestione tempo",
+        "produttività commerciale"
+      ]
+    },
+    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo non è il problema. È dove lo metti.",
@@ -266,21 +280,7 @@
         "multi-threading",
         "consenso interno"
       ]
-    },
-    {
-      "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
-      "kind": "article",
-      "title": "Il consenso si costruisce dal basso. Sempre.",
-      "subtitle": "Entrare dalla porta principale è il modo più lento per arrivarci.",
-      "preview_text": "5,4x più stakeholder coinvolti nelle trattative B2B rispetto a 10 anni fa Hai scritto un&#x27;email perfetta al direttore. Oggetto calibrato",
-      "web_url": "https://www.pipeline.news/post.html?id=il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
-      "publish_date": 1773358740,
-      "thumbnail_url": null,
-      "tags": [
-        "multi-threading",
-        "consenso interno"
-      ]
     }
   ],
-  "generated": 1776551875
+  "generated": 1776551878
 }
