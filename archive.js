@@ -198,12 +198,13 @@ function buildCtaHtml(issueNum) {
     <div class="modal-cta">
       <div class="modal-cta__label">Pipeline · Edizione #${issueNum}</div>
       <h3 class="modal-cta__heading">Quella di martedì prossimo arriva direttamente nella tua inbox.</h3>
-      <p class="modal-cta__sub">Ogni martedì: una tattica di vendita, uno script pronto e un tool da usare quella stessa mattina. Gratis. Nessun rumore.</p>
+      <p class="modal-cta__sub">Ogni martedì: una tattica di vendita, uno script pronto e un tool da usare quella stessa mattina. Nessun rumore. Gratis.</p>
       <iframe src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
               data-test-id="beehiiv-embed"
-              width="100%" height="160" frameborder="0" scrolling="no"
+              width="100%" height="80" frameborder="0" scrolling="no"
               class="modal-cta__iframe" title="Iscriviti a Pipeline"></iframe>
-    </div>`;
+    </div>
+    <div class="modal-cta__fade"></div>`;
 }
 
 function injectCta(html, issueNum) {
