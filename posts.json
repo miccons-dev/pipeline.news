@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "kind": "article",
+      "title": "Personalizzare la proposta non significa metterci il nome",
+      "subtitle": "Quattro livelli di contesto che il tuo concorrente ignora",
+      "preview_text": "Ogni corso di contatto a freddo insegna la stessa cosa: personalizza. E ogni responsabile commerciale italiano obbedisce aggiungendo il nome",
+      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "publish_date": 1775259180,
+      "thumbnail_url": null,
+      "tags": [
+        "personalizzazione proposta",
+        "contatto freddo"
+      ]
+    },
+    {
       "id": "il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
       "kind": "article",
       "title": "Il fondatore che vende: il vantaggio che non sa di avere",
@@ -266,21 +280,7 @@
         "gestione tempo",
         "produttività vendite"
       ]
-    },
-    {
-      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "kind": "newsletter",
-      "title": "Due ore al giorno non bastano. Ma le stai usando bene?",
-      "subtitle": "La maratona da 10 persone che ha trasformato un reparto commerciale in 48 ore",
-      "preview_text": "Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno, secondo HubSpot. Il resto v",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "publish_date": 1774942200,
-      "thumbnail_url": null,
-      "tags": [
-        "adozione strumenti",
-        "produttività commerciale"
-      ]
     }
   ],
-  "generated": 1776551913
+  "generated": 1776551915
 }
