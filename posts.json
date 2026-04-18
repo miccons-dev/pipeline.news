@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
+      "kind": "article",
+      "title": "Claude come coach commerciale: analizza la pipeline in 10 minuti",
+      "subtitle": "Nessuna integrazione, nessun costo extra, risultato immediato",
+      "preview_text": "Ogni lunedì mattina guardi la pipeline e non sai da dove iniziare. Venti trattative aperte, tutte &#x27;importanti&#x27;, tutte &#x27;in cor",
+      "web_url": "https://www.pipeline.news/post.html?id=claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
+      "publish_date": 1774740720,
+      "thumbnail_url": null,
+      "tags": [
+        "priorità pipeline",
+        "intelligenza artificiale"
+      ]
+    },
+    {
       "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
       "kind": "article",
       "title": "Dove metti la riprova sociale cambia tutto",
@@ -97,20 +111,6 @@
       "tags": [
         "cold outreach",
         "messaggi decisori"
-      ]
-    },
-    {
-      "id": "claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
-      "kind": "article",
-      "title": "Claude come coach commerciale: analizza la pipeline in 10 minuti",
-      "subtitle": "Nessuna integrazione, nessun costo extra, risultato immediato",
-      "preview_text": "Ogni lunedì mattina guardi la pipeline e non sai da dove iniziare. Venti trattative aperte, tutte &#x27;importanti&#x27;, tutte &#x27;in cor",
-      "web_url": "https://www.pipeline.news/post.html?id=claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
-      "publish_date": 1774740720,
-      "thumbnail_url": null,
-      "tags": [
-        "priorità pipeline",
-        "intelligenza artificiale"
       ]
     },
     {
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776552316
+  "generated": 1776552319
 }
