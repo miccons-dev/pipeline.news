@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
+      "kind": "article",
+      "title": "Claude come coach commerciale: analizza la pipeline in 10 minuti",
+      "subtitle": "Nessuna integrazione, nessun costo extra, risultato immediato",
+      "preview_text": "Ogni lunedì mattina guardi la pipeline e non sai da dove iniziare. Venti trattative aperte, tutte &#x27;importanti&#x27;, tutte &#x27;in cor",
+      "web_url": "https://www.pipeline.news/post.html?id=claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
+      "publish_date": 1774740720,
+      "thumbnail_url": null,
+      "tags": [
+        "priorità pipeline",
+        "intelligenza artificiale"
+      ]
+    },
+    {
       "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
       "kind": "article",
       "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
@@ -266,21 +280,7 @@
         "gestione tempo",
         "produttività commerciale"
       ]
-    },
-    {
-      "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il prezzo non è il problema. È dove lo metti.",
-      "subtitle": "Come presentare i costi senza bloccare la trattativa",
-      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale passa a vendere davvero ogni giorno. Il resto va in amministrazione, agg",
-      "web_url": "https://www.pipeline.news/post.html?id=il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
-      "publish_date": 1774337400,
-      "thumbnail_url": null,
-      "tags": [
-        "ancoraggio prezzo",
-        "gestione trattativa"
-      ]
     }
   ],
-  "generated": 1776551930
+  "generated": 1776551933
 }
