@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
+      "kind": "article",
+      "title": "La ricerca sul prospect non basta più. Cambia il gioco.",
+      "subtitle": "Quando tutti hanno gli stessi dati, la differenza la fa come li usi.",
+      "preview_text": "45% dei team sales usa già l&#x27;AI per la ricerca account Hai usato LinkedIn Sales Navigator. Hai letto il sito dell&#x27;azienda. Hai tro",
+      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
+      "publish_date": 1773531540,
+      "thumbnail_url": null,
+      "tags": [
+        "personalizzazione",
+        "primo contatto",
+        "b2b",
+        "ai",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
       "kind": "article",
       "title": "Il consenso si costruisce dal basso. Sempre.",
@@ -146,5 +163,5 @@
       "thumbnail_url": null
     }
   ],
-  "generated": 1776548406
+  "generated": 1776548408
 }
