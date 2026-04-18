@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
+      "kind": "article",
+      "title": "Il fondatore che vende: il vantaggio che non sa di avere",
+      "subtitle": "Le prime 20 trattative non sono vendite. Sono ricerca di mercato pagata dai clienti.",
+      "preview_text": "Il fondatore italiano medio odia vendere. Lo considera una distrazione dal prodotto, una fase temporanea da delegare appena possibile. È il ",
+      "web_url": "https://www.pipeline.news/post.html?id=il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
+      "publish_date": 1775518380,
+      "thumbnail_url": null,
+      "tags": [
+        "vendita fondatore",
+        "documentazione commerciale"
+      ]
+    },
+    {
       "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
       "kind": "newsletter",
       "title": "L'evento da 10 persone che ha cambiato tutto",
@@ -266,21 +280,7 @@
         "adozione strumenti",
         "produttività commerciale"
       ]
-    },
-    {
-      "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
-      "kind": "article",
-      "title": "L'avvio che nessuno fa (e che ferma l'abbandono)",
-      "subtitle": "I primi 30 giorni dopo la firma decidono tutto",
-      "preview_text": "Chiudi la trattativa. Passi il cliente al team. Fine della storia — almeno per te. Ma i dati dicono che l'abbandono più pericoloso avviene n",
-      "web_url": "https://www.pipeline.news/post.html?id=l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
-      "publish_date": 1775086320,
-      "thumbnail_url": null,
-      "tags": [
-        "onboarding clienti",
-        "fidelizzazione"
-      ]
     }
   ],
-  "generated": 1776551910
+  "generated": 1776551913
 }
