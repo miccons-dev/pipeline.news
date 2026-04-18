@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "kind": "article",
+      "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
+      "subtitle": "Il problema è la sequenza, non il numero",
+      "preview_text": "Il potenziale cliente legge la tua proposta, vede il prezzo, smette di rispondere. Non è che non può permetterselo. È che lo hai messo a con",
+      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "publish_date": 1774913520,
+      "thumbnail_url": null,
+      "tags": [
+        "ancoraggio valore",
+        "struttura proposta"
+      ]
+    },
+    {
       "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
       "kind": "article",
       "title": "Riprova sociale nelle proposte: la posizione vale più del contenuto",
@@ -266,21 +280,7 @@
         "ancoraggio prezzo",
         "gestione trattativa"
       ]
-    },
-    {
-      "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "kind": "article",
-      "title": "Dove metti la riprova sociale cambia tutto",
-      "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
-      "preview_text": "Hai un caso di successo forte, un cliente che ha ottenuto risultati veri, numeri verificabili. Lo metti all&#x27;inizio della proposta per i",
-      "web_url": "https://www.pipeline.news/post.html?id=dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "publish_date": 1774567920,
-      "thumbnail_url": null,
-      "tags": [
-        "riprova sociale",
-        "struttura proposta"
-      ]
     }
   ],
-  "generated": 1776551927
+  "generated": 1776551930
 }
