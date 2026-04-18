@@ -169,7 +169,7 @@ emptyReset.addEventListener('click', () => {
 /* ── Init ───────────────────────────────────────────────────────── */
 async function loadBlog() {
   try {
-    const res = await fetch('blog.json', { cache: 'no-store' });
+    const res = await fetch(`blog.json?_=${Date.now()}`);
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
     allPosts = (data.posts || []).filter(p => p.title).sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0));

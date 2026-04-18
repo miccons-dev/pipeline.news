@@ -307,7 +307,7 @@ emptyReset.addEventListener('click', () => {
 /* ── Init ───────────────────────────────────────────────────────── */
 async function loadArchive() {
   try {
-    const res = await fetch('archive.json');
+    const res = await fetch(`archive.json?_=${Date.now()}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 

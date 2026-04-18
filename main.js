@@ -78,7 +78,7 @@ async function loadPosts() {
   if (!container) return;
 
   try {
-    const res = await fetch('posts.json');
+    const res = await fetch(`posts.json?_=${Date.now()}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
