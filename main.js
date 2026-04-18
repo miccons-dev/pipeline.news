@@ -16,7 +16,7 @@ const observer = new IntersectionObserver(
 
 function observeAnimatable() {
   document.querySelectorAll(
-    '.card, .step, .issue, .testimonial, .check-item, .faq-item'
+    '.card, .step, .issue, .blog-card, .testimonial, .check-item, .faq-item'
   ).forEach(el => {
     if (!el.classList.contains('fade-up')) {
       el.classList.add('fade-up');
@@ -52,6 +52,28 @@ function formatDate(unixSeconds) {
   });
 }
 
+/* ── Cover gradients (stable per post, mirrors archive.js) ─ */
+const COVERS = [
+  'linear-gradient(135deg,#0D2756 0%,#1E6BC5 100%)',
+  'linear-gradient(135deg,#1E6BC5 0%,#5BB8F5 100%)',
+  'linear-gradient(135deg,#00C4A0 0%,#0D2756 100%)',
+  'linear-gradient(135deg,#0D2756 0%,#00A88A 100%)',
+  'linear-gradient(135deg,#5BB8F5 0%,#4f46e5 100%)',
+];
+
+function coverBg(id) {
+  let h = 0;
+  for (const ch of String(id)) h = (h * 31 + ch.charCodeAt(0)) & 0x7fffffff;
+  return COVERS[h % COVERS.length];
+}
+
+const MONTHS = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+function fmtDate(ts) {
+  if (!ts) return '';
+  const d = new Date(ts * 1000);
+  return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+}
+
 /* ── Carica edizioni da posts.json ──────────────────────── */
 async function loadPosts() {
   const container = document.getElementById('issues-container');
@@ -67,23 +89,24 @@ async function loadPosts() {
       return;
     }
 
-    container.innerHTML = data.posts.map(post => `
-      <article class="issue">
-        <div class="issue__meta">
-          <span class="issue__date">${formatDate(post.publish_date)}</span>
+    const cards = data.posts.slice(0, 3).map(post => `
+      <a class="blog-card" href="/archive.html#${escapeHtml(post.id)}" aria-label="${escapeHtml(post.title)}">
+        <div class="blog-card__cover" style="background:${coverBg(post.id)}"></div>
+        <div class="blog-card__body">
+          <h3 class="blog-card__title">${escapeHtml(post.title)}</h3>
+          ${post.subtitle ? `<p class="blog-card__subtitle">${escapeHtml(post.subtitle)}</p>` : ''}
+          <div class="blog-card__meta">
+            <time class="blog-card__date">${fmtDate(post.publish_date)}</time>
+            <span class="blog-card__read">Leggi →</span>
+          </div>
         </div>
-        <h3 class="issue__title">${escapeHtml(post.title)}</h3>
-        <p class="issue__excerpt">${escapeHtml(post.subtitle || post.preview_text || '')}</p>
-        <a href="archive.html#${escapeHtml(post.id)}" class="issue__link">
-          Leggi l'edizione →
-        </a>
-      </article>
+      </a>
     `).join('');
 
+    container.innerHTML = `<div class="blog-grid blog-grid--home">${cards}</div>`;
     observeAnimatable();
 
   } catch {
-    // Fallback: mostra messaggio neutro senza esporre dettagli tecnici
     container.innerHTML = `
       <p class="issues__empty">
         Le edizioni saranno caricate a breve.

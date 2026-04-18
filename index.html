@@ -295,16 +295,26 @@
       <div class="section__header">
         <span class="section__tag">Ultimi numeri</span>
         <h2 class="section__title">Dai un'occhiata a cosa abbiamo scritto</h2>
-        <a href="archive.html" class="section__archive-link">Vedi tutto l'archivio →</a>
       </div>
 
       <!-- Issues caricati dinamicamente da posts.json (generato da GitHub Actions) -->
-      <div class="issues" id="issues-container">
+      <div id="issues-container">
         <div class="issues__loading" aria-live="polite">
           <span class="issues__spinner"></span>
           Caricamento edizioni…
         </div>
       </div>
+
+      <a href="/archive.html" class="issues-archive-cta">
+        <div class="issues-archive-cta__left">
+          <span class="issues-archive-cta__icon">📬</span>
+          <div>
+            <div class="issues-archive-cta__title">Archivio Newsletter</div>
+            <div class="issues-archive-cta__sub">Tutte le edizioni, dalla più recente alla più antica</div>
+          </div>
+        </div>
+        <span class="issues-archive-cta__arrow">Sfoglia tutto →</span>
+      </a>
     </div>
   </section>
 
