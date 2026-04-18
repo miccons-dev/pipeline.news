@@ -289,7 +289,7 @@ async function loadArchive() {
       return;
     }
 
-    allPosts = data.posts;
+    allPosts = data.posts.slice().sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0));
     allPosts.flatMap(p => p.tags || []).forEach(t => tagColor(t));
     renderFilters();
     renderFeed();

@@ -172,7 +172,7 @@ async function loadBlog() {
     const res = await fetch('blog.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
-    allPosts = (data.posts || []).filter(p => p.title);
+    allPosts = (data.posts || []).filter(p => p.title).sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0));
 
     const params = new URLSearchParams(location.search);
     activeTag   = params.get('tag') || '';
