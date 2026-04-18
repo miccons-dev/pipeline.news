@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
+      "kind": "newsletter",
+      "title": "Due ore al giorno non bastano. Ma le stai usando bene?",
+      "subtitle": "La maratona da 10 persone che ha trasformato un reparto commerciale in 48 ore",
+      "preview_text": "Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno, secondo HubSpot. Il resto v",
+      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
+      "publish_date": 1776541343,
+      "thumbnail_url": null,
+      "tags": [
+        "produttività commerciale",
+        "adozione ai",
+        "pmi",
+        "formazione interna",
+        "crm"
+      ]
+    },
+    {
       "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
       "kind": "newsletter",
       "title": "L'evento da 10 persone che ha cambiato tutto",
@@ -72,5 +89,5 @@
       "thumbnail_url": null
     }
   ],
-  "generated": 1776541341
+  "generated": 1776541344
 }
