@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "kind": "article",
+      "title": "Tre righe che un CEO legge. Le altre no.",
+      "subtitle": "Come costruire un messaggio che guadagna attenzione prima di chiederla",
+      "preview_text": "2% tasso di risposta medio delle email standard a decisori senior Non è che i CEO non rispondono alle email. È che non rispondono alle tue. ",
+      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "publish_date": 1773185940,
+      "thumbnail_url": null,
+      "tags": [
+        "cold outreach",
+        "messaggi decisori"
+      ]
+    },
+    {
       "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
       "kind": "article",
       "title": "Quanto ti costa non automatizzare lo scheduling",
@@ -266,21 +280,7 @@
         "personalizzazione email",
         "prospecting"
       ]
-    },
-    {
-      "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
-      "kind": "article",
-      "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
-      "subtitle": "Se vendi il tuo stesso prodotto senza un metodo, stai vendendo per fortuna",
-      "preview_text": "Il fondatore è il miglior venditore della sua azienda — ma solo nelle prime trattative, e solo se smette di improvvisare. Il problema non è ",
-      "web_url": "https://www.pipeline.news/post.html?id=le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
-      "publish_date": 1775691180,
-      "thumbnail_url": null,
-      "tags": [
-        "vendita fondatore",
-        "metodo commerciale"
-      ]
     }
   ],
-  "generated": 1776551893
+  "generated": 1776551896
 }
