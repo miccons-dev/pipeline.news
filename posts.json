@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il prezzo non è il problema. È dove lo metti.",
+      "subtitle": "Come presentare i costi senza bloccare la trattativa",
+      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale passa a vendere davvero ogni giorno. Il resto va in amministrazione, agg",
+      "web_url": "https://www.pipeline.news/post.html?id=il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
+      "publish_date": 1774337400,
+      "thumbnail_url": null,
+      "tags": [
+        "ancoraggio prezzo",
+        "gestione trattativa"
+      ]
+    },
+    {
       "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
       "kind": "article",
       "title": "Dove metti la riprova sociale cambia tutto",
@@ -266,21 +280,7 @@
         "multi-threading",
         "consenso interno"
       ]
-    },
-    {
-      "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
-      "kind": "article",
-      "title": "La ricerca sul prospect non basta più. Cambia il gioco.",
-      "subtitle": "Quando tutti hanno gli stessi dati, la differenza la fa come li usi.",
-      "preview_text": "45% dei team sales usa già l&#x27;AI per la ricerca account Hai usato LinkedIn Sales Navigator. Hai letto il sito dell&#x27;azienda. Hai tro",
-      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
-      "publish_date": 1773531540,
-      "thumbnail_url": null,
-      "tags": [
-        "personalizzazione",
-        "ricerca prospect"
-      ]
     }
   ],
-  "generated": 1776551872
+  "generated": 1776551875
 }
