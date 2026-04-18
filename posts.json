@@ -2,6 +2,22 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "kind": "article",
+      "title": "Personalizzare la proposta non significa metterci il nome",
+      "subtitle": "Quattro livelli di contesto che il tuo concorrente ignora",
+      "preview_text": "Ogni corso di contatto a freddo insegna la stessa cosa: personalizza. E ogni responsabile commerciale italiano obbedisce aggiungendo il nome",
+      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "publish_date": 1775259180,
+      "thumbnail_url": null,
+      "tags": [
+        "personalizzazione",
+        "contatti freddi",
+        "proposta commerciale",
+        "b2b"
+      ]
+    },
+    {
       "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
       "kind": "article",
       "title": "L'avvio che nessuno fa (e che ferma l'abbandono)",
@@ -247,5 +263,5 @@
       "thumbnail_url": null
     }
   ],
-  "generated": 1776548431
+  "generated": 1776548434
 }
