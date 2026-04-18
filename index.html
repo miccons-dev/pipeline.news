@@ -79,6 +79,9 @@
           <a href="/archive.html" class="nav__link">Archivio Newsletter</a>
         </nav>
         <a href="#iscriviti" class="btn btn--nav">Iscriviti gratis →</a>
+        <button class="nav__burger" id="navBurger" aria-label="Apri menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
@@ -464,6 +467,22 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+  (function(){
+    var b=document.getElementById('navBurger');
+    var h=b.closest('.nav');
+    b.addEventListener('click',function(){
+      var open=h.classList.toggle('nav--open');
+      b.setAttribute('aria-expanded',String(open));
+    });
+    document.addEventListener('click',function(e){
+      if(!h.contains(e.target))h.classList.remove('nav--open');
+    });
+    h.querySelectorAll('.nav__link').forEach(function(a){
+      a.addEventListener('click',function(){h.classList.remove('nav--open');});
+    });
+  })();
+  </script>
 
   <!-- ── HTTPS redirect (safety net — fix definitivo: GitHub Pages Settings → Enforce HTTPS) -->
   <script>
