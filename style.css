@@ -1691,6 +1691,17 @@ a  { color: inherit; text-decoration: none; }
   color: var(--white);
   border-color: var(--navy);
 }
+.blog-modal__logo-wrap {
+  text-align: center;
+  padding: 8px 0 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.blog-modal__logo-wrap img {
+  height: 52px;
+  width: auto;
+  display: inline-block;
+}
 .blog-modal__tags {
   display: flex;
   gap: 6px;

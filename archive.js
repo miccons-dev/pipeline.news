@@ -11,6 +11,7 @@ const paginationEl  = document.getElementById('archive-pagination');
 const blogModal     = document.getElementById('blogModal');
 const modalClose    = document.getElementById('modalClose');
 const modalBackdrop = document.getElementById('modalBackdrop');
+const modalLogo     = document.getElementById('modalLogo');
 const modalTags     = document.getElementById('modalTags');
 const modalDate     = document.getElementById('modalDate');
 const modalTitle    = document.getElementById('modalTitle');
@@ -222,11 +223,21 @@ function openModal(post) {
   modalSubtitle.textContent = post.subtitle || post.preview_text || '';
   modalSubtitle.hidden      = !(post.subtitle || post.preview_text);
 
-  const rawHtml = post.content_html && post.content_html.trim()
+  let rawHtml = post.content_html && post.content_html.trim()
     ? post.content_html
     : (post.preview_text
         ? `<p>${esc(post.preview_text)}</p>`
         : '<p style="color:var(--gray)">Contenuto non disponibile.</p>');
+
+  const logoRe = /<!--\s*PL_LOGO\s*-->([\s\S]*?)<!--\s*\/PL_LOGO\s*-->/i;
+  const logoMatch = rawHtml.match(logoRe);
+  if (logoMatch) {
+    modalLogo.innerHTML = logoMatch[1];
+    modalLogo.hidden = false;
+    rawHtml = rawHtml.replace(logoRe, '');
+  } else {
+    modalLogo.hidden = true;
+  }
 
   modalBody.innerHTML = injectCta(rawHtml, issueNum);
 
