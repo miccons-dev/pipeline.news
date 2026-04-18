@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il C-level risponde. Solo se gli dai un motivo.",
+      "subtitle": "Come scrivere al decisore senza finire ignorato",
+      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale dedica davvero alla vendita in una giornata lavorativa di 8 ore. Il rest",
+      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "publish_date": 1776541340,
+      "thumbnail_url": null,
+      "tags": [
+        "decisori senior",
+        "contatti freddi",
+        "pmi",
+        "email",
+        "obiezioni"
+      ]
+    },
+    {
       "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
       "kind": "newsletter",
       "title": "Il multi-threading non è una scelta. È l'unica via.",
@@ -70,23 +87,6 @@
       ]
     },
     {
-      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il C-level risponde. Solo se gli dai un motivo.",
-      "subtitle": "Come scrivere al decisore senza finire ignorato",
-      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale dedica davvero alla vendita in una giornata lavorativa di 8 ore. Il rest",
-      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "publish_date": 1776541340,
-      "thumbnail_url": null,
-      "tags": [
-        "decisori senior",
-        "contatti freddi",
-        "pmi",
-        "email",
-        "obiezioni"
-      ]
-    },
-    {
       "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
       "title": "Dove metti la riprova sociale cambia tutto",
       "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
@@ -114,5 +114,5 @@
       "thumbnail_url": null
     }
   ],
-  "generated": 1776545521
+  "generated": 1776545524
 }
