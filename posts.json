@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "kind": "newsletter",
+      "title": "L'evento da 10 persone che ha cambiato tutto",
+      "subtitle": "Come trasformare l'adozione dell'IA in un vantaggio commerciale reale — senza aspettare il consenso di nessuno",
+      "preview_text": "Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l&#x27;adozione dell&#x27;IA in azienda dal 10% al 97% con un singolo evento",
+      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "publish_date": 1775547000,
+      "thumbnail_url": null,
+      "tags": [
+        "adozione ia",
+        "team commerciale"
+      ]
+    },
+    {
       "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
       "kind": "article",
       "title": "Prenotazione automatica: 27% di trattative chiuse in più",
@@ -266,21 +280,7 @@
         "onboarding clienti",
         "fidelizzazione"
       ]
-    },
-    {
-      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "kind": "article",
-      "title": "Personalizzare la proposta non significa metterci il nome",
-      "subtitle": "Quattro livelli di contesto che il tuo concorrente ignora",
-      "preview_text": "Ogni corso di contatto a freddo insegna la stessa cosa: personalizza. E ogni responsabile commerciale italiano obbedisce aggiungendo il nome",
-      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "publish_date": 1775259180,
-      "thumbnail_url": null,
-      "tags": [
-        "personalizzazione proposta",
-        "contatto freddo"
-      ]
     }
   ],
-  "generated": 1776551908
+  "generated": 1776551910
 }
