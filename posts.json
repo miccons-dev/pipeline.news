@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "kind": "article",
+      "title": "Prenotazione automatica: 27% di trattative chiuse in più",
+      "subtitle": "Il ping-pong di email per fissare un incontro è un costo nascosto che nessuno misura",
+      "preview_text": "Ogni volta che scrivi 'fammi sapere quando sei disponibile', stai allungando il tuo ciclo di vendita. Non di ore. Di giorni. E nel B2B itali",
+      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "publish_date": 1775863980,
+      "thumbnail_url": null,
+      "tags": [
+        "prenotazione meeting",
+        "automazione",
+        "ciclo vendita",
+        "crm",
+        "pmi"
+      ]
+    },
+    {
       "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
       "kind": "article",
       "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
@@ -288,5 +305,5 @@
       ]
     }
   ],
-  "generated": 1776548443
+  "generated": 1776548446
 }
