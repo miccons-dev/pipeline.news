@@ -44,15 +44,20 @@ function escapeHtml(str) {
 }
 
 function formatDate(unixSeconds) {
-  const d = new Date(unixSeconds * 1000);
-  return d.toLocaleDateString('it-IT', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
+  if (!unixSeconds) return '';
+  return new Date(unixSeconds * 1000).toLocaleDateString('it-IT', {
+    day: 'numeric', month: 'long', year: 'numeric',
+    timeZone: 'Europe/Rome'
   });
 }
 
-/* ── Cover gradients (stable per post, mirrors archive.js) ─ */
+function fmtDate(ts) {
+  if (!ts) return '';
+  return new Date(ts * 1000).toLocaleDateString('it-IT', {
+    day: 'numeric', month: 'short', year: 'numeric',
+    timeZone: 'Europe/Rome'
+  });
+}
 const COVERS = [
   'linear-gradient(135deg,#0D2756 0%,#1E6BC5 100%)',
   'linear-gradient(135deg,#1E6BC5 0%,#5BB8F5 100%)',
@@ -65,13 +70,6 @@ function coverBg(id) {
   let h = 0;
   for (const ch of String(id)) h = (h * 31 + ch.charCodeAt(0)) & 0x7fffffff;
   return COVERS[h % COVERS.length];
-}
-
-const MONTHS = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
-function fmtDate(ts) {
-  if (!ts) return '';
-  const d = new Date(ts * 1000);
-  return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
 }
 
 /* ── Carica edizioni da posts.json ──────────────────────── */

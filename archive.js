@@ -24,13 +24,13 @@ let allPosts    = [];
 let activeTag   = null;
 let currentPage = 1;
 
-const MONTHS = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
-
 /* ── Utils ──────────────────────────────────────────────────────── */
 function formatDate(ts) {
   if (!ts) return '';
-  const d = new Date(ts * 1000);
-  return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
+  return new Date(ts * 1000).toLocaleDateString('it-IT', {
+    day: 'numeric', month: 'short', year: 'numeric',
+    timeZone: 'Europe/Rome'
+  });
 }
 
 function esc(str) {
