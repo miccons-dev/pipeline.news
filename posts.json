@@ -2,6 +2,22 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "kind": "article",
+      "title": "Quanto ti costa non automatizzare lo scheduling",
+      "subtitle": "Il calcolo che nessun commerciale fa mai",
+      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Ogni email che scrivi per fissare un appuntamento — &#x27;va bene martedì?&#x27;",
+      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "publish_date": 1777592040,
+      "thumbnail_url": null,
+      "tags": [
+        "automazione",
+        "scheduling",
+        "produttività commerciale",
+        "strumenti sales"
+      ]
+    },
+    {
       "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
       "kind": "article",
       "title": "Riprova sociale nelle proposte: la posizione vale più del contenuto",
@@ -322,23 +338,7 @@
         "ai",
         "outreach"
       ]
-    },
-    {
-      "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
-      "kind": "article",
-      "title": "Il consenso si costruisce dal basso. Sempre.",
-      "subtitle": "Entrare dalla porta principale è il modo più lento per arrivarci.",
-      "preview_text": "5,4x più stakeholder coinvolti nelle trattative B2B rispetto a 10 anni fa Hai scritto un&#x27;email perfetta al direttore. Oggetto calibrato",
-      "web_url": "https://www.pipeline.news/post.html?id=il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
-      "publish_date": 1773358740,
-      "thumbnail_url": null,
-      "tags": [
-        "stakeholder",
-        "trattativa",
-        "b2b",
-        "consenso"
-      ]
     }
   ],
-  "generated": 1776548458
+  "generated": 1776548461
 }
