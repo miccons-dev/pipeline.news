@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "kind": "article",
+      "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
+      "subtitle": "Il problema è la sequenza, non il numero",
+      "preview_text": "Il potenziale cliente legge la tua proposta, vede il prezzo, smette di rispondere. Non è che non può permetterselo. È che lo hai messo a con",
+      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "publish_date": 1774913520,
+      "thumbnail_url": null,
+      "tags": [
+        "proposta commerciale",
+        "ancoraggio",
+        "obiezioni",
+        "chiusura",
+        "valore percepito"
+      ]
+    },
+    {
       "id": "claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
       "kind": "article",
       "title": "Claude come coach commerciale: analizza la pipeline in 10 minuti",
@@ -213,5 +230,5 @@
       "thumbnail_url": null
     }
   ],
-  "generated": 1776548424
+  "generated": 1776548426
 }
