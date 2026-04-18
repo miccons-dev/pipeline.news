@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "kind": "article",
+      "title": "Quattro livelli di personalizzazione: usi solo il primo",
+      "subtitle": "Mettere il nome nell'oggetto non è personalizzazione. È prendere in giro te stesso.",
+      "preview_text": "La maggior parte delle email commerciali italiane ha un problema strutturale: sono generiche con una spruzzata di nome proprio. 'Ciao Marco,",
+      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "publish_date": 1776123180,
+      "thumbnail_url": null,
+      "tags": [
+        "personalizzazione email",
+        "prospecting"
+      ]
+    },
+    {
       "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
       "kind": "article",
       "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
@@ -162,23 +176,6 @@
       ]
     },
     {
-      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "kind": "article",
-      "title": "Quattro livelli di personalizzazione: usi solo il primo",
-      "subtitle": "Mettere il nome nell'oggetto non è personalizzazione. È prendere in giro te stesso.",
-      "preview_text": "La maggior parte delle email commerciali italiane ha un problema strutturale: sono generiche con una spruzzata di nome proprio. 'Ciao Marco,",
-      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "publish_date": 1776123180,
-      "thumbnail_url": null,
-      "tags": [
-        "email a freddo",
-        "personalizzazione",
-        "pmi",
-        "contatti freddi",
-        "linkedin"
-      ]
-    },
-    {
       "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
       "kind": "article",
       "title": "Prenotazione automatica: 27% di trattative chiuse in più",
@@ -314,5 +311,5 @@
       ]
     }
   ],
-  "generated": 1776551838
+  "generated": 1776551841
 }
