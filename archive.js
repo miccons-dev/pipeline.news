@@ -13,6 +13,8 @@ const modalClose    = document.getElementById('modalClose');
 const modalBackdrop = document.getElementById('modalBackdrop');
 const modalLogo     = document.getElementById('modalLogo');
 const modalTags     = document.getElementById('modalTags');
+const modalTitle    = document.getElementById('modalTitle');
+const modalSubtitle = document.getElementById('modalSubtitle');
 const modalDate     = document.getElementById('modalDate');
 const modalBody     = document.getElementById('modalBody');
 
@@ -215,8 +217,11 @@ function injectCta(html, issueNum) {
 function openModal(post) {
   const issueNum = allPosts.length - allPosts.indexOf(post);
 
-  modalTags.innerHTML   = tagsHtml(post);
-  modalDate.textContent = formatDate(post.publish_date);
+  modalTags.innerHTML       = tagsHtml(post);
+  modalTitle.textContent    = post.title;
+  modalSubtitle.textContent = post.subtitle || post.preview_text || '';
+  modalSubtitle.hidden      = !(post.subtitle || post.preview_text);
+  modalDate.textContent     = formatDate(post.publish_date);
 
   let rawHtml = post.content_html && post.content_html.trim()
     ? post.content_html
