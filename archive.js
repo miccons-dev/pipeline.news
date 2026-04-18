@@ -67,6 +67,34 @@ function tagsHtml(post) {
   }).join('');
 }
 
+/* ── Modal tag cloud ─────────────────────────────────────────────── */
+function tagFreq() {
+  const f = {};
+  allPosts.forEach(p => (p.tags || []).forEach(t => { f[t] = (f[t] || 0) + 1; }));
+  return f;
+}
+
+function tagHash(str) {
+  let h = 0;
+  for (const ch of str) h = (h * 31 + ch.charCodeAt(0)) & 0xffff;
+  return h;
+}
+
+function modalTagCloud(tags) {
+  const freq = tagFreq();
+  const maxFreq = Math.max(1, ...Object.values(freq));
+  const items = tags.map((t, i) => {
+    const c = tagColor(t);
+    const f = freq[t] || 1;
+    const tier = f >= maxFreq * .7 ? 'lg' : f >= maxFreq * .35 ? 'md' : 'sm';
+    const rot = (tagHash(t) % 9) - 4; // -4..+4 deg, deterministic per tag
+    return `<span class="tag-cloud__item tag-cloud__item--${tier}"
+      style="--rot:${rot}deg;background:${c.bg};border-color:${c.bd};color:${c.c};animation-delay:${i * 55}ms"
+    >${esc(t)}</span>`;
+  }).join('');
+  return `<div class="tag-cloud">${items}</div>`;
+}
+
 /* ── Cover gradients (stable per post) ──────────────────────────── */
 const COVERS = [
   'linear-gradient(135deg,#0D2756 0%,#1E6BC5 100%)',
@@ -218,7 +246,7 @@ function injectCta(html, issueNum) {
 function openModal(post) {
   const issueNum = allPosts.length - allPosts.indexOf(post);
 
-  modalTags.innerHTML       = tagsHtml(post);
+  modalTags.innerHTML       = post.tags && post.tags.length ? modalTagCloud(post.tags) : '';
   modalTitle.textContent    = post.title;
   modalSubtitle.textContent = post.subtitle || post.preview_text || '';
   modalSubtitle.hidden      = !(post.subtitle || post.preview_text);

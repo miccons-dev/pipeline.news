@@ -1692,10 +1692,37 @@ a  { color: inherit; text-decoration: none; }
   border-color: var(--navy);
 }
 .blog-modal__tags {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
   margin-bottom: 8px;
+}
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  align-items: center;
+}
+.tag-cloud__item {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: default;
+  white-space: nowrap;
+  rotate: var(--rot, 0deg);
+  transition: rotate .22s ease, scale .22s ease, box-shadow .22s, filter .2s;
+  animation: tagPop .4s cubic-bezier(.175,.885,.32,1.275) both;
+}
+.tag-cloud__item--sm { font-size: 11px; padding: 4px 10px; }
+.tag-cloud__item--md { font-size: 13px; padding: 5px 13px; }
+.tag-cloud__item--lg { font-size: 15px; padding: 6px 16px; font-weight: 800; }
+.tag-cloud__item:hover {
+  rotate: 0deg;
+  scale: 1.12;
+  box-shadow: 0 4px 14px rgba(0,0,0,.13);
+  filter: brightness(1.08);
+}
+@keyframes tagPop {
+  from { opacity: 0; scale: .55; }
+  to   { opacity: 1; scale: 1; }
 }
 .blog-modal__logo-wrap {
   text-align: center;
