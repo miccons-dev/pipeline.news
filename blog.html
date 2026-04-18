@@ -12,7 +12,6 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
 </head>
 <body>
 
@@ -62,7 +61,7 @@
         Caricamento articoli…
       </div>
 
-      <div id="blogFeed"></div>
+      <div id="blogFeed" class="blog-feed-wrap"></div>
 
       <div class="blog-empty" id="blogEmpty" hidden>
         <div class="blog-empty__icon">📭</div>
@@ -74,20 +73,6 @@
 
     </div>
   </section>
-
-  <!-- ─── ARTICLE MODAL ────────────────────────────────────────── -->
-  <div class="blog-modal" id="blogModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="blog-modal__backdrop" id="modalBackdrop"></div>
-    <div class="blog-modal__panel">
-      <button class="blog-modal__close" id="modalClose" aria-label="Chiudi articolo">✕</button>
-      <div class="blog-modal__tags" id="modalTags"></div>
-      <time class="blog-modal__date" id="modalDate"></time>
-      <h1 class="blog-modal__title" id="modalTitle"></h1>
-      <p class="blog-modal__subtitle" id="modalSubtitle"></p>
-      <hr class="blog-modal__divider" />
-      <div class="blog-modal__body" id="modalBody"></div>
-    </div>
-  </div>
 
   <!-- ─── FOOTER ───────────────────────────────────────────────── -->
   <footer class="footer">

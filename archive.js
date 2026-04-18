@@ -1,206 +1,296 @@
-/* pipeline.news — archive.js */
 'use strict';
 
-/* ── Helpers ─────────────────────────────────────────────── */
-function escapeHtml(str) {
-  if (!str) return '';
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+/* ── DOM refs ───────────────────────────────────────────────────── */
+const loadingEl     = document.getElementById('archive-loading');
+const filtersEl     = document.getElementById('archive-filters');
+const tagPillsEl    = document.getElementById('archive-tag-pills');
+const feedEl        = document.getElementById('archive-feed');
+const emptyEl       = document.getElementById('archive-empty');
+const emptyReset    = document.getElementById('archive-empty-reset');
+const paginationEl  = document.getElementById('archive-pagination');
+const blogModal     = document.getElementById('blogModal');
+const modalClose    = document.getElementById('modalClose');
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalTags     = document.getElementById('modalTags');
+const modalDate     = document.getElementById('modalDate');
+const modalTitle    = document.getElementById('modalTitle');
+const modalSubtitle = document.getElementById('modalSubtitle');
+const modalBody     = document.getElementById('modalBody');
+
+/* ── State ──────────────────────────────────────────────────────── */
+const PER_PAGE  = 7;   // 1 featured + 6 grid
+let allPosts    = [];
+let activeTag   = null;
+let currentPage = 1;
+
+const MONTHS = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+
+/* ── Utils ──────────────────────────────────────────────────────── */
+function formatDate(ts) {
+  if (!ts) return '';
+  const d = new Date(ts * 1000);
+  return `${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-function formatDate(unixSeconds) {
-  const d = new Date(unixSeconds * 1000);
-  return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+function esc(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-/* ── DOM refs ────────────────────────────────────────────── */
-const loadingEl   = document.getElementById('archive-loading');
-const tagsEl      = document.getElementById('archive-tags');
-const listEl      = document.getElementById('archive-list');
-const emptyEl     = document.getElementById('archive-empty');
-const articleEl   = document.getElementById('archive-article');
-const dateEl      = document.getElementById('reader-date');
-const titleEl     = document.getElementById('reader-title');
-const subtitleEl  = document.getElementById('reader-subtitle');
-const bodyEl      = document.getElementById('reader-body');
-const noContentEl = document.getElementById('reader-no-content');
-const extLinkEl   = document.getElementById('reader-external-link');
-const backBtn     = document.getElementById('reader-back-btn');
-
-/* ── State ───────────────────────────────────────────────── */
-let allPosts = [];
-let posts    = [];
-let activeId  = null;
-let activeTag = null;
-
-/* ── Nav shadow ──────────────────────────────────────────── */
+/* ── Nav shadow ─────────────────────────────────────────────────── */
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('nav--scrolled', window.scrollY > 20);
 }, { passive: true });
 
-/* ── Tag filtering ───────────────────────────────────────── */
-function renderTags(allPostsData) {
-  const tagSet = new Set();
-  allPostsData.forEach(p => (p.tags || []).forEach(t => t && tagSet.add(t)));
-  const tags = [...tagSet].sort();
-  if (tags.length === 0) return;
-
-  tagsEl.innerHTML =
-    `<button class="archive-tag is-active" data-tag="">Tutti</button>` +
-    tags.map(t => `<button class="archive-tag" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('');
-
-  tagsEl.hidden = false;
-
-  tagsEl.addEventListener('click', e => {
-    const btn = e.target.closest('.archive-tag');
-    if (!btn) return;
-    const tag = btn.dataset.tag;
-    activeTag = tag || null;
-
-    tagsEl.querySelectorAll('.archive-tag').forEach(b =>
-      b.classList.toggle('is-active', b.dataset.tag === (activeTag || ''))
-    );
-
-    filterAndRender();
-  });
+/* ── Tag colours ────────────────────────────────────────────────── */
+const PALETTE = [
+  { bg: 'rgba(30,107,197,.09)',  bd: 'rgba(30,107,197,.22)', c: '#1E6BC5' },
+  { bg: 'rgba(0,196,160,.09)',   bd: 'rgba(0,196,160,.28)',  c: '#00A88A' },
+  { bg: 'rgba(91,184,245,.12)',  bd: 'rgba(91,184,245,.32)', c: '#1a6fa8' },
+  { bg: 'rgba(99,102,241,.09)',  bd: 'rgba(99,102,241,.25)', c: '#4f46e5' },
+  { bg: 'rgba(245,158,11,.10)',  bd: 'rgba(245,158,11,.28)', c: '#b45309' },
+];
+const colorMap = {};
+let colorIdx = 0;
+function tagColor(tag) {
+  if (!colorMap[tag]) colorMap[tag] = PALETTE[colorIdx++ % PALETTE.length];
+  return colorMap[tag];
 }
 
-function filterAndRender() {
+function tagsHtml(post) {
+  return (post.tags || []).map(t => {
+    const c = tagColor(t);
+    return `<span class="post-tag" style="background:${c.bg};border-color:${c.bd};color:${c.c}">${esc(t)}</span>`;
+  }).join('');
+}
+
+/* ── Cover gradients (stable per post) ──────────────────────────── */
+const COVERS = [
+  'linear-gradient(135deg,#0D2756 0%,#1E6BC5 100%)',
+  'linear-gradient(135deg,#1E6BC5 0%,#5BB8F5 100%)',
+  'linear-gradient(135deg,#00C4A0 0%,#0D2756 100%)',
+  'linear-gradient(135deg,#0D2756 0%,#00A88A 100%)',
+  'linear-gradient(135deg,#5BB8F5 0%,#4f46e5 100%)',
+];
+
+function coverBg(post) {
+  if (post.thumbnail_url) return `url('${esc(post.thumbnail_url)}') center/cover no-repeat`;
+  let h = 0;
+  for (const ch of post.id) h = (h * 31 + ch.charCodeAt(0)) & 0x7fffffff;
+  return COVERS[h % COVERS.length];
+}
+
+/* ── Tag filters ────────────────────────────────────────────────── */
+function renderFilters() {
+  const set = new Set();
+  allPosts.forEach(p => (p.tags || []).forEach(t => t && set.add(t)));
+  const tags = [...set].sort((a, b) => a.localeCompare(b, 'it'));
+  if (!tags.length) { filtersEl.hidden = true; return; }
+
+  const mkBtn = (label, tag) => {
+    const btn = document.createElement('button');
+    btn.className = 'page-filter-btn' + ((activeTag || '') === tag ? ' is-active' : '');
+    btn.textContent = label;
+    btn.dataset.tag = tag;
+    tagPillsEl.appendChild(btn);
+  };
+  mkBtn('Tutte', '');
+  tags.forEach(t => mkBtn(t, t));
+  filtersEl.hidden = false;
+}
+
+tagPillsEl.addEventListener('click', e => {
+  const btn = e.target.closest('.page-filter-btn');
+  if (!btn) return;
+  activeTag = btn.dataset.tag || null;
+  tagPillsEl.querySelectorAll('.page-filter-btn').forEach(b =>
+    b.classList.toggle('is-active', b.dataset.tag === (activeTag || ''))
+  );
+  currentPage = 1;
+  renderFeed();
+});
+
+/* ── Card HTML ──────────────────────────────────────────────────── */
+function cardHtml(p, issueNum, featured) {
+  const tags = tagsHtml(p);
+  const cls  = 'blog-card' + (featured ? ' blog-card--featured' : '');
+  return `
+    <article class="${cls}" data-id="${esc(p.id)}" tabindex="0" role="button"
+             aria-label="Edizione #${issueNum}: ${esc(p.title)}">
+      <div class="blog-card__cover" style="background:${coverBg(p)}">
+        <div class="archive-card__num">#${issueNum}</div>
+        ${tags ? `<div class="blog-card__cover-tags">${tags}</div>` : ''}
+      </div>
+      <div class="blog-card__body">
+        <h2 class="blog-card__title">${esc(p.title)}</h2>
+        ${p.subtitle ? `<p class="blog-card__subtitle">${esc(p.subtitle)}</p>` : ''}
+        <div class="blog-card__meta">
+          <time class="blog-card__date">${formatDate(p.publish_date)}</time>
+          <span class="blog-card__read">Leggi →</span>
+        </div>
+      </div>
+    </article>`;
+}
+
+/* ── Pagination ─────────────────────────────────────────────────── */
+function renderPagination(totalPages) {
+  if (totalPages <= 1) { paginationEl.hidden = true; return; }
+  paginationEl.hidden = false;
+  const items = [];
+  items.push(`<button class="pag-btn" data-page="${currentPage - 1}" ${currentPage === 1 ? 'disabled' : ''}>← Precedenti</button>`);
+  const delta = 2;
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= delta) {
+      items.push(`<button class="pag-btn${i === currentPage ? ' is-active' : ''}" data-page="${i}">${i}</button>`);
+    } else if (Math.abs(i - currentPage) === delta + 1) {
+      items.push(`<span class="pag-ellipsis">…</span>`);
+    }
+  }
+  items.push(`<button class="pag-btn" data-page="${currentPage + 1}" ${currentPage === totalPages ? 'disabled' : ''}>Successive →</button>`);
+  paginationEl.innerHTML = items.join('');
+}
+
+/* ── Feed render ────────────────────────────────────────────────── */
+function renderFeed() {
   const filtered = activeTag
     ? allPosts.filter(p => (p.tags || []).includes(activeTag))
     : allPosts;
-  renderList(filtered);
 
-  /* If active post is not in filtered set, reset reader */
-  if (activeId && !filtered.find(p => p.id === activeId)) {
-    articleEl.hidden = true;
-    emptyEl.hidden   = false;
-    activeId         = null;
-    history.replaceState(null, '', location.pathname);
-  }
-}
+  const total      = filtered.length;
+  const totalPages = Math.ceil(total / PER_PAGE) || 1;
+  if (currentPage > totalPages) currentPage = 1;
 
-/* ── Select post ─────────────────────────────────────────── */
-function selectPost(id) {
-  const post = posts.find(p => p.id === id);
-  if (!post) return;
-  activeId = id;
+  const page = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
 
-  /* Aggiorna stato attivo nella sidebar */
-  listEl.querySelectorAll('.archive-list__item').forEach(el => {
-    el.classList.toggle('is-active', el.dataset.id === id);
-    el.setAttribute('aria-selected', el.dataset.id === id ? 'true' : 'false');
+  feedEl.hidden  = total === 0;
+  emptyEl.hidden = total > 0;
+  if (total === 0) { paginationEl.hidden = true; return; }
+
+  let html = '<div class="blog-grid">';
+  page.forEach((p, i) => {
+    const issueNum = allPosts.length - allPosts.indexOf(p);
+    html += cardHtml(p, issueNum, i === 0 && currentPage === 1);
   });
+  html += '</div>';
+  feedEl.innerHTML = html;
 
-  /* Popola il lettore */
-  dateEl.textContent     = formatDate(post.publish_date);
-  titleEl.textContent    = post.title;
-  subtitleEl.textContent = post.subtitle || post.preview_text || '';
-
-  if (post.content_html && post.content_html.trim()) {
-    const parser = new DOMParser();
-    const doc    = parser.parseFromString(post.content_html, 'text/html');
-    bodyEl.innerHTML   = doc.body ? doc.body.innerHTML : post.content_html;
-    noContentEl.hidden = true;
-    bodyEl.hidden      = false;
-  } else {
-    bodyEl.innerHTML   = '';
-    bodyEl.hidden      = true;
-    noContentEl.hidden = false;
-    extLinkEl.href     = post.web_url;
-  }
-
-  emptyEl.hidden   = true;
-  articleEl.hidden = false;
-
-  if (window.innerWidth < 900) {
-    articleEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  history.replaceState(null, '', '#' + id);
-}
-
-/* ── Torna alla lista (mobile) ───────────────────────────── */
-backBtn.addEventListener('click', () => {
-  articleEl.hidden = true;
-  emptyEl.hidden   = false;
-  activeId         = null;
-  listEl.querySelectorAll('.archive-list__item').forEach(el => {
-    el.classList.remove('is-active');
-    el.setAttribute('aria-selected', 'false');
-  });
-  history.replaceState(null, '', location.pathname);
-  if (window.innerWidth < 900) {
-    document.getElementById('archive-sidebar').scrollIntoView({ behavior: 'smooth' });
-  }
-});
-
-/* ── Render lista ────────────────────────────────────────── */
-function renderList(data) {
-  posts = data;
-
-  if (data.length === 0) {
-    listEl.innerHTML = '<li class="archive-list__empty">Nessuna edizione per questo tag.</li>';
-    return;
-  }
-
-  listEl.innerHTML = data.map((p, i) => `
-    <li class="archive-list__item"
-        data-id="${escapeHtml(p.id)}"
-        role="option"
-        tabindex="0"
-        aria-selected="false"
-        aria-label="${escapeHtml(p.title)}">
-      <span class="archive-list__num">#${allPosts.length - allPosts.findIndex(ap => ap.id === p.id)}</span>
-      <div class="archive-list__info">
-        <span class="archive-list__date">${formatDate(p.publish_date)}</span>
-        <span class="archive-list__title">${escapeHtml(p.title)}</span>
-      </div>
-    </li>
-  `).join('');
-
-  listEl.querySelectorAll('.archive-list__item').forEach(el => {
-    el.addEventListener('click', () => selectPost(el.dataset.id));
-    el.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        selectPost(el.dataset.id);
-      }
+  feedEl.querySelectorAll('.blog-card').forEach(card => {
+    const open = () => {
+      const post = allPosts.find(p => p.id === card.dataset.id);
+      if (post) openModal(post);
+    };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
     });
   });
+
+  renderPagination(totalPages);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Carica archive.json ─────────────────────────────────── */
+/* ── Mid-article CTA ────────────────────────────────────────────── */
+function buildCtaHtml(issueNum) {
+  return `
+    <div class="modal-cta">
+      <div class="modal-cta__label">Pipeline · Edizione #${issueNum}</div>
+      <h3 class="modal-cta__heading">Quella di martedì prossimo arriva direttamente nella tua inbox.</h3>
+      <p class="modal-cta__sub">Ogni martedì: una tattica di vendita, uno script pronto e un tool da usare quella stessa mattina. Gratis. Nessun rumore.</p>
+      <iframe src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
+              data-test-id="beehiiv-embed"
+              width="100%" height="160" frameborder="0" scrolling="no"
+              class="modal-cta__iframe" title="Iscriviti a Pipeline"></iframe>
+    </div>`;
+}
+
+function injectCta(html, issueNum) {
+  const half = Math.floor(html.length / 2);
+  const cut  = html.indexOf('>', half);
+  if (cut === -1) return html + buildCtaHtml(issueNum);
+  return html.slice(0, cut + 1) + buildCtaHtml(issueNum) + html.slice(cut + 1);
+}
+
+/* ── Modal ──────────────────────────────────────────────────────── */
+function openModal(post) {
+  const issueNum = allPosts.length - allPosts.indexOf(post);
+
+  modalTags.innerHTML       = tagsHtml(post);
+  modalDate.textContent     = formatDate(post.publish_date);
+  modalTitle.textContent    = post.title;
+  modalSubtitle.textContent = post.subtitle || post.preview_text || '';
+  modalSubtitle.hidden      = !(post.subtitle || post.preview_text);
+
+  const rawHtml = post.content_html && post.content_html.trim()
+    ? post.content_html
+    : (post.preview_text
+        ? `<p>${esc(post.preview_text)}</p>`
+        : '<p style="color:var(--gray)">Contenuto non disponibile.</p>');
+
+  modalBody.innerHTML = injectCta(rawHtml, issueNum);
+
+  blogModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  blogModal.scrollTop = 0;
+  history.replaceState(null, '', '#' + post.id);
+}
+
+function closeModal() {
+  blogModal.hidden = true;
+  document.body.style.overflow = '';
+  history.replaceState(null, '', location.pathname);
+}
+
+modalClose.addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', closeModal);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !blogModal.hidden) closeModal();
+});
+
+paginationEl.addEventListener('click', e => {
+  const btn = e.target.closest('.pag-btn');
+  if (!btn || btn.disabled) return;
+  currentPage = parseInt(btn.dataset.page, 10);
+  renderFeed();
+});
+
+emptyReset.addEventListener('click', () => {
+  activeTag = null;
+  tagPillsEl.querySelectorAll('.page-filter-btn').forEach(b =>
+    b.classList.toggle('is-active', b.dataset.tag === '')
+  );
+  currentPage = 1;
+  renderFeed();
+});
+
+/* ── Init ───────────────────────────────────────────────────────── */
 async function loadArchive() {
   try {
-    const res  = await fetch('archive.json');
+    const res = await fetch('archive.json');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
     loadingEl.hidden = true;
 
     if (!data.posts || data.posts.length === 0) {
-      listEl.innerHTML = '<li class="archive-list__empty">Nessuna edizione disponibile.</li>';
+      feedEl.innerHTML = '<p style="text-align:center;color:var(--gray);padding:80px 0">Nessuna edizione disponibile.</p>';
       return;
     }
 
     allPosts = data.posts;
-    renderTags(allPosts);
-    renderList(allPosts);
+    allPosts.flatMap(p => p.tags || []).forEach(t => tagColor(t));
+    renderFilters();
+    renderFeed();
 
-    /* Apre il post dall'hash URL (link diretto) */
     const hash = location.hash.slice(1);
-    if (hash && allPosts.find(p => p.id === hash)) {
-      selectPost(hash);
+    if (hash) {
+      const post = allPosts.find(p => p.id === hash);
+      if (post) openModal(post);
     }
-
   } catch {
     loadingEl.hidden = true;
-    listEl.innerHTML = '<li class="archive-list__empty">Impossibile caricare l\'archivio.<br>Riprova più tardi.</li>';
+    feedEl.innerHTML = '<p style="text-align:center;color:var(--gray);padding:80px 0">Impossibile caricare l\'archivio. Riprova più tardi.</p>';
   }
 }
 

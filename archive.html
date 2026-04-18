@@ -10,6 +10,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
 </head>
 <body>
 
@@ -30,10 +31,10 @@
     </div>
   </header>
 
-  <!-- ─── HEADER PAGINA ───────────────────────────────────────── -->
+  <!-- ─── HERO ────────────────────────────────────────────────── -->
   <section class="page-hero">
     <div class="container page-hero__inner">
-      <div class="page-hero__badge">📚 Edizioni settimanali</div>
+      <div class="page-hero__badge">📬 Edizioni settimanali</div>
       <h1 class="page-hero__title">Archivio Newsletter</h1>
       <p class="page-hero__sub">
         Tutte le edizioni di Pipeline, dalla più recente alla più antica.<br />
@@ -42,63 +43,47 @@
     </div>
   </section>
 
-  <!-- ─── LAYOUT ARCHIVIO ─────────────────────────────────────── -->
-  <div class="archive-layout">
+  <!-- ─── FILTRI TAG ───────────────────────────────────────────── -->
+  <div class="page-filters" id="archive-filters" hidden>
+    <div class="container">
+      <div class="page-filters__pills" id="archive-tag-pills" role="group" aria-label="Filtra per argomento"></div>
+    </div>
+  </div>
 
-    <!-- Sidebar: lista edizioni -->
-    <aside class="archive-sidebar" id="archive-sidebar">
-      <div class="archive-sidebar__inner">
-        <div class="archive-loading" id="archive-loading" aria-live="polite">
-          <span class="issues__spinner"></span> Caricamento archivio…
-        </div>
-        <div class="archive-tags" id="archive-tags" hidden></div>
-        <ul class="archive-list" id="archive-list" role="list"></ul>
-      </div>
-    </aside>
+  <!-- ─── GRIGLIA EDIZIONI ─────────────────────────────────────── -->
+  <section class="blog-section">
+    <div class="container">
 
-    <!-- Pannello lettore -->
-    <main class="archive-reader" id="archive-reader">
-
-      <!-- Stato vuoto iniziale -->
-      <div class="archive-reader__empty" id="archive-empty">
-        <div class="archive-empty">
-          <div class="archive-empty__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M19 12H5M12 5l-7 7 7 7"/>
-            </svg>
-          </div>
-          <h2 class="archive-empty__title">Scegli un'edizione</h2>
-          <p class="archive-empty__text">
-            Clicca su uno dei numeri nella lista per leggerne il contenuto completo qui a fianco.
-          </p>
-          <div class="archive-empty__tag">
-            <span>← Seleziona dalla lista</span>
-          </div>
-        </div>
+      <div class="blog-loading" id="archive-loading" aria-live="polite">
+        <span class="issues__spinner"></span>
+        Caricamento archivio…
       </div>
 
-      <!-- Contenuto edizione -->
-      <article class="archive-reader__article" id="archive-article" hidden>
-        <header class="archive-reader__topbar">
-          <button class="archive-reader__back-btn" id="reader-back-btn" aria-label="Torna alla lista">
-            ← Lista edizioni
-          </button>
-          <span class="archive-reader__date" id="reader-date"></span>
-        </header>
-        <h1 class="archive-reader__title" id="reader-title"></h1>
-        <p class="archive-reader__subtitle" id="reader-subtitle"></p>
-        <hr class="archive-reader__divider" />
-        <div class="archive-reader__body" id="reader-body"></div>
-        <div class="archive-reader__no-content" id="reader-no-content" hidden>
-          <p>Il contenuto completo di questa edizione è disponibile su Beehiiv.</p>
-          <a href="#" id="reader-external-link" class="btn btn--primary"
-             target="_blank" rel="noopener noreferrer">
-            Leggi l'edizione completa →
-          </a>
-        </div>
-      </article>
+      <div id="archive-feed"></div>
 
-    </main>
+      <div class="blog-empty" id="archive-empty" hidden>
+        <div class="blog-empty__icon">📭</div>
+        <p class="blog-empty__text">Nessuna edizione trovata.</p>
+        <button class="blog-empty__reset" id="archive-empty-reset">Mostra tutte →</button>
+      </div>
+
+      <nav class="blog-pagination" id="archive-pagination" hidden aria-label="Pagine"></nav>
+
+    </div>
+  </section>
+
+  <!-- ─── ARTICLE MODAL ────────────────────────────────────────── -->
+  <div class="blog-modal" id="blogModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="blog-modal__backdrop" id="modalBackdrop"></div>
+    <div class="blog-modal__panel">
+      <button class="blog-modal__close" id="modalClose" aria-label="Chiudi">✕</button>
+      <div class="blog-modal__tags" id="modalTags"></div>
+      <time class="blog-modal__date" id="modalDate"></time>
+      <h1 class="blog-modal__title" id="modalTitle"></h1>
+      <p class="blog-modal__subtitle" id="modalSubtitle"></p>
+      <hr class="blog-modal__divider" />
+      <div class="blog-modal__body" id="modalBody"></div>
+    </div>
   </div>
 
   <!-- ─── FOOTER ────────────────────────────────────────────────── -->
