@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
+      "kind": "article",
+      "title": "Due ore al giorno. È tutto il tempo che hai per vendere.",
+      "subtitle": "Il problema non è la motivazione. È dove finisce il tempo.",
+      "preview_text": "I responsabili commerciali italiani non perdono trattative per mancanza di tecnica. Le perdono perché quando arriva il momento di fare una c",
+      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
+      "publish_date": 1776295920,
+      "thumbnail_url": null,
+      "tags": [
+        "gestione tempo",
+        "produttività",
+        "pmi",
+        "pianificazione",
+        "crm"
+      ]
+    },
+    {
       "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
       "kind": "newsletter",
       "title": "Il C-level risponde. Solo se gli dai un motivo.",
@@ -322,5 +339,5 @@
       ]
     }
   ],
-  "generated": 1776548452
+  "generated": 1776548455
 }
