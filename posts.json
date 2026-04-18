@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il multi-threading non è una scelta. È l'unica via.",
+      "subtitle": "Come costruire consenso interno prima che il decisore ti risponda",
+      "preview_text": "Il numero della settimana 45% dei team sales usa l&#x27;AI per la ricerca account. Il che significa che il vantaggio informativo si sta azze",
+      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "publish_date": 1773732600,
+      "thumbnail_url": null,
+      "tags": [
+        "stakeholder",
+        "trattativa",
+        "b2b",
+        "consenso",
+        "pmi"
+      ]
+    },
+    {
       "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
       "kind": "article",
       "title": "La ricerca sul prospect non basta più. Cambia il gioco.",
@@ -119,23 +136,6 @@
       ]
     },
     {
-      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il multi-threading non è una scelta. È l'unica via.",
-      "subtitle": "Come costruire consenso interno prima che il decisore ti risponda",
-      "preview_text": "Il numero della settimana 45% dei team sales usa l&#x27;AI per la ricerca account. Il che significa che il vantaggio informativo si sta azze",
-      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "publish_date": 1773127800,
-      "thumbnail_url": null,
-      "tags": [
-        "stakeholder",
-        "trattativa",
-        "b2b",
-        "consenso",
-        "pmi"
-      ]
-    },
-    {
       "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
       "title": "Dove metti la riprova sociale cambia tutto",
       "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
@@ -163,5 +163,5 @@
       "thumbnail_url": null
     }
   ],
-  "generated": 1776548408
+  "generated": 1776548411
 }
