@@ -87,7 +87,7 @@ async function loadPosts() {
       return;
     }
 
-    const cards = data.posts.slice().sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3).map(post => `
+    const cards = data.posts.filter(p => p.kind === 'newsletter').sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3).map(post => `
       <a class="blog-card" href="/archive.html#${escapeHtml(post.id)}" aria-label="${escapeHtml(post.title)}">
         <div class="blog-card__cover" style="background:${coverBg(post.id)}"></div>
         <div class="blog-card__body">
