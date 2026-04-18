@@ -1,33 +1,5 @@
 {
-  "_comment": "Questo file è generato automaticamente da GitHub Actions. Non modificarlo a mano.",
-  "posts": [
-    {
-      "id": "placeholder-1",
-      "title": "Come usare l'AI per qualificare i lead in metà tempo",
-      "subtitle": "Abbiamo testato 6 strumenti di AI per la qualificazione dei lead. Ecco quale ha funzionato meglio e come integrarlo nel tuo processo di vendita.",
-      "preview_text": "Abbiamo testato 6 strumenti di AI per la qualificazione dei lead. Ecco quale ha funzionato meglio e come integrarlo nel tuo processo.",
-      "web_url": "#",
-      "publish_date": 1775520000,
-      "thumbnail_url": null
-    },
-    {
-      "id": "placeholder-2",
-      "title": "Il metodo MEDDIC spiegato con un caso reale B2B italiano",
-      "subtitle": "MEDDIC è la metodologia di qualificazione preferita dalle aziende SaaS. Ti mostriamo come adattarla al mercato italiano con un caso concreto.",
-      "preview_text": "MEDDIC è la metodologia di qualificazione preferita dalle aziende SaaS. Ti mostriamo come adattarla al mercato italiano.",
-      "web_url": "#",
-      "publish_date": 1774915200,
-      "thumbnail_url": null
-    },
-    {
-      "id": "placeholder-3",
-      "title": "Perché i tuoi follow-up non funzionano (e come sistemarli)",
-      "subtitle": "L'80% delle vendite richiede almeno 5 follow-up. Il 44% dei venditori si arrende dopo il primo. Ecco la sequenza che funziona davvero.",
-      "preview_text": "L'80% delle vendite richiede almeno 5 follow-up. Il 44% dei venditori si arrende dopo il primo. Ecco la sequenza che funziona.",
-      "web_url": "#",
-      "publish_date": 1774310400,
-      "thumbnail_url": null
-    }
-  ],
+  "_comment": "Generato dall'admin pipeline-agent.",
+  "posts": [],
   "generated": null
 }
