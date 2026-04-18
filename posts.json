@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "kind": "article",
+      "title": "Tre righe che un CEO legge. Le altre no.",
+      "subtitle": "Come costruire un messaggio che guadagna attenzione prima di chiederla",
+      "preview_text": "2% tasso di risposta medio delle email standard a decisori senior Non è che i CEO non rispondono alle email. È che non rispondono alle tue. ",
+      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "publish_date": 1773185940,
+      "thumbnail_url": null,
+      "tags": [
+        "cold outreach",
+        "messaggi decisori"
+      ]
+    },
+    {
       "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
       "kind": "article",
       "title": "Quanto ti costa non automatizzare lo scheduling",
@@ -304,24 +318,7 @@
         "crm",
         "b2b"
       ]
-    },
-    {
-      "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "kind": "article",
-      "title": "Dove metti la riprova sociale cambia tutto",
-      "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
-      "preview_text": "Hai un caso di successo forte, un cliente che ha ottenuto risultati veri, numeri verificabili. Lo metti all&#x27;inizio della proposta per i",
-      "web_url": "https://www.pipeline.news/post.html?id=dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "publish_date": 1774567920,
-      "thumbnail_url": null,
-      "tags": [
-        "riprova sociale",
-        "proposte commerciali",
-        "obiezioni",
-        "pmi",
-        "ricontatto"
-      ]
     }
   ],
-  "generated": 1776551830
+  "generated": 1776551833
 }
