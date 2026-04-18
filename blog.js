@@ -171,7 +171,7 @@ emptyReset.addEventListener('click', () => {
 /* ── Init ────────────────────────────────────────────────── */
 async function loadBlog() {
   try {
-    const res = await fetch('archive.json');
+    const res = await fetch('blog.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
     allPosts = (data.posts || []).filter(p => p.title);
