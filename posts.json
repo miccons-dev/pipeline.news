@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
+      "kind": "article",
+      "title": "Tutti hanno gli stessi dati. Il problema è che si vede.",
+      "subtitle": "L'AI ha azzerato il vantaggio informativo. Resta un solo livello su cui competere.",
+      "preview_text": "45% dei team sales usa già l'AI per la ricerca account Hai aperto LinkedIn Sales Navigator. Hai letto il sito. Hai trovato un post del CEO d",
+      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
+      "publish_date": 1773531540,
+      "thumbnail_url": "https://images.pexels.com/photos/7793720/pexels-photo-7793720.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7793720/pexels-photo-7793720.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Businessman examining a line graph in a modern office space.",
+      "image_attribution": "Foto: Yan Krukau (https://www.pexels.com/@yankrukov) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "due-ore-per-vendere-dove-vanno-le-altre-sei-2026-03-19",
       "kind": "article",
       "title": "Il 75% della giornata non è vendita",
@@ -323,24 +340,7 @@
         "pmi",
         "outreach"
       ]
-    },
-    {
-      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il multi-threading non è una scelta. È l'unica via.",
-      "subtitle": "Come costruire consenso interno prima che il decisore ti risponda",
-      "preview_text": "Il numero della settimana 45% dei team sales usa l&#x27;AI per la ricerca account. Il che significa che il vantaggio informativo si sta azze",
-      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "publish_date": 1774942200,
-      "thumbnail_url": null,
-      "image_url": null,
-      "image_alt": "Il multi-threading non è una scelta. È l'unica via.",
-      "image_attribution": null,
-      "tags": [
-        "outreach",
-        "linkedin"
-      ]
     }
   ],
-  "generated": 1776614218
+  "generated": 1776614222
 }
