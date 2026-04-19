@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "kind": "article",
+      "title": "Quanto ti costa non automatizzare la prenotazione",
+      "subtitle": "Il calcolo che nessun commerciale fa mai",
+      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Ogni email che scrivi per fissare un appuntamento — &#x27;va bene martedì?&#x27;",
+      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "publish_date": 1777592040,
+      "thumbnail_url": "https://images.pexels.com/photos/4386341/pexels-photo-4386341.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/4386341/pexels-photo-4386341.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "From above of roll of American dollar banknotes tied with rubber band near professional calculator and empty spring notepad with pen on marble table",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "processi",
+        "b2b"
+      ]
+    },
+    {
       "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
       "kind": "article",
       "title": "Cerchi il decisore sbagliato nel posto sbagliato",
@@ -255,20 +272,6 @@
       ]
     },
     {
-      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
-      "kind": "article",
-      "title": "Quanto ti costa non automatizzare lo scheduling",
-      "subtitle": "Il calcolo che nessun commerciale fa mai",
-      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Ogni email che scrivi per fissare un appuntamento — &#x27;va bene martedì?&#x27;",
-      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
-      "publish_date": 1777592040,
-      "thumbnail_url": null,
-      "tags": [
-        "processi",
-        "b2b"
-      ]
-    },
-    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo non è il problema. È dove lo metti.",
@@ -297,5 +300,5 @@
       ]
     }
   ],
-  "generated": 1776607311
+  "generated": 1776607314
 }
