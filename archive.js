@@ -12,11 +12,14 @@ const blogModal     = document.getElementById('blogModal');
 const modalClose    = document.getElementById('modalClose');
 const modalBackdrop = document.getElementById('modalBackdrop');
 const modalLogo     = document.getElementById('modalLogo');
-const modalTags     = document.getElementById('modalTags');
-const modalTitle    = document.getElementById('modalTitle');
-const modalSubtitle = document.getElementById('modalSubtitle');
-const modalDate     = document.getElementById('modalDate');
-const modalBody     = document.getElementById('modalBody');
+const modalTags       = document.getElementById('modalTags');
+const modalTitle      = document.getElementById('modalTitle');
+const modalSubtitle   = document.getElementById('modalSubtitle');
+const modalDate       = document.getElementById('modalDate');
+const modalBody       = document.getElementById('modalBody');
+const modalCtaOverlay = document.getElementById('modalCtaOverlay');
+const modalCtaLabel   = document.getElementById('modalCtaLabel');
+const modalCtaDismiss = document.getElementById('modalCtaDismiss');
 
 /* ── State ──────────────────────────────────────────────────────── */
 const PER_PAGE  = 7;   // 1 featured + 6 grid
@@ -213,27 +216,6 @@ function renderFeed() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Mid-article CTA ────────────────────────────────────────────── */
-function buildCtaHtml(issueNum) {
-  return `
-    <div class="modal-cta">
-      <div class="modal-cta__label">Pipeline · Edizione #${issueNum}</div>
-      <h3 class="modal-cta__heading">Quella di martedì prossimo arriva direttamente nella tua inbox.</h3>
-      <p class="modal-cta__sub">Ogni martedì: una tattica di vendita, uno script pronto e un tool da usare quella stessa mattina. Nessun rumore. Gratis.</p>
-      <iframe src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
-              data-test-id="beehiiv-embed"
-              width="100%" height="80" frameborder="0" scrolling="no"
-              class="modal-cta__iframe" title="Iscriviti a Pipeline"></iframe>
-    </div>
-    <div class="modal-cta__fade"></div>`;
-}
-
-function injectCta(html, issueNum) {
-  const half = Math.floor(html.length / 2);
-  const cut  = html.indexOf('>', half);
-  if (cut === -1) return html + buildCtaHtml(issueNum);
-  return html.slice(0, cut + 1) + buildCtaHtml(issueNum) + html.slice(cut + 1);
-}
 
 /* ── Dynamic meta (SEO / social sharing) ───────────────────────── */
 function setMeta(attr, val, content) {
@@ -269,7 +251,9 @@ function openModal(post) {
     modalLogo.hidden = true;
   }
 
-  modalBody.innerHTML = injectCta(rawHtml, issueNum);
+  modalBody.innerHTML = rawHtml;
+  modalCtaLabel.textContent = `Pipeline · Edizione #${issueNum}`;
+  modalCtaOverlay.hidden = false;
 
   blogModal.hidden = false;
   document.body.style.overflow = 'hidden';
@@ -284,6 +268,7 @@ function openModal(post) {
 
 function closeModal() {
   blogModal.hidden = true;
+  modalCtaOverlay.hidden = false;
   document.body.style.overflow = '';
   history.replaceState(null, '', location.pathname);
   document.title = _defaultTitle;
@@ -297,6 +282,10 @@ modalClose.addEventListener('click', closeModal);
 modalBackdrop.addEventListener('click', closeModal);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && !blogModal.hidden) closeModal();
+});
+
+modalCtaDismiss.addEventListener('click', () => {
+  modalCtaOverlay.hidden = true;
 });
 
 paginationEl.addEventListener('click', e => {

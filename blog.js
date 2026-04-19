@@ -236,27 +236,6 @@ function renderFeed() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Mid-article CTA ────────────────────────────────────────────── */
-function buildCtaHtml() {
-  return `
-    <div class="modal-cta">
-      <div class="modal-cta__label">Pipeline · Newsletter settimanale</div>
-      <h3 class="modal-cta__heading">Ogni martedì, una tattica di vendita nella tua inbox.</h3>
-      <p class="modal-cta__sub">Script pronti, tool e strategie per chi vive di vendita B2B. Nessun rumore. Gratis.</p>
-      <iframe src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
-              data-test-id="beehiiv-embed"
-              width="100%" height="80" frameborder="0" scrolling="no"
-              class="modal-cta__iframe" title="Iscriviti a Pipeline"></iframe>
-    </div>
-    <div class="modal-cta__fade"></div>`;
-}
-
-function injectCta(html) {
-  const half = Math.floor(html.length / 2);
-  const cut  = html.indexOf('>', half);
-  if (cut === -1) return html + buildCtaHtml();
-  return html.slice(0, cut + 1) + buildCtaHtml() + html.slice(cut + 1);
-}
 
 /* ── Dynamic meta ───────────────────────────────────────────────── */
 function setMeta(attr, val, content) {
@@ -280,7 +259,7 @@ function openModal(post) {
         ? `<p>${esc(post.preview_text)}</p>`
         : '<p style="color:var(--gray)">Contenuto non disponibile.</p>');
 
-  modalBody.innerHTML = injectCta(rawHtml);
+  modalBody.innerHTML = rawHtml;
 
   blogModal.hidden = false;
   document.body.style.overflow = 'hidden';
