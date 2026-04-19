@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "kind": "article",
+      "title": "200 ore l'anno spese a rimbalzare date via email",
+      "subtitle": "Chi usa la prenotazione automatica chiude il 27% di trattative in più. Non per lo strumento: per il tempo che libera.",
+      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Martedì va bene? No, mercoledì sono in trasferta. Giovedì mattina? Meglio pomeri",
+      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "publish_date": 1776728040,
+      "thumbnail_url": "https://images.pexels.com/photos/29509495/pexels-photo-29509495.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/29509495/pexels-photo-29509495.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Spiral-bound calendar showing May with focus on weekdays in Portuguese.",
+      "image_attribution": "Foto: Matheus Bertelli (https://www.pexels.com/@bertellifotografia) · Pexels",
+      "tags": [
+        "processi",
+        "b2b"
+      ]
+    },
+    {
       "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
       "kind": "article",
       "title": "Contatti l'AD a freddo e hai già perso",
@@ -323,24 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il C-level risponde. Solo se gli dai un motivo.",
-      "subtitle": "Come scrivere al decisore senza finire ignorato",
-      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale dedica davvero alla vendita in una giornata lavorativa di 8 ore. Il rest",
-      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "publish_date": 1776203280,
-      "thumbnail_url": null,
-      "image_url": null,
-      "image_alt": "Il C-level risponde. Solo se gli dai un motivo.",
-      "image_attribution": null,
-      "tags": [
-        "email a freddo",
-        "chiamata a freddo"
-      ]
     }
   ],
-  "generated": 1776614231
+  "generated": 1776614234
 }
