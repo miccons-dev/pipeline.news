@@ -73,22 +73,15 @@ function tagFreq() {
   return f;
 }
 
-function tagHash(str) {
-  let h = 0;
-  for (const ch of str) h = (h * 31 + ch.charCodeAt(0)) & 0xffff;
-  return h;
-}
-
 function modalTagCloud(tags) {
   const freq = tagFreq();
   const maxFreq = Math.max(1, ...Object.values(freq));
-  const items = tags.map((t, i) => {
+  const items = tags.map(t => {
     const c = tagColor(t);
     const f = freq[t] || 1;
     const tier = f >= maxFreq * .7 ? 'lg' : f >= maxFreq * .35 ? 'md' : 'sm';
-    const rot = (tagHash(t) % 9) - 4;
     return `<span class="tag-cloud__item tag-cloud__item--${tier}"
-      style="--rot:${rot}deg;background:${c.bg};border-color:${c.bd};color:${c.c};animation-delay:${i * 55}ms"
+      style="background:${c.bg};border-color:${c.bd};color:${c.c}"
     >${esc(t)}</span>`;
   }).join('');
   return `<div class="tag-cloud">${items}</div>`;
