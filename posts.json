@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "kind": "newsletter",
+      "title": "L'evento da 10 persone che ha cambiato tutto",
+      "subtitle": "Come trasformare l'adozione dell'IA in un vantaggio commerciale reale — senza aspettare il consenso di nessuno",
+      "preview_text": "Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l&#x27;adozione dell&#x27;IA in azienda dal 10% al 97% con un singolo evento",
+      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "publish_date": 1775547000,
+      "thumbnail_url": null,
+      "tags": [
+        "adozione ia",
+        "formazione commerciale"
+      ]
+    },
+    {
       "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
       "kind": "article",
       "title": "Prenotazione automatica: 27% di trattative chiuse in più",
@@ -184,20 +198,6 @@
       ]
     },
     {
-      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "kind": "newsletter",
-      "title": "L'evento da 10 persone che ha cambiato tutto",
-      "subtitle": "Come trasformare l'adozione dell'IA in un vantaggio commerciale reale — senza aspettare il consenso di nessuno",
-      "preview_text": "Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l&#x27;adozione dell&#x27;IA in azienda dal 10% al 97% con un singolo evento",
-      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "publish_date": 1775547000,
-      "thumbnail_url": null,
-      "tags": [
-        "adozione ia",
-        "team commerciale"
-      ]
-    },
-    {
       "id": "il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
       "kind": "article",
       "title": "Il fondatore che vende: il vantaggio che non sa di avere",
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776576021
+  "generated": 1776576024
 }
