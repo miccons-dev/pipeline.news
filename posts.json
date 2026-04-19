@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "kind": "article",
+      "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
+      "subtitle": "Il problema è la sequenza, non il numero",
+      "preview_text": "Il potenziale cliente legge la tua proposta, vede il prezzo, smette di rispondere. Non è che non può permetterselo. È che lo hai messo a con",
+      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "publish_date": 1774913520,
+      "thumbnail_url": null,
+      "tags": [
+        "pricing",
+        "obiezioni"
+      ]
+    },
+    {
       "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
       "kind": "article",
       "title": "Riprova sociale nelle proposte: la posizione vale più del contenuto",
@@ -240,20 +254,6 @@
       ]
     },
     {
-      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "kind": "article",
-      "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
-      "subtitle": "Il problema è la sequenza, non il numero",
-      "preview_text": "Il potenziale cliente legge la tua proposta, vede il prezzo, smette di rispondere. Non è che non può permetterselo. È che lo hai messo a con",
-      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "publish_date": 1774913520,
-      "thumbnail_url": null,
-      "tags": [
-        "ancoraggio valore",
-        "struttura proposta"
-      ]
-    },
-    {
       "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
       "kind": "newsletter",
       "title": "Due ore al giorno non bastano. Ma le stai usando bene?",
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776589196
+  "generated": 1776589199
 }
