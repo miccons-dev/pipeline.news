@@ -53,7 +53,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
+  <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
 </head>
 <body>
 
@@ -91,9 +92,9 @@
   </section>
 
   <!-- ─── FILTRI TAG ────────────────────────────────────────────── -->
-  <div class="page-filters" id="blogFilters" hidden>
+  <div class="page-filters" id="blog-filters" hidden>
     <div class="container">
-      <div class="page-filters__pills" id="filterPills" role="group" aria-label="Filtra per argomento"></div>
+      <div class="page-filters__pills" id="blog-tag-pills" role="group" aria-label="Filtra per argomento"></div>
     </div>
   </div>
 
@@ -101,23 +102,37 @@
   <section class="blog-section">
     <div class="container">
 
-      <div class="blog-loading" id="blogLoading" aria-live="polite">
+      <div class="blog-loading" id="blog-loading" aria-live="polite">
         <span class="issues__spinner"></span>
         Caricamento articoli…
       </div>
 
-      <div id="blogFeed" class="blog-feed-wrap"></div>
+      <div id="blog-feed"></div>
 
-      <div class="blog-empty" id="blogEmpty" hidden>
+      <div class="blog-empty" id="blog-empty" hidden>
         <div class="blog-empty__icon">📭</div>
         <p class="blog-empty__text">Nessun articolo trovato per questo tag.</p>
-        <button class="blog-empty__reset" id="emptyReset">Mostra tutti →</button>
+        <button class="blog-empty__reset" id="blog-empty-reset">Mostra tutti →</button>
       </div>
 
-      <nav class="blog-pagination" id="blogPagination" hidden aria-label="Pagine"></nav>
+      <nav class="blog-pagination" id="blog-pagination" hidden aria-label="Pagine"></nav>
 
     </div>
   </section>
+
+  <!-- ─── ARTICLE MODAL ────────────────────────────────────────── -->
+  <div class="blog-modal" id="blogModal" hidden role="dialog" aria-modal="true">
+    <div class="blog-modal__backdrop" id="modalBackdrop"></div>
+    <div class="blog-modal__panel">
+      <button class="blog-modal__close" id="modalClose" aria-label="Chiudi">✕</button>
+      <div class="blog-modal__tags" id="modalTags"></div>
+      <h1 class="blog-modal__title" id="modalTitle"></h1>
+      <p class="blog-modal__subtitle" id="modalSubtitle" hidden></p>
+      <hr class="blog-modal__divider" />
+      <time class="blog-modal__date" id="modalDate"></time>
+      <div class="blog-modal__body" id="modalBody"></div>
+    </div>
+  </div>
 
   <!-- ─── FOOTER ───────────────────────────────────────────────── -->
   <footer class="footer">
@@ -142,7 +157,7 @@
     </div>
   </footer>
 
-  <script src="blog.js?v=3"></script>
+  <script src="blog.js?v=4"></script>
   <script>
   (function(){
     var b=document.getElementById('navBurger');

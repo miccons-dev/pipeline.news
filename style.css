@@ -1492,6 +1492,26 @@ a  { color: inherit; text-decoration: none; }
   flex-shrink: 0;
   overflow: hidden;
 }
+.blog-card__cover--svg {
+  background: #EEF4FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog-card__cover-svg-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 4px;
+}
+.blog-card__cover-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .blog-card__cover-tags {
   position: absolute;
   bottom: 12px;
