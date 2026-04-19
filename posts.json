@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
+      "kind": "article",
+      "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
+      "subtitle": "Senza uno schema minimo, ogni accordo ricomincia da zero — e non resta nulla da passare al primo commerciale.",
+      "preview_text": "La chiamata è andata bene. Il potenziale cliente era interessato, hai risposto a tutto, hai persino chiuso. Poi ti siedi e non riesci a spie",
+      "web_url": "https://www.pipeline.news/post.html?id=le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
+      "publish_date": 1775691180,
+      "thumbnail_url": "https://images.pexels.com/photos/7477715/pexels-photo-7477715.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7477715/pexels-photo-7477715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Two adults working at a desk with a laptop, smartphone, and documents. Collaborative workspace scene.",
+      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
+      "tags": [
+        "pmi",
+        "processi"
+      ]
+    },
+    {
       "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
       "kind": "newsletter",
       "title": "Il C-level risponde. Se gli dai un motivo.",
@@ -323,24 +340,7 @@
         "processi",
         "leadership"
       ]
-    },
-    {
-      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "kind": "article",
-      "title": "Prenotazione automatica: 27% di trattative chiuse in più",
-      "subtitle": "Il ping-pong di email per fissare un incontro è un costo nascosto che nessuno misura",
-      "preview_text": "Ogni volta che scrivi 'fammi sapere quando sei disponibile', stai allungando il tuo ciclo di vendita. Non di ore. Di giorni. E nel B2B itali",
-      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "publish_date": 1775863980,
-      "thumbnail_url": "https://images.pexels.com/photos/569986/pexels-photo-569986.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/569986/pexels-photo-569986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Vibrant orange ping pong ball with a table tennis racket on a blue table, emphasizing sport and leisure.",
-      "image_attribution": "Foto: Ingo Joseph (https://www.pexels.com/@ingo) · Pexels",
-      "tags": [
-        "processi",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1776614240
+  "generated": 1776614243
 }
