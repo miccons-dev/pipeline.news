@@ -92,21 +92,31 @@ async function loadPosts() {
   if (!container) return;
 
   try {
-    const res = await fetch(`posts.json?_=${Date.now()}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const [postsRes, archiveRes] = await Promise.all([
+      fetch(`posts.json?_=${Date.now()}`),
+      fetch(`archive.json?_=${Date.now()}`)
+    ]);
+    if (!postsRes.ok) throw new Error(`HTTP ${postsRes.status}`);
+    const data = await postsRes.json();
+    const archiveData = archiveRes.ok ? await archiveRes.json() : null;
+    const totalIssues = archiveData ? (archiveData.posts || []).filter(p => p.kind === 'newsletter').length : 0;
 
     if (!data.posts || data.posts.length === 0) {
       container.innerHTML = '<p class="issues__empty">Le prossime edizioni saranno disponibili a breve.</p>';
       return;
     }
 
-    const cards = data.posts.filter(p => p.kind === 'newsletter').sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3).map(post => {
-      const logoOverlay = post.thumbnail_url ? '' :
-        `<div class="archive-card__num"><img class="archive-card__logo" src="logo.png" alt="Pipeline"></div>`;
+    const newsletters = data.posts.filter(p => p.kind === 'newsletter').sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3);
+    const cards = newsletters.map((post, idx) => {
+      const issueNum = totalIssues ? totalIssues - idx : '';
+      const logoOverlay = `<div class="archive-card__num">
+        <img class="archive-card__logo" src="logo.png" alt="Pipeline">
+        ${issueNum ? `<span class="archive-card__issue">#${issueNum}</span>` : ''}
+      </div>`;
+      const coverStyle = coverBg(post);
       return `
       <a class="blog-card" href="/archive.html#${escapeHtml(post.id)}" aria-label="${escapeHtml(decodeHtml(post.title))}">
-        <div class="blog-card__cover" style="background:${coverBg(post)}">${logoOverlay}</div>
+        <div class="blog-card__cover" style="background:${coverStyle}">${logoOverlay}</div>
         <div class="blog-card__body">
           <h3 class="blog-card__title">${escapeHtml(decodeHtml(post.title))}</h3>
           ${post.subtitle ? `<p class="blog-card__subtitle">${escapeHtml(decodeHtml(post.subtitle))}</p>` : ''}

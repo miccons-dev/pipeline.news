@@ -17,6 +17,7 @@ const modalTitle      = document.getElementById('modalTitle');
 const modalSubtitle   = document.getElementById('modalSubtitle');
 const modalDate       = document.getElementById('modalDate');
 const modalBody       = document.getElementById('modalBody');
+const modalHeroImg    = document.getElementById('modalHeroImg');
 const modalCtaOverlay = document.getElementById('modalCtaOverlay');
 const modalCtaLabel   = document.getElementById('modalCtaLabel');
 const modalCtaDismiss = document.getElementById('modalCtaDismiss');
@@ -281,6 +282,15 @@ function openModal(post) {
   }
 
   modalBody.innerHTML = stripNewsletterFooter(rawHtml);
+
+  const heroUrl = post.thumbnail_url || post.image_url || '';
+  if (heroUrl) {
+    modalHeroImg.innerHTML = `<img src="${esc(heroUrl)}" alt="${esc(decodeHtml(post.image_alt || post.title || ''))}" class="modal-hero-img__img">`;
+    modalHeroImg.hidden = false;
+  } else {
+    modalHeroImg.hidden = true;
+  }
+
   modalCtaLabel.textContent = `Pipeline · Edizione #${issueNum}`;
   modalCtaOverlay.hidden = false;
 
@@ -297,6 +307,7 @@ function openModal(post) {
 
 function closeModal() {
   blogModal.hidden = true;
+  modalHeroImg.hidden = true;
   modalCtaOverlay.hidden = false;
   document.body.style.overflow = '';
   history.replaceState(null, '', location.pathname);
