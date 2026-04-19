@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
+      "kind": "article",
+      "title": "L'avvio che nessuno fa (e che ferma l'abbandono)",
+      "subtitle": "I primi 30 giorni dopo la firma decidono tutto",
+      "preview_text": "Chiudi la trattativa. Passi il cliente al team. Fine della storia — almeno per te. Ma i dati dicono che l'abbandono più pericoloso avviene n",
+      "web_url": "https://www.pipeline.news/post.html?id=l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
+      "publish_date": 1775086320,
+      "thumbnail_url": null,
+      "tags": [
+        "email",
+        "pmi"
+      ]
+    },
+    {
       "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
       "kind": "article",
       "title": "Personalizzare la proposta non significa metterci il nome",
@@ -254,20 +268,6 @@
       ]
     },
     {
-      "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
-      "kind": "article",
-      "title": "L'avvio che nessuno fa (e che ferma l'abbandono)",
-      "subtitle": "I primi 30 giorni dopo la firma decidono tutto",
-      "preview_text": "Chiudi la trattativa. Passi il cliente al team. Fine della storia — almeno per te. Ma i dati dicono che l'abbandono più pericoloso avviene n",
-      "web_url": "https://www.pipeline.news/post.html?id=l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
-      "publish_date": 1775086320,
-      "thumbnail_url": null,
-      "tags": [
-        "onboarding clienti",
-        "fidelizzazione"
-      ]
-    },
-    {
       "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
       "kind": "newsletter",
       "title": "L'evento da 10 persone che ha cambiato tutto",
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776589187
+  "generated": 1776589189
 }
