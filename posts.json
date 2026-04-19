@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "kind": "article",
+      "title": "Prenotazione automatica: 27% di trattative chiuse in più",
+      "subtitle": "Il ping-pong di email per fissare un incontro è un costo nascosto che nessuno misura",
+      "preview_text": "Ogni volta che scrivi 'fammi sapere quando sei disponibile', stai allungando il tuo ciclo di vendita. Non di ore. Di giorni. E nel B2B itali",
+      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "publish_date": 1775863980,
+      "thumbnail_url": null,
+      "tags": [
+        "prenotazione automatica",
+        "ciclo vendita"
+      ]
+    },
+    {
       "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
       "kind": "article",
       "title": "Quattro livelli di personalizzazione: usi solo il primo",
@@ -170,20 +184,6 @@
       ]
     },
     {
-      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "kind": "article",
-      "title": "Prenotazione automatica: 27% di trattative chiuse in più",
-      "subtitle": "Il ping-pong di email per fissare un incontro è un costo nascosto che nessuno misura",
-      "preview_text": "Ogni volta che scrivi 'fammi sapere quando sei disponibile', stai allungando il tuo ciclo di vendita. Non di ore. Di giorni. E nel B2B itali",
-      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "publish_date": 1775863980,
-      "thumbnail_url": null,
-      "tags": [
-        "prenotazione automatica",
-        "ciclo vendita"
-      ]
-    },
-    {
       "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
       "kind": "newsletter",
       "title": "L'evento da 10 persone che ha cambiato tutto",
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776576018
+  "generated": 1776576021
 }
