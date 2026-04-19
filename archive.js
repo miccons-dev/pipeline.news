@@ -42,6 +42,12 @@ function esc(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function decodeHtml(str) {
+  const d = document.createElement('div');
+  d.innerHTML = str ?? '';
+  return d.textContent || '';
+}
+
 /* ── Nav shadow ─────────────────────────────────────────────────── */
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
@@ -151,14 +157,14 @@ function cardHtml(p, issueNum, featured) {
   const cls  = 'blog-card' + (featured ? ' blog-card--featured' : '');
   return `
     <article class="${cls}" data-id="${esc(p.id)}" tabindex="0" role="button"
-             aria-label="Edizione #${issueNum}: ${esc(p.title)}">
+             aria-label="Edizione #${issueNum}: ${esc(decodeHtml(p.title))}">
       <div class="blog-card__cover" style="background:${coverBg(p)}">
         <div class="archive-card__num"><img class="archive-card__logo" src="logo.png" alt="Pipeline"><span class="archive-card__issue">#${issueNum}</span></div>
         ${tags ? `<div class="blog-card__cover-tags">${tags}</div>` : ''}
       </div>
       <div class="blog-card__body">
-        <h2 class="blog-card__title">${esc(p.title)}</h2>
-        ${p.subtitle ? `<p class="blog-card__subtitle">${esc(p.subtitle)}</p>` : ''}
+        <h2 class="blog-card__title">${esc(decodeHtml(p.title))}</h2>
+        ${p.subtitle ? `<p class="blog-card__subtitle">${esc(decodeHtml(p.subtitle))}</p>` : ''}
         <div class="blog-card__meta">
           <time class="blog-card__date">${formatDate(p.publish_date)}</time>
           <span class="blog-card__read">Leggi →</span>
@@ -238,8 +244,8 @@ function openModal(post) {
   const issueNum = allPosts.length - allPosts.indexOf(post);
 
   modalTags.innerHTML       = post.tags && post.tags.length ? modalTagCloud(post.tags) : '';
-  modalTitle.textContent    = post.title;
-  modalSubtitle.textContent = post.subtitle || post.preview_text || '';
+  modalTitle.textContent    = decodeHtml(post.title);
+  modalSubtitle.textContent = decodeHtml(post.subtitle || post.preview_text || '');
   modalSubtitle.hidden      = !(post.subtitle || post.preview_text);
   modalDate.textContent     = formatDate(post.publish_date);
 

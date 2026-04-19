@@ -38,6 +38,12 @@ function esc(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function decodeHtml(str) {
+  const d = document.createElement('div');
+  d.innerHTML = str ?? '';
+  return d.textContent || '';
+}
+
 /* ── Nav shadow ─────────────────────────────────────────────────── */
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
@@ -151,10 +157,10 @@ function postHtml(p) {
   }).join('');
 
   const href = `/post.html?id=${encodeURIComponent(p.id || '')}`;
-  const excerpt = p.preview_text || '';
+  const excerpt = decodeHtml(p.preview_text || '');
   const thumbUrl = p.thumbnail_url || p.image_url || '';
   const thumbHtml = thumbUrl
-    ? `<div class="blog-post__thumb"><img src="${esc(thumbUrl)}" alt="${esc(p.image_alt || p.title || '')}" loading="lazy"></div>`
+    ? `<div class="blog-post__thumb"><img src="${esc(thumbUrl)}" alt="${esc(decodeHtml(p.image_alt || p.title || ''))}" loading="lazy"></div>`
     : '';
 
   return `
@@ -165,8 +171,8 @@ function postHtml(p) {
           ${tagsHtml ? `<div class="blog-post__tags">${tagsHtml}</div>` : ''}
           <time class="blog-post__date">${formatDate(p.publish_date)}</time>
         </div>
-        <h2 class="blog-post__title">${esc(p.title)}</h2>
-        ${p.subtitle ? `<p class="blog-post__subtitle">${esc(p.subtitle)}</p>` : ''}
+        <h2 class="blog-post__title">${esc(decodeHtml(p.title))}</h2>
+        ${p.subtitle ? `<p class="blog-post__subtitle">${esc(decodeHtml(p.subtitle))}</p>` : ''}
         ${excerpt ? `<p class="blog-post__excerpt">${esc(excerpt)}</p>` : ''}
         <span class="blog-post__read-more">Leggi l'articolo →</span>
       </div>
