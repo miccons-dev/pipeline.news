@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "kind": "article",
+      "title": "Tre righe che un CEO legge. Le altre no.",
+      "subtitle": "Come costruire un messaggio che guadagna attenzione prima di chiederla",
+      "preview_text": "2% tasso di risposta medio delle email standard a decisori senior Non è che i CEO non rispondono alle email. È che non rispondono alle tue. ",
+      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "publish_date": 1773099540,
+      "thumbnail_url": "https://images.pexels.com/photos/19001404/pexels-photo-19001404.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/19001404/pexels-photo-19001404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A vibrant red flag waving on a tall pole against a clear, blue sky.",
+      "image_attribution": "Foto: Jan van der Wolf (https://www.pexels.com/@jan-van-der-wolf-11680885) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
       "kind": "article",
       "title": "Quanto ti costa non automatizzare la prenotazione",
@@ -258,20 +275,6 @@
       ]
     },
     {
-      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "kind": "article",
-      "title": "Tre righe che un CEO legge. Le altre no.",
-      "subtitle": "Come costruire un messaggio che guadagna attenzione prima di chiederla",
-      "preview_text": "2% tasso di risposta medio delle email standard a decisori senior Non è che i CEO non rispondono alle email. È che non rispondono alle tue. ",
-      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "publish_date": 1773099540,
-      "thumbnail_url": null,
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
-    },
-    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo non è il problema. È dove lo metti.",
@@ -300,5 +303,5 @@
       ]
     }
   ],
-  "generated": 1776607314
+  "generated": 1776607318
 }
