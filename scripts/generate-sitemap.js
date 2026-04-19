@@ -27,25 +27,29 @@ function url(loc, lastmod, changefreq, priority) {
 const entries = [];
 
 // Static pages
-entries.push(url(`${BASE}/`,              null,          'weekly',  '1.0'));
-entries.push(url(`${BASE}/blog.html`,     null,          'weekly',  '0.9'));
-entries.push(url(`${BASE}/archive.html`,  null,          'weekly',  '0.9'));
+entries.push(url(`${BASE}/`,             null, 'weekly', '1.0'));
+entries.push(url(`${BASE}/archive.html`, null, 'weekly', '0.9'));
+// blog.html added below with lastmod from posts
 
-// Blog posts
+// Blog posts — each gets its own crawlable URL
+let blogAdded = false;
 try {
   const blog = readJson('blog.json');
   const posts = (blog.posts || [])
-    .filter(p => p.title && p.publish_date)
+    .filter(p => p.id && p.title && p.publish_date)
     .sort((a, b) => b.publish_date - a.publish_date);
+  entries.push(url(`${BASE}/blog.html`, posts.length ? isoDate(posts[0].publish_date) : null, 'weekly', '0.9'));
+  blogAdded = true;
   posts.forEach(p => {
     entries.push(url(
-      `${BASE}/blog.html`,
+      `${BASE}/post.html?id=${encodeURIComponent(p.id)}`,
       isoDate(p.publish_date),
       'monthly',
       '0.7'
     ));
   });
 } catch (e) { console.warn('blog.json not found:', e.message); }
+if (!blogAdded) entries.push(url(`${BASE}/blog.html`, null, 'weekly', '0.9'));
 
 // Newsletter archive
 try {

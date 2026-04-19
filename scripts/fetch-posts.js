@@ -20,8 +20,10 @@ const path = require('path');
 const API_KEY = process.env.BEEHIIV_API_KEY;
 const PUB_ID  = process.env.BEEHIIV_PUBLICATION_ID;
 
-if (!API_KEY) { console.error('❌  BEEHIIV_API_KEY non trovata.'); process.exit(1); }
-if (!PUB_ID)  { console.error('❌  BEEHIIV_PUBLICATION_ID non trovata.'); process.exit(1); }
+if (!API_KEY || !PUB_ID) {
+  console.warn('⚠️  BEEHIIV_API_KEY o BEEHIIV_PUBLICATION_ID mancanti — fetch saltato.');
+  process.exit(0);
+}
 
 const BASE_URL = `https://api.beehiiv.com/v2/publications/${PUB_ID}/posts`;
 const HEADERS  = { Authorization: `Bearer ${API_KEY}`, 'Content-Type': 'application/json' };
@@ -36,18 +38,23 @@ async function beehiivGet(url) {
 }
 
 function mapPost(p, includeContent = false) {
+  const tags = (p.tags || []).map(t => typeof t === 'string' ? t : (t.name || '')).filter(Boolean);
   const post = {
-    id:            p.id,
-    title:         p.title        || '',
-    subtitle:      p.subtitle     || '',
-    preview_text:  p.preview_text || '',
-    web_url:       p.web_url      || '#',
-    publish_date:  p.publish_date || 0,
-    thumbnail_url: p.thumbnail_url || null,
+    id:                p.id,
+    kind:              'newsletter',
+    title:             p.title             || '',
+    subtitle:          p.subtitle          || '',
+    preview_text:      p.preview_text      || '',
+    web_url:           p.web_url           || '#',
+    publish_date:      p.publish_date      || 0,
+    thumbnail_url:     p.thumbnail_url     || null,
+    image_url:         p.image_url         || null,
+    image_alt:         p.image_alt         || '',
+    image_attribution: p.image_attribution || '',
+    tags,
   };
   if (includeContent) {
     post.content_html = p.content?.free?.web || '';
-    post.tags = (p.tags || []).map(t => typeof t === 'string' ? t : (t.name || '')).filter(Boolean);
   }
   return post;
 }

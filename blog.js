@@ -253,6 +253,9 @@ function openModal(post) {
   setMeta('property', 'og:title', `${post.title} — Pipeline.news`);
   setMeta('property', 'og:description', post.subtitle || post.preview_text || '');
   setMeta('property', 'og:url', `https://www.pipeline.news/blog.html#${esc(post.id)}`);
+  const imgUrl = post.thumbnail_url || post.image_url || 'https://www.pipeline.news/logo.png';
+  setMeta('property', 'og:image', imgUrl);
+  setMeta('name', 'twitter:image', imgUrl);
 }
 
 function closeModal() {
@@ -264,6 +267,8 @@ function closeModal() {
   setMeta('property', 'og:title', 'Blog — Pipeline.news');
   setMeta('property', 'og:description', 'Approfondimenti su vendita B2B, leadership commerciale e crescita professionale.');
   setMeta('property', 'og:url', 'https://www.pipeline.news/blog.html');
+  setMeta('property', 'og:image', 'https://www.pipeline.news/logo.png');
+  setMeta('name', 'twitter:image', 'https://www.pipeline.news/logo.png');
 }
 
 modalClose.addEventListener('click', closeModal);

@@ -125,12 +125,50 @@
   }
 
   function render(p) {
+    const postUrl = `https://www.pipeline.news/post.html?id=${encodeURIComponent(p.id || '')}`;
+
     document.title = `${p.title} — Pipeline.news`;
+
+    // Canonical
+    let canon = document.querySelector('link[rel="canonical"]');
+    if (!canon) { canon = document.createElement('link'); canon.rel = 'canonical'; document.head.appendChild(canon); }
+    canon.href = postUrl;
+
     setMeta('name', 'description', p.subtitle || p.preview_text || '');
     setMeta('property', 'og:title', `${p.title} — Pipeline.news`);
     setMeta('property', 'og:description', p.subtitle || p.preview_text || '');
-    setMeta('property', 'og:url', `https://www.pipeline.news/post.html?id=${encodeURIComponent(p.id || '')}`);
-    if (p.image_url) setMeta('property', 'og:image', p.image_url);
+    setMeta('property', 'og:url', postUrl);
+    if (p.image_url || p.thumbnail_url) {
+      const img = p.image_url || p.thumbnail_url;
+      setMeta('property', 'og:image', img);
+      setMeta('name', 'twitter:image', img);
+    }
+    setMeta('name', 'twitter:title', `${p.title} — Pipeline.news`);
+    setMeta('name', 'twitter:description', p.subtitle || p.preview_text || '');
+
+    // Article JSON-LD
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: p.title,
+      description: p.subtitle || p.preview_text || '',
+      url: postUrl,
+      inLanguage: 'it-IT',
+      datePublished: p.publish_date ? new Date(p.publish_date * 1000).toISOString() : undefined,
+      author: { '@type': 'Organization', name: 'Pipeline.news', url: 'https://www.pipeline.news/' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Pipeline.news',
+        url: 'https://www.pipeline.news/',
+        logo: { '@type': 'ImageObject', url: 'https://www.pipeline.news/logo.png' }
+      },
+      isPartOf: { '@type': 'WebSite', name: 'Pipeline.news', url: 'https://www.pipeline.news/' }
+    };
+    if (p.image_url || p.thumbnail_url) ld.image = p.image_url || p.thumbnail_url;
+    const ldScript = document.createElement('script');
+    ldScript.type = 'application/ld+json';
+    ldScript.textContent = JSON.stringify(ld);
+    document.head.appendChild(ldScript);
 
     const tags = (p.tags || []).map(t => {
       const c = tagColor(t);

@@ -41,21 +41,29 @@ jobs:
         with:
           node-version: '20'
 
-      # 3. Genera sitemap.xml con tutti i post e newsletter aggiornati
+      # 3. Recupera post e newsletter aggiornati da Beehiiv (richiede secrets)
+      - name: Fetch posts from Beehiiv
+        env:
+          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
+          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
+        run: node scripts/fetch-posts.js
+        continue-on-error: true
+
+      # 4. Genera sitemap.xml con tutti i post e newsletter aggiornati
       - name: Generate sitemap
         run: node scripts/generate-sitemap.js
 
-      # 4. Configura GitHub Pages
+      # 5. Configura GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 5. Carica tutti i file del sito (incluso posts.json appena generato)
+      # 6. Carica tutti i file del sito (incluso posts.json appena generato)
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-      # 6. Pubblica su GitHub Pages
+      # 7. Pubblica su GitHub Pages
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
