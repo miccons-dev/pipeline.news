@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "kind": "article",
+      "title": "Quattro livelli di personalizzazione: usi solo il primo",
+      "subtitle": "Mettere il nome nell'oggetto non è personalizzazione. È prendere in giro te stesso.",
+      "preview_text": "La maggior parte delle email commerciali italiane ha un problema strutturale: sono generiche con una spruzzata di nome proprio. 'Ciao Marco,",
+      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "publish_date": 1776123180,
+      "thumbnail_url": "https://images.pexels.com/photos/36700298/pexels-photo-36700298.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/36700298/pexels-photo-36700298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A striking view of Milan's Bosco Verticale with lush greenery in urban architecture.",
+      "image_attribution": "Foto: Irina Balashova (https://www.pexels.com/@irina-a-balashova) · Pexels",
+      "tags": [
+        "email a freddo",
+        "pmi"
+      ]
+    },
+    {
       "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
       "kind": "article",
       "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
@@ -281,20 +298,6 @@
       ]
     },
     {
-      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "kind": "article",
-      "title": "Quattro livelli di personalizzazione: usi solo il primo",
-      "subtitle": "Mettere il nome nell'oggetto non è personalizzazione. È prendere in giro te stesso.",
-      "preview_text": "La maggior parte delle email commerciali italiane ha un problema strutturale: sono generiche con una spruzzata di nome proprio. 'Ciao Marco,",
-      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "publish_date": 1776123180,
-      "thumbnail_url": null,
-      "tags": [
-        "email a freddo",
-        "pmi"
-      ]
-    },
-    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo non è il problema. È dove lo metti.",
@@ -309,5 +312,5 @@
       ]
     }
   ],
-  "generated": 1776607324
+  "generated": 1776607326
 }
