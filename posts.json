@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
+      "kind": "article",
+      "title": "Non sei ignorato. Sei arrivato nel posto sbagliato.",
+      "subtitle": "Il vertice non risponde perché nessuno, dentro, ti stava aspettando",
+      "preview_text": "5,4x più persone coinvolte nelle trattative B2B rispetto a dieci anni fa Hai scritto al direttore. Oggetto calibrato, messaggio breve, nessu",
+      "web_url": "https://www.pipeline.news/post.html?id=il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
+      "publish_date": 1773358740,
+      "thumbnail_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A diverse group of professionals in a business meeting discussing sales strategies.",
+      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
+      "tags": [
+        "pmi",
+        "linkedin"
+      ]
+    },
+    {
       "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
       "kind": "article",
       "title": "Tutti hanno gli stessi dati. Il problema è che si vede.",
@@ -323,24 +340,7 @@
         "processi",
         "b2b"
       ]
-    },
-    {
-      "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
-      "kind": "article",
-      "title": "Cerchi il decisore sbagliato nel posto sbagliato",
-      "subtitle": "Il contatto a più livelli nelle PMI italiane: come funziona davvero",
-      "preview_text": "60% delle trattative B2B coinvolge più di un decisore interno Scrivere solo all'amministratore delegato è un errore. Non perché non conti — ",
-      "web_url": "https://www.pipeline.news/post.html?id=cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
-      "publish_date": 1774136040,
-      "thumbnail_url": "https://images.pexels.com/photos/36458686/pexels-photo-36458686.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/36458686/pexels-photo-36458686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "View of the iconic Duomo di Milano with Italian and European Union flags in the foreground.",
-      "image_attribution": "Foto: Riccardo Falconi (https://www.pexels.com/@falcons) · Pexels",
-      "tags": [
-        "pmi",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776614222
+  "generated": 1776614225
 }
