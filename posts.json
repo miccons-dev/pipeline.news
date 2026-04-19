@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
+      "kind": "article",
+      "title": "Il silenzio post-firma costa più di una trattativa persa",
+      "subtitle": "L'abbandono non avviene al rinnovo. Avviene nel mese in cui non ti fai sentire.",
+      "preview_text": "Chiudi la trattativa. Passi il cliente al team. Ti togli il cappello da venditore e lo rimetti in tasca. Fatto. Ma nei trenta giorni success",
+      "web_url": "https://www.pipeline.news/post.html?id=l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
+      "publish_date": 1775086320,
+      "thumbnail_url": "https://images.pexels.com/photos/7876099/pexels-photo-7876099.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7876099/pexels-photo-7876099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A professional trio engaged in a serious discussion inside a modern office.",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "email",
+        "pmi"
+      ]
+    },
+    {
       "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
       "kind": "article",
       "title": "Il nome nell'oggetto non è personalizzazione: è scusa",
@@ -323,24 +340,7 @@
         "pricing",
         "obiezioni"
       ]
-    },
-    {
-      "id": "due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
-      "kind": "article",
-      "title": "Due ore al giorno. È tutto il tempo che hai per vendere.",
-      "subtitle": "Il problema non è la motivazione. È dove finisce il tempo.",
-      "preview_text": "I responsabili commerciali italiani non perdono trattative per mancanza di tecnica. Le perdono perché quando arriva il momento di fare una c",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
-      "publish_date": 1776295920,
-      "thumbnail_url": "https://images.pexels.com/photos/11134794/pexels-photo-11134794.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/11134794/pexels-photo-11134794.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Woman walking past stores on an urban street in black and white.",
-      "image_attribution": "Foto: Rangoni Gianluca (https://www.pexels.com/@rangoni-gianluca-41700784) · Pexels",
-      "tags": [
-        "processi",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1776614258
+  "generated": 1776614262
 }
