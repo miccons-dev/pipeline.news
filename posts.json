@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il C-level risponde. Solo se gli dai un motivo.",
+      "subtitle": "Come scrivere al decisore senza finire ignorato",
+      "preview_text": "Il numero della settimana 2 ore È tutto il tempo che un commerciale dedica davvero alla vendita in una giornata lavorativa di 8 ore. Il rest",
+      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "publish_date": 1776203280,
+      "thumbnail_url": null,
+      "image_url": null,
+      "image_alt": "Il C-level risponde. Solo se gli dai un motivo.",
+      "image_attribution": null,
+      "tags": [
+        "email a freddo",
+        "chiamata a freddo"
+      ]
+    },
+    {
       "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
       "kind": "article",
       "title": "Tre righe che un CEO legge. Le altre no.",
@@ -287,21 +304,7 @@
         "ancoraggio prezzo",
         "gestione trattativa"
       ]
-    },
-    {
-      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "kind": "newsletter",
-      "title": "Due ore al giorno non bastano. Ma le stai usando bene?",
-      "subtitle": "La maratona da 10 persone che ha trasformato un reparto commerciale in 48 ore",
-      "preview_text": "Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno, secondo HubSpot. Il resto v",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "publish_date": 1774942200,
-      "thumbnail_url": null,
-      "tags": [
-        "adozione strumenti",
-        "produttività commerciale"
-      ]
     }
   ],
-  "generated": 1776607318
+  "generated": 1776607321
 }
