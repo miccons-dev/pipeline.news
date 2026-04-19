@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
+      "kind": "article",
+      "title": "Dove metti la riprova sociale cambia tutto",
+      "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
+      "preview_text": "Hai un caso di successo forte. Un cliente reale, numeri verificabili, un problema risolto in modo netto. Lo metti all'inizio della proposta ",
+      "web_url": "https://www.pipeline.news/post.html?id=dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
+      "publish_date": 1774567920,
+      "thumbnail_url": null,
+      "tags": [
+        "obiezioni",
+        "b2b"
+      ]
+    },
+    {
       "id": "claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
       "kind": "article",
       "title": "Claude come coach commerciale: analizza la pipeline in 10 minuti",
@@ -240,20 +254,6 @@
       ]
     },
     {
-      "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "kind": "article",
-      "title": "Dove metti la riprova sociale cambia tutto",
-      "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
-      "preview_text": "Hai un caso di successo forte, un cliente che ha ottenuto risultati veri, numeri verificabili. Lo metti all&#x27;inizio della proposta per i",
-      "web_url": "https://www.pipeline.news/post.html?id=dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "publish_date": 1774567920,
-      "thumbnail_url": null,
-      "tags": [
-        "riprova sociale",
-        "struttura proposta"
-      ]
-    },
-    {
       "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
       "kind": "newsletter",
       "title": "Due ore al giorno non bastano. Ma le stai usando bene?",
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776589202
+  "generated": 1776589205
 }
