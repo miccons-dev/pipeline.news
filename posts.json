@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
+      "kind": "article",
+      "title": "Cerchi il decisore sbagliato nel posto sbagliato",
+      "subtitle": "Il contatto a più livelli nelle PMI italiane: come funziona davvero",
+      "preview_text": "60% delle trattative B2B coinvolge più di un decisore interno Scrivere solo all'amministratore delegato è un errore. Non perché non conti — ",
+      "web_url": "https://www.pipeline.news/post.html?id=cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
+      "publish_date": 1774136040,
+      "thumbnail_url": "https://images.pexels.com/photos/36458686/pexels-photo-36458686.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/36458686/pexels-photo-36458686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "View of the iconic Duomo di Milano with Italian and European Union flags in the foreground.",
+      "image_attribution": "Foto: Riccardo Falconi (https://www.pexels.com/@falcons) · Pexels",
+      "tags": [
+        "pmi",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
       "kind": "newsletter",
       "title": "Il multi-threading non è una scelta. È l'unica via.",
@@ -252,20 +269,6 @@
       ]
     },
     {
-      "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
-      "kind": "article",
-      "title": "Cerchi il decisore sbagliato nel posto sbagliato",
-      "subtitle": "Il contatto a più livelli nelle PMI italiane: come funziona davvero",
-      "preview_text": "60% delle trattative B2B coinvolge più di un decisore interno Scrivere solo all'amministratore delegato è un errore. Non perché non conti — ",
-      "web_url": "https://www.pipeline.news/post.html?id=cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
-      "publish_date": 1774136040,
-      "thumbnail_url": null,
-      "tags": [
-        "pmi",
-        "outreach"
-      ]
-    },
-    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo non è il problema. È dove lo metti.",
@@ -294,5 +297,5 @@
       ]
     }
   ],
-  "generated": 1776607308
+  "generated": 1776607311
 }
