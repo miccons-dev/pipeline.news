@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
+      "kind": "article",
+      "title": "Claude come coach commerciale: analizza la pipeline in 10 minuti",
+      "subtitle": "Nessuna integrazione, nessun costo extra, risultato immediato",
+      "preview_text": "Ogni lunedì mattina guardi la pipeline e non sai da dove iniziare. Venti trattative aperte, tutte &#x27;importanti&#x27;, tutte &#x27;in cor",
+      "web_url": "https://www.pipeline.news/post.html?id=claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
+      "publish_date": 1774740720,
+      "thumbnail_url": "https://images.pexels.com/photos/23878948/pexels-photo-23878948.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/23878948/pexels-photo-23878948.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Large industrial pipeline traversing through a green forest in Geesthacht, Germany.",
+      "image_attribution": "Foto: Wolfgang Weiser (https://www.pexels.com/@wolfgang-weiser-467045605) · Pexels",
+      "tags": [
+        "processi",
+        "chiusura"
+      ]
+    },
+    {
       "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
       "kind": "article",
       "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
@@ -323,21 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "kind": "article",
-      "title": "Dove metti la riprova sociale cambia tutto",
-      "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
-      "preview_text": "Hai un caso di successo forte. Un cliente reale, numeri verificabili, un problema risolto in modo netto. Lo metti all'inizio della proposta ",
-      "web_url": "https://www.pipeline.news/post.html?id=dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "publish_date": 1774567920,
-      "thumbnail_url": null,
-      "tags": [
-        "obiezioni",
-        "b2b"
-      ]
     }
   ],
-  "generated": 1776607352
+  "generated": 1776607355
 }
