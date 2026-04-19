@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Pipeline.news</title>
+  <meta name="description" content="Approfondimento su vendita B2B, leadership commerciale e crescita professionale." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Pipeline.news" />
+  <meta name="language" content="Italian" />
+  <meta name="geo.region" content="IT" />
+  <meta name="geo.placename" content="Italia" />
+  <meta name='impact-site-verification' value='7e756be3-b0cf-47a4-8b54-7401f45e9cee' />
+
+  <!-- Open Graph (overridden dynamically by script) -->
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Pipeline.news" />
+  <meta property="og:image" content="https://www.pipeline.news/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.pipeline.news/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="logo.png" alt="Pipeline.news" class="nav__logo-img"
+             onerror="this.src='logo.svg';this.onerror=null" />
+      </a>
+      <div class="nav__right">
+        <nav class="nav__links" aria-label="Navigazione principale">
+          <a href="/blog.html" class="nav__link is-active">Blog</a>
+          <a href="/archive.html" class="nav__link">Archivio Newsletter</a>
+        </nav>
+        <a href="/#iscriviti" class="btn btn--nav">Iscriviti gratis →</a>
+        <button class="nav__burger" id="navBurger" aria-label="Apri menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── POST CONTENT ─────────────────────────────────────────── -->
+  <main class="post-page">
+    <div class="container post-page__inner">
+
+      <div class="post-loading" id="postLoading" aria-live="polite">
+        <span class="issues__spinner"></span>
+        Caricamento articolo…
+      </div>
+
+      <div id="postContent"></div>
+
+    </div>
+  </main>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo">
+          <img src="logo.png" alt="Pipeline.news" class="nav__logo-img nav__logo-img--footer"
+               onerror="this.src='logo.svg';this.onerror=null" />
+        </a>
+        <p class="footer__tagline">La newsletter italiana per chi vive di vendita.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="/#cosa-troverai">Cosa troverai</a>
+        <a href="/#per-chi">Per chi è</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/archive.html">Archivio Newsletter</a>
+      </nav>
+      <div class="footer__legal">
+        <p>© 2026 Pipeline.news · <a href="#">Privacy Policy</a> · <a href="#">Cancella iscrizione</a></p>
+        <p>Fatto con passione per la vendita 🇮🇹</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  'use strict';
+
+  const PALETTE = [
+    { bg: 'rgba(30,107,197,.09)',  bd: 'rgba(30,107,197,.22)', c: '#1E6BC5' },
+    { bg: 'rgba(0,196,160,.09)',   bd: 'rgba(0,196,160,.28)',  c: '#00A88A' },
+    { bg: 'rgba(91,184,245,.12)',  bd: 'rgba(91,184,245,.32)', c: '#1a6fa8' },
+    { bg: 'rgba(99,102,241,.09)',  bd: 'rgba(99,102,241,.25)', c: '#4f46e5' },
+    { bg: 'rgba(245,158,11,.10)',  bd: 'rgba(245,158,11,.28)', c: '#b45309' },
+  ];
+  const colorMap = {};
+  let colorIdx = 0;
+  function tagColor(tag) {
+    if (!colorMap[tag]) colorMap[tag] = PALETTE[colorIdx++ % PALETTE.length];
+    return colorMap[tag];
+  }
+
+  function esc(str) {
+    return String(str ?? '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function fmtDate(ts) {
+    if (!ts) return '';
+    return new Date(ts * 1000).toLocaleDateString('it-IT', {
+      day: 'numeric', month: 'long', year: 'numeric',
+      timeZone: 'Europe/Rome'
+    });
+  }
+
+  function setMeta(attr, val, content) {
+    let el = document.querySelector(`meta[${attr}="${val}"]`);
+    if (!el) { el = document.createElement('meta'); el.setAttribute(attr, val); document.head.appendChild(el); }
+    el.setAttribute('content', content);
+  }
+
+  function render(p) {
+    document.title = `${p.title} — Pipeline.news`;
+    setMeta('name', 'description', p.subtitle || p.preview_text || '');
+    setMeta('property', 'og:title', `${p.title} — Pipeline.news`);
+    setMeta('property', 'og:description', p.subtitle || p.preview_text || '');
+    setMeta('property', 'og:url', `https://www.pipeline.news/post.html?id=${encodeURIComponent(p.id || '')}`);
+    if (p.image_url) setMeta('property', 'og:image', p.image_url);
+
+    const tags = (p.tags || []).map(t => {
+      const c = tagColor(t);
+      return `<span class="post-tag" style="background:${c.bg};border-color:${c.bd};color:${c.c}">${esc(t)}</span>`;
+    }).join('');
+
+    const imgHtml = p.image_url
+      ? `<figure class="post-hero">
+           <img src="${esc(p.image_url)}" alt="${esc(p.image_alt || p.title || '')}">
+           ${p.image_attribution ? `<figcaption>${esc(p.image_attribution)}</figcaption>` : ''}
+         </figure>`
+      : '';
+
+    document.getElementById('postContent').innerHTML = `
+      <a href="/blog.html" class="post-backlink">← Torna al blog</a>
+      ${imgHtml}
+      <header class="post-header">
+        ${tags ? `<div class="post-header__tags">${tags}</div>` : ''}
+        <h1 class="post-header__title">${esc(p.title)}</h1>
+        ${p.subtitle ? `<p class="post-header__subtitle">${esc(p.subtitle)}</p>` : ''}
+        <div class="post-header__meta">
+          <time>${fmtDate(p.publish_date)}</time>
+        </div>
+      </header>
+      <div class="post-body">${p.content_html || ''}</div>
+      <div class="post-cta">
+        <a href="/#iscriviti" class="btn btn--primary">Ricevi Pipeline ogni martedì →</a>
+      </div>
+    `;
+  }
+
+  async function loadPost() {
+    const id = new URLSearchParams(location.search).get('id');
+    if (!id) {
+      document.getElementById('postLoading').innerHTML =
+        '<span style="color:var(--red,#e53e3e)">Articolo non trovato.</span>';
+      return;
+    }
+    try {
+      const res = await fetch(`blog.json?_=${Date.now()}`);
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      const post = (data.posts || []).find(p => p.id === id);
+      if (!post) throw new Error('not found');
+      document.getElementById('postLoading').hidden = true;
+      render(post);
+    } catch {
+      document.getElementById('postLoading').innerHTML =
+        '<span style="color:var(--red,#e53e3e)">Impossibile caricare l\'articolo. <a href="/blog.html">Torna al blog</a>.</span>';
+    }
+  }
+
+  loadPost();
+
+  (function(){
+    var b = document.getElementById('navBurger');
+    var h = b.closest('.nav');
+    b.addEventListener('click', function(){
+      var open = h.classList.toggle('nav--open');
+      b.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', function(e){
+      if (!h.contains(e.target)) h.classList.remove('nav--open');
+    });
+    h.querySelectorAll('.nav__link').forEach(function(a){
+      a.addEventListener('click', function(){ h.classList.remove('nav--open'); });
+    });
+  })();
+  </script>
+</body>
+</html>

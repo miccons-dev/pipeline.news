@@ -2047,3 +2047,56 @@ a  { color: inherit; text-decoration: none; }
   .issues-archive-cta__arrow { display: none; }
   .blog-grid--home { grid-template-columns: 1fr; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   BLOG CARD — thumbnail stock
+   ════════════════════════════════════════════════════════════ */
+.blog-post--has-thumb {
+  padding: 0;
+  overflow: hidden;
+}
+.blog-post__thumb {
+  display: block;
+  background: var(--bg);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.blog-post__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.blog-post--has-thumb:hover .blog-post__thumb img {
+  transform: scale(1.03);
+}
+.blog-post__body {
+  padding: 28px 36px 32px;
+}
+@media (max-width: 600px) {
+  .blog-post__body { padding: 20px 22px 24px; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   POST PAGE — hero image sopra il titolo
+   ════════════════════════════════════════════════════════════ */
+.post-hero {
+  margin: 0 0 28px;
+  padding: 0;
+}
+.post-hero img {
+  width: 100%;
+  max-height: 460px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+.post-hero figcaption {
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 8px;
+  text-align: right;
+  font-style: italic;
+}

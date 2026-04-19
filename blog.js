@@ -144,40 +144,33 @@ tagPillsEl.addEventListener('click', e => {
 });
 
 /* ── Card HTML ──────────────────────────────────────────────────── */
-function cardHtml(p, featured) {
-  const cover = extractCover(p);
-  const tags  = tagsHtml(p);
-  const cls   = 'blog-card' + (featured ? ' blog-card--featured' : '');
+function postHtml(p) {
+  const tagsHtml = (p.tags || []).map(t => {
+    const c = tagColor(t);
+    return `<span class="post-tag" style="background:${c.bg};border-color:${c.bd};color:${c.c}">${esc(t)}</span>`;
+  }).join('');
 
-  let coverClass = 'blog-card__cover';
-  let coverStyle = '';
-  let coverInner = '';
-
-  if (cover.type === 'svg') {
-    coverClass += ' blog-card__cover--svg';
-    coverInner  = `<div class="blog-card__cover-svg-wrap">${cover.markup}</div>`;
-  } else if (cover.type === 'img') {
-    coverStyle = `background:url('${esc(cover.src)}') center/cover no-repeat`;
-  } else {
-    coverStyle = `background:${cover.bg}`;
-  }
+  const href = `/post.html?id=${encodeURIComponent(p.id || '')}`;
+  const excerpt = p.preview_text || '';
+  const thumbUrl = p.thumbnail_url || p.image_url || '';
+  const thumbHtml = thumbUrl
+    ? `<div class="blog-post__thumb"><img src="${esc(thumbUrl)}" alt="${esc(p.image_alt || p.title || '')}" loading="lazy"></div>`
+    : '';
 
   return `
-    <article class="${cls}" data-id="${esc(p.id)}" tabindex="0" role="button"
-             aria-label="${esc(p.title)}">
-      <div class="${coverClass}"${coverStyle ? ` style="${coverStyle}"` : ''}>
-        ${coverInner}
-        ${tags ? `<div class="blog-card__cover-tags">${tags}</div>` : ''}
-      </div>
-      <div class="blog-card__body">
-        <h2 class="blog-card__title">${esc(p.title)}</h2>
-        ${p.subtitle ? `<p class="blog-card__subtitle">${esc(p.subtitle)}</p>` : ''}
-        <div class="blog-card__meta">
-          <time class="blog-card__date">${formatDate(p.publish_date)}</time>
-          <span class="blog-card__read">Leggi →</span>
+    <a href="${href}" class="blog-post${thumbUrl ? ' blog-post--has-thumb' : ''}">
+      ${thumbHtml}
+      <div class="blog-post__body">
+        <div class="blog-post__meta">
+          ${tagsHtml ? `<div class="blog-post__tags">${tagsHtml}</div>` : ''}
+          <time class="blog-post__date">${formatDate(p.publish_date)}</time>
         </div>
+        <h2 class="blog-post__title">${esc(p.title)}</h2>
+        ${p.subtitle ? `<p class="blog-post__subtitle">${esc(p.subtitle)}</p>` : ''}
+        ${excerpt ? `<p class="blog-post__excerpt">${esc(excerpt)}</p>` : ''}
+        <span class="blog-post__read-more">Leggi l'articolo →</span>
       </div>
-    </article>`;
+    </a>`;
 }
 
 /* ── Pagination ─────────────────────────────────────────────────── */
@@ -214,23 +207,7 @@ function renderFeed() {
   emptyEl.hidden = total > 0;
   if (total === 0) { paginationEl.hidden = true; return; }
 
-  let html = '<div class="blog-grid">';
-  page.forEach((p, i) => {
-    html += cardHtml(p, i === 0 && currentPage === 1);
-  });
-  html += '</div>';
-  feedEl.innerHTML = html;
-
-  feedEl.querySelectorAll('.blog-card').forEach(card => {
-    const open = () => {
-      const post = allPosts.find(p => p.id === card.dataset.id);
-      if (post) openModal(post);
-    };
-    card.addEventListener('click', open);
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-    });
-  });
+  feedEl.innerHTML = '<div class="blog-feed">' + page.map(postHtml).join('') + '</div>';
 
   renderPagination(totalPages);
   window.scrollTo({ top: 0, behavior: 'smooth' });
