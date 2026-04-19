@@ -46,16 +46,12 @@ function tagColor(tag) {
 }
 
 /* ── Filters ────────────────────────────────────────────────────── */
-function collectTags() {
+function renderFilters() {
   const set = new Set();
-  allPosts.forEach(p => (p.tags || []).forEach(t => set.add(t)));
-  return [...set].sort((a, b) => a.localeCompare(b, 'it'));
-}
-
-function renderFilters(tags) {
+  allPosts.forEach(p => (p.tags || []).forEach(t => t && set.add(t)));
+  const tags = [...set].sort((a, b) => a.localeCompare(b, 'it'));
   filterPills.innerHTML = '';
-  blogFilters.hidden = tags.length === 0;
-  if (!tags.length) return;
+  if (!tags.length) { blogFilters.hidden = true; return; }
   const mkBtn = (label, tag) => {
     const btn = document.createElement('button');
     btn.className = 'page-filter-btn' + (activeTag === tag ? ' is-active' : '');
@@ -65,6 +61,7 @@ function renderFilters(tags) {
   };
   mkBtn('Tutti', '');
   tags.forEach(t => mkBtn(t, t));
+  blogFilters.hidden = false;
 }
 
 /* ── Article HTML (full content, vertical feed) ─────────────────── */
@@ -146,7 +143,9 @@ filterPills.addEventListener('click', e => {
   if (!btn) return;
   activeTag = btn.dataset.tag;
   currentPage = 1;
-  renderFilters(collectTags());
+  filterPills.querySelectorAll('.page-filter-btn').forEach(b =>
+    b.classList.toggle('is-active', b.dataset.tag === activeTag)
+  );
   renderFeed();
   const url = new URL(location.href);
   activeTag ? url.searchParams.set('tag', activeTag) : url.searchParams.delete('tag');
@@ -171,7 +170,9 @@ emptyReset.addEventListener('click', () => {
   url.searchParams.delete('tag');
   url.searchParams.delete('p');
   history.replaceState(null, '', url);
-  renderFilters(collectTags());
+  filterPills.querySelectorAll('.page-filter-btn').forEach(b =>
+    b.classList.toggle('is-active', b.dataset.tag === '')
+  );
   renderFeed();
 });
 
@@ -188,8 +189,8 @@ async function loadBlog() {
     currentPage = parseInt(params.get('p'), 10) || 1;
 
     blogLoading.hidden = true;
-    collectTags().forEach(t => tagColor(t));
-    renderFilters(collectTags());
+    allPosts.flatMap(p => p.tags || []).forEach(t => tagColor(t));
+    renderFilters();
     renderFeed();
   } catch {
     blogLoading.innerHTML =
