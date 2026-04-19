@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il multi-threading non è una scelta. È l'unica via.",
+      "subtitle": "Come costruire consenso interno prima che il decisore ti risponda",
+      "preview_text": "Il numero della settimana 45% dei team sales usa l&#x27;AI per la ricerca account. Il che significa che il vantaggio informativo si sta azze",
+      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "publish_date": 1774942200,
+      "thumbnail_url": null,
+      "image_url": null,
+      "image_alt": "Il multi-threading non è una scelta. È l'unica via.",
+      "image_attribution": null,
+      "tags": [
+        "outreach",
+        "linkedin"
+      ]
+    },
+    {
       "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
       "kind": "article",
       "title": "Il consenso si costruisce dal basso. Sempre.",
@@ -275,21 +292,7 @@
         "adozione strumenti",
         "produttività commerciale"
       ]
-    },
-    {
-      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "kind": "newsletter",
-      "title": "L'evento da 10 persone che ha cambiato tutto",
-      "subtitle": "Come trasformare l'adozione dell'IA in un vantaggio commerciale reale — senza aspettare il consenso di nessuno",
-      "preview_text": "Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l&#x27;adozione dell&#x27;IA in azienda dal 10% al 97% con un singolo evento",
-      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "publish_date": 1775547000,
-      "thumbnail_url": null,
-      "tags": [
-        "adozione ia",
-        "formazione commerciale"
-      ]
     }
   ],
-  "generated": 1776607305
+  "generated": 1776607308
 }
