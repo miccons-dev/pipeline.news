@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "kind": "article",
+      "title": "Metti il nome nell'oggetto e chiami personalizzazione",
+      "subtitle": "Esistono quattro livelli. Fermarsi al primo è la norma — ed è il motivo per cui non rispondono.",
+      "preview_text": "L'email parte. Oggetto: \"Ciao Marco, un'idea per [Nome Azienda].\" Prima riga: \"Ti scrivo perché penso che la nostra soluzione possa fare al ",
+      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "publish_date": 1776123180,
+      "thumbnail_url": "https://images.pexels.com/photos/7681983/pexels-photo-7681983.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7681983/pexels-photo-7681983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Smiling customer service agent using a laptop and headset indoors.",
+      "image_attribution": "Foto: Mikhail Nilov (https://www.pexels.com/@mikhail-nilov) · Pexels",
+      "tags": [
+        "email a freddo",
+        "pmi"
+      ]
+    },
+    {
       "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
       "kind": "article",
       "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
@@ -323,24 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "kind": "newsletter",
-      "title": "L'evento da 10 persone che ha cambiato tutto",
-      "subtitle": "Come trasformare l'adozione dell'IA in un vantaggio commerciale reale — senza aspettare il consenso di nessuno",
-      "preview_text": "Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l&#x27;adozione dell&#x27;IA in azienda dal 10% al 97% con un singolo evento",
-      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "publish_date": 1775547000,
-      "thumbnail_url": null,
-      "image_url": null,
-      "image_alt": "L'evento da 10 persone che ha cambiato tutto",
-      "image_attribution": null,
-      "tags": [
-        "processi",
-        "leadership"
-      ]
     }
   ],
-  "generated": 1776614243
+  "generated": 1776614246
 }
