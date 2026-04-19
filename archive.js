@@ -153,7 +153,7 @@ function cardHtml(p, issueNum, featured) {
     <article class="${cls}" data-id="${esc(p.id)}" tabindex="0" role="button"
              aria-label="Edizione #${issueNum}: ${esc(p.title)}">
       <div class="blog-card__cover" style="background:${coverBg(p)}">
-        <div class="archive-card__num"><span class="archive-card__label">Pipeline</span><span class="archive-card__issue">#${issueNum}</span></div>
+        <div class="archive-card__num"><img class="archive-card__logo" src="logo.png" alt="Pipeline"><span class="archive-card__issue">#${issueNum}</span></div>
         ${tags ? `<div class="blog-card__cover-tags">${tags}</div>` : ''}
       </div>
       <div class="blog-card__body">
