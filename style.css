@@ -1737,7 +1737,7 @@ a  { color: inherit; text-decoration: none; }
 }
 .blog-modal__logo-wrap {
   text-align: center;
-  padding: 6px 0 8px;
+  padding: 6px 0 2px;
   margin-bottom: 0;
 }
 .blog-modal__logo-wrap img {
@@ -1746,7 +1746,7 @@ a  { color: inherit; text-decoration: none; }
   display: inline-block;
 }
 .modal-hero-img {
-  margin: 4px 0 16px;
+  margin: 0 0 16px;
   border-radius: 10px;
   overflow: hidden;
 }
