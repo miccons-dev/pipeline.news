@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "kind": "article",
+      "title": "Quanto ti costa non automatizzare lo scheduling",
+      "subtitle": "Il calcolo che nessun commerciale fa mai",
+      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Ogni email che scrivi per fissare un appuntamento — &#x27;va bene martedì?&#x27;",
+      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "publish_date": 1777592040,
+      "thumbnail_url": null,
+      "tags": [
+        "scheduling automatico",
+        "produttività commerciale"
+      ]
+    },
+    {
       "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
       "kind": "article",
       "title": "Cerchi il decisore sbagliato nel posto sbagliato",
@@ -68,20 +82,6 @@
       "thumbnail_url": null,
       "tags": [
         "gestione tempo",
-        "produttività commerciale"
-      ]
-    },
-    {
-      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
-      "kind": "article",
-      "title": "Quanto ti costa non automatizzare lo scheduling",
-      "subtitle": "Il calcolo che nessun commerciale fa mai",
-      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Ogni email che scrivi per fissare un appuntamento — &#x27;va bene martedì?&#x27;",
-      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
-      "publish_date": 1777592040,
-      "thumbnail_url": null,
-      "tags": [
-        "scheduling automatico",
         "produttività commerciale"
       ]
     },
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776576004
+  "generated": 1776576007
 }
