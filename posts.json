@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
+      "kind": "article",
+      "title": "Contatti l'AD a freddo e hai già perso",
+      "subtitle": "Il silenzio dell'AD non è un problema di testo: è un problema di posizione.",
+      "preview_text": "60% delle trattative B2B coinvolge più di un decisore interno Hai trovato il profilo giusto su LinkedIn. Titolo chiaro, azienda giusta, dime",
+      "web_url": "https://www.pipeline.news/post.html?id=cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
+      "publish_date": 1774136040,
+      "thumbnail_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A diverse group of professionals in a business meeting discussing sales strategies.",
+      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
+      "tags": [
+        "pmi",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
       "kind": "newsletter",
       "title": "Sei arrivato solo. Per questo non rispondono.",
@@ -323,24 +340,7 @@
         "email a freddo",
         "chiamata a freddo"
       ]
-    },
-    {
-      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "kind": "article",
-      "title": "Tre righe che un CEO legge. Le altre no.",
-      "subtitle": "Come costruire un messaggio che guadagna attenzione prima di chiederla",
-      "preview_text": "2% tasso di risposta medio delle email standard a decisori senior Non è che i CEO non rispondono alle email. È che non rispondono alle tue. ",
-      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "publish_date": 1773099540,
-      "thumbnail_url": "https://images.pexels.com/photos/19001404/pexels-photo-19001404.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/19001404/pexels-photo-19001404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A vibrant red flag waving on a tall pole against a clear, blue sky.",
-      "image_attribution": "Foto: Jan van der Wolf (https://www.pexels.com/@jan-van-der-wolf-11680885) · Pexels",
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776614228
+  "generated": 1776614231
 }
