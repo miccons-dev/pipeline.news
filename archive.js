@@ -98,6 +98,13 @@ const COVERS = [
   'linear-gradient(135deg,#00C4A0 0%,#0D2756 100%)',
   'linear-gradient(135deg,#0D2756 0%,#00A88A 100%)',
   'linear-gradient(135deg,#5BB8F5 0%,#4f46e5 100%)',
+  'linear-gradient(135deg,#4f46e5 0%,#0D2756 100%)',
+  'linear-gradient(135deg,#00A88A 0%,#1E6BC5 100%)',
+  'linear-gradient(135deg,#0D2756 0%,#5BB8F5 100%)',
+  'linear-gradient(135deg,#1E6BC5 0%,#00C4A0 100%)',
+  'linear-gradient(135deg,#4f46e5 0%,#5BB8F5 100%)',
+  'linear-gradient(135deg,#00C4A0 0%,#4f46e5 100%)',
+  'linear-gradient(135deg,#5BB8F5 0%,#0D2756 100%)',
 ];
 
 function coverBg(post) {

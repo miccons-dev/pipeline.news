@@ -1972,16 +1972,17 @@ a  { color: inherit; text-decoration: none; }
 /* ── Archive issue number badge ──────────────────────────── */
 .archive-card__num {
   position: absolute;
-  top: 12px;
-  right: 14px;
-  font-size: 12px;
-  font-weight: 700;
-  color: rgba(255,255,255,.92);
-  background: rgba(0,0,0,.28);
-  backdrop-filter: blur(4px);
-  border-radius: 6px;
-  padding: 3px 9px;
-  letter-spacing: .3px;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(52px, 7vw, 92px);
+  font-weight: 900;
+  color: rgba(255,255,255,.22);
+  letter-spacing: -3px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* ── Homepage blog-grid variant (always 3-col, no featured) ── */
