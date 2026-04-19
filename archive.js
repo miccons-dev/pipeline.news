@@ -230,6 +230,21 @@ function renderFeed() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+/* ── Strip Beehiiv boilerplate footer from newsletter body ──────── */
+function stripNewsletterFooter(html) {
+  const root = document.createElement('div');
+  root.innerHTML = html;
+  const MARKERS = ['Hai trovato utile', 'Mandala a un collega', 'Disdici', 'Leggi le edizioni precedenti'];
+  const container = (root.children.length === 1) ? root.children[0] : root;
+  for (const child of [...container.children]) {
+    if (MARKERS.some(m => child.textContent.includes(m))) {
+      let node = child;
+      while (node) { const next = node.nextElementSibling; node.remove(); node = next; }
+      break;
+    }
+  }
+  return root.innerHTML;
+}
 
 /* ── Dynamic meta (SEO / social sharing) ───────────────────────── */
 function setMeta(attr, val, content) {
@@ -265,7 +280,7 @@ function openModal(post) {
     modalLogo.hidden = true;
   }
 
-  modalBody.innerHTML = rawHtml;
+  modalBody.innerHTML = stripNewsletterFooter(rawHtml);
   modalCtaLabel.textContent = `Pipeline · Edizione #${issueNum}`;
   modalCtaOverlay.hidden = false;
 
