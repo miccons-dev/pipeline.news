@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "kind": "newsletter",
+      "title": "Dal 10% al 97% in un pomeriggio",
+      "subtitle": "Non serve un corso. Serve un pomeriggio con un problema vero e un vincolo di tempo",
+      "preview_text": "📊 Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l'adozione dell'IA dal 10% al 97% del team con un solo evento interno. Non",
+      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
+      "publish_date": 1775547000,
+      "thumbnail_url": "https://images.pexels.com/photos/32074897/pexels-photo-32074897.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/32074897/pexels-photo-32074897.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A diverse team working together, reviewing documents and making notes during a collaborative meeting.",
+      "image_attribution": "Foto: Md Jawadur Rahman (https://www.pexels.com/@srijonism) · Pexels",
+      "tags": [
+        "processi",
+        "leadership"
+      ]
+    },
+    {
       "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
       "kind": "article",
       "title": "Ogni 'fammi sapere quando sei libero' ti costa una trattativa",
@@ -323,24 +340,7 @@
         "email",
         "pmi"
       ]
-    },
-    {
-      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "kind": "article",
-      "title": "Personalizzare la proposta non significa metterci il nome",
-      "subtitle": "Quattro livelli di contesto che il tuo concorrente ignora",
-      "preview_text": "Ogni corso di contatto a freddo insegna la stessa cosa: personalizza. E ogni responsabile commerciale italiano obbedisce aggiungendo il nome",
-      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "publish_date": 1775259180,
-      "thumbnail_url": "https://images.pexels.com/photos/6555663/pexels-photo-6555663.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/6555663/pexels-photo-6555663.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Close-up of wooden tiles spelling 'Do Not Copy' on a textured surface.",
-      "image_attribution": "Foto: Ann H (https://www.pexels.com/@ann-h-45017) · Pexels",
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776614250
+  "generated": 1776614253
 }
