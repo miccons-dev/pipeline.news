@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "kind": "article",
+      "title": "Prenotazione automatica: 27% di trattative chiuse in più",
+      "subtitle": "Il ping-pong di email per fissare un incontro è un costo nascosto che nessuno misura",
+      "preview_text": "Ogni volta che scrivi 'fammi sapere quando sei disponibile', stai allungando il tuo ciclo di vendita. Non di ore. Di giorni. E nel B2B itali",
+      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "publish_date": 1775863980,
+      "thumbnail_url": "https://images.pexels.com/photos/569986/pexels-photo-569986.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/569986/pexels-photo-569986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Vibrant orange ping pong ball with a table tennis racket on a blue table, emphasizing sport and leisure.",
+      "image_attribution": "Foto: Ingo Joseph (https://www.pexels.com/@ingo) · Pexels",
+      "tags": [
+        "processi",
+        "pmi"
+      ]
+    },
+    {
       "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
       "kind": "article",
       "title": "Quattro livelli di personalizzazione: usi solo il primo",
@@ -284,20 +301,6 @@
       ]
     },
     {
-      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "kind": "article",
-      "title": "Prenotazione automatica: 27% di trattative chiuse in più",
-      "subtitle": "Il ping-pong di email per fissare un incontro è un costo nascosto che nessuno misura",
-      "preview_text": "Ogni volta che scrivi 'fammi sapere quando sei disponibile', stai allungando il tuo ciclo di vendita. Non di ore. Di giorni. E nel B2B itali",
-      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "publish_date": 1775863980,
-      "thumbnail_url": null,
-      "tags": [
-        "processi",
-        "pmi"
-      ]
-    },
-    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo non è il problema. È dove lo metti.",
@@ -312,5 +315,5 @@
       ]
     }
   ],
-  "generated": 1776607326
+  "generated": 1776607329
 }
