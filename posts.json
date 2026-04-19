@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
+      "kind": "article",
+      "title": "La ricerca sul prospect non basta più. Cambia il gioco.",
+      "subtitle": "Quando tutti hanno gli stessi dati, la differenza la fa come li usi.",
+      "preview_text": "45% dei team sales usa già l&#x27;AI per la ricerca account Hai usato LinkedIn Sales Navigator. Hai letto il sito dell&#x27;azienda. Hai tro",
+      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
+      "publish_date": 1773531540,
+      "thumbnail_url": "https://images.pexels.com/photos/32085584/pexels-photo-32085584.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/32085584/pexels-photo-32085584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Street covered with political posters promoting anti-capitalist youth movements in Córdoba.",
+      "image_attribution": "Foto: Tomás Asurmendi (https://www.pexels.com/@tomas-asurmendi-774865545) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "due-ore-per-vendere-dove-vanno-le-altre-sei-2026-03-19",
       "kind": "article",
       "title": "Due ore per vendere: dove vanno le altre sei",
@@ -229,20 +246,6 @@
       ]
     },
     {
-      "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
-      "kind": "article",
-      "title": "La ricerca sul prospect non basta più. Cambia il gioco.",
-      "subtitle": "Quando tutti hanno gli stessi dati, la differenza la fa come li usi.",
-      "preview_text": "45% dei team sales usa già l&#x27;AI per la ricerca account Hai usato LinkedIn Sales Navigator. Hai letto il sito dell&#x27;azienda. Hai tro",
-      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
-      "publish_date": 1773531540,
-      "thumbnail_url": null,
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
-    },
-    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo non è il problema. È dove lo metti.",
@@ -285,5 +288,5 @@
       ]
     }
   ],
-  "generated": 1776607299
+  "generated": 1776607302
 }
