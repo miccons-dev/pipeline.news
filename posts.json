@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
+      "kind": "newsletter",
+      "title": "Due ore al giorno non bastano. Ma le stai usando bene?",
+      "subtitle": "La maratona da 10 persone che ha trasformato un reparto commerciale in 48 ore",
+      "preview_text": "Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno, secondo HubSpot. Il resto v",
+      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
+      "publish_date": 1774942200,
+      "thumbnail_url": null,
+      "image_url": null,
+      "image_alt": "Due ore al giorno non bastano. Ma le stai usando bene?",
+      "image_attribution": null,
+      "tags": [
+        "processi",
+        "pmi"
+      ]
+    },
+    {
       "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
       "kind": "article",
       "title": "L'avvio che nessuno fa (e che ferma l'abbandono)",
@@ -311,21 +328,7 @@
         "pricing",
         "obiezioni"
       ]
-    },
-    {
-      "id": "due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
-      "kind": "article",
-      "title": "Due ore al giorno. È tutto il tempo che hai per vendere.",
-      "subtitle": "Il problema non è la motivazione. È dove finisce il tempo.",
-      "preview_text": "I responsabili commerciali italiani non perdono trattative per mancanza di tecnica. Le perdono perché quando arriva il momento di fare una c",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
-      "publish_date": 1776295920,
-      "thumbnail_url": null,
-      "tags": [
-        "processi",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1776607341
+  "generated": 1776607344
 }
