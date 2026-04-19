@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "kind": "article",
+      "title": "Il nome nell'oggetto non è personalizzazione: è scusa",
+      "subtitle": "Nome e settore non bastano più. Il contesto specifico è l'unica cosa che distingue la tua proposta.",
+      "preview_text": "Hai scritto il nome dell'azienda nell'oggetto. Hai citato il settore nel primo paragrafo. Hai persino cambiato il logo nella copertina della",
+      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "publish_date": 1775259180,
+      "thumbnail_url": "https://images.pexels.com/photos/7845382/pexels-photo-7845382.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7845382/pexels-photo-7845382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Two professional women having a discussion in an office with documents in hand.",
+      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
       "kind": "article",
       "title": "Vendi tu le prime venti trattative. Poi delega.",
@@ -323,24 +340,7 @@
         "processi",
         "pmi"
       ]
-    },
-    {
-      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "kind": "newsletter",
-      "title": "Due ore al giorno non bastano. Ma le stai usando bene?",
-      "subtitle": "La maratona da 10 persone che ha trasformato un reparto commerciale in 48 ore",
-      "preview_text": "Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno, secondo HubSpot. Il resto v",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "publish_date": 1774942200,
-      "thumbnail_url": null,
-      "image_url": null,
-      "image_alt": "Due ore al giorno non bastano. Ma le stai usando bene?",
-      "image_attribution": null,
-      "tags": [
-        "processi",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1776614255
+  "generated": 1776614258
 }
