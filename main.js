@@ -43,6 +43,12 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+function decodeHtml(str) {
+  const d = document.createElement('div');
+  d.innerHTML = str ?? '';
+  return d.textContent || '';
+}
+
 function formatDate(unixSeconds) {
   if (!unixSeconds) return '';
   return new Date(unixSeconds * 1000).toLocaleDateString('it-IT', {
@@ -64,11 +70,19 @@ const COVERS = [
   'linear-gradient(135deg,#00C4A0 0%,#0D2756 100%)',
   'linear-gradient(135deg,#0D2756 0%,#00A88A 100%)',
   'linear-gradient(135deg,#5BB8F5 0%,#4f46e5 100%)',
+  'linear-gradient(135deg,#4f46e5 0%,#0D2756 100%)',
+  'linear-gradient(135deg,#00A88A 0%,#1E6BC5 100%)',
+  'linear-gradient(135deg,#0D2756 0%,#5BB8F5 100%)',
+  'linear-gradient(135deg,#1E6BC5 0%,#00C4A0 100%)',
+  'linear-gradient(135deg,#4f46e5 0%,#5BB8F5 100%)',
+  'linear-gradient(135deg,#00C4A0 0%,#4f46e5 100%)',
+  'linear-gradient(135deg,#5BB8F5 0%,#0D2756 100%)',
 ];
 
-function coverBg(id) {
+function coverBg(post) {
+  if (post.thumbnail_url) return `url('${escapeHtml(post.thumbnail_url)}') center/cover no-repeat`;
   let h = 0;
-  for (const ch of String(id)) h = (h * 31 + ch.charCodeAt(0)) & 0x7fffffff;
+  for (const ch of String(post.id)) h = (h * 31 + ch.charCodeAt(0)) & 0x7fffffff;
   return COVERS[h % COVERS.length];
 }
 
@@ -87,19 +101,22 @@ async function loadPosts() {
       return;
     }
 
-    const cards = data.posts.filter(p => p.kind === 'newsletter').sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3).map(post => `
-      <a class="blog-card" href="/archive.html#${escapeHtml(post.id)}" aria-label="${escapeHtml(post.title)}">
-        <div class="blog-card__cover" style="background:${coverBg(post.id)}"></div>
+    const cards = data.posts.filter(p => p.kind === 'newsletter').sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3).map(post => {
+      const logoOverlay = post.thumbnail_url ? '' :
+        `<div class="archive-card__num"><img class="archive-card__logo" src="logo.png" alt="Pipeline"></div>`;
+      return `
+      <a class="blog-card" href="/archive.html#${escapeHtml(post.id)}" aria-label="${escapeHtml(decodeHtml(post.title))}">
+        <div class="blog-card__cover" style="background:${coverBg(post)}">${logoOverlay}</div>
         <div class="blog-card__body">
-          <h3 class="blog-card__title">${escapeHtml(post.title)}</h3>
-          ${post.subtitle ? `<p class="blog-card__subtitle">${escapeHtml(post.subtitle)}</p>` : ''}
+          <h3 class="blog-card__title">${escapeHtml(decodeHtml(post.title))}</h3>
+          ${post.subtitle ? `<p class="blog-card__subtitle">${escapeHtml(decodeHtml(post.subtitle))}</p>` : ''}
           <div class="blog-card__meta">
             <time class="blog-card__date">${fmtDate(post.publish_date)}</time>
             <span class="blog-card__read">Leggi →</span>
           </div>
         </div>
-      </a>
-    `).join('');
+      </a>`;
+    }).join('');
 
     container.innerHTML = `<div class="blog-grid blog-grid--home">${cards}</div>`;
     observeAnimatable();
