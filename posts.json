@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il multi-threading non è una scelta. È l'unica via.",
+      "subtitle": "Come costruire consenso interno prima che il decisore ti risponda",
+      "preview_text": "Il numero della settimana 45% dei team sales usa l&#x27;AI per la ricerca account. Il che significa che il vantaggio informativo si sta azze",
+      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "publish_date": 1774942200,
+      "thumbnail_url": null,
+      "tags": [
+        "multi-threading",
+        "consenso interno"
+      ]
+    },
+    {
       "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
       "kind": "article",
       "title": "Il consenso si costruisce dal basso. Sempre.",
@@ -212,20 +226,6 @@
       ]
     },
     {
-      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il multi-threading non è una scelta. È l'unica via.",
-      "subtitle": "Come costruire consenso interno prima che il decisore ti risponda",
-      "preview_text": "Il numero della settimana 45% dei team sales usa l&#x27;AI per la ricerca account. Il che significa che il vantaggio informativo si sta azze",
-      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "publish_date": 1774942200,
-      "thumbnail_url": null,
-      "tags": [
-        "multi-threading",
-        "consenso interno"
-      ]
-    },
-    {
       "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
       "kind": "article",
       "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
@@ -282,5 +282,5 @@
       ]
     }
   ],
-  "generated": 1776575999
+  "generated": 1776576002
 }
