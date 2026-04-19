@@ -112,6 +112,7 @@ function renderFilters() {
   const set = new Set();
   allPosts.forEach(p => (p.tags || []).forEach(t => t && set.add(t)));
   const tags = [...set].sort((a, b) => a.localeCompare(b, 'it'));
+  tagPillsEl.innerHTML = '';
   if (!tags.length) { filtersEl.hidden = true; return; }
 
   const mkBtn = (label, tag) => {
