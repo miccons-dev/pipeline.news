@@ -2,6 +2,20 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "kind": "article",
+      "title": "Quanto ti costa non automatizzare lo scheduling",
+      "subtitle": "Il calcolo che nessun commerciale fa mai",
+      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Ogni email che scrivi per fissare un appuntamento — &#x27;va bene martedì?&#x27;",
+      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "publish_date": 1777592040,
+      "thumbnail_url": null,
+      "tags": [
+        "processi",
+        "b2b"
+      ]
+    },
+    {
       "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
       "kind": "article",
       "title": "Cerchi il decisore sbagliato nel posto sbagliato",
@@ -266,21 +280,7 @@
         "primo contatto",
         "decisori senior"
       ]
-    },
-    {
-      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "kind": "article",
-      "title": "Tre righe che un CEO legge. Le altre no.",
-      "subtitle": "Come costruire un messaggio che guadagna attenzione prima di chiederla",
-      "preview_text": "2% tasso di risposta medio delle email standard a decisori senior Non è che i CEO non rispondono alle email. È che non rispondono alle tue. ",
-      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "publish_date": 1773099540,
-      "thumbnail_url": null,
-      "tags": [
-        "cold outreach",
-        "messaggi decisori"
-      ]
     }
   ],
-  "generated": 1776589166
+  "generated": 1776589169
 }
