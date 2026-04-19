@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "kind": "article",
+      "title": "Il prezzo non spaventa. Lo spaventa il vuoto che lo precede.",
+      "subtitle": "Prima del prezzo manca sempre una cosa: il costo reale del problema che stai risolvendo.",
+      "preview_text": "Mandi la proposta. Hai lavorato bene, il prezzo è corretto, la soluzione è solida. Poi silenzio. Non un rifiuto — silenzio. Il potenziale cl",
+      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "publish_date": 1774913520,
+      "thumbnail_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Overhead view of professionals discussing financial graphs and using calculators in an office setting.",
+      "image_attribution": "Foto: Vlada Karpovich (https://www.pexels.com/@vlada-karpovich) · Pexels",
+      "tags": [
+        "pricing",
+        "obiezioni"
+      ]
+    },
+    {
       "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
       "kind": "article",
       "title": "Dove metti la riprova sociale cambia tutto",
@@ -323,24 +340,7 @@
         "pricing",
         "obiezioni"
       ]
-    },
-    {
-      "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "kind": "article",
-      "title": "Dove metti la riprova sociale cambia tutto",
-      "subtitle": "Nel posto sbagliato, la testimonianza ti fa sembrare uno che vende — non uno che risolve.",
-      "preview_text": "Hai un caso di successo forte. Un cliente reale, numeri verificabili, un problema risolto in modo netto. Lo metti all'inizio della proposta ",
-      "web_url": "https://www.pipeline.news/post.html?id=dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "publish_date": 1774567920,
-      "thumbnail_url": "https://images.pexels.com/photos/36682900/pexels-photo-36682900.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/36682900/pexels-photo-36682900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Visitors gather at the iconic Trevi Fountain in Rome, enjoying a sunny day by the historic landmark.",
-      "image_attribution": "Foto: Gunawan Sidik (https://www.pexels.com/@gunawan-sidik-2160324431) · Pexels",
-      "tags": [
-        "obiezioni",
-        "b2b"
-      ]
     }
   ],
-  "generated": 1776614272
+  "generated": 1776614275
 }
