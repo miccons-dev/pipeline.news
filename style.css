@@ -1983,11 +1983,11 @@ a  { color: inherit; text-decoration: none; }
   user-select: none;
 }
 .archive-card__logo {
-  width: clamp(100px, 13vw, 180px);
+  width: clamp(140px, 18vw, 220px);
   height: auto;
   display: block;
   filter: brightness(0) invert(1);
-  opacity: .22;
+  opacity: .32;
 }
 .archive-card__issue {
   font-size: clamp(52px, 7vw, 92px);
