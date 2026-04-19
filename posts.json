@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "kind": "article",
+      "title": "Personalizzare la proposta non significa metterci il nome",
+      "subtitle": "Quattro livelli di contesto che il tuo concorrente ignora",
+      "preview_text": "Ogni corso di contatto a freddo insegna la stessa cosa: personalizza. E ogni responsabile commerciale italiano obbedisce aggiungendo il nome",
+      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
+      "publish_date": 1775259180,
+      "thumbnail_url": "https://images.pexels.com/photos/6555663/pexels-photo-6555663.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/6555663/pexels-photo-6555663.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Close-up of wooden tiles spelling 'Do Not Copy' on a textured surface.",
+      "image_attribution": "Foto: Ann H (https://www.pexels.com/@ann-h-45017) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
       "kind": "article",
       "title": "Il fondatore che vende: il vantaggio che non sa di avere",
@@ -305,21 +322,7 @@
         "email",
         "pmi"
       ]
-    },
-    {
-      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "kind": "article",
-      "title": "Personalizzare la proposta non significa metterci il nome",
-      "subtitle": "Quattro livelli di contesto che il tuo concorrente ignora",
-      "preview_text": "Ogni corso di contatto a freddo insegna la stessa cosa: personalizza. E ogni responsabile commerciale italiano obbedisce aggiungendo il nome",
-      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "publish_date": 1775259180,
-      "thumbnail_url": null,
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776607335
+  "generated": 1776607338
 }
