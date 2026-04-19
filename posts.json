@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "kind": "article",
+      "title": "Tre righe che un CEO legge. Le altre no.",
+      "subtitle": "Chi chiede subito un appuntamento ha già perso.",
+      "preview_text": "2% tasso di risposta medio delle email standard inviate a decisori senior Arriva una email. Mittente sconosciuto. Oggetto: «Opportunità di c",
+      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "publish_date": 1773099540,
+      "thumbnail_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Professional man reviewing documents at his office desk with attention to detail.",
+      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
       "kind": "article",
       "title": "200 ore l'anno spese a rimbalzare date via email",
@@ -323,24 +340,7 @@
         "email a freddo",
         "pmi"
       ]
-    },
-    {
-      "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
-      "kind": "article",
-      "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
-      "subtitle": "Se vendi il tuo stesso prodotto senza un metodo, stai vendendo per fortuna",
-      "preview_text": "Il fondatore è il miglior venditore della sua azienda — ma solo nelle prime trattative, e solo se smette di improvvisare. Il problema non è ",
-      "web_url": "https://www.pipeline.news/post.html?id=le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
-      "publish_date": 1775691180,
-      "thumbnail_url": "https://images.pexels.com/photos/4152606/pexels-photo-4152606.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/4152606/pexels-photo-4152606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A woman filming a cooking vlog in her kitchen using a digital camera.",
-      "image_attribution": "Foto: Mikael Blomkvist (https://www.pexels.com/@mikael-blomkvist) · Pexels",
-      "tags": [
-        "pmi",
-        "processi"
-      ]
     }
   ],
-  "generated": 1776614234
+  "generated": 1776614237
 }
