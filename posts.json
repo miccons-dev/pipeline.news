@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
+      "kind": "article",
+      "title": "Non è la tecnica che manca. È il tempo per usarla.",
+      "subtitle": "Le ore di punta finiscono in amministrazione. Le chiamate importanti restano al pomeriggio.",
+      "preview_text": "Sono le 10 di mattina. Hai già risposto a quattro email interne, aggiornato due record nel CRM, rimandato una riunione e confermato un appun",
+      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
+      "publish_date": 1776295920,
+      "thumbnail_url": "https://images.pexels.com/photos/7794058/pexels-photo-7794058.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7794058/pexels-photo-7794058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Businessman enthusiastically celebrating success in an office setting with a laptop.",
+      "image_attribution": "Foto: Yan Krukau (https://www.pexels.com/@yankrukov) · Pexels",
+      "tags": [
+        "processi",
+        "pmi"
+      ]
+    },
+    {
       "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
       "kind": "newsletter",
       "title": "Due ore al giorno. E non le stai vendendo.",
@@ -323,24 +340,7 @@
         "processi",
         "chiusura"
       ]
-    },
-    {
-      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "kind": "article",
-      "title": "Perché il tuo prezzo spaventa (e non è colpa del prezzo)",
-      "subtitle": "Il problema è la sequenza, non il numero",
-      "preview_text": "Il potenziale cliente legge la tua proposta, vede il prezzo, smette di rispondere. Non è che non può permetterselo. È che lo hai messo a con",
-      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "publish_date": 1774913520,
-      "thumbnail_url": "https://images.pexels.com/photos/35702379/pexels-photo-35702379.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/35702379/pexels-photo-35702379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A traditional scarecrow stands in a lush rice paddy surrounded by young rice plants.",
-      "image_attribution": "Foto: hartono subagio (https://www.pexels.com/@hartonosbg) · Pexels",
-      "tags": [
-        "pricing",
-        "obiezioni"
-      ]
     }
   ],
-  "generated": 1776614265
+  "generated": 1776614268
 }
