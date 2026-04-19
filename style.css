@@ -1983,7 +1983,7 @@ a  { color: inherit; text-decoration: none; }
   user-select: none;
 }
 .archive-card__logo {
-  width: clamp(72px, 9vw, 120px);
+  width: clamp(100px, 13vw, 180px);
   height: auto;
   display: block;
   filter: brightness(0) invert(1);
