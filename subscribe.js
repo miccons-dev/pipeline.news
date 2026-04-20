@@ -1,6 +1,14 @@
-/* pipeline.news — MailerLite subscribe handler */
+/* pipeline.news — MailerLite subscribe handler (via Cloudflare Worker) */
 (function () {
   'use strict';
+
+  /*
+   * Dopo il deploy del worker, incolla qui l'URL:
+   *   wrangler deploy worker/subscribe.js
+   * Esempio: https://pipeline-subscribe.tuonome.workers.dev
+   */
+  var WORKER_URL = 'https://pipeline-subscribe.miccons.workers.dev';
+
   document.querySelectorAll('form.pl-subscribe').forEach(function (form) {
     var input     = form.querySelector('input[name="email"]');
     var btn       = form.querySelector('button[type="submit"]');
@@ -30,35 +38,26 @@
       loading(true);
       msg.hidden = true;
 
-      var account = form.dataset.account;
-      var formId  = form.dataset.form;
-      var cbName  = 'plSub_' + Date.now() + '_' + Math.random().toString(36).slice(2);
-      var url = 'https://assets.mailerlite.com/jsonp/' + account
-              + '/forms/' + formId + '/subscribe'
-              + '?callback=' + cbName
-              + '&fields%5Bemail%5D=' + encodeURIComponent(email)
-              + '&ml-submit=1&anticsrf=true';
-
-      var s = document.createElement('script');
-      window[cbName] = function (resp) {
-        loading(false);
-        delete window[cbName];
-        if (s && s.parentNode) s.parentNode.removeChild(s);
-        if (resp && resp.success) {
-          show('Iscrizione registrata. Controlla la mail per confermare.', 'ok');
-          form.reset();
-        } else {
-          var err = (resp && (resp.message || resp.error)) || 'Riprova fra qualche istante.';
-          show('Iscrizione non completata: ' + err, 'error');
-        }
-      };
-      s.onerror = function () {
-        loading(false);
-        show('Connessione fallita. Riprova.', 'error');
-        delete window[cbName];
-      };
-      s.src = url;
-      document.head.appendChild(s);
+      fetch(WORKER_URL, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ email: email }),
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          loading(false);
+          if (data && data.success) {
+            show('Iscrizione registrata. Controlla la mail per confermare.', 'ok');
+            form.reset();
+          } else {
+            var err = (data && (data.message || data.error)) || 'Riprova fra qualche istante.';
+            show('Iscrizione non completata: ' + err, 'error');
+          }
+        })
+        .catch(function () {
+          loading(false);
+          show('Connessione fallita. Riprova.', 'error');
+        });
     });
   });
 })();

@@ -1,22 +1,23 @@
 /**
  * subscribe.js — Cloudflare Worker
  *
- * Proxy sicuro tra il sito pipeline.news e l'API Beehiiv.
- * Tiene la chiave API come secret Cloudflare (mai nel codice).
+ * Proxy sicuro tra pipeline.news e MailerLite.
+ * Riceve { email } dal browser via POST, chiama l'endpoint
+ * MailerLite lato server (nessuna restrizione di dominio).
  *
  * Deploy:
  *   1. npm install -g wrangler
  *   2. wrangler login
  *   3. wrangler deploy worker/subscribe.js --name pipeline-subscribe --compatibility-date 2024-01-01
- *   4. wrangler secret put BEEHIIV_API_KEY   ← incolla la tua chiave quando richiesto
  *
- * Dopo il deploy, copia l'URL del Worker (es. https://pipeline-subscribe.tuonome.workers.dev)
- * e sostituisci YOUR_WORKER_URL in index.html.
+ * Non servono secrets: l'endpoint form MailerLite è pubblico.
  */
 
 'use strict';
 
-const PUB_ID = 'pub_502a54b7-6175-4c50-a224-8d244c41a2ed';
+const ML_ACCOUNT = '2279724';
+const ML_FORM    = 'HhXmbp';
+const ML_URL     = `https://assets.mailerlite.com/jsonp/${ML_ACCOUNT}/forms/${ML_FORM}/subscribe`;
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin':  '*',
@@ -32,8 +33,7 @@ function json(data, status = 200) {
 }
 
 export default {
-  async fetch(request, env) {
-    /* Preflight CORS */
+  async fetch(request) {
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: CORS_HEADERS });
     }
@@ -42,7 +42,6 @@ export default {
       return json({ error: 'Method not allowed' }, 405);
     }
 
-    /* Leggi e valida l'email */
     let email;
     try {
       ({ email } = await request.json());
@@ -54,27 +53,23 @@ export default {
       return json({ error: 'Email non valida' }, 400);
     }
 
-    /* Chiama l'API Beehiiv */
-    const beehiivRes = await fetch(
-      `https://api.beehiiv.com/v2/publications/${PUB_ID}/subscriptions`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization:  `Bearer ${env.BEEHIIV_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          reactivate_existing: false,
-          send_welcome_email:  true,
-          utm_source:          'website',
-          utm_medium:          'organic',
-        }),
-      }
-    );
+    /* Chiama MailerLite lato server — nessuna restrizione di dominio */
+    const body = new URLSearchParams();
+    body.set('fields[email]', email);
+    body.set('ml-submit', '1');
 
-    /* 201 Created o 409 Conflict (già iscritto) → successo */
-    const ok = beehiivRes.ok || beehiivRes.status === 409;
-    return json({ success: ok }, ok ? 200 : 500);
+    const mlRes = await fetch(ML_URL, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body:    body.toString(),
+    });
+
+    let success = mlRes.ok;
+    try {
+      const data = await mlRes.json();
+      success = data.success === true;
+    } catch { /* risposta non JSON — considera successo se status 2xx */ }
+
+    return json({ success }, success ? 200 : 502);
   },
 };
