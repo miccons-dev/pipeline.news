@@ -127,7 +127,15 @@ chipsWrap.addEventListener('click', (e) => {
 });
 
 /* ── Name / email field validation ──────────────────────── */
-nameInput.addEventListener('input', updateSubmit);
+nameInput.addEventListener('input', () => {
+  const pos = nameInput.selectionStart;
+  const val = nameInput.value.replace(/\b\w/g, c => c.toUpperCase());
+  if (nameInput.value !== val) {
+    nameInput.value = val;
+    nameInput.setSelectionRange(pos, pos);
+  }
+  updateSubmit();
+});
 
 referrerInput.addEventListener('input', () => {
   const ok = isValidEmail(referrerInput.value.trim());
