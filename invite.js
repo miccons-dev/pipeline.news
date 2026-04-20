@@ -2,9 +2,12 @@
 'use strict';
 
 /* ── Config ──────────────────────────────────────────────── */
-const API_BASE = 'https://pipeline-news.onrender.com';
+const API_BASE  = 'https://pipeline-news.onrender.com';
 const MAX_CHIPS = 10;
 const EMAIL_RE  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/* ── Warm-up: pinga il backend appena la pagina si carica ─── */
+fetch(`${API_BASE}/health`, { method: 'GET', cache: 'no-store' }).catch(() => {});
 
 /* ── DOM refs ────────────────────────────────────────────── */
 const nameInput     = document.getElementById('nameInput');
@@ -158,12 +161,27 @@ async function submitInvites() {
   sendBtn.textContent = 'Invio in corso…';
   clearStatus();
 
+  // Messaggio progressivo se il server è lento ad avviarsi
+  const slowTimer = setTimeout(() => {
+    if (sendBtn.textContent === 'Invio in corso…') {
+      sendBtn.textContent = 'Avvio server…';
+      showInfo('Il server si sta avviando, ci vogliono circa 30 secondi. Attendi…');
+    }
+  }, 4000);
+
   try {
+    const controller = new AbortController();
+    const timeout    = setTimeout(() => controller.abort(), 90_000); // 90s max
+
     const res  = await fetch(`${API_BASE}/api/v1/invite`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ referrerName, referrerEmail, emails: validEmails }),
+      signal: controller.signal,
     });
+    clearTimeout(timeout);
+    clearTimeout(slowTimer);
+
     const data = await res.json();
 
     if (!res.ok) throw new Error(data.error || "Errore durante l'invio.");
@@ -174,7 +192,11 @@ async function submitInvites() {
 
     showSuccess(data.sent, data.skipped);
   } catch (err) {
-    showError(err.message || 'Impossibile inviare gli inviti. Riprova tra qualche minuto.');
+    clearTimeout(slowTimer);
+    const msg = err.name === 'AbortError'
+      ? 'Il server ha impiegato troppo. Riprova tra qualche istante.'
+      : (err.message || 'Impossibile inviare gli inviti. Riprova tra qualche minuto.');
+    showError(msg);
     sendBtn.disabled    = false;
     sendBtn.textContent = 'Invia inviti →';
   }
@@ -183,6 +205,12 @@ async function submitInvites() {
 /* ── UI helpers ──────────────────────────────────────────── */
 function showError(msg) {
   statusMsg.className   = 'status-msg status-msg--error';
+  statusMsg.textContent = msg;
+  statusMsg.hidden      = false;
+}
+
+function showInfo(msg) {
+  statusMsg.className   = 'status-msg status-msg--info';
   statusMsg.textContent = msg;
   statusMsg.hidden      = false;
 }
