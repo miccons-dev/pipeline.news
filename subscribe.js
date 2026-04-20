@@ -41,8 +41,7 @@
         var data = {};
         try { data = await r.json(); } catch (_) {}
         if (data && data.success) {
-          show(data.message || 'Iscrizione registrata.', 'ok');
-          form.reset();
+          window.location.href = '/welcome.html?email=' + encodeURIComponent(email);
         } else {
           show((data && data.message) || 'Iscrizione non riuscita. Riprova.', 'error');
         }
