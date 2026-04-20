@@ -53,8 +53,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
-  <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+  <link rel="stylesheet" href="style.css?v=4" />
+  <script src="subscribe.js?v=1" defer></script>
 </head>
 <body>
 
@@ -137,10 +137,19 @@
         <div class="modal-cta__label" id="modalCtaLabel">Pipeline · Newsletter</div>
         <h3 class="modal-cta__heading">Quella di martedì prossimo arriva direttamente nella tua inbox.</h3>
         <p class="modal-cta__sub">Ogni martedì: una tattica di vendita, uno script pronto e un tool da usare quella stessa mattina. Nessun rumore. Gratis.</p>
-        <iframe src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
-                data-test-id="beehiiv-embed"
-                width="100%" height="80" frameborder="0" scrolling="no"
-                class="modal-cta__iframe" title="Iscriviti a Pipeline"></iframe>
+        <form class="pl-subscribe pl-subscribe--compact" novalidate
+              data-account="2279724" data-form="HhXmbp">
+          <div class="pl-subscribe__inputs">
+            <input type="email" id="pl-email-modal" name="email" required
+                   autocomplete="email" placeholder="la-tua-email@azienda.it"
+                   class="pl-subscribe__input">
+            <button type="submit" class="pl-subscribe__btn">
+              <span class="pl-subscribe__btn-text">Iscriviti</span>
+              <span class="pl-subscribe__btn-loader" hidden>…</span>
+            </button>
+          </div>
+          <p class="pl-subscribe__msg" hidden></p>
+        </form>
       </div>
     </div>
   </div>

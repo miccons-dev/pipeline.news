@@ -33,8 +33,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
-  <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+  <link rel="stylesheet" href="style.css?v=4" />
+  <script src="subscribe.js?v=1" defer></script>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -111,17 +111,27 @@
       </p>
 
       <div class="hero__cta">
-        <!-- ── Form iscrizione Beehiiv (hero) ── -->
-        <div class="beehiiv-embed-wrap">
-          <iframe
-            src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
-            class="beehiiv-embed"
-            data-test-id="beehiiv-embed"
-            frameborder="0"
-            scrolling="no"
-            style="width: 100%; max-width: 560px; height: 207px; margin: 0 auto; display: block; border-radius: 12px !important; background-color: transparent; box-shadow: none;"
-          ></iframe>
-        </div>
+        <form class="pl-subscribe" novalidate
+              data-account="2279724" data-form="HhXmbp">
+          <div class="pl-subscribe__row">
+            <label class="pl-subscribe__label" for="pl-email-hero">
+              Iscriviti alla newsletter
+            </label>
+            <div class="pl-subscribe__inputs">
+              <input type="email" id="pl-email-hero" name="email" required
+                     autocomplete="email" placeholder="la-tua-email@azienda.it"
+                     class="pl-subscribe__input">
+              <button type="submit" class="pl-subscribe__btn">
+                <span class="pl-subscribe__btn-text">Iscriviti gratis →</span>
+                <span class="pl-subscribe__btn-loader" hidden>…</span>
+              </button>
+            </div>
+            <p class="pl-subscribe__msg" hidden></p>
+            <p class="pl-subscribe__hint">
+              1 newsletter a settimana. Niente spam. Disiscrizione in 1 click.
+            </p>
+          </div>
+        </form>
       </div>
 
       <div class="hero__stats">
@@ -437,17 +447,27 @@
         Unisciti a 4.200+ professionisti della vendita che ogni martedì mattina
         aprono Pipeline per iniziare la settimana nel modo giusto.
       </p>
-      <!-- ── Form iscrizione Beehiiv (CTA finale) ── -->
-      <div class="beehiiv-embed-wrap">
-        <iframe
-          src="https://subscribe-forms.beehiiv.com/5fd77ece-8a54-4f8e-8f22-47918300a6ca"
-          class="beehiiv-embed"
-          data-test-id="beehiiv-embed"
-          frameborder="0"
-          scrolling="no"
-          style="width: 100%; max-width: 560px; height: 207px; margin: 0 auto; display: block; border-radius: 12px !important; background-color: transparent; box-shadow: none;"
-        ></iframe>
-      </div>
+      <form class="pl-subscribe" novalidate
+            data-account="2279724" data-form="HhXmbp">
+        <div class="pl-subscribe__row">
+          <label class="pl-subscribe__label" for="pl-email-cta">
+            Iscriviti alla newsletter
+          </label>
+          <div class="pl-subscribe__inputs">
+            <input type="email" id="pl-email-cta" name="email" required
+                   autocomplete="email" placeholder="la-tua-email@azienda.it"
+                   class="pl-subscribe__input">
+            <button type="submit" class="pl-subscribe__btn">
+              <span class="pl-subscribe__btn-text">Iscriviti gratis →</span>
+              <span class="pl-subscribe__btn-loader" hidden>…</span>
+            </button>
+          </div>
+          <p class="pl-subscribe__msg" hidden></p>
+          <p class="pl-subscribe__hint">
+            1 newsletter a settimana. Niente spam. Disiscrizione in 1 click.
+          </p>
+        </div>
+      </form>
     </div>
   </section>
 

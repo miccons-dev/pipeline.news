@@ -760,19 +760,7 @@ a  { color: inherit; text-decoration: none; }
 }
 .footer__legal a:hover { color: var(--cyan); }
 
-/* ── BEEHIIV EMBED ────────────────────────────────────── */
-.beehiiv-embed-wrap {
-  width: 100%;
-  max-width: 540px;
-  margin: 0 auto;
-}
-.beehiiv-embed {
-  width: 100%;
-  border: none;
-  display: block;
-  border-radius: 8px;
-  overflow: hidden;
-}
+
 
 /* ── ISSUES: stati loading / empty ───────────────────── */
 .issues__loading {
@@ -2130,4 +2118,99 @@ a  { color: inherit; text-decoration: none; }
   margin-top: 8px;
   text-align: right;
   font-style: italic;
+}
+
+/* ── MailerLite subscribe form ───────────────────────────── */
+.pl-subscribe {
+  background: #E4EDFA;
+  border: 1px solid rgba(13,39,86,.08);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 32px 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #0D2756;
+}
+.pl-subscribe__label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0D2756;
+  display: block;
+  margin-bottom: 12px;
+}
+.pl-subscribe__inputs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pl-subscribe__input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #0D2756;
+  background: #fff;
+  border: 1px solid rgba(13,39,86,.18);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.pl-subscribe__input:focus {
+  border-color: #1E6BC5;
+  box-shadow: 0 0 0 3px rgba(30,107,197,.18);
+}
+.pl-subscribe__btn {
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: #00C4A0;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .15s, transform .05s;
+  white-space: nowrap;
+}
+.pl-subscribe__btn:hover  { background: #00b393; }
+.pl-subscribe__btn:active { transform: translateY(1px); }
+.pl-subscribe__btn[disabled] { opacity: .6; cursor: wait; }
+.pl-subscribe__hint {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #3a3a3a;
+}
+.pl-subscribe__msg {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.pl-subscribe__msg--ok    { background: rgba(0,196,160,.14); color: #006e5a; }
+.pl-subscribe__msg--error { background: rgba(217,48,37,.10);  color: #9b1c14; }
+
+/* Compact variant — for modal CTA overlay */
+.pl-subscribe--compact {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.pl-subscribe--compact .pl-subscribe__input {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.3);
+  color: #fff;
+}
+.pl-subscribe--compact .pl-subscribe__input::placeholder { color: rgba(255,255,255,.55); }
+.pl-subscribe--compact .pl-subscribe__input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,196,160,.25);
+}
+.pl-subscribe--compact .pl-subscribe__msg--ok    { background: rgba(0,196,160,.2); color: #b2ffe6; }
+.pl-subscribe--compact .pl-subscribe__msg--error { background: rgba(217,48,37,.2); color: #ffb3ae; }
+
+@media (max-width: 480px) {
+  .pl-subscribe__btn { flex: 1 1 100%; }
 }
