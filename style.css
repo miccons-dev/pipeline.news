@@ -2135,8 +2135,9 @@ a  { color: inherit; text-decoration: none; }
 }
 .pl-subscribe__row { display: flex; flex-direction: column; gap: 0; }
 .pl-subscribe__label {
-  font-weight: 700;
-  font-size: 17px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-size: 22px;
   color: #0D2756;
   display: block;
   margin-bottom: 12px;

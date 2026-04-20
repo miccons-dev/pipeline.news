@@ -1,13 +1,8 @@
-/* pipeline.news — MailerLite subscribe handler (via Cloudflare Worker) */
+/* pipeline.news — subscribe handler → pipeline-agent.onrender.com */
 (function () {
   'use strict';
 
-  /*
-   * Dopo il deploy del worker, incolla qui l'URL:
-   *   wrangler deploy worker/subscribe.js
-   * Esempio: https://pipeline-subscribe.tuonome.workers.dev
-   */
-  var WORKER_URL = 'https://pipeline-subscribe.miccons.workers.dev';
+  var ENDPOINT = 'https://pipeline-agent.onrender.com/public/subscribe';
 
   document.querySelectorAll('form.pl-subscribe').forEach(function (form) {
     var input     = form.querySelector('input[name="email"]');
@@ -27,7 +22,7 @@
       btnLoader.hidden = !on;
     }
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
       var email = (input.value || '').trim();
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -37,27 +32,25 @@
       }
       loading(true);
       msg.hidden = true;
-
-      fetch(WORKER_URL, {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email: email }),
-      })
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          loading(false);
-          if (data && data.success) {
-            show('Iscrizione registrata. Controlla la mail per confermare.', 'ok');
-            form.reset();
-          } else {
-            var err = (data && (data.message || data.error)) || 'Riprova fra qualche istante.';
-            show('Iscrizione non completata: ' + err, 'error');
-          }
-        })
-        .catch(function () {
-          loading(false);
-          show('Connessione fallita. Riprova.', 'error');
+      try {
+        var r = await fetch(ENDPOINT, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ email: email }),
         });
+        var data = {};
+        try { data = await r.json(); } catch (_) {}
+        if (data && data.success) {
+          show(data.message || 'Iscrizione registrata.', 'ok');
+          form.reset();
+        } else {
+          show((data && data.message) || 'Iscrizione non riuscita. Riprova.', 'error');
+        }
+      } catch (_) {
+        show('Connessione fallita. Riprova.', 'error');
+      } finally {
+        loading(false);
+      }
     });
   });
 })();
