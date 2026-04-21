@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
+      "kind": "article",
+      "title": "Il messaggio LinkedIn a cui nessuno risponde ha 12 parole di troppo",
+      "subtitle": "Il limite di caratteri che tutti odiano è l'unica cosa che ti costringe a dire qualcosa di utile",
+      "preview_text": "Anatomia del messaggio di connessione LinkedIn che ottiene risposta ❌ MESSAGGIO TIPICO «Salve, sono Marco, mi occupo di soluzioni innovative",
+      "web_url": "https://www.pipeline.news/post.html?id=il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
+      "publish_date": 1776778200,
+      "thumbnail_url": "https://images.pexels.com/photos/33440149/pexels-photo-33440149.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/33440149/pexels-photo-33440149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Close-up of LinkedIn logo on smartphone screen, with keyboard background.",
+      "image_attribution": "Foto: Zulfugar Karimov (https://www.pexels.com/@zulfugarkarimov) · Pexels",
+      "tags": [
+        "linkedin",
+        "outreach"
+      ]
+    },
+    {
       "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
       "kind": "article",
       "title": "200 ore l'anno spese a rimbalzare date via email",
@@ -323,24 +340,7 @@
         "pricing",
         "obiezioni"
       ]
-    },
-    {
-      "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "kind": "article",
-      "title": "Il nome nell'oggetto non è personalizzazione: è scusa",
-      "subtitle": "Nome e settore non bastano più. Il contesto specifico è l'unica cosa che distingue la tua proposta.",
-      "preview_text": "Hai scritto il nome dell'azienda nell'oggetto. Hai citato il settore nel primo paragrafo. Hai persino cambiato il logo nella copertina della",
-      "web_url": "https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
-      "publish_date": 1771975980,
-      "thumbnail_url": "https://images.pexels.com/photos/7845382/pexels-photo-7845382.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7845382/pexels-photo-7845382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Two professional women having a discussion in an office with documents in hand.",
-      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776797409
+  "generated": 1776797412
 }
