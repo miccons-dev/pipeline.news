@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "kind": "article",
+      "title": "Tre righe che un CEO legge. Le altre no.",
+      "subtitle": "Chi chiede subito un appuntamento ha già perso.",
+      "preview_text": "2% tasso di risposta medio delle email standard inviate a decisori senior Arriva una email. Mittente sconosciuto. Oggetto: «Opportunità di c",
+      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
+      "publish_date": 1773099540,
+      "thumbnail_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Professional man reviewing documents at his office desk with attention to detail.",
+      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
       "kind": "article",
       "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
@@ -323,24 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "kind": "article",
-      "title": "Ogni 'fammi sapere quando sei libero' ti costa una trattativa",
-      "subtitle": "Nel B2B italiano il rimbalzo di email è ancora la norma. E costa il 27% delle trattative.",
-      "preview_text": "Hai appena parlato con un potenziale cliente. C'è interesse. C'è energia. Poi scrivi: 'Fammi sapere quando sei disponibile per una chiamata.",
-      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
-      "publish_date": 1775863980,
-      "thumbnail_url": "https://images.pexels.com/photos/6170652/pexels-photo-6170652.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/6170652/pexels-photo-6170652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A woman marks important dates on her desk calendar, planning upcoming events.",
-      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
-      "tags": [
-        "processi",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1776797346
+  "generated": 1776797350
 }
