@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "kind": "article",
+      "title": "200 ore l'anno spese a rimbalzare date via email",
+      "subtitle": "Chi usa la prenotazione automatica chiude il 27% di trattative in più. Non per lo strumento: per il tempo che libera.",
+      "preview_text": "27% di trattative chiuse in più con prenotazione automatica Martedì va bene? No, mercoledì sono in trasferta. Giovedì mattina? Meglio pomeri",
+      "web_url": "https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30",
+      "publish_date": 1776728040,
+      "thumbnail_url": "https://images.pexels.com/photos/29509495/pexels-photo-29509495.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/29509495/pexels-photo-29509495.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Spiral-bound calendar showing May with focus on weekdays in Portuguese.",
+      "image_attribution": "Foto: Matheus Bertelli (https://www.pexels.com/@bertellifotografia) · Pexels",
+      "tags": [
+        "processi",
+        "b2b"
+      ]
+    },
+    {
       "id": "hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02",
       "kind": "article",
       "title": "Hai chiuso l'accordo. Ora inizia la parte che quasi nessuno gestisce.",
@@ -323,24 +340,7 @@
         "email a freddo",
         "outreach"
       ]
-    },
-    {
-      "id": "il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
-      "kind": "article",
-      "title": "Il messaggio LinkedIn a cui nessuno risponde ha 12 parole di troppo",
-      "subtitle": "Il limite di caratteri che tutti odiano è l'unica cosa che ti costringe a dire qualcosa di utile",
-      "preview_text": "Anatomia del messaggio di connessione LinkedIn che ottiene risposta ❌ MESSAGGIO TIPICO «Salve, sono Marco, mi occupo di soluzioni innovative",
-      "web_url": "https://www.pipeline.news/post.html?id=il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
-      "publish_date": 1776778200,
-      "thumbnail_url": "https://images.pexels.com/photos/33440149/pexels-photo-33440149.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/33440149/pexels-photo-33440149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Close-up of LinkedIn logo on smartphone screen, with keyboard background.",
-      "image_attribution": "Foto: Zulfugar Karimov (https://www.pexels.com/@zulfugarkarimov) · Pexels",
-      "tags": [
-        "linkedin",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776797405
+  "generated": 1776797409
 }
