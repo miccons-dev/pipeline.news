@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-buyer-ha-gia-deciso-arrivi-tardi-o-in-tempo-2026-04-21",
+      "kind": "newsletter",
+      "title": "Il buyer ha già deciso. Arrivi tardi o in tempo?",
+      "subtitle": "Quando arrivi al tavolo, devi smettere di convincere e iniziare a convalidare",
+      "preview_text": "Il numero della settimana 70% I buyer B2B completano circa il 70% del processo decisionale prima di parlare con un venditore. Arrivano alla ",
+      "web_url": "https://www.pipeline.news/post.html?id=il-buyer-ha-gia-deciso-arrivi-tardi-o-in-tempo-2026-04-21",
+      "publish_date": 1776781800,
+      "thumbnail_url": "https://images.pexels.com/photos/7876662/pexels-photo-7876662.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7876662/pexels-photo-7876662.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Three business colleagues engage in a productive meeting, exchanging ideas with data charts.",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "discovery",
+        "b2b"
+      ]
+    },
+    {
       "id": "il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
       "kind": "article",
       "title": "Il messaggio LinkedIn a cui nessuno risponde ha 12 parole di troppo",
@@ -323,24 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
-      "kind": "article",
-      "title": "Dove metti la riprova sociale cambia tutto",
-      "subtitle": "Nel posto sbagliato diventa decorazione. Nel posto giusto risponde all'unica domanda che conta.",
-      "preview_text": "Hai un caso studio forte. Cliente reale, numeri concreti, risultati verificabili. Lo metti in apertura della proposta per fare colpo subito.",
-      "web_url": "https://www.pipeline.news/post.html?id=riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
-      "publish_date": 1772580720,
-      "thumbnail_url": "https://images.pexels.com/photos/7875983/pexels-photo-7875983.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7875983/pexels-photo-7875983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Diverse professionals in a business meeting, shaking hands across a table, indoors.",
-      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
-      "tags": [
-        "pricing",
-        "obiezioni"
-      ]
     }
   ],
-  "generated": 1776797412
+  "generated": 1776797424
 }
