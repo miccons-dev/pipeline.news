@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "kind": "article",
+      "title": "Ogni 'fammi sapere quando sei libero' ti costa una trattativa",
+      "subtitle": "Nel B2B italiano il rimbalzo di email è ancora la norma. E costa il 27% delle trattative.",
+      "preview_text": "Hai appena parlato con un potenziale cliente. C'è interesse. C'è energia. Poi scrivi: 'Fammi sapere quando sei disponibile per una chiamata.",
+      "web_url": "https://www.pipeline.news/post.html?id=prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
+      "publish_date": 1775863980,
+      "thumbnail_url": "https://images.pexels.com/photos/6170652/pexels-photo-6170652.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/6170652/pexels-photo-6170652.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A woman marks important dates on her desk calendar, planning upcoming events.",
+      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
+      "tags": [
+        "processi",
+        "pmi"
+      ]
+    },
+    {
       "id": "la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
       "kind": "article",
       "title": "La ricerca manuale sui potenziali clienti è già un ritardo competitivo",
@@ -323,24 +340,7 @@
         "pricing",
         "obiezioni"
       ]
-    },
-    {
-      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "kind": "newsletter",
-      "title": "Due ore al giorno. E non le stai vendendo.",
-      "subtitle": "Una maratona interna di 48 ore ha portato l'adozione dell'IA dal 10% al 97%. Ecco come replicarla con sei persone e un portatile.",
-      "preview_text": "📊 Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno. Il resto sparisce in aggi",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "publish_date": 1774942200,
-      "thumbnail_url": "https://images.pexels.com/photos/8555916/pexels-photo-8555916.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8555916/pexels-photo-8555916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Business professionals in masks discuss customer profiles in a modern office setting.",
-      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
-      "tags": [
-        "processi",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1776797390
+  "generated": 1776797394
 }
