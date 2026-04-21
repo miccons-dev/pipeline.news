@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-buyer-ha-gia-deciso-arrivi-tardi-o-in-tempo-2026-04-21",
+      "kind": "newsletter",
+      "title": "Il buyer ha già deciso. Arrivi tardi o in tempo?",
+      "subtitle": "Quando arrivi al tavolo, devi smettere di convincere e iniziare a convalidare",
+      "preview_text": "Il numero della settimana 70% I buyer B2B completano circa il 70% del processo decisionale prima di parlare con un venditore. Arrivano alla ",
+      "web_url": "https://www.pipeline.news/post.html?id=il-buyer-ha-gia-deciso-arrivi-tardi-o-in-tempo-2026-04-21",
+      "publish_date": 1776781800,
+      "thumbnail_url": null,
+      "image_url": null,
+      "image_alt": "Il buyer ha già deciso. Arrivi tardi o in tempo?",
+      "image_attribution": null,
+      "tags": [
+        "discovery",
+        "b2b"
+      ]
+    },
+    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo nel posto sbagliato blocca tutto",
@@ -323,24 +340,7 @@
         "pmi",
         "outreach"
       ]
-    },
-    {
-      "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
-      "kind": "article",
-      "title": "Non sei ignorato. Sei arrivato nel posto sbagliato.",
-      "subtitle": "Il vertice non risponde perché nessuno, dentro, ti stava aspettando",
-      "preview_text": "5,4x più persone coinvolte nelle trattative B2B rispetto a dieci anni fa Hai scritto al direttore. Oggetto calibrato, messaggio breve, nessu",
-      "web_url": "https://www.pipeline.news/post.html?id=il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
-      "publish_date": 1773358740,
-      "thumbnail_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A diverse group of professionals in a business meeting discussing sales strategies.",
-      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
-      "tags": [
-        "pmi",
-        "linkedin"
-      ]
     }
   ],
-  "generated": 1776767549
+  "generated": 1776793410
 }
