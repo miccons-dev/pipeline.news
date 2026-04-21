@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
+      "kind": "article",
+      "title": "Vendi tu le prime venti trattative. Poi delega.",
+      "subtitle": "Le prime venti trattative non sono vendite. Sono ricerca di mercato pagata dai clienti.",
+      "preview_text": "Il fondatore entra nella chiamata con il potenziale cliente, spiega il prodotto meglio di chiunque altro, risponde a ogni obiezione con prec",
+      "web_url": "https://www.pipeline.news/post.html?id=il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
+      "publish_date": 1775518380,
+      "thumbnail_url": "https://images.pexels.com/photos/8123817/pexels-photo-8123817.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8123817/pexels-photo-8123817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Diverse team of colleagues discussing at a workplace meeting.",
+      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
+      "tags": [
+        "pmi",
+        "processi"
+      ]
+    },
+    {
       "id": "il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
       "kind": "article",
       "title": "Il buyer decide da solo. Il tuo pitch arriva dopo.",
@@ -323,24 +340,7 @@
         "processi",
         "pmi"
       ]
-    },
-    {
-      "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "kind": "newsletter",
-      "title": "Dal 10% al 97% in un pomeriggio",
-      "subtitle": "Non serve un corso. Serve un pomeriggio con un problema vero e un vincolo di tempo",
-      "preview_text": "📊 Il numero della settimana 10% → 97% Il CEO di Zapier ha portato l'adozione dell'IA dal 10% al 97% del team con un solo evento interno. Non",
-      "web_url": "https://www.pipeline.news/post.html?id=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
-      "publish_date": 1775547000,
-      "thumbnail_url": "https://images.pexels.com/photos/32074897/pexels-photo-32074897.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/32074897/pexels-photo-32074897.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A diverse team working together, reviewing documents and making notes during a collaborative meeting.",
-      "image_attribution": "Foto: Md Jawadur Rahman (https://www.pexels.com/@srijonism) · Pexels",
-      "tags": [
-        "processi",
-        "leadership"
-      ]
     }
   ],
-  "generated": 1776797383
+  "generated": 1776797387
 }
