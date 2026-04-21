@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "kind": "article",
+      "title": "Il prezzo non spaventa. Lo spaventa il vuoto che lo precede.",
+      "subtitle": "Prima del prezzo manca sempre una cosa: il costo reale del problema che stai risolvendo.",
+      "preview_text": "Mandi la proposta. Hai lavorato bene, il prezzo è corretto, la soluzione è solida. Poi silenzio. Non un rifiuto — silenzio. Il potenziale cl",
+      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
+      "publish_date": 1774913520,
+      "thumbnail_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Overhead view of professionals discussing financial graphs and using calculators in an office setting.",
+      "image_attribution": "Foto: Vlada Karpovich (https://www.pexels.com/@vlada-karpovich) · Pexels",
+      "tags": [
+        "pricing",
+        "obiezioni"
+      ]
+    },
+    {
       "id": "claude-come-coach-commerciale-analizza-la-pipeline-in-1-2026-04-18",
       "kind": "article",
       "title": "La pipeline del lunedì mattina non si analizza con l'istinto",
@@ -323,24 +340,7 @@
         "email a freddo",
         "chiamata a freddo"
       ]
-    },
-    {
-      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "kind": "newsletter",
-      "title": "Sei arrivato solo. Per questo non rispondono.",
-      "subtitle": "Costruisci alleati interni prima di bussare in cima",
-      "preview_text": "📊 Il numero della settimana 45% dei team sales usa già l'AI per analizzare i potenziali clienti. Il vantaggio informativo si sta azzerando —",
-      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "publish_date": 1773732600,
-      "thumbnail_url": "https://images.pexels.com/photos/7698807/pexels-photo-7698807.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7698807/pexels-photo-7698807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A diverse group of young professionals discussing finances using a laptop in an office setting.",
-      "image_attribution": "Foto: Yan Krukau (https://www.pexels.com/@yankrukov) · Pexels",
-      "tags": [
-        "outreach",
-        "linkedin"
-      ]
     }
   ],
-  "generated": 1776797372
+  "generated": 1776797376
 }
