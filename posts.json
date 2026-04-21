@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "kind": "newsletter",
+      "title": "Il C-level risponde. Se gli dai un motivo.",
+      "subtitle": "Mandi il messaggio giusto o finisci nel cestino come gli altri",
+      "preview_text": "📊 Il numero della settimana 57% Più della metà dei decisori B2B dichiara di non rispondere mai ai messaggi di primo contatto perché non perc",
+      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
+      "publish_date": 1776203280,
+      "thumbnail_url": "https://images.pexels.com/photos/7971719/pexels-photo-7971719.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7971719/pexels-photo-7971719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Professional woman in an office setting managing tasks with a phone call and laptop.",
+      "image_attribution": "Foto: Antoni Shkraba Studio (https://www.pexels.com/@shkrabaanthony) · Pexels",
+      "tags": [
+        "email a freddo",
+        "chiamata a freddo"
+      ]
+    },
+    {
       "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
       "kind": "newsletter",
       "title": "Sei arrivato solo. Per questo non rispondono.",
@@ -257,23 +274,6 @@
       ]
     },
     {
-      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il C-level risponde. Se gli dai un motivo.",
-      "subtitle": "Mandi il messaggio giusto o finisci nel cestino come gli altri",
-      "preview_text": "📊 Il numero della settimana 2 ore Su otto ore di lavoro, il venditore medio dedica alla vendita effettiva due ore scarse. Il resto va in CRM",
-      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "publish_date": 1776203280,
-      "thumbnail_url": "https://images.pexels.com/photos/7971719/pexels-photo-7971719.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7971719/pexels-photo-7971719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Professional woman in an office setting managing tasks with a phone call and laptop.",
-      "image_attribution": "Foto: Antoni Shkraba Studio (https://www.pexels.com/@shkrabaanthony) · Pexels",
-      "tags": [
-        "email a freddo",
-        "chiamata a freddo"
-      ]
-    },
-    {
       "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
       "kind": "article",
       "title": "Tre righe che un CEO legge. Le altre no.",
@@ -342,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1776767537
+  "generated": 1776767540
 }
