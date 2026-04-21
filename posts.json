@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
+      "kind": "article",
+      "title": "Il buyer decide da solo. Il tuo pitch arriva dopo.",
+      "subtitle": "Il 70% del processo decisionale B2B avviene prima della tua prima call: ecco cosa cambia",
+      "preview_text": "Dove avviene il processo decisionale B2B 70% — Prima della prima call con il venditore 30% — Durante e dopo le call commerciali 70% del perc",
+      "web_url": "https://www.pipeline.news/post.html?id=il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
+      "publish_date": 1772780400,
+      "thumbnail_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Consultant discussing financial plans with senior clients in a modern office setting, using documents and a laptop.",
+      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
+      "tags": [
+        "discovery",
+        "b2b"
+      ]
+    },
+    {
       "id": "la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
       "kind": "article",
       "title": "La ricerca manuale sui potenziali clienti è già un ritardo competitivo",
@@ -323,24 +340,7 @@
         "email a freddo",
         "pmi"
       ]
-    },
-    {
-      "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
-      "kind": "article",
-      "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
-      "subtitle": "Senza uno schema minimo, ogni accordo ricomincia da zero — e non resta nulla da passare al primo commerciale.",
-      "preview_text": "La chiamata è andata bene. Il potenziale cliente era interessato, hai risposto a tutto, hai persino chiuso. Poi ti siedi e non riesci a spie",
-      "web_url": "https://www.pipeline.news/post.html?id=le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
-      "publish_date": 1775691180,
-      "thumbnail_url": "https://images.pexels.com/photos/7477715/pexels-photo-7477715.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7477715/pexels-photo-7477715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Two adults working at a desk with a laptop, smartphone, and documents. Collaborative workspace scene.",
-      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
-      "tags": [
-        "pmi",
-        "processi"
-      ]
     }
   ],
-  "generated": 1776794571
+  "generated": 1776794575
 }
