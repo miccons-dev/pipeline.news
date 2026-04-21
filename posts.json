@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
+      "kind": "article",
+      "title": "Il silenzio post-firma costa più di una trattativa persa",
+      "subtitle": "L'abbandono non avviene al rinnovo. Avviene nel mese in cui non ti fai sentire.",
+      "preview_text": "Chiudi la trattativa. Passi il cliente al team. Ti togli il cappello da venditore e lo rimetti in tasca. Fatto. Ma nei trenta giorni success",
+      "web_url": "https://www.pipeline.news/post.html?id=l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
+      "publish_date": 1775086320,
+      "thumbnail_url": "https://images.pexels.com/photos/7876099/pexels-photo-7876099.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7876099/pexels-photo-7876099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A professional trio engaged in a serious discussion inside a modern office.",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "email",
+        "pmi"
+      ]
+    },
+    {
       "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
       "kind": "article",
       "title": "Il prezzo non spaventa. Lo spaventa il vuoto che lo precede.",
@@ -323,24 +340,7 @@
         "processi",
         "leadership"
       ]
-    },
-    {
-      "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il C-level risponde. Se gli dai un motivo.",
-      "subtitle": "Mandi il messaggio giusto o finisci nel cestino come gli altri",
-      "preview_text": "📊 Il numero della settimana 57% Più della metà dei decisori B2B dichiara di non rispondere mai ai messaggi di primo contatto perché non perc",
-      "web_url": "https://www.pipeline.news/post.html?id=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
-      "publish_date": 1776203280,
-      "thumbnail_url": "https://images.pexels.com/photos/7971719/pexels-photo-7971719.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7971719/pexels-photo-7971719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Professional woman in an office setting managing tasks with a phone call and laptop.",
-      "image_attribution": "Foto: Antoni Shkraba Studio (https://www.pexels.com/@shkrabaanthony) · Pexels",
-      "tags": [
-        "email a freddo",
-        "chiamata a freddo"
-      ]
     }
   ],
-  "generated": 1776797376
+  "generated": 1776797379
 }
