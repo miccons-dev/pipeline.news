@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
+      "kind": "article",
+      "title": "Il messaggio LinkedIn a cui nessuno risponde ha 12 parole di troppo",
+      "subtitle": "Il limite di caratteri che tutti odiano è l'unica cosa che ti costringe a dire qualcosa di utile",
+      "preview_text": "Anatomia del messaggio di connessione LinkedIn che ottiene risposta ❌ MESSAGGIO TIPICO «Salve, sono Marco, mi occupo di soluzioni innovative",
+      "web_url": "https://www.pipeline.news/post.html?id=il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
+      "publish_date": 1776778200,
+      "thumbnail_url": "https://images.pexels.com/photos/33440149/pexels-photo-33440149.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/33440149/pexels-photo-33440149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Close-up of LinkedIn logo on smartphone screen, with keyboard background.",
+      "image_attribution": "Foto: Zulfugar Karimov (https://www.pexels.com/@zulfugarkarimov) · Pexels",
+      "tags": [
+        "linkedin",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-buyer-ha-gia-deciso-arrivi-tardi-o-in-tempo-2026-04-21",
       "kind": "newsletter",
       "title": "Il buyer ha già deciso. Arrivi tardi o in tempo?",
@@ -323,24 +340,7 @@
         "processi",
         "b2b"
       ]
-    },
-    {
-      "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
-      "kind": "article",
-      "title": "Contatti l'AD a freddo e hai già perso",
-      "subtitle": "Il silenzio dell'AD non è un problema di testo: è un problema di posizione.",
-      "preview_text": "60% delle trattative B2B coinvolge più di un decisore interno Hai trovato il profilo giusto su LinkedIn. Titolo chiaro, azienda giusta, dime",
-      "web_url": "https://www.pipeline.news/post.html?id=cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
-      "publish_date": 1774136040,
-      "thumbnail_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A diverse group of professionals in a business meeting discussing sales strategies.",
-      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
-      "tags": [
-        "pmi",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776793410
+  "generated": 1776793413
 }
