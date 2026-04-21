@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
+      "kind": "article",
+      "title": "Dove metti la riprova sociale cambia tutto",
+      "subtitle": "Nel posto sbagliato diventa decorazione. Nel posto giusto risponde all'unica domanda che conta.",
+      "preview_text": "Hai un caso studio forte. Cliente reale, numeri concreti, risultati verificabili. Lo metti in apertura della proposta per fare colpo subito.",
+      "web_url": "https://www.pipeline.news/post.html?id=riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
+      "publish_date": 1772580720,
+      "thumbnail_url": "https://images.pexels.com/photos/7875983/pexels-photo-7875983.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7875983/pexels-photo-7875983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Diverse professionals in a business meeting, shaking hands across a table, indoors.",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "pricing",
+        "obiezioni"
+      ]
+    },
+    {
       "id": "personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03",
       "kind": "article",
       "title": "Il nome nell'oggetto non è personalizzazione: è scusa",
@@ -240,23 +257,6 @@
       ]
     },
     {
-      "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
-      "kind": "article",
-      "title": "Dove metti la riprova sociale cambia tutto",
-      "subtitle": "Nel posto sbagliato diventa decorazione. Nel posto giusto risponde all'unica domanda che conta.",
-      "preview_text": "Hai un caso studio forte. Cliente reale, numeri concreti, risultati verificabili. Lo metti in apertura della proposta per fare colpo subito.",
-      "web_url": "https://www.pipeline.news/post.html?id=riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
-      "publish_date": 1776468720,
-      "thumbnail_url": "https://images.pexels.com/photos/7875983/pexels-photo-7875983.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7875983/pexels-photo-7875983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Diverse professionals in a business meeting, shaking hands across a table, indoors.",
-      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
-      "tags": [
-        "pricing",
-        "obiezioni"
-      ]
-    },
-    {
       "id": "due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
       "kind": "article",
       "title": "Non è la tecnica che manca. È il tempo per usarla.",
@@ -342,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1776797339
+  "generated": 1776797342
 }
