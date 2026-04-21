@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
+      "kind": "article",
+      "title": "La ricerca manuale sui potenziali clienti è già un ritardo competitivo",
+      "subtitle": "Quando la metà del mercato automatizza la preparazione delle call, il gap non è tecnico — è commerciale",
+      "preview_text": "Adozione AI nei team sales — 2025 45% Ricerca sugli account con supporto AI 54% Personalizzazione delle comunicazioni con AI Chi non ha anco",
+      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
+      "publish_date": 1772638200,
+      "thumbnail_url": "https://images.pexels.com/photos/8441814/pexels-photo-8441814.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8441814/pexels-photo-8441814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Professional setting with businessman reviewing documents and data on a laptop in an office.",
+      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
+      "tags": [
+        "strumenti",
+        "outreach"
+      ]
+    },
+    {
       "id": "hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02",
       "kind": "article",
       "title": "Hai chiuso l'accordo. Ora inizia la parte che quasi nessuno gestisce.",
@@ -323,24 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "kind": "article",
-      "title": "Tre righe che un CEO legge. Le altre no.",
-      "subtitle": "Chi chiede subito un appuntamento ha già perso.",
-      "preview_text": "2% tasso di risposta medio delle email standard inviate a decisori senior Arriva una email. Mittente sconosciuto. Oggetto: «Opportunità di c",
-      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "publish_date": 1773099540,
-      "thumbnail_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Professional man reviewing documents at his office desk with attention to detail.",
-      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1776794568
+  "generated": 1776794571
 }
