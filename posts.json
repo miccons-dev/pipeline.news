@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
+      "kind": "article",
+      "title": "Il buyer decide da solo. Il tuo pitch arriva dopo.",
+      "subtitle": "Il 70% del processo decisionale B2B avviene prima della tua prima call: ecco cosa cambia",
+      "preview_text": "Dove avviene il processo decisionale B2B 70% — Prima della prima call con il venditore 30% — Durante e dopo le call commerciali 70% del perc",
+      "web_url": "https://www.pipeline.news/post.html?id=il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
+      "publish_date": 1775199600,
+      "thumbnail_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Consultant discussing financial plans with senior clients in a modern office setting, using documents and a laptop.",
+      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
+      "tags": [
+        "discovery",
+        "b2b"
+      ]
+    },
+    {
       "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
       "kind": "article",
       "title": "Il silenzio post-firma costa più di una trattativa persa",
@@ -206,23 +223,6 @@
       ]
     },
     {
-      "id": "il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
-      "kind": "article",
-      "title": "Il buyer decide da solo. Il tuo pitch arriva dopo.",
-      "subtitle": "Il 70% del processo decisionale B2B avviene prima della tua prima call: ecco cosa cambia",
-      "preview_text": "Dove avviene il processo decisionale B2B 70% — Prima della prima call con il venditore 30% — Durante e dopo le call commerciali 70% del perc",
-      "web_url": "https://www.pipeline.news/post.html?id=il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
-      "publish_date": 1772780400,
-      "thumbnail_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Consultant discussing financial plans with senior clients in a modern office setting, using documents and a laptop.",
-      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
-      "tags": [
-        "discovery",
-        "b2b"
-      ]
-    },
-    {
       "id": "la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
       "kind": "article",
       "title": "La ricerca manuale sui potenziali clienti è già un ritardo competitivo",
@@ -342,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1776797379
+  "generated": 1776797383
 }
