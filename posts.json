@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "kind": "newsletter",
+      "title": "Sei arrivato solo. Per questo non rispondono.",
+      "subtitle": "Costruisci alleati interni prima di bussare in cima",
+      "preview_text": "📊 Il numero della settimana 45% dei team sales usa già l'AI per analizzare i potenziali clienti. Il vantaggio informativo si sta azzerando —",
+      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
+      "publish_date": 1773732600,
+      "thumbnail_url": "https://images.pexels.com/photos/7698807/pexels-photo-7698807.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7698807/pexels-photo-7698807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A diverse group of young professionals discussing finances using a laptop in an office setting.",
+      "image_attribution": "Foto: Yan Krukau (https://www.pexels.com/@yankrukov) · Pexels",
+      "tags": [
+        "outreach",
+        "linkedin"
+      ]
+    },
+    {
       "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
       "kind": "newsletter",
       "title": "Il prezzo nel posto sbagliato blocca tutto",
@@ -308,23 +325,6 @@
       ]
     },
     {
-      "id": "il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "kind": "newsletter",
-      "title": "Sei arrivato solo. Per questo non rispondono.",
-      "subtitle": "Costruisci alleati interni prima di bussare in cima",
-      "preview_text": "📊 Il numero della settimana 45% dei team sales usa già l'AI per analizzare i potenziali clienti. Il vantaggio informativo si sta azzerando —",
-      "web_url": "https://www.pipeline.news/post.html?id=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18",
-      "publish_date": 1773732600,
-      "thumbnail_url": "https://images.pexels.com/photos/7698807/pexels-photo-7698807.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7698807/pexels-photo-7698807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A diverse group of young professionals discussing finances using a laptop in an office setting.",
-      "image_attribution": "Foto: Yan Krukau (https://www.pexels.com/@yankrukov) · Pexels",
-      "tags": [
-        "outreach",
-        "linkedin"
-      ]
-    },
-    {
       "id": "il-consenso-si-costruisce-dal-basso-sempre-2026-03-12",
       "kind": "article",
       "title": "Non sei ignorato. Sei arrivato nel posto sbagliato.",
@@ -342,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1776614285
+  "generated": 1776767537
 }
