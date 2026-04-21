@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "kind": "article",
+      "title": "Il contatto a freddo generico non esiste: esiste quello pigro",
+      "subtitle": "Esistono quattro livelli. Fermarsi al primo è la norma — ed è il motivo per cui non rispondono.",
+      "preview_text": "L'email parte. Oggetto: \"Ciao Marco, un'idea per [Nome Azienda].\" Prima riga: \"Ti scrivo perché penso che la nostra soluzione possa fare al ",
+      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
+      "publish_date": 1776123180,
+      "thumbnail_url": "https://images.pexels.com/photos/7681983/pexels-photo-7681983.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7681983/pexels-photo-7681983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Smiling customer service agent using a laptop and headset indoors.",
+      "image_attribution": "Foto: Mikhail Nilov (https://www.pexels.com/@mikhail-nilov) · Pexels",
+      "tags": [
+        "email a freddo",
+        "pmi"
+      ]
+    },
+    {
       "id": "prenotazione-automatica-27-di-trattative-chiuse-in-piu-2026-04-10",
       "kind": "article",
       "title": "Ogni 'fammi sapere quando sei libero' ti costa una trattativa",
@@ -323,24 +340,7 @@
         "discovery",
         "b2b"
       ]
-    },
-    {
-      "id": "il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
-      "kind": "newsletter",
-      "title": "Il prezzo nel posto sbagliato blocca tutto",
-      "subtitle": "Non è quanto chiedi. È quando lo dici.",
-      "preview_text": "📊 Il numero della settimana 58% Quasi sei potenziali clienti su dieci dichiarano che il prezzo è stato il motivo per cui hanno abbandonato u",
-      "web_url": "https://www.pipeline.news/post.html?id=il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18",
-      "publish_date": 1774337400,
-      "thumbnail_url": "https://images.pexels.com/photos/7875990/pexels-photo-7875990.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7875990/pexels-photo-7875990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Business professionals discussing a contract in a modern office setting.",
-      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
-      "tags": [
-        "pricing",
-        "obiezioni"
-      ]
     }
   ],
-  "generated": 1776797394
+  "generated": 1776797398
 }
