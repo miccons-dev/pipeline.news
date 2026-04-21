@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02",
+      "kind": "article",
+      "title": "Hai chiuso l'accordo. Ora inizia la parte che quasi nessuno gestisce.",
+      "subtitle": "Cinque touchpoint nei primi 45 giorni che trasformano un cliente soddisfatto in una referenza",
+      "preview_text": "Sequenza post-firma: i 5 touchpoint critici 1 Entro 2 ore dalla firma Email di benvenuto — conferma decisione, next step concreti 2 Giorno 2",
+      "web_url": "https://www.pipeline.news/post.html?id=hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02",
+      "publish_date": 1776507300,
+      "thumbnail_url": "https://images.pexels.com/photos/8815841/pexels-photo-8815841.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8815841/pexels-photo-8815841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Professional real estate agent sealing a deal with a senior client indoors through a handshake.",
+      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
+      "tags": [
+        "chiusura",
+        "processi"
+      ]
+    },
+    {
       "id": "due-ore-al-giorno-e-tutto-il-tempo-che-hai-per-vendere-2026-04-15",
       "kind": "article",
       "title": "Non è la tecnica che manca. È il tempo per usarla.",
@@ -308,23 +325,6 @@
       ]
     },
     {
-      "id": "hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02",
-      "kind": "article",
-      "title": "Hai chiuso l'accordo. Ora inizia la parte che quasi nessuno gestisce.",
-      "subtitle": "Cinque touchpoint nei primi 45 giorni che trasformano un cliente soddisfatto in una referenza",
-      "preview_text": "Sequenza post-firma: i 5 touchpoint critici 1 Entro 2 ore dalla firma Email di benvenuto — conferma decisione, next step concreti 2 Giorno 2",
-      "web_url": "https://www.pipeline.news/post.html?id=hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02",
-      "publish_date": 1772446500,
-      "thumbnail_url": "https://images.pexels.com/photos/8815841/pexels-photo-8815841.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8815841/pexels-photo-8815841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Professional real estate agent sealing a deal with a senior client indoors through a handshake.",
-      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
-      "tags": [
-        "chiusura",
-        "processi"
-      ]
-    },
-    {
       "id": "il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21",
       "kind": "article",
       "title": "Il messaggio LinkedIn a cui nessuno risponde ha 12 parole di troppo",
@@ -342,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1776797401
+  "generated": 1776797405
 }
