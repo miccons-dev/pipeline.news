@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
+      "kind": "newsletter",
+      "title": "Due ore al giorno. E non le stai vendendo.",
+      "subtitle": "Una maratona interna di 48 ore ha portato l'adozione dell'IA dal 10% al 97%. Ecco come replicarla con sei persone e un portatile.",
+      "preview_text": "📊 Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno. Il resto sparisce in aggi",
+      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
+      "publish_date": 1774942200,
+      "thumbnail_url": "https://images.pexels.com/photos/8555916/pexels-photo-8555916.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8555916/pexels-photo-8555916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Business professionals in masks discuss customer profiles in a modern office setting.",
+      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
+      "tags": [
+        "processi",
+        "pmi"
+      ]
+    },
+    {
       "id": "l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17",
       "kind": "newsletter",
       "title": "Dal 10% al 97% in un pomeriggio",
@@ -149,23 +166,6 @@
       "image_url": "https://images.pexels.com/photos/7794058/pexels-photo-7794058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "image_alt": "Businessman enthusiastically celebrating success in an office setting with a laptop.",
       "image_attribution": "Foto: Yan Krukau (https://www.pexels.com/@yankrukov) · Pexels",
-      "tags": [
-        "processi",
-        "pmi"
-      ]
-    },
-    {
-      "id": "due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "kind": "newsletter",
-      "title": "Due ore al giorno. E non le stai vendendo.",
-      "subtitle": "Una maratona interna di 48 ore ha portato l'adozione dell'IA dal 10% al 97%. Ecco come replicarla con sei persone e un portatile.",
-      "preview_text": "📊 Il numero della settimana 2 ore È il tempo medio che un commerciale dedica effettivamente a vendere ogni giorno. Il resto sparisce in aggi",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18",
-      "publish_date": 1774942200,
-      "thumbnail_url": "https://images.pexels.com/photos/8555916/pexels-photo-8555916.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8555916/pexels-photo-8555916.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Business professionals in masks discuss customer profiles in a modern office setting.",
-      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
       "tags": [
         "processi",
         "pmi"
@@ -342,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1776767543
+  "generated": 1776767546
 }
