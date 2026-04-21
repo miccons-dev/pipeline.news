@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
+      "kind": "article",
+      "title": "La ricerca manuale sui potenziali clienti è già un ritardo competitivo",
+      "subtitle": "Quando la metà del mercato automatizza la preparazione delle call, il gap non è tecnico — è commerciale",
+      "preview_text": "Adozione AI nei team sales — 2025 45% Ricerca sugli account con supporto AI 54% Personalizzazione delle comunicazioni con AI Chi non ha anco",
+      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
+      "publish_date": 1775662200,
+      "thumbnail_url": "https://images.pexels.com/photos/8441814/pexels-photo-8441814.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8441814/pexels-photo-8441814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Professional setting with businessman reviewing documents and data on a laptop in an office.",
+      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
+      "tags": [
+        "strumenti",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-fondatore-che-vende-il-vantaggio-che-non-sa-di-avere-2026-04-06",
       "kind": "article",
       "title": "Vendi tu le prime venti trattative. Poi delega.",
@@ -240,23 +257,6 @@
       ]
     },
     {
-      "id": "la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
-      "kind": "article",
-      "title": "La ricerca manuale sui potenziali clienti è già un ritardo competitivo",
-      "subtitle": "Quando la metà del mercato automatizza la preparazione delle call, il gap non è tecnico — è commerciale",
-      "preview_text": "Adozione AI nei team sales — 2025 45% Ricerca sugli account con supporto AI 54% Personalizzazione delle comunicazioni con AI Chi non ha anco",
-      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04",
-      "publish_date": 1772638200,
-      "thumbnail_url": "https://images.pexels.com/photos/8441814/pexels-photo-8441814.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8441814/pexels-photo-8441814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Professional setting with businessman reviewing documents and data on a laptop in an office.",
-      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
-      "tags": [
-        "strumenti",
-        "outreach"
-      ]
-    },
-    {
       "id": "hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02",
       "kind": "article",
       "title": "Hai chiuso l'accordo. Ora inizia la parte che quasi nessuno gestisce.",
@@ -342,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1776797387
+  "generated": 1776797390
 }
