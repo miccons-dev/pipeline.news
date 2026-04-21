@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
+      "kind": "article",
+      "title": "Contatti l'AD a freddo e hai già perso",
+      "subtitle": "Il silenzio dell'AD non è un problema di testo: è un problema di posizione.",
+      "preview_text": "60% delle trattative B2B coinvolge più di un decisore interno Hai trovato il profilo giusto su LinkedIn. Titolo chiaro, azienda giusta, dime",
+      "web_url": "https://www.pipeline.news/post.html?id=cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
+      "publish_date": 1774136040,
+      "thumbnail_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8555605/pexels-photo-8555605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A diverse group of professionals in a business meeting discussing sales strategies.",
+      "image_attribution": "Foto: Edmond Dantès (https://www.pexels.com/@edmond-dantes) · Pexels",
+      "tags": [
+        "pmi",
+        "outreach"
+      ]
+    },
+    {
       "id": "due-ore-per-vendere-dove-vanno-le-altre-sei-2026-03-19",
       "kind": "article",
       "title": "Il 75% della giornata non è vendita",
@@ -323,24 +340,7 @@
         "processi",
         "chiusura"
       ]
-    },
-    {
-      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "kind": "article",
-      "title": "Il prezzo non spaventa. Lo spaventa il vuoto che lo precede.",
-      "subtitle": "Prima del prezzo manca sempre una cosa: il costo reale del problema che stai risolvendo.",
-      "preview_text": "Mandi la proposta. Hai lavorato bene, il prezzo è corretto, la soluzione è solida. Poi silenzio. Non un rifiuto — silenzio. Il potenziale cl",
-      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "publish_date": 1774913520,
-      "thumbnail_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Overhead view of professionals discussing financial graphs and using calculators in an office setting.",
-      "image_attribution": "Foto: Vlada Karpovich (https://www.pexels.com/@vlada-karpovich) · Pexels",
-      "tags": [
-        "pricing",
-        "obiezioni"
-      ]
     }
   ],
-  "generated": 1776797361
+  "generated": 1776797364
 }
