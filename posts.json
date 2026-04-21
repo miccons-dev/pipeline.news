@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
+      "kind": "article",
+      "title": "Le prime 20 trattative del fondatore: un metodo, non un talento",
+      "subtitle": "Senza uno schema minimo, ogni accordo ricomincia da zero — e non resta nulla da passare al primo commerciale.",
+      "preview_text": "La chiamata è andata bene. Il potenziale cliente era interessato, hai risposto a tutto, hai persino chiuso. Poi ti siedi e non riesci a spie",
+      "web_url": "https://www.pipeline.news/post.html?id=le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18",
+      "publish_date": 1772753580,
+      "thumbnail_url": "https://images.pexels.com/photos/7477715/pexels-photo-7477715.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7477715/pexels-photo-7477715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Two adults working at a desk with a laptop, smartphone, and documents. Collaborative workspace scene.",
+      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
+      "tags": [
+        "pmi",
+        "processi"
+      ]
+    },
+    {
       "id": "riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17",
       "kind": "article",
       "title": "Dove metti la riprova sociale cambia tutto",
@@ -323,24 +340,7 @@
         "processi",
         "pmi"
       ]
-    },
-    {
-      "id": "quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "kind": "article",
-      "title": "Metti il nome nell'oggetto e chiami personalizzazione",
-      "subtitle": "Esistono quattro livelli. Fermarsi al primo è la norma — ed è il motivo per cui non rispondono.",
-      "preview_text": "L'email parte. Oggetto: \"Ciao Marco, un'idea per [Nome Azienda].\" Prima riga: \"Ti scrivo perché penso che la nostra soluzione possa fare al ",
-      "web_url": "https://www.pipeline.news/post.html?id=quattro-livelli-di-personalizzazione-usi-solo-il-primo-2026-04-13",
-      "publish_date": 1776123180,
-      "thumbnail_url": "https://images.pexels.com/photos/7681983/pexels-photo-7681983.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7681983/pexels-photo-7681983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Smiling customer service agent using a laptop and headset indoors.",
-      "image_attribution": "Foto: Mikhail Nilov (https://www.pexels.com/@mikhail-nilov) · Pexels",
-      "tags": [
-        "email a freddo",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1776797342
+  "generated": 1776797346
 }
