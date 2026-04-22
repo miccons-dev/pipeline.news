@@ -70,8 +70,8 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
           <p style="margin:0 0 24px;font-size:16px;line-height:1.75;
                     color:#4a5568;text-align:center;">
             Ogni martedì mattina, Pipeline consegna nella tua inbox una tattica
-            di vendita B2B concreta&nbsp;&mdash; con lo script pronto, il template
-            email da copiare e il tool gratuito per applicarla quella stessa mattina.
+            di vendita B2B concreta&nbsp;&mdash; con lo script pronto, il modello
+            email da copiare e uno strumento gratuito per applicarla quella stessa mattina.
           </p>
 
           <!-- Callout card -->
@@ -85,17 +85,17 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
                          padding:16px 22px;">
                 <p style="margin:0;font-size:15px;font-weight:700;
                            color:#0D2756;line-height:1.5;">
-                  Niente teoria. Niente motivazione.<br/>Solo cose che funzionano.
+                  Niente teoria. Niente frasi motivazionali.<br/>Solo cose che funzionano.
                 </p>
               </td>
             </tr>
           </table>
 
           <!-- Endorsement -->
-          <p style="margin:0 0 36px;font-size:15px;line-height:1.7;
-                    color:#6B7A99;text-align:center;font-style:italic;">
+          <p style="margin:0 0 36px;font-size:16px;line-height:1.75;
+                    color:#4a5568;text-align:center;">
             ${name} pensa che valga il tuo tempo.
-            <span style="color:#0D2756;font-style:normal;font-weight:700;">Ha ragione.</span>
+            <span style="color:#0D2756;font-weight:700;">Ha ragione.</span>
           </p>
 
           <!-- CTA -->
@@ -105,12 +105,19 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
               <td align="center">
                 <a href="${esc(inviteUrl)}"
                    style="display:inline-block;
-                          background:linear-gradient(135deg,#00C4A0,#00A88A);
+                          background-color:#00C4A0;
                           color:#ffffff;font-size:17px;font-weight:800;
                           text-decoration:none;padding:18px 48px;
-                          border-radius:12px;letter-spacing:.1px;
-                          box-shadow:0 4px 20px rgba(0,196,160,.35);">
+                          border-radius:12px;letter-spacing:.1px;">
                   → Iscriviti gratis a Pipeline
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding-top:14px;">
+                <a href="${esc(inviteUrl)}"
+                   style="font-size:13px;color:#1E6BC5;text-decoration:underline;">
+                  oppure clicca qui per iscriverti
                 </a>
               </td>
             </tr>
@@ -151,9 +158,9 @@ function inviteEmailHtml({ referrerName, referrerEmail, inviteUrl }) {
 function inviteEmailText({ referrerName, referrerEmail, inviteUrl }) {
   return `${referrerName} ti ha riservato un posto in Pipeline.
 
-Ogni martedì mattina, Pipeline consegna nella tua inbox una tattica di vendita B2B concreta — con lo script pronto, il template email da copiare e il tool gratuito per applicarla quella stessa mattina.
+Ogni martedì mattina, Pipeline consegna nella tua inbox una tattica di vendita B2B concreta — con lo script pronto, il modello email da copiare e uno strumento gratuito per applicarla quella stessa mattina.
 
-Niente teoria. Niente motivazione. Solo cose che funzionano.
+Niente teoria. Niente frasi motivazionali. Solo cose che funzionano.
 
 ${referrerName} pensa che valga il tuo tempo. Ha ragione.
 
