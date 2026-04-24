@@ -317,7 +317,7 @@ function openModal(post) {
     modalHeroImg.hidden = true;
   }
 
-  const shareUrl = `https://www.pipeline.news/archive.html#${post.id}`;
+  const shareUrl = `https://www.pipeline.news/archive.html?open=${encodeURIComponent(post.id)}`;
   document.getElementById('modalShare').innerHTML = shareBarHtml(shareUrl, decodeHtml(post.title));
 
   modalCtaLabel.textContent = `Pipeline · Edizione #${issueNum}`;
@@ -392,9 +392,9 @@ async function loadArchive() {
     renderFilters();
     renderFeed();
 
-    const hash = location.hash.slice(1);
-    if (hash) {
-      const post = allPosts.find(p => p.id === hash);
+    const openId = new URLSearchParams(location.search).get('open') || location.hash.slice(1);
+    if (openId) {
+      const post = allPosts.find(p => p.id === openId);
       if (post) openModal(post);
     }
   } catch {
