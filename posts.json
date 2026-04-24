@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "ai-dimezza-la-preparazione-pre-call-il-resto-e-ancora-t-2026-04-24",
+      "kind": "article",
+      "title": "AI dimezza la preparazione pre-call. Il resto è ancora tuo.",
+      "subtitle": "10 minuti invece di 20, per ogni chiamata. Ma solo se sai cosa automatizzare — e cosa no.",
+      "preview_text": "Tempo di preparazione per call: prima e dopo l'AI Senza AI 20 minuti per call 5 call/giorno → 100 min/giorno Con AI 10 minuti per call 5 cal",
+      "web_url": "https://www.pipeline.news/post.html?id=ai-dimezza-la-preparazione-pre-call-il-resto-e-ancora-t-2026-04-24",
+      "publish_date": 1777027500,
+      "thumbnail_url": "https://images.pexels.com/photos/3987034/pexels-photo-3987034.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/3987034/pexels-photo-3987034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A young woman multitasking with a phone, laptop, and tablet in a bright home office setting.",
+      "image_attribution": "Foto: Anna Shvets (https://www.pexels.com/@shvetsa) · Pexels",
+      "tags": [
+        "strumenti",
+        "chiamata a freddo"
+      ]
+    },
+    {
       "id": "cerchi-il-decisore-sbagliato-nel-posto-sbagliato-2026-03-21",
       "kind": "article",
       "title": "Contatti l'AD a freddo e hai già perso",
@@ -257,5 +274,5 @@
       ]
     }
   ],
-  "generated": 1777018404
+  "generated": 1777021727
 }
