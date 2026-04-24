@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - claude/pipeline-news-landing-page-jZ1Qp   # branch attuale
   workflow_dispatch:
 
 permissions:
