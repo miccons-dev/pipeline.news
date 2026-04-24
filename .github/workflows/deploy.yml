@@ -1,15 +1,10 @@
 name: Deploy to GitHub Pages
 
-# Si attiva su ogni push al branch main,
-# ogni martedì alle 07:00 (per aggiornare le edizioni della settimana),
-# oppure manualmente da GitHub → Actions → "Run workflow".
 on:
   push:
     branches:
       - main
       - claude/pipeline-news-landing-page-jZ1Qp   # branch attuale
-  schedule:
-    - cron: '0 7 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -17,7 +12,6 @@ permissions:
   pages: write
   id-token: write
 
-# Evita deploy sovrapposti: cancella il vecchio se arriva uno nuovo.
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -31,44 +25,29 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
 
     steps:
-      # 1. Scarica il codice del repository
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2. Installa Node.js (serve solo per eseguire fetch-posts.js)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # 3. Recupera post e newsletter aggiornati da Beehiiv (richiede secrets)
-      - name: Fetch posts from Beehiiv
-        env:
-          BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
-          BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
-        run: node scripts/fetch-posts.js
-        continue-on-error: true
-
-      # 4. Genera sitemap.xml con tutti i post e newsletter aggiornati
       - name: Generate sitemap
         run: node scripts/generate-sitemap.js
 
-      # 5. Genera pagine statiche /share/[id].html per og:image corretto sui social
       - name: Generate share pages
         run: node scripts/generate-share-pages.js
         continue-on-error: true
 
-      # 7. Configura GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 8. Carica tutti i file del sito (incluso posts.json appena generato)
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-      # 9. Pubblica su GitHub Pages
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
