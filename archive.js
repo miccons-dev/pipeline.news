@@ -318,7 +318,7 @@ function openModal(post) {
     modalHeroImg.hidden = true;
   }
 
-  const shareUrl = `https://www.pipeline.news/archive.html?open=${encodeURIComponent(post.id)}`;
+  const shareUrl = `https://pipeline-news.onrender.com/share?type=newsletter&id=${encodeURIComponent(post.id)}`;
   document.getElementById('modalShare').innerHTML = shareBarHtml(shareUrl, decodeHtml(post.title));
 
   modalCtaLabel.textContent = `Pipeline · Edizione #${issueNum}`;

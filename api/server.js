@@ -6,6 +6,7 @@ const express      = require('express');
 const cors         = require('cors');
 const rateLimit    = require('express-rate-limit');
 const inviteRoutes = require('./routes/invites');
+const shareRoutes  = require('./routes/share');
 const pool         = require('./db/pool');
 
 const app  = express();
@@ -54,6 +55,7 @@ app.use('/api', rateLimit({
 }));
 
 /* ── Routes ──────────────────────────────────────────────── */
+app.use('/', shareRoutes);
 app.use('/api/v1', inviteRoutes);
 
 /* ── Health check ────────────────────────────────────────── */
