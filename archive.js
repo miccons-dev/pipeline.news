@@ -310,7 +310,8 @@ function openModal(post) {
   modalBody.innerHTML = stripNewsletterFooter(rawHtml);
 
   const heroUrl = post.thumbnail_url || post.image_url || '';
-  if (heroUrl && !rawHtml.includes(heroUrl)) {
+  const heroInContent = heroUrl && modalBody.querySelector(`img[src*="${heroUrl.split('/').pop().split('?')[0]}"]`);
+  if (heroUrl && !heroInContent) {
     modalHeroImg.innerHTML = `<img src="${esc(heroUrl)}" alt="${esc(decodeHtml(post.image_alt || post.title || ''))}" class="modal-hero-img__img">`;
     modalHeroImg.hidden = false;
   } else {
