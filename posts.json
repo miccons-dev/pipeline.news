@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "entri-in-chiamata-in-difensiva-il-potenziale-cliente-lo-2026-05-02",
+      "kind": "article",
+      "title": "Entri in chiamata in difensiva. Il potenziale cliente lo sente.",
+      "subtitle": "L'ansia pre-chiamata non si sente nelle parole. Si sente nel ritmo, nelle pause, nei secondi che riempi.",
+      "preview_text": "Assertività rilassata: i 5 segnali misurabili −20% ritmo parlato 2-3s pausa post-obiezione 0 scuse nei primi 30 secondi 1 post-it prima di o",
+      "web_url": "https://www.pipeline.news/post.html?id=entri-in-chiamata-in-difensiva-il-potenziale-cliente-lo-2026-05-02",
+      "publish_date": 1777730400,
+      "thumbnail_url": "https://images.pexels.com/photos/8276226/pexels-photo-8276226.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/8276226/pexels-photo-8276226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Businessman in gray suit talking on smartphone indoors",
+      "image_attribution": "Foto: PNW Production (https://www.pexels.com/@pnw-prod) · Pexels",
+      "tags": [
+        "chiamata a freddo",
+        "obiezioni"
+      ]
+    },
+    {
       "id": "ai-dimezza-la-preparazione-pre-call-il-resto-e-ancora-t-2026-04-24",
       "kind": "article",
       "title": "AI dimezza la preparazione pre-call. Il resto è ancora tuo.",
@@ -323,24 +340,7 @@
         "pmi",
         "linkedin"
       ]
-    },
-    {
-      "id": "tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "kind": "article",
-      "title": "Tre righe che un CEO legge. Le altre no.",
-      "subtitle": "Chi chiede subito un appuntamento ha già perso.",
-      "preview_text": "2% tasso di risposta medio delle email standard inviate a decisori senior Arriva una email. Mittente sconosciuto. Oggetto: «Opportunità di c",
-      "web_url": "https://www.pipeline.news/post.html?id=tre-righe-che-un-ceo-legge-le-altre-no-2026-03-10",
-      "publish_date": 1773099540,
-      "thumbnail_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/10376232/pexels-photo-10376232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Professional man reviewing documents at his office desk with attention to detail.",
-      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1777017906
+  "generated": 1777018183
 }
