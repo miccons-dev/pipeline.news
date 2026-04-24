@@ -10,11 +10,10 @@ function esc(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function page(post, destUrl) {
+function page(post, shareUrl, destUrl) {
   const img   = post.thumbnail_url || post.image_url || 'https://www.pipeline.news/logo.png';
   const title = esc(post.title || 'Pipeline.news');
   const desc  = esc(post.subtitle || post.preview_text || 'La newsletter italiana per i professionisti della vendita.');
-  const dest  = esc(destUrl);
   return `<!DOCTYPE html><html lang="it"><head>
 <meta charset="UTF-8">
 <title>${title} — Pipeline.news</title>
@@ -23,14 +22,14 @@ function page(post, destUrl) {
 <meta property="og:title" content="${title} — Pipeline.news">
 <meta property="og:description" content="${desc}">
 <meta property="og:image" content="${esc(img)}">
-<meta property="og:url" content="${dest}">
+<meta property="og:url" content="${esc(shareUrl)}">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title} — Pipeline.news">
 <meta name="twitter:description" content="${desc}">
 <meta name="twitter:image" content="${esc(img)}">
-<link rel="canonical" href="${dest}">
-<meta http-equiv="refresh" content="0;url=${dest}">
+<link rel="canonical" href="${esc(shareUrl)}">
+<meta http-equiv="refresh" content="0;url=${esc(destUrl)}">
 <script>window.location.replace(${JSON.stringify(destUrl)})</script>
 </head><body></body></html>`;
 }
@@ -49,8 +48,9 @@ for (const [file, makeUrl] of [
   const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   for (const post of data.posts || []) {
     if (!post.id) continue;
-    const safeId = post.id.replace(/[^a-zA-Z0-9_-]/g, '_');
-    fs.writeFileSync(path.join(outDir, `${safeId}.html`), page(post, makeUrl(post.id)));
+    const safeId   = post.id.replace(/[^a-zA-Z0-9_-]/g, '_');
+    const shareUrl = `https://www.pipeline.news/share/${safeId}.html`;
+    fs.writeFileSync(path.join(outDir, `${safeId}.html`), page(post, shareUrl, makeUrl(post.id)));
     count++;
   }
 }
