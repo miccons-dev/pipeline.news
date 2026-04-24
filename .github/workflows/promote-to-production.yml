@@ -11,8 +11,7 @@ jobs:
   promote:
     runs-on: ubuntu-latest
     steps:
-      - name: Merge staging → main
-        id: merge
+      - name: Merge staging → produzione
         run: |
           http_code=$(curl -s -o response.json -w "%{http_code}" \
             -X POST \
@@ -20,7 +19,7 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${{ github.repository }}/merges \
-            -d '{"base":"main","head":"staging","commit_message":"chore: promuovi staging in produzione"}')
+            -d '{"base":"claude/pipeline-news-landing-page-jZ1Qp","head":"staging","commit_message":"chore: promuovi staging in produzione"}')
           cat response.json
           if [ "$http_code" = "201" ] || [ "$http_code" = "204" ]; then
             echo "✅ Merge completato (HTTP $http_code)"
@@ -30,11 +29,11 @@ jobs:
 
       - name: Triggera deploy su GitHub Pages
         run: |
-          curl -s -o /dev/null -w "%{http_code}" \
+          curl -s -o /dev/null -w "%{http_code}\n" \
             -X POST \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches \
-            -d '{"ref":"main"}'
+            -d '{"ref":"claude/pipeline-news-landing-page-jZ1Qp"}'
           echo "✅ Deploy lanciato"
