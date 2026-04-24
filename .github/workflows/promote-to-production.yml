@@ -8,6 +8,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   promote:
     runs-on: ubuntu-latest
@@ -22,8 +25,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout main
-          git merge origin/staging --no-edit -m "chore: promuovi staging → main"
+          git fetch origin
+          git checkout -B main origin/main
+          git merge origin/staging -m "chore: promuovi staging in produzione"
           git push origin main
 
       - name: Setup Node.js
