@@ -3,6 +3,3 @@ api/
 
 # Cloudflare Worker — non pertinente
 worker/
-
-# Script di build — servono solo in build phase, non come file statici
-scripts/
