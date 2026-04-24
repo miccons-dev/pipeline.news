@@ -321,7 +321,7 @@ function openModal(post) {
   document.getElementById('modalShare').innerHTML = shareBarHtml(shareUrl, decodeHtml(post.title));
 
   modalCtaLabel.textContent = `Pipeline · Edizione #${issueNum}`;
-  modalCtaOverlay.hidden = false;
+  modalCtaOverlay.hidden = sessionStorage.getItem('ctaSeen') === '1';
 
   blogModal.hidden = false;
   document.body.style.overflow = 'hidden';
@@ -337,7 +337,7 @@ function openModal(post) {
 function closeModal() {
   blogModal.hidden = true;
   modalHeroImg.hidden = true;
-  modalCtaOverlay.hidden = false;
+  modalCtaOverlay.hidden = sessionStorage.getItem('ctaSeen') === '1';
   document.body.style.overflow = '';
   history.replaceState(null, '', location.pathname);
   document.title = _defaultTitle;
@@ -355,6 +355,7 @@ document.addEventListener('keydown', e => {
 
 modalCtaDismiss.addEventListener('click', () => {
   modalCtaOverlay.hidden = true;
+  sessionStorage.setItem('ctaSeen', '1');
 });
 
 paginationEl.addEventListener('click', e => {
