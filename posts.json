@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-tua-lista-perde-il-22-5-ogni-anno-ma-tu-continui-a-s-2026-04-30",
+      "kind": "newsletter",
+      "title": "La tua lista perde il 22,5% ogni anno. Ma tu continui a scrivere.",
+      "subtitle": "Mandi email a chi non c'è più. Ecco come smettere prima della prossima campagna.",
+      "preview_text": "📊 Il numero della settimana 22,5% È la quota di contatti B2B che diventano inutili nel giro di dodici mesi. Cambio ruolo, cambio azienda, pe",
+      "web_url": "https://www.pipeline.news/post.html?id=la-tua-lista-perde-il-22-5-ogni-anno-ma-tu-continui-a-s-2026-04-30",
+      "publish_date": 1777527000,
+      "thumbnail_url": "https://images.pexels.com/photos/7582776/pexels-photo-7582776.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7582776/pexels-photo-7582776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Businessman in a stylish black jacket using a laptop indoors, focused on his work.",
+      "image_attribution": "Foto: Mikhail Nilov (https://www.pexels.com/@mikhail-nilov) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "i-numeri-non-convincono-le-ragioni-si-2026-04-30",
       "kind": "article",
       "title": "I numeri non convincono. Le ragioni sì.",
@@ -323,24 +340,7 @@
         "obiezioni",
         "b2b"
       ]
-    },
-    {
-      "id": "due-ore-per-vendere-dove-vanno-le-altre-sei-2026-03-19",
-      "kind": "article",
-      "title": "Il 75% della giornata non è vendita",
-      "subtitle": "Le altre sei le passi a rendere possibile la vendita. Non è la stessa cosa.",
-      "preview_text": "2 ore al giorno dedicate alla vendita effettiva dal commerciale medio Hai risposto a dodici email, aggiornato il CRM, preparato una proposta",
-      "web_url": "https://www.pipeline.news/post.html?id=due-ore-per-vendere-dove-vanno-le-altre-sei-2026-03-19",
-      "publish_date": 1773963240,
-      "thumbnail_url": "https://images.pexels.com/photos/7654447/pexels-photo-7654447.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7654447/pexels-photo-7654447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Confident woman with eyeglasses working in a modern office environment.",
-      "image_attribution": "Foto: Pavel Danilyuk (https://www.pexels.com/@pavel-danilyuk) · Pexels",
-      "tags": [
-        "pmi",
-        "processi"
-      ]
     }
   ],
-  "generated": 1777018191
+  "generated": 1777018194
 }
