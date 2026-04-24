@@ -29,7 +29,6 @@ function page(post, shareUrl, destUrl) {
 <meta name="twitter:description" content="${desc}">
 <meta name="twitter:image" content="${esc(img)}">
 <link rel="canonical" href="${esc(shareUrl)}">
-<meta http-equiv="refresh" content="0;url=${esc(destUrl)}">
 <script>window.location.replace(${JSON.stringify(destUrl)})</script>
 </head><body></body></html>`;
 }
