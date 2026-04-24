@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "i-numeri-non-convincono-le-ragioni-si-2026-04-30",
+      "kind": "article",
+      "title": "I numeri non convincono. Le ragioni sì.",
+      "subtitle": "Quasi nessuno chiede perché il cliente vuole davvero cambiare. Quella risposta vale più di qualsiasi proposta.",
+      "preview_text": "Perché le proposte vengono rimandate: logica vs emozione APPROCCIO STANDARD Apri con ROI e numeri Elenchi feature e vantaggi Case study gene",
+      "web_url": "https://www.pipeline.news/post.html?id=i-numeri-non-convincono-le-ragioni-si-2026-04-30",
+      "publish_date": 1777539600,
+      "thumbnail_url": "https://images.pexels.com/photos/7876299/pexels-photo-7876299.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7876299/pexels-photo-7876299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A professional business meeting with a lawyer and clients in a modern office setting.",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "discovery",
+        "chiusura"
+      ]
+    },
+    {
       "id": "ha-comprato-da-un-concorrente-piu-caro-eccone-il-motivo-2026-05-01",
       "kind": "article",
       "title": "Ha comprato da un concorrente più caro. Eccone il motivo.",
@@ -323,24 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
-      "kind": "article",
-      "title": "Tutti hanno gli stessi dati. Il problema è che si vede.",
-      "subtitle": "L'AI ha azzerato il vantaggio informativo. Resta un solo livello su cui competere.",
-      "preview_text": "45% dei team sales usa già l'AI per la ricerca account Hai aperto LinkedIn Sales Navigator. Hai letto il sito. Hai trovato un post del CEO d",
-      "web_url": "https://www.pipeline.news/post.html?id=la-ricerca-sul-prospect-non-basta-piu-cambia-il-gioco-2026-03-14",
-      "publish_date": 1773531540,
-      "thumbnail_url": "https://images.pexels.com/photos/7793720/pexels-photo-7793720.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7793720/pexels-photo-7793720.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Businessman examining a line graph in a modern office space.",
-      "image_attribution": "Foto: Yan Krukau (https://www.pexels.com/@yankrukov) · Pexels",
-      "tags": [
-        "email a freddo",
-        "outreach"
-      ]
     }
   ],
-  "generated": 1777018187
+  "generated": 1777018191
 }
