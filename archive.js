@@ -310,7 +310,7 @@ function openModal(post) {
   modalBody.innerHTML = stripNewsletterFooter(rawHtml);
 
   const heroUrl = post.thumbnail_url || post.image_url || '';
-  if (heroUrl) {
+  if (heroUrl && !rawHtml.includes(heroUrl)) {
     modalHeroImg.innerHTML = `<img src="${esc(heroUrl)}" alt="${esc(decodeHtml(post.image_alt || post.title || ''))}" class="modal-hero-img__img">`;
     modalHeroImg.hidden = false;
   } else {
