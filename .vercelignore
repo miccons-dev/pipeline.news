@@ -1,0 +1,8 @@
+# Backend Express — gira su Render, non su Vercel
+api/
+
+# Cloudflare Worker — non pertinente
+worker/
+
+# Script di build — servono solo in build phase, non come file statici
+scripts/
