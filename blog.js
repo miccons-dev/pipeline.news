@@ -270,7 +270,8 @@ function openModal(post) {
 
   modalBody.innerHTML = rawHtml;
 
-  const shareUrl = `https://pipeline-news.onrender.com/share?type=blog&id=${encodeURIComponent(post.id)}`;
+  const safeId   = post.id.replace(/[^a-zA-Z0-9_-]/g, '_');
+  const shareUrl = `https://www.pipeline.news/share/${safeId}.html`;
   document.getElementById('modalShare').innerHTML = shareBarHtml(shareUrl, post.title);
 
   blogModal.hidden = false;

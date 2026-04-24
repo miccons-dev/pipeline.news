@@ -53,17 +53,22 @@ jobs:
       - name: Generate sitemap
         run: node scripts/generate-sitemap.js
 
-      # 5. Configura GitHub Pages
+      # 5. Genera pagine statiche /share/[id].html per og:image corretto sui social
+      - name: Generate share pages
+        run: node scripts/generate-share-pages.js
+        continue-on-error: true
+
+      # 7. Configura GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      # 6. Carica tutti i file del sito (incluso posts.json appena generato)
+      # 8. Carica tutti i file del sito (incluso posts.json appena generato)
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-      # 7. Pubblica su GitHub Pages
+      # 9. Pubblica su GitHub Pages
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
