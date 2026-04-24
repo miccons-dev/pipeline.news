@@ -106,7 +106,8 @@ async function loadPosts() {
       return;
     }
 
-    const newsletters = data.posts.sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3);
+    const source = archiveData ? (archiveData.posts || []).filter(p => p.kind === 'newsletter') : data.posts;
+    const newsletters = source.sort((a, b) => (b.publish_date || 0) - (a.publish_date || 0)).slice(0, 3);
     const cards = newsletters.map((post, idx) => {
       const issueNum = totalIssues ? totalIssues - idx : '';
       const logoOverlay = `<div class="archive-card__num">
