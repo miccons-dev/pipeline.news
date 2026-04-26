@@ -15,9 +15,21 @@
   </url>
   <url>
     <loc>https://www.pipeline.news/blog.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.pipeline.news/post.html?id=ai-dimezza-la-preparazione-pre-call-il-resto-e-ancora-t-2026-04-24</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.pipeline.news/post.html?id=il-messaggio-linkedin-a-cui-nessuno-risponde-ha-12-paro-2026-04-21</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.pipeline.news/post.html?id=quanto-ti-costa-non-automatizzare-lo-scheduling-2026-04-30</loc>
@@ -26,8 +38,8 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/post.html?id=riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17</loc>
-    <lastmod>2026-04-17</lastmod>
+    <loc>https://www.pipeline.news/post.html?id=hai-chiuso-l-accordo-ora-inizia-la-parte-che-quasi-ness-2026-03-02</loc>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -50,7 +62,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/post.html?id=le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18</loc>
+    <loc>https://www.pipeline.news/post.html?id=la-ricerca-manuale-sui-potenziali-clienti-e-gia-un-rita-2026-03-04</loc>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -62,7 +74,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03</loc>
+    <loc>https://www.pipeline.news/post.html?id=il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06</loc>
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -122,33 +134,62 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/archive.html#il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18</loc>
+    <loc>https://www.pipeline.news/post.html?id=le-prime-20-trattative-del-fondatore-un-metodo-non-un-t-2026-04-18</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.pipeline.news/post.html?id=riprova-sociale-nelle-proposte-la-posizione-vale-piu-de-2026-04-17</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.pipeline.news/post.html?id=personalizzare-la-proposta-non-significa-metterci-il-no-2026-04-03</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.pipeline.news/archive.html?open=il-buyer-ha-gia-deciso-arrivi-tardi-o-in-tempo-2026-04-21</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pipeline.news/archive.html?open=il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/archive.html#l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17</loc>
+    <loc>https://www.pipeline.news/archive.html?open=l-evento-da-10-persone-che-ha-cambiato-tutto-2026-04-17</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/archive.html#due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18</loc>
+    <loc>https://www.pipeline.news/archive.html?open=due-ore-al-giorno-non-bastano-ma-le-stai-usando-bene-2026-04-18</loc>
     <lastmod>2026-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/archive.html#il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18</loc>
+    <loc>https://www.pipeline.news/archive.html?open=il-prezzo-non-e-il-problema-e-dove-lo-metti-2026-04-18</loc>
     <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.pipeline.news/archive.html#il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18</loc>
+    <loc>https://www.pipeline.news/archive.html?open=il-multi-threading-non-e-una-scelta-e-l-unica-via-2026-04-18</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pipeline.news/invite.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

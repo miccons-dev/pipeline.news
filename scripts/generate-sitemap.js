@@ -51,21 +51,24 @@ try {
 } catch (e) { console.warn('blog.json not found:', e.message); }
 if (!blogAdded) entries.push(url(`${BASE}/blog.html`, null, 'weekly', '0.9'));
 
-// Newsletter archive
+// Newsletter archive — use ?open= (crawlable) instead of hash fragments
 try {
   const archive = readJson('archive.json');
   const posts = (archive.posts || [])
-    .filter(p => p.title && p.publish_date)
+    .filter(p => p.id && p.title && p.publish_date)
     .sort((a, b) => b.publish_date - a.publish_date);
   posts.forEach(p => {
     entries.push(url(
-      `${BASE}/archive.html#${p.id}`,
+      `${BASE}/archive.html?open=${encodeURIComponent(p.id)}`,
       isoDate(p.publish_date),
       'monthly',
       '0.8'
     ));
   });
 } catch (e) { console.warn('archive.json not found:', e.message); }
+
+// Static utility pages
+entries.push(url(`${BASE}/invite.html`, null, 'monthly', '0.5'));
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"

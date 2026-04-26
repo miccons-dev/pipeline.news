@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - claude/pipeline-news-landing-page-jZ1Qp
+  schedule:
+    - cron: '0 7 * * 1'   # ogni lunedì alle 07:00 UTC
   workflow_dispatch:
 
 permissions:
