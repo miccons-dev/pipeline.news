@@ -1,0 +1,11 @@
+{
+  "lastUpdated": "2026-04-26",
+  "version": 1,
+  "changes": [
+    {
+      "date": "2026-04-26",
+      "type": "geo+schema+sitemap",
+      "description": "geo.position e ICBM su tutte le pagine, Organization JSON-LD con sameAs LinkedIn e foundingDate, fix sitemap URL archivio da hash a query param, invite.html in sitemap, cron settimanale deploy"
+    }
+  ]
+}

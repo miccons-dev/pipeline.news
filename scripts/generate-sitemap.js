@@ -81,3 +81,12 @@ ${entries.join('\n')}
 
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), xml);
 console.log(`sitemap.xml generated — ${entries.length} URLs`);
+
+// Aggiorna lastUpdated in seo-log.json
+const seoLogPath = path.join(ROOT, 'seo-log.json');
+try {
+  const seoLog = JSON.parse(fs.readFileSync(seoLogPath, 'utf8'));
+  seoLog.lastUpdated = new Date().toISOString().split('T')[0];
+  fs.writeFileSync(seoLogPath, JSON.stringify(seoLog, null, 2) + '\n');
+  console.log(`seo-log.json updated — lastUpdated: ${seoLog.lastUpdated}`);
+} catch (e) { console.warn('seo-log.json not found:', e.message); }
