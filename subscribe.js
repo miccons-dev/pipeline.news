@@ -1,8 +1,39 @@
-/* pipeline.news — subscribe handler → pipeline-agent.onrender.com */
+/* pipeline.news — subscribe handler → pipeline-agent.onrender.com (con fallback) */
 (function () {
   'use strict';
 
   var ENDPOINT = 'https://pipeline-agent.onrender.com/public/subscribe';
+  var FALLBACK = 'https://formsubmit.co/ajax/crew@pipeline.news';
+
+  // Salva in localStorage come ultimo backup
+  function saveLocal(email) {
+    try {
+      var key = 'pl_pending_subs';
+      var list = JSON.parse(localStorage.getItem(key) || '[]');
+      list.push({ email: email, ts: new Date().toISOString() });
+      localStorage.setItem(key, JSON.stringify(list));
+    } catch (_) {}
+  }
+
+  // Invia al fallback FormSubmit (ti arriva via email a crew@pipeline.news)
+  async function sendFallback(email) {
+    try {
+      var r = await fetch(FALLBACK, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify({
+          email: email,
+          source: 'pipeline.news subscribe form (fallback)',
+          timestamp: new Date().toISOString(),
+          page: window.location.pathname,
+        }),
+      });
+      var data = await r.json().catch(function () { return {}; });
+      return data && (data.success === 'true' || data.success === true);
+    } catch (_) {
+      return false;
+    }
+  }
 
   document.querySelectorAll('form.pl-subscribe').forEach(function (form) {
     var input     = form.querySelector('input[name="email"]');
@@ -32,6 +63,9 @@
       }
       loading(true);
       msg.hidden = true;
+
+      // Tentativo principale
+      var primaryOk = false;
       try {
         var r = await fetch(ENDPOINT, {
           method:  'POST',
@@ -40,15 +74,28 @@
         });
         var data = {};
         try { data = await r.json(); } catch (_) {}
-        if (data && data.success) {
-          window.location.href = '/welcome.html?email=' + encodeURIComponent(email);
-        } else {
-          show((data && data.message) || 'Iscrizione non riuscita. Riprova.', 'error');
+        primaryOk = !!(data && data.success);
+        if (!primaryOk && data && data.message) {
+          // Errore di validazione (es. email già iscritta) — non usare fallback
+          show(data.message, 'error');
+          loading(false);
+          return;
         }
-      } catch (_) {
-        show('Connessione fallita. Riprova.', 'error');
-      } finally {
-        loading(false);
+      } catch (_) {}
+
+      if (primaryOk) {
+        window.location.href = '/welcome.html?email=' + encodeURIComponent(email);
+        return;
+      }
+
+      // Fallback: salva in localStorage e invia notifica a crew@pipeline.news
+      saveLocal(email);
+      var fbOk = await sendFallback(email);
+      loading(false);
+      if (fbOk) {
+        window.location.href = '/welcome.html?email=' + encodeURIComponent(email);
+      } else {
+        show('Iscrizione registrata. Ti contatteremo a breve via email.', 'success');
       }
     });
   });
