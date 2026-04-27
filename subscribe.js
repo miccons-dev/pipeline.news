@@ -75,7 +75,7 @@
         var data = {};
         try { data = await r.json(); } catch (_) {}
         primaryOk = !!(data && data.success);
-        if (!primaryOk && data && data.message) {
+        if (!primaryOk && r.status >= 400 && r.status < 500 && data && data.message) {
           // Errore di validazione (es. email già iscritta) — non usare fallback
           show(data.message, 'error');
           loading(false);
