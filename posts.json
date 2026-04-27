@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "il-briefing-mattutino-che-svuota-il-team-prima-ancora-d-2026-04-27",
+      "kind": "article",
+      "title": "Il briefing mattutino che svuota il team prima ancora di iniziare",
+      "subtitle": "Le prime ore del mattino sono le più produttive. Il tuo meeting le sta bruciando.",
+      "preview_text": "Struttura del briefing quotidiano: 3 blocchi da 5 minuti 5' NUMERI Pipeline aperta Attività del giorno prima Nessun commento 5' FOCUS 1 obie",
+      "web_url": "https://www.pipeline.news/post.html?id=il-briefing-mattutino-che-svuota-il-team-prima-ancora-d-2026-04-27",
+      "publish_date": 1777266360,
+      "thumbnail_url": "https://images.pexels.com/photos/5922211/pexels-photo-5922211.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/5922211/pexels-photo-5922211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Group of diverse professionals discussing project plans in a well-lit office.",
+      "image_attribution": "Foto: RDNE Stock project (https://www.pexels.com/@rdne) · Pexels",
+      "tags": [
+        "leadership",
+        "processi"
+      ]
+    },
+    {
       "id": "il-c-level-risponde-solo-se-gli-dai-un-motivo-2026-04-18",
       "kind": "newsletter",
       "title": "Il C-level risponde. Se gli dai un motivo.",
@@ -308,5 +325,5 @@
       ]
     }
   ],
-  "generated": 1777196935
+  "generated": 1777266613
 }
