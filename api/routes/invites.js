@@ -102,7 +102,7 @@ router.post('/invite', async (req, res) => {
         if (insert.rowCount === 0) { skipped++; continue; }
 
         const inviteUrl = `${SITE_URL}/accept.html?token=${token}`;
-        await resend.emails.send({
+        const { error: sendError } = await resend.emails.send({
           from:    FROM_EMAIL,
           to:      invitedEmail,
           subject: `${referrerName} ti ha riservato un posto in Pipeline.`,
@@ -110,7 +110,12 @@ router.post('/invite', async (req, res) => {
           text:    inviteEmailText({ referrerName, referrerEmail, inviteUrl }),
         });
 
-        sent++;
+        if (sendError) {
+          console.error(`Resend error for ${invitedEmail}:`, sendError);
+          failed++;
+        } else {
+          sent++;
+        }
       } catch (err) {
         console.error(`Error processing invite for ${invitedEmail}:`, err.message);
         failed++;
