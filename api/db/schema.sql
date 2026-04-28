@@ -30,6 +30,12 @@ CREATE INDEX IF NOT EXISTS idx_invites_expires    ON invites (expires_at)
 -- Migration for existing installations (safe to run multiple times)
 ALTER TABLE invites ADD COLUMN IF NOT EXISTS referrer_name VARCHAR(60);
 
+-- Reset cooldown: backdate all existing invites so they can be re-sent immediately.
+-- Run once after deploying the 30-day cooldown logic.
+UPDATE invites
+SET created_at = NOW() - INTERVAL '31 days'
+WHERE created_at > NOW() - INTERVAL '31 days';
+
 -- ── Per-referrer aggregated stats ─────────────────────────────
 CREATE TABLE IF NOT EXISTS referral_stats (
   email            VARCHAR(254) PRIMARY KEY,

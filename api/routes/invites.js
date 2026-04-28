@@ -14,6 +14,7 @@ const EMAIL_REGEX       = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_PER_BATCH     = 10;
 const MAX_PER_DAY       = 20;
 const TOKEN_EXPIRY_DAYS = 7;
+const COOLDOWN_DAYS     = 30;
 const BEEHIIV_PUB_ID    = process.env.BEEHIIV_PUBLICATION_ID;
 const BEEHIIV_API_KEY   = process.env.BEEHIIV_API_KEY;
 const SITE_URL          = process.env.SITE_URL || 'https://www.pipeline.news';
@@ -86,7 +87,14 @@ router.post('/invite', async (req, res) => {
         const insert = await client.query(
           `INSERT INTO invites (token, referrer_name, referrer_email, invited_email, expires_at)
            VALUES ($1, $2, $3, $4, NOW() + INTERVAL '${TOKEN_EXPIRY_DAYS} days')
-           ON CONFLICT (referrer_email, invited_email) DO NOTHING
+           ON CONFLICT (referrer_email, invited_email) DO UPDATE
+             SET token         = EXCLUDED.token,
+                 referrer_name = EXCLUDED.referrer_name,
+                 status        = 'pending',
+                 created_at    = NOW(),
+                 expires_at    = EXCLUDED.expires_at,
+                 accepted_at   = NULL
+             WHERE invites.created_at < NOW() - INTERVAL '${COOLDOWN_DAYS} days'
            RETURNING id`,
           [token, referrerName, normalRef, invitedEmail]
         );
