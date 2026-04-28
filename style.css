@@ -2244,23 +2244,31 @@ a  { color: inherit; text-decoration: none; }
 .entry__specification { display: none !important; }
 .sib-container--large .input {
   font-family: 'Inter', system-ui, sans-serif !important;
-  background: rgba(255,255,255,.12) !important;
-  border: 1.5px solid rgba(255,255,255,.28) !important;
+  background: #fff !important;
+  border: 1.5px solid rgba(255,255,255,.4) !important;
   border-radius: 8px !important;
-  color: #fff !important;
+  color: #0D2756 !important;
   font-size: 15px !important;
   padding: 12px 16px !important;
   width: 100% !important;
   box-sizing: border-box !important;
 }
 .sib-container--large .input::placeholder {
-  color: rgba(255,255,255,.55) !important;
+  color: #6b7280 !important;
+  opacity: 1 !important;
   font-family: 'Inter', system-ui, sans-serif !important;
 }
 .sib-container--large .input:focus {
   outline: none !important;
   border-color: #00C4A0 !important;
-  background: rgba(255,255,255,.18) !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 3px rgba(0,196,160,.25) !important;
+}
+.sib-container--large .input:-webkit-autofill,
+.sib-container--large .input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0D2756 !important;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  caret-color: #0D2756 !important;
 }
 .sib-form-block__button {
   font-family: 'Inter', system-ui, sans-serif !important;
