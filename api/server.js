@@ -11,7 +11,7 @@ const pool         = require('./db/pool');
 
 const app  = express();
 
-/* ── Startup migration ───────────────────────────────────── */
+/* ── Startup migrations ──────────────────────────────────── */
 (async function migrate() {
   try {
     await pool.query(
@@ -19,7 +19,40 @@ const app  = express();
     );
     console.log('✅  Migration: referrer_name column ensured');
   } catch (err) {
-    console.error('⚠️   Migration warning:', err.message);
+    console.error('⚠️   Migration warning (referrer_name):', err.message);
+  }
+
+  // Tracked one-time migrations. Each entry runs exactly once across the
+  // lifetime of the database; the id is recorded in schema_migrations.
+  const migrations = [
+    {
+      id: '2026_04_28_reset_invite_cooldown',
+      sql: `UPDATE invites
+            SET created_at = NOW() - INTERVAL '31 days'
+            WHERE created_at > NOW() - INTERVAL '31 days'`,
+    },
+  ];
+
+  try {
+    await pool.query(
+      `CREATE TABLE IF NOT EXISTS schema_migrations (
+         id          TEXT PRIMARY KEY,
+         applied_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+       )`
+    );
+
+    for (const m of migrations) {
+      const inserted = await pool.query(
+        `INSERT INTO schema_migrations (id) VALUES ($1)
+         ON CONFLICT (id) DO NOTHING RETURNING id`,
+        [m.id]
+      );
+      if (inserted.rowCount === 0) continue;
+      const result = await pool.query(m.sql);
+      console.log(`✅  Migration ${m.id} applied (${result.rowCount ?? 0} row(s))`);
+    }
+  } catch (err) {
+    console.error('⚠️   Migration warning (tracked):', err.message);
   }
 })();
 const PORT = process.env.PORT || 3000;
