@@ -2223,25 +2223,25 @@ a  { color: inherit; text-decoration: none; }
   font-style: italic;
 }
 
-/* ── Hero CTA scroll button ──────────────────────────────── */
+/* ── Hero CTA form ───────────────────────────────────────── */
 .hero__cta { margin-top: 32px; text-align: center; }
-.hero__cta-link {
-  display: inline-block;
-  background: #00C4A0;
-  color: #fff;
-  font-weight: 700;
-  font-size: 17px;
-  padding: 14px 36px;
-  border-radius: 8px;
-  text-decoration: none;
-  letter-spacing: .02em;
-  transition: background .18s, transform .1s;
-}
-.hero__cta-link:hover { background: #00b393; transform: translateY(-1px); }
 .hero__cta-hint {
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 13px;
   color: rgba(255,255,255,.65);
+}
+#sib-form-hero {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+#sib-form-hero > div { padding: 0 !important; }
+#sib-form-hero > div:first-child { flex: 1 1 auto; }
+#sib-form-hero > div:last-child  { flex: 0 0 auto; }
+#sib-form-hero .sib-form-block__button { width: auto !important; white-space: nowrap; }
+@media (max-width: 520px) {
+  #sib-form-hero { flex-direction: column; }
+  #sib-form-hero .sib-form-block__button { width: 100% !important; }
 }
 
 /* ── Brevo inline form overrides ────────────────────────── */
