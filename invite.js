@@ -232,11 +232,8 @@ function showSuccess(sent, skipped) {
   cardInvite.hidden  = true;
   cardSuccess.hidden = false;
 
-  let detail = `${sent} invit${sent === 1 ? 'o inviato' : 'i inviati'} con successo.`;
-  if (skipped > 0) {
-    detail += ` ${skipped} email già invitat${skipped === 1 ? 'a' : 'e'} in precedenza.`;
-  }
-  successDetail.textContent = detail;
+  const total = sent + skipped;
+  successDetail.textContent = `${total} invit${total === 1 ? 'o inviato' : 'i inviati'} con successo.`;
 }
 
 function escapeHtml(str) {
