@@ -15,8 +15,8 @@ const MAX_PER_BATCH     = 10;
 const MAX_PER_DAY       = 20;
 const TOKEN_EXPIRY_DAYS = 7;
 const COOLDOWN_DAYS     = 30;
-const BEEHIIV_PUB_ID    = process.env.BEEHIIV_PUBLICATION_ID;
-const BEEHIIV_API_KEY   = process.env.BEEHIIV_API_KEY;
+const BREVO_API_KEY     = process.env.BREVO_API_KEY;
+const BREVO_LIST_ID     = parseInt(process.env.BREVO_LIST_ID || '0', 10);
 const SITE_URL          = process.env.SITE_URL || 'https://www.pipeline.news';
 const FROM_EMAIL        = process.env.FROM_EMAIL || 'Pipeline.news <crew@pipeline.news>';
 
@@ -240,33 +240,30 @@ router.post('/accept-invite', async (req, res) => {
       });
     }
 
-    /* Subscribe via Beehiiv */
-    const beehiivRes = await fetch(
-      `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${BEEHIIV_API_KEY}`,
-          'Content-Type': 'application/json',
+    /* Subscribe via Brevo */
+    const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'api-key':      BREVO_API_KEY,
+        'Content-Type': 'application/json',
+        'Accept':       'application/json',
+      },
+      body: JSON.stringify({
+        email:         invite.invited_email,
+        listIds:       BREVO_LIST_ID ? [BREVO_LIST_ID] : [],
+        updateEnabled: true,
+        attributes: {
+          SOURCE:         'user_invite',
+          REFERRER_EMAIL: invite.referrer_email,
+          REFERRER_NAME:  invite.referrer_name,
         },
-        body: JSON.stringify({
-          email:               invite.invited_email,
-          reactivate_existing: false,
-          send_welcome_email:  true,
-          utm_source:          'user_invite',
-          utm_medium:          'referral',
-          utm_campaign:        invite.referrer_email,
-          custom_fields: [
-            { name: 'referral_source', value: 'user_invite' },
-            { name: 'referrer_email',  value: invite.referrer_email },
-          ],
-        }),
-      }
-    );
+      }),
+    });
 
-    if (!beehiivRes.ok && beehiivRes.status !== 409) {
-      const body = await beehiivRes.text();
-      console.error('Beehiiv error:', beehiivRes.status, body.slice(0, 200));
+    // 201 = new contact, 204 = existing contact updated — both are success
+    if (brevoRes.status !== 201 && brevoRes.status !== 204) {
+      const body = await brevoRes.text();
+      console.error('Brevo error:', brevoRes.status, body.slice(0, 200));
       await client.query('ROLLBACK');
       return res.status(502).json({
         error: "Impossibile completare l'iscrizione. Riprova tra qualche minuto.",

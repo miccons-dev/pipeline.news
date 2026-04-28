@@ -1,6 +1,0 @@
-name            = "pipeline-subscribe"
-main            = "subscribe.js"
-compatibility_date = "2024-01-01"
-
-# Deploy: wrangler deploy worker/subscribe.js
-# Poi copia l'URL del Worker e aggiornalo in subscribe.js → WORKER_URL
