@@ -1958,9 +1958,9 @@ a  { color: inherit; text-decoration: none; }
 .modal-cta__iframe {
   display: block;
   width: 100%;
+  height: 305px;
   border: 0;
   border-radius: 8px;
-  min-height: 60px;
 }
 
 /* ── Responsive ──────────────────────────────────────────── */
@@ -2222,7 +2222,23 @@ a  { color: inherit; text-decoration: none; }
   font-style: italic;
 }
 
-/* ── MailerLite subscribe form ───────────────────────────── */
+/* ── Brevo form wrapper ──────────────────────────────────── */
+.brevo-form-wrap {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+.brevo-form-wrap iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 305px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ── Legacy subscribe form (kept for reference) ──────────── */
 .pl-subscribe {
   width: 100%;
   max-width: 540px;
