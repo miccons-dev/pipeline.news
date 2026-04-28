@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-tua-lista-perde-il-22-5-ogni-anno-ma-tu-continui-a-s-2026-04-28",
+      "kind": "newsletter",
+      "title": "La tua lista perde il 22,5% ogni anno. Ma tu continui a scrivere.",
+      "subtitle": "Mandi email a chi non c'è più. Ecco come smettere prima della prossima campagna.",
+      "preview_text": "📊 Il numero della settimana 22,5% È la quota di contatti B2B che diventano inutili nel giro di dodici mesi. Cambio ruolo, cambio azienda, pe",
+      "web_url": "https://www.pipeline.news/post.html?id=la-tua-lista-perde-il-22-5-ogni-anno-ma-tu-continui-a-s-2026-04-28",
+      "publish_date": 1777356000,
+      "thumbnail_url": "https://images.pexels.com/photos/7582776/pexels-photo-7582776.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7582776/pexels-photo-7582776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Businessman in a stylish black jacket using a laptop indoors, focused on his work.",
+      "image_attribution": "Foto: Mikhail Nilov (https://www.pexels.com/@mikhail-nilov) · Pexels",
+      "tags": [
+        "email a freddo",
+        "outreach"
+      ]
+    },
+    {
       "id": "il-briefing-mattutino-che-svuota-il-team-prima-ancora-d-2026-04-27",
       "kind": "article",
       "title": "Il briefing mattutino che svuota il team prima ancora di iniziare",
@@ -325,5 +342,5 @@
       ]
     }
   ],
-  "generated": 1777266613
+  "generated": 1777356615
 }
