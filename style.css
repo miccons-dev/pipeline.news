@@ -2233,16 +2233,16 @@ a  { color: inherit; text-decoration: none; }
 
 /* ── Brevo inline form overrides ────────────────────────── */
 .sib-form,
-#sib-container {
+.sib-container--large {
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
   margin: 0 auto !important;
 }
 .sib-form { max-width: 540px; }
-#sib-container { max-width: 100% !important; }
+.sib-container--large { max-width: 100% !important; }
 .entry__specification { display: none !important; }
-#sib-container .input {
+.sib-container--large .input {
   font-family: 'Inter', system-ui, sans-serif !important;
   background: rgba(255,255,255,.12) !important;
   border: 1.5px solid rgba(255,255,255,.28) !important;
@@ -2253,11 +2253,11 @@ a  { color: inherit; text-decoration: none; }
   width: 100% !important;
   box-sizing: border-box !important;
 }
-#sib-container .input::placeholder {
-  color: rgba(255,255,255,.5) !important;
+.sib-container--large .input::placeholder {
+  color: rgba(255,255,255,.55) !important;
   font-family: 'Inter', system-ui, sans-serif !important;
 }
-#sib-container .input:focus {
+.sib-container--large .input:focus {
   outline: none !important;
   border-color: #00C4A0 !important;
   background: rgba(255,255,255,.18) !important;
