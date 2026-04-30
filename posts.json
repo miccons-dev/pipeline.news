@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "i-numeri-non-convincono-le-ragioni-si-2026-04-30",
+      "kind": "article",
+      "title": "I numeri non convincono. Le ragioni sì.",
+      "subtitle": "Quasi nessuno chiede perché il cliente vuole davvero cambiare. Quella risposta vale più di qualsiasi proposta.",
+      "preview_text": "Perché le proposte vengono rimandate: logica vs emozione APPROCCIO STANDARD Apri con ROI e numeri Elenchi feature e vantaggi Case study gene",
+      "web_url": "https://www.pipeline.news/post.html?id=i-numeri-non-convincono-le-ragioni-si-2026-04-30",
+      "publish_date": 1777532760,
+      "thumbnail_url": "https://images.pexels.com/photos/7876299/pexels-photo-7876299.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7876299/pexels-photo-7876299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "A professional business meeting with a lawyer and clients in a modern office setting.",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "discovery",
+        "chiusura"
+      ]
+    },
+    {
       "id": "la-tua-lista-perde-il-22-5-ogni-anno-ma-tu-continui-a-s-2026-04-28",
       "kind": "newsletter",
       "title": "La tua lista perde il 22,5% ogni anno. Ma tu continui a scrivere.",
@@ -323,24 +340,7 @@
         "processi",
         "chiusura"
       ]
-    },
-    {
-      "id": "dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "kind": "article",
-      "title": "Messa troppo presto, la tua prova migliore diventa rumore",
-      "subtitle": "Nel posto sbagliato ti fa sembrare disperato. Nel posto giusto lavora al posto tuo.",
-      "preview_text": "Hai un caso di successo solido. Cliente reale, numeri verificabili, problema risolto in modo netto. Lo metti in apertura della proposta — pr",
-      "web_url": "https://www.pipeline.news/post.html?id=dove-metti-la-riprova-sociale-cambia-tutto-2026-04-18",
-      "publish_date": 1774567920,
-      "thumbnail_url": "https://images.pexels.com/photos/8439670/pexels-photo-8439670.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8439670/pexels-photo-8439670.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Close-up of a professional during a business meeting, focusing on documents and writing.",
-      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
-      "tags": [
-        "obiezioni",
-        "b2b"
-      ]
     }
   ],
-  "generated": 1777356615
+  "generated": 1777533010
 }
