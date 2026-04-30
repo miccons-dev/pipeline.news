@@ -93,12 +93,12 @@ router.post('/invite', async (req, res) => {
                  created_at    = NOW(),
                  expires_at    = EXCLUDED.expires_at,
                  accepted_at   = NULL
-             WHERE invites.created_at < NOW() - INTERVAL '${COOLDOWN_DAYS} days'
            RETURNING id`,
           [token, referrerName, normalRef, invitedEmail]
         );
 
-        if (insert.rowCount === 0) { skipped++; continue; }
+        // TODO: ripristinare check duplicati dopo fase test
+        // if (insert.rowCount === 0) { skipped++; continue; }
 
         const inviteUrl = `${SITE_URL}/accept.html?token=${token}`;
         const { error: sendError } = await resend.emails.send({
