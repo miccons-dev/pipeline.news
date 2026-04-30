@@ -15,8 +15,7 @@ const MAX_PER_BATCH     = 10;
 const MAX_PER_DAY       = 20;
 const TOKEN_EXPIRY_DAYS = 7;
 const COOLDOWN_DAYS     = 30;
-const BREVO_API_KEY     = process.env.BREVO_API_KEY;
-const BREVO_LIST_ID     = parseInt(process.env.BREVO_LIST_ID || '0', 10);
+const SUBSCRIBE_URL     = 'https://pipeline-agent.onrender.com/public/subscribe';
 const SITE_URL          = process.env.SITE_URL || 'https://www.pipeline.news';
 const FROM_EMAIL        = process.env.FROM_EMAIL || 'Pipeline.news <crew@pipeline.news>';
 
@@ -240,30 +239,16 @@ router.post('/accept-invite', async (req, res) => {
       });
     }
 
-    /* Subscribe via Brevo */
-    const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: {
-        'api-key':      BREVO_API_KEY,
-        'Content-Type': 'application/json',
-        'Accept':       'application/json',
-      },
-      body: JSON.stringify({
-        email:         invite.invited_email,
-        listIds:       BREVO_LIST_ID ? [BREVO_LIST_ID] : [],
-        updateEnabled: true,
-        attributes: {
-          SOURCE:         'user_invite',
-          REFERRER_EMAIL: invite.referrer_email,
-          REFERRER_NAME:  invite.referrer_name,
-        },
-      }),
+    /* Subscribe via pipeline-agent → Brevo */
+    const subRes = await fetch(SUBSCRIBE_URL, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ email: invite.invited_email }),
     });
 
-    // 201 = new contact, 204 = existing contact updated — both are success
-    if (brevoRes.status !== 201 && brevoRes.status !== 204) {
-      const body = await brevoRes.text();
-      console.error('Brevo error:', brevoRes.status, body.slice(0, 200));
+    if (subRes.status !== 200) {
+      const body = await subRes.text();
+      console.error('Subscribe error:', subRes.status, body.slice(0, 200));
       await client.query('ROLLBACK');
       return res.status(502).json({
         error: "Impossibile completare l'iscrizione. Riprova tra qualche minuto.",
