@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY035FNKPT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JY035FNKPT');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrivici — Pipeline.news</title>
+  <meta name="description" content="Hai un suggerimento, una correzione o vuoi collaborare con Pipeline? Scrivici — leggiamo tutto." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.pipeline.news/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <style>
+    /* ── Contact page ───────────────────────────────────────── */
+    .contact-hero {
+      background: linear-gradient(150deg, var(--navy) 0%, #1a3d78 60%, var(--blue) 100%);
+      padding: 72px 0 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,196,160,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-hero__tag {
+      display: inline-block;
+      background: rgba(0,196,160,.18);
+      border: 1px solid rgba(0,196,160,.42);
+      color: #00E4BC;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 20px;
+      position: relative; z-index: 1;
+    }
+    .contact-hero__title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900; line-height: 1.15;
+      letter-spacing: -1px; color: #fff;
+      margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+    .contact-hero__sub {
+      font-size: 17px; color: rgba(255,255,255,.72);
+      line-height: 1.65; max-width: 540px;
+      margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+
+    /* ── Form section ───────────────────────────────────────── */
+    .contact-section {
+      background: var(--bg);
+      padding: 64px 0 96px;
+    }
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 52px;
+      max-width: 640px;
+      margin: 0 auto;
+      box-shadow: 0 4px 32px rgba(13,39,86,.07);
+    }
+    @media (max-width: 680px) {
+      .contact-card { padding: 32px 20px; }
+    }
+
+    /* ── Form fields ────────────────────────────────────────── */
+    .cf-group { margin-bottom: 22px; }
+    .cf-label {
+      display: block;
+      font-size: 13px; font-weight: 600;
+      color: var(--navy); margin-bottom: 7px;
+      letter-spacing: .01em;
+    }
+    .cf-label span { color: var(--teal); }
+    .cf-input,
+    .cf-select,
+    .cf-textarea {
+      width: 100%; box-sizing: border-box;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px; color: #1f2937;
+      background: #f9fafb;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      transition: border-color .15s, background .15s, box-shadow .15s;
+      outline: none;
+    }
+    .cf-select { cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+      padding-right: 38px;
+    }
+    .cf-textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+    .cf-input:focus, .cf-select:focus, .cf-textarea:focus {
+      border-color: var(--teal);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(0,196,160,.15);
+    }
+    .cf-input.is-invalid, .cf-select.is-invalid, .cf-textarea.is-invalid {
+      border-color: #ef4444;
+      background: #fff5f5;
+    }
+    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 560px) { .cf-row { grid-template-columns: 1fr; } }
+
+    /* ── Submit button ──────────────────────────────────────── */
+    .cf-btn {
+      width: 100%;
+      background: var(--teal);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px; font-weight: 700;
+      border: none; border-radius: 10px;
+      padding: 15px 32px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0,196,160,.3);
+      transition: background .15s, box-shadow .15s, transform .12s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .cf-btn:hover:not(:disabled) {
+      background: #00b393;
+      box-shadow: 0 6px 24px rgba(0,196,160,.45);
+      transform: translateY(-1px);
+    }
+    .cf-btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+    .cf-spinner {
+      display: none;
+      width: 18px; height: 18px;
+      border: 2.5px solid rgba(255,255,255,.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .65s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Status messages ────────────────────────────────────── */
+    .cf-status {
+      margin-top: 18px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: 14px; line-height: 1.5;
+      display: none;
+    }
+    .cf-status--error   { background: #fff5f5; border: 1px solid #fca5a5; color: #991b1b; }
+    .cf-status--success { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+
+    /* ── Success state (replaces form) ─────────────────────── */
+    .cf-success-wrap {
+      text-align: center; padding: 16px 0;
+      display: none;
+    }
+    .cf-success-wrap .icon { font-size: 52px; margin-bottom: 16px; display: block; }
+    .cf-success-wrap h2 {
+      font-size: 24px; font-weight: 900;
+      color: var(--navy); margin-bottom: 10px;
+    }
+    .cf-success-wrap p {
+      font-size: 15px; color: #6b7280;
+      line-height: 1.65; max-width: 360px; margin: 0 auto 28px;
+    }
+    .cf-back {
+      display: inline-block;
+      background: rgba(13,39,86,.07);
+      color: var(--navy);
+      font-size: 14px; font-weight: 600;
+      padding: 10px 24px; border-radius: 8px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .cf-back:hover { background: rgba(13,39,86,.12); }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="logo.png" alt="Pipeline.news" class="nav__logo-img"
+             onerror="this.src='logo.svg';this.onerror=null" />
+      </a>
+      <div class="nav__right">
+        <nav class="nav__links" aria-label="Navigazione principale">
+          <a href="/blog.html" class="nav__link">Blog</a>
+          <a href="/archive.html" class="nav__link">Archivio Newsletter</a>
+          <a href="/invite.html" class="nav__link">Invita un collega</a>
+          <a href="/contact.html" class="nav__link is-active">Scrivici</a>
+        </nav>
+        <a href="/#iscriviti" class="btn btn--nav">Iscriviti gratis →</a>
+        <button class="nav__burger" id="navBurger" aria-label="Apri menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="contact-hero__tag">✉️ Scrivici</div>
+      <h1 class="contact-hero__title">Hai qualcosa da dirci?<br />Siamo in ascolto.</h1>
+      <p class="contact-hero__sub">
+        Suggerimenti sui contenuti, correzioni, idee per futuri numeri o proposte
+        di collaborazione: leggiamo e rispondiamo a tutto.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── FORM ─────────────────────────────────────────────── -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+
+        <!-- Success state (shown after submit) -->
+        <div class="cf-success-wrap" id="cfSuccess">
+          <span class="icon">🎉</span>
+          <h2>Messaggio inviato!</h2>
+          <p>Grazie per averci scritto. Ti risponderemo all'indirizzo email che hai indicato.</p>
+          <a href="/" class="cf-back">← Torna alla home</a>
+        </div>
+
+        <!-- Form -->
+        <form id="contactForm" novalidate>
+          <div class="cf-row">
+            <div class="cf-group">
+              <label class="cf-label" for="cf-name">Nome <span>*</span></label>
+              <input class="cf-input" type="text" id="cf-name" name="name"
+                     placeholder="Mario Rossi" autocomplete="name" maxlength="80" required />
+            </div>
+            <div class="cf-group">
+              <label class="cf-label" for="cf-email">Email <span>*</span></label>
+              <input class="cf-input" type="email" id="cf-email" name="email"
+                     placeholder="mario@azienda.com" autocomplete="email" maxlength="254" required />
+            </div>
+          </div>
+
+          <div class="cf-group">
+            <label class="cf-label" for="cf-topic">Argomento</label>
+            <select class="cf-select" id="cf-topic" name="topic">
+              <option value="Suggerimento sui contenuti">💡 Suggerimento sui contenuti</option>
+              <option value="Correzione o errore">✏️ Correzione o errore</option>
+              <option value="Proposta di collaborazione">🤝 Proposta di collaborazione</option>
+              <option value="Problema tecnico">🔧 Problema tecnico</option>
+              <option value="Altro">💬 Altro</option>
+            </select>
+          </div>
+
+          <div class="cf-group">
+            <label class="cf-label" for="cf-message">Messaggio <span>*</span></label>
+            <textarea class="cf-textarea" id="cf-message" name="message"
+                      placeholder="Scrivi qui il tuo messaggio…" maxlength="5000" required></textarea>
+          </div>
+
+          <button class="cf-btn" type="submit" id="cfSubmit">
+            <span id="cfBtnText">Invia messaggio →</span>
+            <span class="cf-spinner" id="cfSpinner"></span>
+          </button>
+
+          <div class="cf-status cf-status--error" id="cfError"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo footer__logo">
+          <img src="logo.png" alt="Pipeline.news" class="nav__logo-img nav__logo-img--footer"
+               onerror="this.src='logo.svg';this.onerror=null" />
+        </a>
+        <p class="footer__tagline">La newsletter italiana per chi vive di vendita.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="/#cosa-troverai">Cosa troverai</a>
+        <a href="/#per-chi">Per chi è</a>
+        <a href="/#numeri">Ultimi numeri</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/archive.html">Archivio Newsletter</a>
+        <a href="/invite.html">Invita un collega</a>
+        <a href="/contact.html">Scrivici</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/company/pipeline-newsletter/?viewAsMember=true"
+           target="_blank" rel="noopener" class="footer__social-link" aria-label="Seguici su LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="footer__legal">
+        <p>© 2026 Pipeline.news</p>
+        <p>Fatto con passione per la vendita 🇮🇹</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=3"></script>
+  <script>
+  (function(){
+    var b=document.getElementById('navBurger');
+    var h=b.closest('.nav');
+    b.addEventListener('click',function(){
+      var open=h.classList.toggle('nav--open');
+      b.setAttribute('aria-expanded',String(open));
+    });
+    document.addEventListener('click',function(e){
+      if(!h.contains(e.target))h.classList.remove('nav--open');
+    });
+    h.querySelectorAll('.nav__link').forEach(function(a){
+      a.addEventListener('click',function(){h.classList.remove('nav--open');});
+    });
+  })();
+  </script>
+
+  <script>
+  (function () {
+    'use strict';
+    var API_BASE = 'https://pipeline-news.onrender.com';
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    var form     = document.getElementById('contactForm');
+    var success  = document.getElementById('cfSuccess');
+    var btnText  = document.getElementById('cfBtnText');
+    var spinner  = document.getElementById('cfSpinner');
+    var submitBtn = document.getElementById('cfSubmit');
+    var errorEl  = document.getElementById('cfError');
+
+    function setLoading(on) {
+      submitBtn.disabled  = on;
+      btnText.textContent = on ? 'Invio in corso…' : 'Invia messaggio →';
+      spinner.style.display = on ? 'block' : 'none';
+    }
+
+    function showError(msg) {
+      errorEl.textContent = msg;
+      errorEl.style.display = 'block';
+    }
+
+    function clearError() {
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearError();
+
+      var name    = form.querySelector('#cf-name').value.trim();
+      var email   = form.querySelector('#cf-email').value.trim();
+      var topic   = form.querySelector('#cf-topic').value;
+      var message = form.querySelector('#cf-message').value.trim();
+
+      if (name.length < 2)           { showError('Inserisci il tuo nome.'); return; }
+      if (!EMAIL_RE.test(email))     { showError('Inserisci un indirizzo email valido.'); return; }
+      if (message.length < 10)       { showError('Il messaggio è troppo breve.'); return; }
+
+      setLoading(true);
+
+      try {
+        var res  = await fetch(API_BASE + '/api/v1/contact', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ name: name, email: email, topic: topic, message: message }),
+        });
+        var data = await res.json().catch(function () { return {}; });
+
+        if (!res.ok) {
+          throw new Error(data.error || "Errore durante l'invio. Riprova tra qualche minuto.");
+        }
+
+        form.style.display   = 'none';
+        success.style.display = 'block';
+      } catch (err) {
+        showError(err.message || "Errore durante l'invio. Riprova tra qualche minuto.");
+        setLoading(false);
+      }
+    });
+  })();
+  </script>
+
+  <script>
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+    }
+  </script>
+
+</body>
+</html>
