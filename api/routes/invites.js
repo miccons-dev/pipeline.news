@@ -86,12 +86,18 @@ router.post('/invite', async (req, res) => {
         const insert = await client.query(
           `INSERT INTO invites (token, referrer_name, referrer_email, invited_email, expires_at)
            VALUES ($1, $2, $3, $4, NOW() + INTERVAL '${TOKEN_EXPIRY_DAYS} days')
-           ON CONFLICT (referrer_email, invited_email) DO NOTHING
+           ON CONFLICT (referrer_email, invited_email) DO UPDATE
+             SET token        = EXCLUDED.token,
+                 status       = 'pending',
+                 created_at   = NOW(),
+                 expires_at   = EXCLUDED.expires_at,
+                 accepted_at  = NULL
            RETURNING id`,
           [token, referrerName, normalRef, invitedEmail]
         );
 
-        if (insert.rowCount === 0) { skipped++; continue; }
+        // TODO: ripristinare check duplicati dopo fase test
+        // if (insert.rowCount === 0) { skipped++; continue; }
 
         const inviteUrl = `${SITE_URL}/accept.html?token=${token}`;
         await resend.emails.send({
