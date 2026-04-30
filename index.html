@@ -633,33 +633,7 @@
     }
   </script>
 
-  <script>
-    (function () {
-      'use strict';
-      document.querySelectorAll('form[data-type="subscription"]').forEach(function (form) {
-        var container = form.closest('.sib-form-container');
-        var panels    = container ? container.querySelectorAll('.sib-form-message-panel') : [];
-        var errorEl   = panels[0] || null;
-        var successEl = panels[1] || null;
-        var emailIn   = form.querySelector('input[name="EMAIL"]');
-        var btn       = form.querySelector('.sib-form-block__button');
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var email = (emailIn ? emailIn.value : '').trim();
-          if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            if (errorEl) errorEl.classList.remove('sib-hide');
-            return;
-          }
-          if (errorEl)   errorEl.classList.add('sib-hide');
-          if (successEl) successEl.classList.add('sib-hide');
-          if (btn)       btn.disabled = true;
-          fetch(form.action, { method: 'POST', body: new FormData(form) })
-            .then(function ()  { window.location.href = '/welcome.html'; })
-            .catch(function () { window.location.href = '/welcome.html'; });
-        });
-      });
-    })();
-  </script>
+  <script src="subscribe.js" defer></script>
 
 </body>
 </html>
