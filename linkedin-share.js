@@ -64,7 +64,7 @@
     function (t, h) { return 'Quante volte ti è successo e hai pensato fosse solo sfortuna?\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Riflessione utile.'; },
     function (t, h) { return 'Quante volte ci siamo detti "la prossima volta faccio diversamente"?\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Quante volte abbiamo perso un deal per questo motivo?\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Articolo interessante.'; },
-    function (t, h) { return 'Quante volte abbiamo usato l'approccio sbagliato senza accorgercene?\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Riflessione utile da Pipeline.news.'; },
+    function (t, h) { return 'Quante volte abbiamo usato l\'approccio sbagliato senza accorgercene?\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Riflessione utile da Pipeline.news.'; },
 
     /* 20-29  Questa settimana */
     function (t, h) { return 'Questa settimana mi è rimasto in testa questo:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news — lo consiglio.'; },
@@ -84,9 +84,9 @@
     function (t, h) { return 'Se potessi tornare indietro, avrei letto questo prima:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Un errore che ho smesso di fare dopo aver capito questo:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Articolo utile.'; },
     function (t, h) { return 'Ho impiegato troppo tempo a capirlo. Forse questo articolo ti risparmia del tempo:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
-    function (t, h) { return 'Ci ho messo anni a capirlo. L'articolo lo spiega meglio di quanto farei io:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
+    function (t, h) { return 'Ci ho messo anni a capirlo. L\'articolo lo spiega meglio di quanto farei io:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Una delle lezioni più importanti che ho imparato nelle vendite:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da Pipeline.news.'; },
-    function (t, h) { return 'Questo me lo avrei voluto sentire dire all'inizio della mia carriera:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
+    function (t, h) { return 'Questo me lo avrei voluto sentire dire all\'inizio della mia carriera:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Ho cambiato approccio su questo dopo aver letto qualcosa di simile. Lo condivido:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Vale la pena.'; },
     function (t, h) { return 'Ci ho sbattuto la testa abbastanza volte da capire che questo è importante:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
 
@@ -116,7 +116,7 @@
 
     /* 60-69  Spunti pratici */
     function (t, h) { return 'Uno spunto pratico per chi lavora nelle vendite:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Fonte: Pipeline.news.'; },
-    function (t, h) { return 'Un'idea che vale la pena sperimentare:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
+    function (t, h) { return 'Un\'idea che vale la pena sperimentare:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Piccolo cambio di prospettiva, grande differenza:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da Pipeline.news.'; },
     function (t, h) { return 'Non è un consiglio scontato. È qualcosa di concreto:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Una cosa che mi ha fatto cambiare approccio:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Vale la pena leggerlo.'; },
@@ -127,7 +127,7 @@
     function (t, h) { return 'Qualcosa di concreto da provare subito:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
 
     /* 70-74  Team e colleghi */
-    function (t, h) { return 'L'ho condiviso con il mio team. Lo condivido anche qui:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
+    function (t, h) { return 'L\'ho condiviso con il mio team. Lo condivido anche qui:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Ne ho parlato con dei colleghi e la discussione si è accesa:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da Pipeline.news.'; },
     function (t, h) { return 'Questo dovrebbe leggerlo ogni commerciale prima di iniziare la giornata:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Ne abbiamo parlato in team e ognuno ci ha visto qualcosa di diverso:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da Pipeline.news.'; },
@@ -137,12 +137,12 @@
     function (t, h) { return 'Essere onesti: quante volte preferiamo evitare certi argomenti?\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Vale leggerlo.'; },
     function (t, h) { return 'Non è sempre facile ammetterlo, ma questo articolo ha ragione:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Ci vuole coraggio per fare certe cose in vendita. Questo lo spiega bene:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da Pipeline.news.'; },
-    function (t, h) { return 'L'onestà nel sales è sottovalutata. Questo articolo lo dice chiaramente:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
+    function (t, h) { return 'L\'onestà nel sales è sottovalutata. Questo articolo lo dice chiaramente:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Alcune verità fanno male ma servono. Questo è uno di quegli articoli:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da Pipeline.news.'; },
 
     /* 80-84  Pipeline.news promo */
     function (t, h) { return 'Pipeline.news è la newsletter che leggo per tenere il ritmo. Questo è uno dei migliori articoli:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Consigliato.'; },
-    function (t, h) { return 'Seguo Pipeline.news da un po'. Questo è tra gli articoli che mi sono rimasti:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Vale la lettura.'; },
+    function (t, h) { return 'Seguo Pipeline.news da un po\'. Questo è tra gli articoli che mi sono rimasti:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Vale la lettura.'; },
     function (t, h) { return 'Se non conosci Pipeline.news, questo articolo è un buon punto di partenza:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Una newsletter sul sales che vale davvero. Questo articolo ne è la prova:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Pipeline.news continua a pubblicare contenuti che fanno pensare. Come questo:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da leggere.'; },
@@ -164,7 +164,7 @@
     function (t, h) { return 'Ho condiviso questo in DM con tre persone prima di postarlo. Vale:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
     function (t, h) { return 'Ogni settimana cerco qualcosa che mi faccia crescere. Questa settimana è questo:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Da Pipeline.news.'; },
     function (t, h) { return 'Il modo in cui si affronta questo tema fa la differenza tra chi cresce e chi stagna:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
-    function (t, h) { return 'Tra tutto quello che ho letto questa settimana, questo è l'articolo che ti consiglio:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
+    function (t, h) { return 'Tra tutto quello che ho letto questa settimana, questo è l\'articolo che ti consiglio:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
   ];
 
   /* URL appended exactly once here, never inside templates */
@@ -233,7 +233,7 @@
     bar.innerHTML =
       '<div class="li-bar-left">' +
         '<span class="li-bar-icon">✓</span>' +
-        '<span class="li-bar-msg">Bonus! C'è un testo pronto negli appunti,' +
+        '<span class="li-bar-msg">Bonus! C\'è un testo pronto negli appunti,' +
           '<small>incollalo nel post dopo aver aperto LinkedIn</small></span>' +
       '</div>' +
       '<a class="li-bar-open" href="' + liUrl + '" target="_blank" rel="noopener">' +
