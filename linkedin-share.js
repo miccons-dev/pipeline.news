@@ -137,7 +137,8 @@
     bar.innerHTML =
       '<div class="li-bar-left">' +
         '<div class="li-bar-spinner"></div>' +
-        '<span class="li-bar-msg">Sto preparando il testo del post…</span>' +
+        '<span class="li-bar-msg">Sto generando il testo del post…<br>' +
+          '<span style="font-weight:400;font-size:12px;opacity:.7">può richiedere qualche secondo</span></span>' +
       '</div>' +
       '<button class="li-bar-close" aria-label="Chiudi">×</button>';
     bar.querySelector('.li-bar-close').addEventListener('click', function () { dismissBar(bar); });
@@ -171,85 +172,12 @@
     setTimeout(function () { if (bar.parentNode) bar.remove(); }, 350);
   }
 
-  /* ── Fallback modal (clipboard not available) ───────────────────── */
-  function showFallback(text, liUrl) {
-    var existing = document.getElementById('li-fallback-overlay');
-    if (existing) existing.remove();
-
-    if (!document.getElementById('li-fallback-style')) {
-      var s = document.createElement('style');
-      s.id = 'li-fallback-style';
-      s.textContent = [
-        '#li-fallback-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;',
-          'justify-content:center;padding:16px;background:rgba(13,39,86,.72);backdrop-filter:blur(4px);}',
-        '#li-fallback-modal{background:#fff;border-radius:16px;padding:28px;max-width:500px;',
-          'width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;}',
-        '#li-fallback-modal h3{font-family:Inter,system-ui,sans-serif;font-size:16px;font-weight:700;',
-          'color:#0D2756;margin:0 0 6px;}',
-        '#li-fallback-modal p{font-size:13px;color:#6b7280;margin:0 0 14px;}',
-        '#li-fallback-ta{width:100%;box-sizing:border-box;font-family:Inter,system-ui,sans-serif;',
-          'font-size:13px;color:#1f2937;background:#f9fafb;border:1.5px solid #e5e7eb;',
-          'border-radius:8px;padding:12px;line-height:1.65;resize:vertical;min-height:140px;outline:none;}',
-        '#li-fallback-ta:focus{border-color:#00C4A0;}',
-        '.li-fb-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}',
-        '.li-fb-btn{display:inline-flex;align-items:center;gap:6px;font-family:Inter,sans-serif;',
-          'font-size:14px;font-weight:600;border:none;border-radius:8px;padding:10px 18px;',
-          'cursor:pointer;text-decoration:none;transition:background .15s;}',
-        '.li-fb-btn--copy{background:#f1f5f9;color:#0D2756;}',
-        '.li-fb-btn--copy:hover{background:#e2e8f0;}',
-        '.li-fb-btn--open{background:#0A66C2;color:#fff;margin-left:auto;}',
-        '.li-fb-btn--open:hover{background:#094fa3;}',
-        '.li-fb-close{position:absolute;top:12px;right:14px;background:none;border:none;',
-          'font-size:20px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;}',
-        '.li-fb-close:hover{color:#374151;}',
-        '@media(max-width:400px){.li-fb-btn--open{margin-left:0;width:100%;justify-content:center;}}',
-      ].join('');
-      document.head.appendChild(s);
-    }
-
-    var safe = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    var el = document.createElement('div');
-    el.id = 'li-fallback-overlay';
-    el.innerHTML =
-      '<div id="li-fallback-modal">' +
-        '<button class="li-fb-close" aria-label="Chiudi">×</button>' +
-        '<h3>Copia il testo del post</h3>' +
-        '<p>Tieni premuto → Seleziona tutto → Copia, poi incollalo su LinkedIn.</p>' +
-        '<textarea id="li-fallback-ta" readonly>' + safe + '</textarea>' +
-        '<div class="li-fb-actions">' +
-          '<button class="li-fb-btn li-fb-btn--copy" id="li-fb-copy">Copia testo</button>' +
-          '<a class="li-fb-btn li-fb-btn--open" href="' + liUrl + '" target="_blank" rel="noopener">' +
-            LI_SVG + ' Apri LinkedIn' +
-          '</a>' +
-        '</div>' +
-      '</div>';
-    document.body.appendChild(el);
-
-    var ta = el.querySelector('#li-fallback-ta');
-    el.querySelector('#li-fb-copy').addEventListener('click', function () {
-      ta.select();
-      var btn = el.querySelector('#li-fb-copy');
-      var tryClip = navigator.clipboard && navigator.clipboard.writeText
-        ? navigator.clipboard.writeText(text)
-        : Promise.reject();
-      tryClip
-        .catch(function () { document.execCommand('copy'); })
-        .then(function () { btn.textContent = 'Copiato ✓'; });
-    });
-    el.querySelector('.li-fb-close').addEventListener('click', function () { el.remove(); });
-    el.addEventListener('click', function (e) { if (e.target === el) el.remove(); });
-    document.addEventListener('keydown', function esc(e) {
-      if (e.key === 'Escape') { el.remove(); document.removeEventListener('keydown', esc); }
-    });
-    setTimeout(function () { ta.focus(); ta.setSelectionRange(0, ta.value.length); }, 50);
-  }
-
-  /* ── Copy helper ────────────────────────────────────────────────── */
+  /* ── Copy helper (ignores errors — bar always shown) ───────────── */
   function copyText(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text);
+      return navigator.clipboard.writeText(text).catch(function () {});
     }
-    return Promise.reject(new Error('clipboard unavailable'));
+    return Promise.resolve();
   }
 
   /* ── Main click handler ─────────────────────────────────────────── */
@@ -274,14 +202,13 @@
     /* Check cache first */
     var cached = getCached(url);
     if (cached) {
-      return copyText(cached)
-        .then(function ()  { setBarReady(bar, liUrl); })
-        .catch(function () { showFallback(cached, liUrl); if (bar.parentNode) bar.remove(); });
+      copyText(cached).then(function () { setBarReady(bar, liUrl); });
+      return;
     }
 
-    /* Fetch from API with 12s timeout */
+    /* Fetch from API with 20s timeout */
     var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-    var timeout = setTimeout(function () { if (controller) controller.abort(); }, 12000);
+    var timeout = setTimeout(function () { if (controller) controller.abort(); }, 20000);
 
     var fetchOpts = {
       method:  'POST',
@@ -298,17 +225,12 @@
         if (!body) throw new Error('empty');
         var text = appendHashtags(body + '\n\n👉 ' + url, tags);
         setCached(url, text);
-        return copyText(text)
-          .then(function ()  { setBarReady(bar, liUrl); })
-          .catch(function () { showFallback(text, liUrl); if (bar.parentNode) bar.remove(); });
+        copyText(text).then(function () { setBarReady(bar, liUrl); });
       })
       .catch(function () {
         clearTimeout(timeout);
-        /* API error — use static fallback silently */
         var text = fallbackText(title, excerpt, subtitle, tags, url);
-        return copyText(text)
-          .then(function ()  { setBarReady(bar, liUrl); })
-          .catch(function () { showFallback(text, liUrl); if (bar.parentNode) bar.remove(); });
+        copyText(text).then(function () { setBarReady(bar, liUrl); });
       });
   });
 })();
