@@ -196,12 +196,36 @@
     setTimeout(function () { if (bar.parentNode) bar.remove(); }, 350);
   }
 
-  /* ── Copy helper (ignores errors — bar always shown) ───────────── */
-  function copyText(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      return navigator.clipboard.writeText(text).catch(function () {});
+  /* ── Clipboard helpers ──────────────────────────────────────────── */
+
+  /*
+   * scheduleClipboard — must be called synchronously inside the click handler
+   * (while the user gesture is still active). Returns a `resolve` function:
+   * call resolve(text) whenever the text is ready, even seconds later.
+   *
+   * Uses ClipboardItem + Promise (iOS 16.4+, Chrome 84+) to keep the write
+   * within the user-gesture window even when the text arrives asynchronously.
+   * Falls back to writeText (works on desktop, fails silently on old iOS).
+   */
+  function scheduleClipboard() {
+    var resolveFn;
+    var textPromise = new Promise(function (res) { resolveFn = res; });
+
+    if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+      var blobPromise = textPromise.then(function (text) {
+        return new Blob([text], { type: 'text/plain' });
+      });
+      navigator.clipboard
+        .write([new ClipboardItem({ 'text/plain': blobPromise })])
+        .catch(function () {});
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      /* Fallback: try writeText when text is ready (may fail on older iOS) */
+      textPromise.then(function (text) {
+        navigator.clipboard.writeText(text).catch(function () {});
+      });
     }
-    return Promise.resolve();
+
+    return resolveFn;
   }
 
   /* ── Main click handler ─────────────────────────────────────────── */
@@ -218,16 +242,21 @@
     var excerpt  = btn.dataset.excerpt  || '';
     var subtitle = btn.dataset.subtitle || '';
 
+    /* Reserve clipboard slot NOW, within the user gesture */
+    var resolveClip = scheduleClipboard();
+
     /* Show bar immediately in loading state */
     var bar = createBar();
     setBarLoading(bar);
 
+    function finish(text) {
+      resolveClip(text);          /* fulfils the ClipboardItem promise */
+      setBarReady(bar, url);
+    }
+
     /* Check cache first */
     var cached = getCached(url);
-    if (cached) {
-      copyText(cached).then(function () { setBarReady(bar, url); });
-      return;
-    }
+    if (cached) { finish(cached); return; }
 
     /* Fetch from API with 20s timeout */
     var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
@@ -248,12 +277,11 @@
         if (!body) throw new Error('empty');
         var text = appendHashtags(body + '\n\n👉 ' + url, tags);
         setCached(url, text);
-        copyText(text).then(function () { setBarReady(bar, url); });
+        finish(text);
       })
       .catch(function () {
         clearTimeout(timeout);
-        var text = fallbackText(title, excerpt, subtitle, tags, url);
-        copyText(text).then(function () { setBarReady(bar, url); });
+        finish(fallbackText(title, excerpt, subtitle, tags, url));
       });
   });
 })();
