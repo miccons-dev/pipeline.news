@@ -5,9 +5,10 @@ require('dotenv').config();
 const express      = require('express');
 const cors         = require('cors');
 const rateLimit    = require('express-rate-limit');
-const inviteRoutes  = require('./routes/invites');
-const contactRoutes = require('./routes/contact');
-const shareRoutes   = require('./routes/share');
+const inviteRoutes   = require('./routes/invites');
+const contactRoutes  = require('./routes/contact');
+const shareRoutes    = require('./routes/share');
+const linkedinRoutes = require('./routes/linkedin');
 const pool         = require('./db/pool');
 
 const app  = express();
@@ -92,6 +93,7 @@ app.use('/api', rateLimit({
 app.use('/', shareRoutes);
 app.use('/api/v1', inviteRoutes);
 app.use('/api/v1', contactRoutes);
+app.use('/api/v1', linkedinRoutes);
 
 /* ── Health check ────────────────────────────────────────── */
 app.get('/health', (_, res) => res.json({ ok: true, ts: new Date().toISOString() }));
