@@ -110,7 +110,7 @@
         'border-top-color:#00C4A0;border-radius:50%;flex-shrink:0;',
         'animation:li-spin .7s linear infinite;}',
       '.li-bar-open{display:inline-flex;align-items:center;gap:6px;',
-        'background:#0A66C2;color:#fff;text-decoration:none;',
+        'background:#0A66C2;color:#fff;border:none;cursor:pointer;',
         'font-family:Inter,sans-serif;font-size:14px;font-weight:700;',
         'border-radius:8px;padding:10px 18px;flex-shrink:0;',
         'transition:background .15s;white-space:nowrap;}',
@@ -144,23 +144,47 @@
     bar.querySelector('.li-bar-close').addEventListener('click', function () { dismissBar(bar); });
   }
 
-  function setBarReady(bar, liUrl) {
+  /* ── Open LinkedIn app, fall back to web if not installed ──────── */
+  function openLinkedIn(articleUrl) {
+    var appUrl = 'linkedin://shareArticle?mini=true&url=' + encodeURIComponent(articleUrl);
+    var webUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(articleUrl);
+
+    var appOpened = false;
+    function onHide() { appOpened = true; }
+    document.addEventListener('visibilitychange', onHide, { once: true });
+
+    /* Iframe triggers the URI scheme silently — no error page if app missing */
+    var iframe = document.createElement('iframe');
+    iframe.style.cssText = 'position:absolute;width:1px;height:1px;opacity:0;border:none;pointer-events:none;';
+    iframe.src = appUrl;
+    document.body.appendChild(iframe);
+    setTimeout(function () { if (iframe.parentNode) iframe.remove(); }, 300);
+
+    /* If page is still visible after 1.4s → app not installed → open web */
+    setTimeout(function () {
+      document.removeEventListener('visibilitychange', onHide);
+      if (!appOpened) window.open(webUrl, '_blank', 'noopener');
+    }, 1400);
+  }
+
+  function setBarReady(bar, articleUrl) {
     bar.innerHTML =
       '<div class="li-bar-left">' +
         '<span class="li-bar-icon">✓</span>' +
         '<span class="li-bar-msg">Bonus! C\'è un testo pronto negli appunti,<br>incollalo nel post</span>' +
       '</div>' +
-      '<a class="li-bar-open" href="' + liUrl + '" target="_blank" rel="noopener">' +
+      '<button class="li-bar-open" id="li-bar-open-btn">' +
         LI_SVG + ' Apri LinkedIn' +
-      '</a>' +
+      '</button>' +
       '<button class="li-bar-close" aria-label="Chiudi">×</button>';
 
     var autoHide = setTimeout(function () { dismissBar(bar); }, 20000);
     bar.querySelector('.li-bar-close').addEventListener('click', function () {
       clearTimeout(autoHide); dismissBar(bar);
     });
-    bar.querySelector('.li-bar-open').addEventListener('click', function () {
+    bar.querySelector('#li-bar-open-btn').addEventListener('click', function () {
       clearTimeout(autoHide);
+      openLinkedIn(articleUrl);
       setTimeout(function () { dismissBar(bar); }, 800);
     });
   }
@@ -193,7 +217,6 @@
     var title    = btn.dataset.title    || '';
     var excerpt  = btn.dataset.excerpt  || '';
     var subtitle = btn.dataset.subtitle || '';
-    var liUrl    = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
 
     /* Show bar immediately in loading state */
     var bar = createBar();
@@ -202,7 +225,7 @@
     /* Check cache first */
     var cached = getCached(url);
     if (cached) {
-      copyText(cached).then(function () { setBarReady(bar, liUrl); });
+      copyText(cached).then(function () { setBarReady(bar, url); });
       return;
     }
 
@@ -225,12 +248,12 @@
         if (!body) throw new Error('empty');
         var text = appendHashtags(body + '\n\n👉 ' + url, tags);
         setCached(url, text);
-        copyText(text).then(function () { setBarReady(bar, liUrl); });
+        copyText(text).then(function () { setBarReady(bar, url); });
       })
       .catch(function () {
         clearTimeout(timeout);
         var text = fallbackText(title, excerpt, subtitle, tags, url);
-        copyText(text).then(function () { setBarReady(bar, liUrl); });
+        copyText(text).then(function () { setBarReady(bar, url); });
       });
   });
 })();
