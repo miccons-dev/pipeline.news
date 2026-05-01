@@ -279,7 +279,7 @@ function shareBarHtml(url, title, subtitle, tags, contentHtml) {
   const excerpt  = esc(extractExcerpt(contentHtml));
   return `<div class="share-bar">
     <span class="share-bar__label">Condividi</span>
-    <button class="share-btn share-btn--linkedin" data-title="${esc(title)}" data-subtitle="${esc(subtitle || '')}" data-excerpt="${excerpt}" data-tags="${tagsJson}" data-url="${esc(url)}">${LI_SVG} LinkedIn</button>
+    <button class="share-btn share-btn--linkedin" data-title="${esc(title)}" data-subtitle="${esc(subtitle || '')}" data-excerpt="${excerpt}" data-tags="${tagsJson}" data-url="${esc(url)}">${LI_SVG} LinkedIn <span class="li-ai-badge">✨ AI</span></button>
     <a href="https://twitter.com/intent/tweet?url=${eu}&text=${et}" target="_blank" rel="noopener" class="share-btn">${X_SVG} X</a>
     <button class="share-btn share-btn--copy" data-url="${esc(url)}">Copia link</button>
   </div>`;

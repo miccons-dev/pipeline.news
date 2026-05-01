@@ -110,7 +110,7 @@
     </div>
   </footer>
 
-  <script src="linkedin-share.js?v=4"></script>
+  <script src="linkedin-share.js?v=5"></script>
   <script>
   'use strict';
 
@@ -234,7 +234,7 @@
         </div>
         <div class="share-bar">
           <span class="share-bar__label">Condividi</span>
-          <button class="share-btn share-btn--linkedin" data-title="${esc(p.title)}" data-subtitle="${esc(p.subtitle || '')}" data-excerpt="${liExcerpt}" data-tags="${liTagsJson}" data-url="${esc(sharePageUrl)}">${LI_SVG} LinkedIn</button>
+          <button class="share-btn share-btn--linkedin" data-title="${esc(p.title)}" data-subtitle="${esc(p.subtitle || '')}" data-excerpt="${liExcerpt}" data-tags="${liTagsJson}" data-url="${esc(sharePageUrl)}">${LI_SVG} LinkedIn <span class="li-ai-badge">✨ AI</span></button>
           <a href="${xUrl}" target="_blank" rel="noopener" class="share-btn">${X_SVG} X</a>
           <button class="share-btn share-btn--copy" data-url="${esc(postUrl)}" onclick="navigator.clipboard.writeText(this.dataset.url).then(()=>{const p=this.textContent;this.textContent='Copiato ✓';this.classList.add('copied');setTimeout(()=>{this.textContent=p;this.classList.remove('copied')},2000)})">Copia link</button>
         </div>
