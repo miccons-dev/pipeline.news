@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "cinquanta-ore-perse-ogni-settimana-il-tuo-team-non-lo-s-2026-05-01",
+      "kind": "article",
+      "title": "Cinquanta ore perse ogni settimana: il tuo team non lo sa ancora",
+      "subtitle": "Finché non mappi dove va il tempo, gestisci l'urgenza — non la trattativa.",
+      "preview_text": "Dove spariscono le 50 ore settimanali Aggiornamento CRM ~3,5h Prep. materiali cliente ~2,5h Ricontatti manuali ~2h Report e passaggi interni",
+      "web_url": "https://www.pipeline.news/post.html?id=cinquanta-ore-perse-ogni-settimana-il-tuo-team-non-lo-s-2026-05-01",
+      "publish_date": 1777645800,
+      "thumbnail_url": "https://images.pexels.com/photos/5900089/pexels-photo-5900089.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/5900089/pexels-photo-5900089.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Frustrated woman managing finances, surrounded by bills and a laptop, looking distressed.",
+      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
+      "tags": [
+        "processi",
+        "strumenti"
+      ]
+    },
+    {
       "id": "ha-comprato-da-un-concorrente-piu-caro-eccone-il-motivo-2026-05-01",
       "kind": "article",
       "title": "Ha comprato da un concorrente più caro. Eccone il motivo.",
@@ -323,24 +340,7 @@
         "email",
         "pmi"
       ]
-    },
-    {
-      "id": "perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "kind": "article",
-      "title": "Il prezzo non spaventa. Lo spaventa il vuoto che lo precede.",
-      "subtitle": "Prima del prezzo manca sempre una cosa: il costo reale del problema che stai risolvendo.",
-      "preview_text": "Mandi la proposta. Hai lavorato bene, il prezzo è corretto, la soluzione è solida. Poi silenzio. Non un rifiuto — silenzio. Il potenziale cl",
-      "web_url": "https://www.pipeline.news/post.html?id=perche-il-tuo-prezzo-spaventa-e-non-e-colpa-del-prezzo-2026-03-30",
-      "publish_date": 1774913520,
-      "thumbnail_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7433839/pexels-photo-7433839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Overhead view of professionals discussing financial graphs and using calculators in an office setting.",
-      "image_attribution": "Foto: Vlada Karpovich (https://www.pexels.com/@vlada-karpovich) · Pexels",
-      "tags": [
-        "pricing",
-        "obiezioni"
-      ]
     }
   ],
-  "generated": 1777614010
+  "generated": 1777645820
 }
