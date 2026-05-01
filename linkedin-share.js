@@ -4,28 +4,47 @@
 
   var FIXED_TAGS = ['#pipelinenewsletter', '#vendite', '#sales'];
 
+  /* Extract first meaningful paragraph text from HTML */
+  function extractExcerpt(html, maxLen) {
+    maxLen = maxLen || 240;
+    if (!html) return '';
+    var tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    var candidates = tmp.querySelectorAll('p, li, blockquote');
+    for (var i = 0; i < candidates.length; i++) {
+      var t = candidates[i].textContent.trim();
+      if (t.length > 60) {
+        return t.length > maxLen ? t.slice(0, maxLen) + '…' : t;
+      }
+    }
+    var fallback = tmp.textContent.trim();
+    return fallback.length > maxLen ? fallback.slice(0, maxLen) + '…' : fallback;
+  }
+
   function toHashtag(tag) {
     return '#' + tag.toLowerCase()
       .replace(/[\s-]+/g, '')
       .replace(/[^a-z0-9àèéìòù]/g, '');
   }
 
-  function buildPostText(title, subtitle, tags, url) {
+  function buildPostText(title, excerpt, subtitle, tags, url) {
+    var hook = excerpt || subtitle || '';
     var parts = [];
-    parts.push('📰 Ho appena letto questo articolo su Pipeline.news — la newsletter italiana per chi lavora nelle vendite.\n');
-    parts.push('"' + title + '"\n');
-    if (subtitle && subtitle.trim()) {
-      parts.push(subtitle.trim() + '\n');
+
+    if (hook) {
+      parts.push(hook + '\n');
+    } else {
+      parts.push('"' + title + '"\n');
     }
+
+    parts.push('📬 Da Pipeline.news — la newsletter italiana per chi lavora nelle vendite.');
     parts.push('👉 ' + url);
 
     var hashtags = FIXED_TAGS.slice();
     if (Array.isArray(tags)) {
       tags.slice(0, 3).forEach(function (t) {
         var h = toHashtag(t);
-        if (h.length > 1 && hashtags.indexOf(h) === -1) {
-          hashtags.push(h);
-        }
+        if (h.length > 1 && hashtags.indexOf(h) === -1) hashtags.push(h);
       });
     }
     parts.push('\n' + hashtags.join(' '));
@@ -33,99 +52,109 @@
     return parts.join('\n');
   }
 
-  function injectStyles() {
-    if (document.getElementById('li-share-styles')) return;
-    var s = document.createElement('style');
-    s.id = 'li-share-styles';
-    s.textContent = [
-      '#li-share-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(13,39,86,.72);backdrop-filter:blur(4px);}',
-      '#li-share-overlay[hidden]{display:none!important;}',
-      '#li-share-modal{background:#fff;border-radius:20px;padding:32px;max-width:540px;width:100%;box-shadow:0 24px 64px rgba(0,0,0,.22);position:relative;}',
-      '#li-share-modal h3{font-family:Inter,system-ui,sans-serif;font-size:17px;font-weight:700;color:#0D2756;margin:0 0 6px;}',
-      '.li-share-sub{font-size:13px;color:#6b7280;margin:0 0 16px;line-height:1.5;}',
-      '#li-share-textarea{width:100%;box-sizing:border-box;font-family:Inter,system-ui,sans-serif;font-size:14px;color:#1f2937;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;padding:14px;line-height:1.7;resize:vertical;min-height:200px;outline:none;transition:border-color .15s,background .15s;}',
-      '#li-share-textarea:focus{border-color:#00C4A0;background:#fff;}',
-      '.li-share-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;}',
-      '.li-share-btn{display:inline-flex;align-items:center;gap:7px;font-family:Inter,sans-serif;font-size:14px;font-weight:600;border:none;border-radius:8px;padding:11px 20px;cursor:pointer;transition:background .15s,transform .1s;text-decoration:none;}',
-      '.li-share-btn--copy{background:#f1f5f9;color:#0D2756;}',
-      '.li-share-btn--copy:hover{background:#e2e8f0;}',
-      '.li-share-btn--open{background:#0A66C2;color:#fff;margin-left:auto;}',
-      '.li-share-btn--open:hover{background:#094fa3;transform:translateY(-1px);}',
-      '.li-share-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:22px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;}',
-      '.li-share-close:hover{color:#374151;}',
-      '@media(max-width:400px){.li-share-btn--open{margin-left:0;width:100%;justify-content:center;}}',
-    ].join('');
-    document.head.appendChild(s);
+  /* ── Toast ──────────────────────────────────────────────────────── */
+  function showToast(msg) {
+    var existing = document.getElementById('li-share-toast');
+    if (existing) existing.remove();
+
+    if (!document.getElementById('li-toast-style')) {
+      var s = document.createElement('style');
+      s.id = 'li-toast-style';
+      s.textContent = [
+        '@keyframes li-toast-in{from{opacity:0;transform:translateX(-50%) translateY(10px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}',
+        '#li-share-toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);',
+        'background:#0D2756;color:#fff;font-family:Inter,system-ui,sans-serif;',
+        'font-size:14px;font-weight:500;padding:14px 22px;border-radius:10px;',
+        'box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:9999;',
+        'display:flex;align-items:center;gap:10px;white-space:nowrap;max-width:90vw;',
+        'animation:li-toast-in .25s ease;}',
+      ].join('');
+      document.head.appendChild(s);
+    }
+
+    var toast = document.createElement('div');
+    toast.id = 'li-share-toast';
+    toast.innerHTML = '<span style="color:#00C4A0;font-size:16px">✓</span> ' + msg;
+    document.body.appendChild(toast);
+
+    setTimeout(function () {
+      toast.style.transition = 'opacity .4s';
+      toast.style.opacity = '0';
+      setTimeout(function () { if (toast.parentNode) toast.remove(); }, 400);
+    }, 5000);
   }
 
-  function injectModal() {
-    if (document.getElementById('li-share-overlay')) return;
-    var LI_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
+  /* ── Fallback modal (clipboard unavailable) ─────────────────────── */
+  function showFallback(text) {
+    var existing = document.getElementById('li-fallback-overlay');
+    if (existing) existing.remove();
+
+    if (!document.getElementById('li-fallback-style')) {
+      var s = document.createElement('style');
+      s.id = 'li-fallback-style';
+      s.textContent = [
+        '#li-fallback-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(13,39,86,.72);backdrop-filter:blur(4px);}',
+        '#li-fallback-modal{background:#fff;border-radius:16px;padding:28px;max-width:500px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2);position:relative;}',
+        '#li-fallback-modal h3{font-family:Inter,system-ui,sans-serif;font-size:16px;font-weight:700;color:#0D2756;margin:0 0 6px;}',
+        '#li-fallback-modal p{font-size:13px;color:#6b7280;margin:0 0 14px;}',
+        '#li-fallback-ta{width:100%;box-sizing:border-box;font-family:Inter,system-ui,sans-serif;font-size:13px;color:#1f2937;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:8px;padding:12px;line-height:1.65;resize:vertical;min-height:160px;outline:none;}',
+        '#li-fallback-ta:focus{border-color:#00C4A0;}',
+        '.li-fb-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:20px;color:#9ca3af;cursor:pointer;line-height:1;padding:4px 8px;}',
+        '.li-fb-close:hover{color:#374151;}',
+      ].join('');
+      document.head.appendChild(s);
+    }
+
     var el = document.createElement('div');
-    el.id = 'li-share-overlay';
-    el.setAttribute('hidden', '');
+    el.id = 'li-fallback-overlay';
     el.innerHTML =
-      '<div id="li-share-modal" role="dialog" aria-modal="true" aria-labelledby="li-share-title">' +
-      '<button class="li-share-close" id="li-share-close" aria-label="Chiudi">&times;</button>' +
-      '<h3 id="li-share-title">Condividi su LinkedIn</h3>' +
-      '<p class="li-share-sub">Testo suggerito — modificalo liberamente prima di pubblicare.</p>' +
-      '<textarea id="li-share-textarea" spellcheck="true"></textarea>' +
-      '<div class="li-share-actions">' +
-      '<button class="li-share-btn li-share-btn--copy" id="li-share-copy">Copia testo</button>' +
-      '<a class="li-share-btn li-share-btn--open" id="li-share-open" target="_blank" rel="noopener">' +
-      LI_SVG + ' Apri LinkedIn →' +
-      '</a>' +
-      '</div>' +
+      '<div id="li-fallback-modal">' +
+      '<button class="li-fb-close" aria-label="Chiudi">&times;</button>' +
+      '<h3>Copia il testo del post</h3>' +
+      '<p>Seleziona tutto e copia, poi incollalo su LinkedIn.</p>' +
+      '<textarea id="li-fallback-ta" readonly>' + text.replace(/</g, '&lt;') + '</textarea>' +
       '</div>';
     document.body.appendChild(el);
 
-    document.getElementById('li-share-close').addEventListener('click', closeModal);
-    el.addEventListener('click', function (e) { if (e.target === el) closeModal(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
-    document.getElementById('li-share-copy').addEventListener('click', function () {
-      var ta = document.getElementById('li-share-textarea');
-      navigator.clipboard.writeText(ta.value).then(function () {
-        var btn = document.getElementById('li-share-copy');
-        var prev = btn.textContent;
-        btn.textContent = 'Copiato ✓';
-        setTimeout(function () { btn.textContent = prev; }, 2000);
-      });
+    el.querySelector('.li-fb-close').addEventListener('click', function () { el.remove(); });
+    el.addEventListener('click', function (e) { if (e.target === el) el.remove(); });
+    document.addEventListener('keydown', function esc(e) {
+      if (e.key === 'Escape') { el.remove(); document.removeEventListener('keydown', esc); }
     });
+
+    var ta = el.querySelector('#li-fallback-ta');
+    setTimeout(function () { ta.focus(); ta.select(); }, 50);
   }
 
-  function closeModal() {
-    var overlay = document.getElementById('li-share-overlay');
-    if (overlay) overlay.setAttribute('hidden', '');
-    document.body.style.overflow = '';
-  }
-
-  function openShareModal(title, subtitle, tags, url) {
-    injectStyles();
-    injectModal();
-    document.getElementById('li-share-textarea').value = buildPostText(title, subtitle, tags, url);
-    document.getElementById('li-share-open').href =
-      'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
-    document.getElementById('li-share-overlay').removeAttribute('hidden');
-    document.body.style.overflow = 'hidden';
-    setTimeout(function () {
-      var ta = document.getElementById('li-share-textarea');
-      ta.focus();
-      ta.setSelectionRange(0, 0);
-    }, 50);
-  }
-
-  /* Intercept clicks on .share-btn--linkedin anywhere in the page */
+  /* ── Main click handler ─────────────────────────────────────────── */
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.share-btn--linkedin');
     if (!btn) return;
     e.preventDefault();
+
     var tags = [];
     try { tags = JSON.parse(btn.dataset.tags || '[]'); } catch (_) {}
-    openShareModal(
-      btn.dataset.title    || '',
-      btn.dataset.subtitle || '',
-      tags,
-      btn.dataset.url      || location.href
-    );
+
+    var url     = btn.dataset.url      || location.href;
+    var title   = btn.dataset.title    || '';
+    var excerpt = btn.dataset.excerpt  || '';
+    var subtitle= btn.dataset.subtitle || '';
+
+    var text  = buildPostText(title, excerpt, subtitle, tags, url);
+    var liUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+
+    /* Open LinkedIn immediately (must be in sync click handler to avoid popup blockers) */
+    window.open(liUrl, '_blank', 'noopener');
+
+    /* Copy text to clipboard */
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(function () {
+          showToast('Testo copiato — incollalo nel post su LinkedIn (Ctrl+V / ⌘V)');
+        })
+        .catch(function () { showFallback(text); });
+    } else {
+      showFallback(text);
+    }
   });
 })();

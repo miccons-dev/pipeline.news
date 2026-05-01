@@ -259,13 +259,27 @@ const _defaultTitle = document.title;
 const LI_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
 const X_SVG  = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`;
 
-function shareBarHtml(url, title, subtitle, tags) {
-  const eu = encodeURIComponent(url);
-  const et = encodeURIComponent(title);
+function extractExcerpt(html, maxLen) {
+  maxLen = maxLen || 240;
+  if (!html) return '';
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  for (const el of tmp.querySelectorAll('p, li, blockquote')) {
+    const t = el.textContent.trim();
+    if (t.length > 60) return t.length > maxLen ? t.slice(0, maxLen) + '…' : t;
+  }
+  const all = tmp.textContent.trim();
+  return all.length > maxLen ? all.slice(0, maxLen) + '…' : all;
+}
+
+function shareBarHtml(url, title, subtitle, tags, contentHtml) {
+  const eu      = encodeURIComponent(url);
+  const et      = encodeURIComponent(title);
   const tagsJson = esc(JSON.stringify(tags || []));
+  const excerpt  = esc(extractExcerpt(contentHtml));
   return `<div class="share-bar">
     <span class="share-bar__label">Condividi</span>
-    <button class="share-btn share-btn--linkedin" data-title="${esc(title)}" data-subtitle="${esc(subtitle || '')}" data-tags="${tagsJson}" data-url="${esc(url)}">${LI_SVG} LinkedIn</button>
+    <button class="share-btn share-btn--linkedin" data-title="${esc(title)}" data-subtitle="${esc(subtitle || '')}" data-excerpt="${excerpt}" data-tags="${tagsJson}" data-url="${esc(url)}">${LI_SVG} LinkedIn</button>
     <a href="https://twitter.com/intent/tweet?url=${eu}&text=${et}" target="_blank" rel="noopener" class="share-btn">${X_SVG} X</a>
     <button class="share-btn share-btn--copy" data-url="${esc(url)}">Copia link</button>
   </div>`;
@@ -321,7 +335,7 @@ function openModal(post) {
 
   const safeId   = post.id.replace(/[^a-zA-Z0-9_-]/g, '_');
   const shareUrl = `https://www.pipeline.news/share/${safeId}.html`;
-  document.getElementById('modalShare').innerHTML = shareBarHtml(shareUrl, decodeHtml(post.title), decodeHtml(post.subtitle || ''), post.tags);
+  document.getElementById('modalShare').innerHTML = shareBarHtml(shareUrl, decodeHtml(post.title), decodeHtml(post.subtitle || ''), post.tags, post.content_html);
 
   modalCtaLabel.textContent = `Pipeline · Edizione #${issueNum}`;
   modalCtaOverlay.hidden = sessionStorage.getItem('ctaSeen') === '1';
