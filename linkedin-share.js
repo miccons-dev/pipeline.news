@@ -37,7 +37,7 @@
         if (h.length > 1 && hashtags.indexOf(h) === -1) hashtags.push(h);
       });
     }
-    return body + '\n\n' + hashtags.join(' ');
+    return body + '\n\n' + hashtags.join(' ') + '\n';
   }
 
   /* ── 100 Italian sales post templates (no URL — appended once by generateText) */
@@ -167,12 +167,11 @@
     function (t, h) { return 'Tra tutto quello che ho letto questa settimana, questo è l\'articolo che ti consiglio:\n\n"' + t + '"\n\n' + (h ? h + '\n\n' : '') + 'Pipeline.news.'; },
   ];
 
-  /* URL appended exactly once here, never inside templates */
-  function generateText(title, hook, url, tags) {
+  function generateText(title, hook, tags) {
     var hash = 0;
     for (var i = 0; i < title.length; i++) hash = (hash * 31 + title.charCodeAt(i)) | 0;
     var body = T[Math.abs(hash) % T.length](title, hook);
-    return appendHashtags(body + '\n➡️ ' + url, tags);
+    return appendHashtags(body, tags);
   }
 
   /* ── sessionStorage cache ───────────────────────────────────────── */
@@ -274,7 +273,7 @@
 
     /* Generate or retrieve cached text — all synchronous */
     var cached = getCached(url);
-    var text = cached || generateText(title, shortHook(excerpt, subtitle), url, tags);
+    var text = cached || generateText(title, shortHook(excerpt, subtitle), tags);
     if (!cached) setCached(url, text);
 
     /* Clipboard called synchronously inside user gesture — works on iOS */
