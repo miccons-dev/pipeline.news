@@ -229,6 +229,9 @@ function clearStatus() {
 }
 
 function showSuccess(sent, skipped) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'invite_sent', { invite_count: sent });
+  }
   cardInvite.hidden  = true;
   cardSuccess.hidden = false;
 

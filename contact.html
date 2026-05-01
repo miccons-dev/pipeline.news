@@ -391,6 +391,9 @@
 
         form.style.display   = 'none';
         success.style.display = 'block';
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact_form_submit', { topic: topic });
+        }
       } catch (err) {
         showError(err.message || "Errore durante l'invio. Riprova tra qualche minuto.");
         setLoading(false);

@@ -47,6 +47,9 @@
         })
         .then(function (res) {
           if (res.status === 200) {
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', { form_location: 'subscribe_form' });
+            }
             window.location.href = '/welcome.html?email=' + encodeURIComponent(email);
             return;
           }

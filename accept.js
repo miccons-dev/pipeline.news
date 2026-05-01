@@ -65,6 +65,10 @@ async function loadInvite(token) {
 async function acceptInvite() {
   if (!inviteToken) return;
 
+  if (typeof gtag === 'function') {
+    gtag('event', 'invite_accept_click');
+  }
+
   acceptBtn.disabled    = true;
   acceptBtn.textContent = 'Iscrizione in corso…';
 
@@ -86,6 +90,9 @@ async function acceptInvite() {
       return;
     }
 
+    if (typeof gtag === 'function') {
+      gtag('event', 'invite_accepted');
+    }
     showOnly(stateSuccess);
 
   } catch (err) {
