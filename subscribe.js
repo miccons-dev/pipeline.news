@@ -5,12 +5,22 @@
   var ENDPOINT = 'https://pipeline-agent.onrender.com/public/subscribe';
   var EMAIL_RE  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  function resetCaptcha(captchaEl) {
+    if (!captchaEl || !window.grecaptcha) return;
+    try {
+      var all = Array.from(document.querySelectorAll('.sib-visible-recaptcha'));
+      var idx = all.indexOf(captchaEl);
+      grecaptcha.reset(idx >= 0 ? idx : 0);
+    } catch (e) {}
+  }
+
   document.querySelectorAll('form[data-type="subscription"]').forEach(function (form) {
     var container = form.closest('.sib-form-container');
     var panels    = container ? container.querySelectorAll('.sib-form-message-panel') : [];
     var errorEl   = panels[0] || null;
     var emailIn   = form.querySelector('input[name="EMAIL"]');
     var btn       = form.querySelector('.sib-form-block__button');
+    var captchaEl = form.querySelector('.sib-visible-recaptcha');
 
     function showError(msg) {
       if (!errorEl) return;
@@ -32,13 +42,23 @@
         return;
       }
 
+      var captchaToken = '';
+      if (captchaEl) {
+        var ta = captchaEl.querySelector('textarea');
+        captchaToken = ta ? ta.value : '';
+        if (!captchaToken) {
+          showError('Completa il CAPTCHA per procedere.');
+          return;
+        }
+      }
+
       clearError();
       if (btn) btn.disabled = true;
 
       fetch(ENDPOINT, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email: email }),
+        body:    JSON.stringify({ email: email, captchaToken: captchaToken }),
       })
         .then(function (r) {
           return r.json()
@@ -54,6 +74,7 @@
             return;
           }
           if (btn) btn.disabled = false;
+          resetCaptcha(captchaEl);
           if (res.status === 400) {
             showError('Inserisci un indirizzo email valido.');
           } else if (res.status === 502) {
@@ -66,6 +87,7 @@
         })
         .catch(function () {
           if (btn) btn.disabled = false;
+          resetCaptcha(captchaEl);
           showError('Errore di rete. Controlla la connessione e riprova.');
         });
     });

@@ -269,6 +269,10 @@
                       placeholder="Scrivi qui il tuo messaggio…" maxlength="5000" required></textarea>
           </div>
 
+          <div class="cf-group">
+            <div class="g-recaptcha" id="contact-captcha" data-sitekey="6LfggNUsAAAAAKRLRn8q3T_amYKp9MFGvYtLKB_v"></div>
+          </div>
+
           <button class="cf-btn" type="submit" id="cfSubmit">
             <span id="cfBtnText">Invia messaggio →</span>
             <span class="cf-spinner" id="cfSpinner"></span>
@@ -375,13 +379,21 @@
       if (!EMAIL_RE.test(email))     { showError('Inserisci un indirizzo email valido.'); return; }
       if (message.length < 10)       { showError('Il messaggio è troppo breve.'); return; }
 
+      var captchaEl = document.getElementById('contact-captcha');
+      var captchaToken = '';
+      if (captchaEl) {
+        var ta = captchaEl.querySelector('textarea');
+        captchaToken = ta ? ta.value : '';
+        if (!captchaToken) { showError('Completa il CAPTCHA per procedere.'); return; }
+      }
+
       setLoading(true);
 
       try {
         var res  = await fetch(API_BASE + '/api/v1/contact', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ name: name, email: email, topic: topic, message: message }),
+          body:    JSON.stringify({ name: name, email: email, topic: topic, message: message, captchaToken: captchaToken }),
         });
         var data = await res.json().catch(function () { return {}; });
 
@@ -396,6 +408,7 @@
         }
       } catch (err) {
         showError(err.message || "Errore durante l'invio. Riprova tra qualche minuto.");
+        if (captchaEl && window.grecaptcha) { try { grecaptcha.reset(); } catch (ex) {} }
         setLoading(false);
       }
     });
@@ -407,6 +420,7 @@
       location.replace('https://' + location.host + location.pathname + location.search + location.hash);
     }
   </script>
+  <script src="https://www.google.com/recaptcha/api.js?hl=it" async defer></script>
 
 </body>
 </html>
