@@ -794,6 +794,9 @@ a  { color: inherit; text-decoration: none; }
 }
 .footer__legal a:hover { color: var(--cyan); }
 
+/* reCAPTCHA v3 badge hidden per Google ToS (disclosure text in footer) */
+.grecaptcha-badge { visibility: hidden !important; }
+
 /* ── Footer social ────────────────────────────────────── */
 .footer__social { display: flex; justify-content: center; gap: 12px; }
 .footer__social-link {
