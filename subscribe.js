@@ -3,16 +3,8 @@
   'use strict';
 
   var ENDPOINT = 'https://pipeline-agent.onrender.com/public/subscribe';
+  var SITEKEY  = '6LfggNUsAAAAAKRLRn8q3T_amYKp9MFGvYtLKB_v';
   var EMAIL_RE  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  function resetCaptcha(captchaEl) {
-    if (!captchaEl || !window.grecaptcha) return;
-    try {
-      var all = Array.from(document.querySelectorAll('.sib-visible-recaptcha'));
-      var idx = all.indexOf(captchaEl);
-      grecaptcha.reset(idx >= 0 ? idx : 0);
-    } catch (e) {}
-  }
 
   document.querySelectorAll('form[data-type="subscription"]').forEach(function (form) {
     var container = form.closest('.sib-form-container');
@@ -20,7 +12,6 @@
     var errorEl   = panels[0] || null;
     var emailIn   = form.querySelector('input[name="EMAIL"]');
     var btn       = form.querySelector('.sib-form-block__button');
-    var captchaEl = form.querySelector('.sib-visible-recaptcha');
 
     function showError(msg) {
       if (!errorEl) return;
@@ -33,32 +24,11 @@
       if (errorEl) errorEl.classList.add('sib-hide');
     }
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = (emailIn ? emailIn.value : '').trim();
-
-      if (!email || !EMAIL_RE.test(email)) {
-        showError('Inserisci un indirizzo email valido.');
-        return;
-      }
-
-      var captchaToken = '';
-      if (captchaEl) {
-        var ta = captchaEl.querySelector('textarea');
-        captchaToken = ta ? ta.value : '';
-        if (!captchaToken) {
-          showError('Completa il CAPTCHA per procedere.');
-          return;
-        }
-      }
-
-      clearError();
-      if (btn) btn.disabled = true;
-
+    function doFetch(token) {
       fetch(ENDPOINT, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email: email, captchaToken: captchaToken }),
+        body:    JSON.stringify({ email: emailIn ? emailIn.value.trim() : '', captchaToken: token || '' }),
       })
         .then(function (r) {
           return r.json()
@@ -70,11 +40,10 @@
             if (typeof gtag === 'function') {
               gtag('event', 'generate_lead', { form_location: 'subscribe_form' });
             }
-            window.location.href = '/welcome.html?email=' + encodeURIComponent(email);
+            window.location.href = '/welcome.html?email=' + encodeURIComponent(emailIn ? emailIn.value.trim() : '');
             return;
           }
           if (btn) btn.disabled = false;
-          resetCaptcha(captchaEl);
           if (res.status === 400) {
             showError('Inserisci un indirizzo email valido.');
           } else if (res.status === 502) {
@@ -87,9 +56,31 @@
         })
         .catch(function () {
           if (btn) btn.disabled = false;
-          resetCaptcha(captchaEl);
           showError('Errore di rete. Controlla la connessione e riprova.');
         });
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = (emailIn ? emailIn.value : '').trim();
+
+      if (!email || !EMAIL_RE.test(email)) {
+        showError('Inserisci un indirizzo email valido.');
+        return;
+      }
+
+      clearError();
+      if (btn) btn.disabled = true;
+
+      if (window.grecaptcha) {
+        grecaptcha.ready(function () {
+          grecaptcha.execute(SITEKEY, { action: 'subscribe' })
+            .then(doFetch)
+            .catch(function () { doFetch(''); });
+        });
+      } else {
+        doFetch('');
+      }
     });
   });
 })();
