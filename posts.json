@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "la-pipeline-e-piena-di-aziende-che-non-compreranno-mai-2026-05-02",
+      "kind": "article",
+      "title": "La pipeline è piena. Di aziende che non compreranno mai.",
+      "subtitle": "Invertire la sequenza cambia tutto: qualifica l'azienda prima ancora di cercare il nome su LinkedIn",
+      "preview_text": "3 su 100 aziende nella pipeline B2B tipica che genera trattative reali Il resto? Aziende non qualificate entrate senza criteri. Hai cento az",
+      "web_url": "https://www.pipeline.news/post.html?id=la-pipeline-e-piena-di-aziende-che-non-compreranno-mai-2026-05-02",
+      "publish_date": 1777720500,
+      "thumbnail_url": "https://images.pexels.com/photos/5313176/pexels-photo-5313176.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/5313176/pexels-photo-5313176.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Business professionals working together in a modern office setting with focus on curly-haired man reviewing documents.",
+      "image_attribution": "Foto: olia danilevich (https://www.pexels.com/@olia-danilevich) · Pexels",
+      "tags": [
+        "outreach",
+        "linkedin"
+      ]
+    },
+    {
       "id": "cinquanta-ore-perse-ogni-settimana-il-tuo-team-non-lo-s-2026-05-01",
       "kind": "article",
       "title": "Cinquanta ore perse ogni settimana: il tuo team non lo sa ancora",
@@ -323,24 +340,7 @@
         "discovery",
         "b2b"
       ]
-    },
-    {
-      "id": "l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
-      "kind": "article",
-      "title": "Il silenzio post-firma costa più di una trattativa persa",
-      "subtitle": "L'abbandono non avviene al rinnovo. Avviene nel mese in cui non ti fai sentire.",
-      "preview_text": "Chiudi la trattativa. Passi il cliente al team. Ti togli il cappello da venditore e lo rimetti in tasca. Fatto. Ma nei trenta giorni success",
-      "web_url": "https://www.pipeline.news/post.html?id=l-avvio-che-nessuno-fa-e-che-ferma-l-abbandono-2026-04-01",
-      "publish_date": 1775086320,
-      "thumbnail_url": "https://images.pexels.com/photos/7876099/pexels-photo-7876099.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/7876099/pexels-photo-7876099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "A professional trio engaged in a serious discussion inside a modern office.",
-      "image_attribution": "Foto: www.kaboompics.com (https://www.pexels.com/@karola-g) · Pexels",
-      "tags": [
-        "email",
-        "pmi"
-      ]
     }
   ],
-  "generated": 1777645820
+  "generated": 1777720810
 }
