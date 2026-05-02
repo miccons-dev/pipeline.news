@@ -14,21 +14,39 @@
     var btn       = form.querySelector('.sib-form-block__button');
 
     function showError(msg) {
-      if (!errorEl) return;
-      var inner = errorEl.querySelector('.sib-form-message-panel__inner-text');
-      if (inner) inner.textContent = msg;
-      errorEl.classList.remove('sib-hide');
+      if (errorEl) {
+        var inner = errorEl.querySelector('.sib-form-message-panel__inner-text');
+        if (inner) inner.textContent = msg;
+        errorEl.style.display = 'block';
+        errorEl.classList.remove('sib-hide');
+      }
     }
 
     function clearError() {
-      if (errorEl) errorEl.classList.add('sib-hide');
+      if (errorEl) {
+        errorEl.classList.add('sib-hide');
+        errorEl.style.display = '';
+      }
+    }
+
+    function setBtn(loading) {
+      if (!btn) return;
+      btn.disabled = loading;
+      var txt = btn.querySelector('span') || btn;
+      if (loading) {
+        txt.dataset.orig = txt.dataset.orig || txt.textContent;
+        if (txt !== btn) txt.textContent = 'Invio in corso…';
+      } else {
+        if (txt !== btn && txt.dataset.orig) txt.textContent = txt.dataset.orig;
+      }
     }
 
     function doFetch(token) {
+      var email = emailIn ? emailIn.value.trim() : '';
       fetch(ENDPOINT, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email: emailIn ? emailIn.value.trim() : '', captchaToken: token || '' }),
+        body:    JSON.stringify({ email: email, captchaToken: token || '' }),
       })
         .then(function (r) {
           return r.json()
@@ -40,10 +58,10 @@
             if (typeof gtag === 'function') {
               gtag('event', 'generate_lead', { form_location: 'subscribe_form' });
             }
-            window.location.href = '/welcome.html?email=' + encodeURIComponent(emailIn ? emailIn.value.trim() : '');
+            window.location.href = '/welcome.html?email=' + encodeURIComponent(email);
             return;
           }
-          if (btn) btn.disabled = false;
+          setBtn(false);
           if (res.status === 400) {
             showError('Inserisci un indirizzo email valido.');
           } else if (res.status === 502) {
@@ -55,9 +73,30 @@
           }
         })
         .catch(function () {
-          if (btn) btn.disabled = false;
+          setBtn(false);
           showError('Errore di rete. Controlla la connessione e riprova.');
         });
+    }
+
+    function submitWithCaptcha() {
+      if (window.grecaptcha) {
+        var done = false;
+        var fallback = setTimeout(function () {
+          if (!done) { done = true; doFetch(''); }
+        }, 3000);
+
+        grecaptcha.ready(function () {
+          try {
+            grecaptcha.execute(SITEKEY, { action: 'subscribe' })
+              .then(function (t)  { if (!done) { done = true; clearTimeout(fallback); doFetch(t); } })
+              .catch(function ()  { if (!done) { done = true; clearTimeout(fallback); doFetch(''); } });
+          } catch (e) {
+            if (!done) { done = true; clearTimeout(fallback); doFetch(''); }
+          }
+        });
+      } else {
+        doFetch('');
+      }
     }
 
     form.addEventListener('submit', function (e) {
@@ -70,17 +109,8 @@
       }
 
       clearError();
-      if (btn) btn.disabled = true;
-
-      if (window.grecaptcha) {
-        grecaptcha.ready(function () {
-          grecaptcha.execute(SITEKEY, { action: 'subscribe' })
-            .then(doFetch)
-            .catch(function () { doFetch(''); });
-        });
-      } else {
-        doFetch('');
-      }
+      setBtn(true);
+      submitWithCaptcha();
     });
   });
 })();
