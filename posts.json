@@ -2,6 +2,23 @@
   "_comment": "Generato dall'admin pipeline-agent.",
   "posts": [
     {
+      "id": "feedback-al-commerciale-che-non-performa-la-struttura-i-2026-05-03",
+      "kind": "article",
+      "title": "Feedback al commerciale che non performa: la struttura in cinque mosse",
+      "subtitle": "Tra la pressione sui numeri e la comprensione senza chiarezza, esiste una terza via — e funziona.",
+      "preview_text": "Dal feedback al cambiamento: tre passaggi obbliga… Ascolta e riconosci il cont… Passo 1–2 Torna all'obiettivo, negozi… Passo 3 Una azione so",
+      "web_url": "https://www.pipeline.news/post.html?id=feedback-al-commerciale-che-non-performa-la-struttura-i-2026-05-03",
+      "publish_date": 1777789800,
+      "thumbnail_url": "https://images.pexels.com/photos/7433865/pexels-photo-7433865.jpeg?auto=compress&cs=tinysrgb&h=350",
+      "image_url": "https://images.pexels.com/photos/7433865/pexels-photo-7433865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "image_alt": "Business team collaborates on financial strategies during an office meeting. Engaged discussion over reports.",
+      "image_attribution": "Foto: Vlada Karpovich (https://www.pexels.com/@vlada-karpovich) · Pexels",
+      "tags": [
+        "leadership",
+        "processi"
+      ]
+    },
+    {
       "id": "la-pipeline-e-piena-di-aziende-che-non-compreranno-mai-2026-05-02",
       "kind": "article",
       "title": "La pipeline è piena. Di aziende che non compreranno mai.",
@@ -323,24 +340,7 @@
         "pmi",
         "processi"
       ]
-    },
-    {
-      "id": "il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
-      "kind": "article",
-      "title": "Il buyer decide da solo. Il tuo pitch arriva dopo.",
-      "subtitle": "Il 70% del processo decisionale B2B avviene prima della tua prima call: ecco cosa cambia",
-      "preview_text": "Dove avviene il processo decisionale B2B 70% — Prima della prima call con il venditore 30% — Durante e dopo le call commerciali 70% del perc",
-      "web_url": "https://www.pipeline.news/post.html?id=il-buyer-decide-da-solo-il-tuo-pitch-arriva-dopo-2026-03-06",
-      "publish_date": 1775199600,
-      "thumbnail_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&h=350",
-      "image_url": "https://images.pexels.com/photos/8441820/pexels-photo-8441820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "image_alt": "Consultant discussing financial plans with senior clients in a modern office setting, using documents and a laptop.",
-      "image_attribution": "Foto: Kampus Production (https://www.pexels.com/@kampus) · Pexels",
-      "tags": [
-        "discovery",
-        "b2b"
-      ]
     }
   ],
-  "generated": 1777720810
+  "generated": 1777789824
 }
