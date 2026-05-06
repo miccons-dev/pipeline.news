@@ -54,7 +54,7 @@
       fetch(ENDPOINT, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ email: email, captchaToken: token || '' }),
+        body:    JSON.stringify({ email: email }),
       })
         .then(function (r) {
           return r.json()
