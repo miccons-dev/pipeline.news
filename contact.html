@@ -239,6 +239,9 @@
 
         <!-- Form -->
         <form id="contactForm" novalidate>
+          <!-- honeypot: bots fill this, humans don't -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;" />
           <div class="cf-row">
             <div class="cf-group">
               <label class="cf-label" for="cf-name">Nome <span>*</span></label>
@@ -346,6 +349,7 @@
     var spinner  = document.getElementById('cfSpinner');
     var submitBtn = document.getElementById('cfSubmit');
     var errorEl  = document.getElementById('cfError');
+    var loadedAt = Date.now();
 
     function setLoading(on) {
       submitBtn.disabled  = on;
@@ -372,9 +376,20 @@
       var topic   = form.querySelector('#cf-topic').value;
       var message = form.querySelector('#cf-message').value.trim();
 
+      // 1. honeypot
+      var hp = form.querySelector('[name="website"]');
+      if (hp && hp.value) { form.style.display = 'none'; success.style.display = 'block'; return; }
+
+      // 2. timing (bot submits in < 2s)
+      if (Date.now() - loadedAt < 2000) { form.style.display = 'none'; success.style.display = 'block'; return; }
+
       if (name.length < 2)           { showError('Inserisci il tuo nome.'); return; }
       if (!EMAIL_RE.test(email))     { showError('Inserisci un indirizzo email valido.'); return; }
       if (message.length < 10)       { showError('Il messaggio è troppo breve.'); return; }
+
+      // 3. content: name needs a vowel, message needs a space
+      if (!/[aeiouàèéìòùAEIOUÀÈÉÌÒÙ]/.test(name)) { showError('Il nome inserito non sembra valido.'); return; }
+      if (message.indexOf(' ') === -1) { showError('Il messaggio sembra non valido. Scrivi cosa hai in mente.'); return; }
 
       setLoading(true);
 

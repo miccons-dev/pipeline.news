@@ -99,8 +99,15 @@
       }
     }
 
+    var hp      = form.querySelector('[name="hp"]');
+    var loadedAt = Date.now();
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // honeypot: bot filled the hidden field
+      if (hp && hp.value) { window.location.href = '/welcome.html?email='; return; }
+
       var email = (emailIn ? emailIn.value : '').trim();
 
       if (!email || !EMAIL_RE.test(email)) {
