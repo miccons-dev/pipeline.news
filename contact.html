@@ -350,11 +350,20 @@
     var submitBtn = document.getElementById('cfSubmit');
     var errorEl  = document.getElementById('cfError');
     var loadedAt = Date.now();
+    var slowTimer = null;
 
     function setLoading(on) {
       submitBtn.disabled  = on;
-      btnText.textContent = on ? 'Invio in corso…' : 'Invia messaggio →';
       spinner.style.display = on ? 'block' : 'none';
+      if (on) {
+        btnText.textContent = 'Invio in corso…';
+        slowTimer = setTimeout(function () {
+          btnText.textContent = 'Quasi fatto, ancora un secondo…';
+        }, 5000);
+      } else {
+        clearTimeout(slowTimer);
+        btnText.textContent = 'Invia messaggio →';
+      }
     }
 
     function showError(msg) {
