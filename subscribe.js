@@ -29,15 +29,23 @@
       }
     }
 
+    var slowTimer = null;
+
     function setBtn(loading) {
       if (!btn) return;
       btn.disabled = loading;
-      var txt = btn.querySelector('span') || btn;
+      var node = Array.from(btn.childNodes).reverse()
+        .find(function (n) { return n.nodeType === 3 && n.textContent.trim(); });
+      if (!node) return;
       if (loading) {
-        txt.dataset.orig = txt.dataset.orig || txt.textContent;
-        if (txt !== btn) txt.textContent = 'Invio in corso…';
+        node._orig = node._orig || node.textContent;
+        node.textContent = ' Invio in corso…';
+        slowTimer = setTimeout(function () {
+          node.textContent = ' Quasi fatto, ancora un secondo…';
+        }, 6000);
       } else {
-        if (txt !== btn && txt.dataset.orig) txt.textContent = txt.dataset.orig;
+        clearTimeout(slowTimer);
+        if (node._orig) node.textContent = node._orig;
       }
     }
 
