@@ -16,7 +16,7 @@
     function showError(msg) {
       if (errorEl) {
         var inner = errorEl.querySelector('.sib-form-message-panel__inner-text');
-        if (inner) inner.textContent = msg;
+        if (inner) inner.innerHTML = msg;
         errorEl.style.display = 'block';
         errorEl.classList.remove('sib-hide');
       }
@@ -70,14 +70,17 @@
             return;
           }
           setBtn(false);
+          var backendMsg = res.data && res.data.message;
           if (res.status === 400) {
-            showError('Inserisci un indirizzo email valido.');
+            showError(backendMsg || 'Inserisci un indirizzo email valido.');
+          } else if (res.status === 409 || (backendMsg && /unsubscrib|blacklist|disiscritto|optout/i.test(backendMsg))) {
+            showError('Questo indirizzo risulta disiscritto. Per ri-iscriverti <a href="/contact.html" style="color:inherit;text-decoration:underline">scrivici tramite il form contatti</a>.');
           } else if (res.status === 502) {
-            showError('Errore del server. Riprova tra qualche minuto.');
+            showError('Errore del server. Se ti sei disiscritto in passato e vuoi ri-iscriverti, <a href="/contact.html" style="color:inherit;text-decoration:underline">scrivici</a>.');
           } else if (res.status === 503) {
             showError('Servizio non disponibile. Riprova tra qualche ora.');
           } else {
-            showError((res.data && res.data.message) || "Errore durante l'iscrizione. Riprova.");
+            showError(backendMsg || "Errore durante l'iscrizione. Se il problema persiste, <a href=\"/contact.html\" style=\"color:inherit;text-decoration:underline\">scrivici</a>.");
           }
         })
         .catch(function () {
